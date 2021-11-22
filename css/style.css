@@ -1,0 +1,23 @@
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.bodycontent {
+    display: flex;
+}
+
+
+/* BOARD */
+
+.board_main {
+    margin-left: 20px;
+    margin-top: 36px;
+}
+
+.board_head {
+    margin-left: 8px;
+}
+
+.board_body {
+    display: flex;
+}

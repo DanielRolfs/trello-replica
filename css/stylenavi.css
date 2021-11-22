@@ -1,0 +1,75 @@
+.sidebar {
+    background-color: rgb(32, 44, 139);
+    min-width: 150px;
+    height: 100vh;
+    color: white;
+}
+
+.navlinks {
+    margin-top: 80px;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links {
+    cursor: pointer;
+    margin-top: 10px;
+    padding-left: 60px;
+    border-left: 4px transparent solid;
+}
+
+.includeBoard {
+    display: flex;
+}
+
+.card {
+    margin: 8px;
+}
+
+.aktivsidebarlink {
+    border-left: 4px white solid;
+}
+
+.sidebar {
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottomsidebar {
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logout {
+    margin-top: 50px;
+}
+
+.logout_btn {
+    cursor: pointer;
+    margin: 10px;
+    color: white;
+    height: 30px;
+    background-color: rgb(118, 132, 235);
+    cursor: pointer;
+}
+
+#profile {
+    width: 100px;
+    height: 100px;
+}
+
+#userpic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
