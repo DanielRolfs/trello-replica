@@ -1,0 +1,85 @@
+.add-task {
+  max-width: 900px;
+}
+
+.add-task__form-container {
+  height: 70%;
+  max-height: 500px;
+  padding: clamp(25px, 10%, 100px) 30px;
+  padding: 25px 30px;
+  border-radius: 10px;
+}
+
+.add-task__form {
+  gap: 40px;
+}
+
+.form__column {
+  justify-content: flex-start !important;
+}
+
+.input-container {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 17px;
+}
+
+.form__column div:last-child {
+ flex: 1;
+  margin-bottom: 0;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--bg-blue);
+}
+
+.form-field {
+  padding: 0.9rem 0.5rem;
+  border: 1px solid #dedee2;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.input-container h3 {
+  margin-bottom: 0.5rem;
+}
+
+select {
+  background-color: #fff;
+}
+
+.assign__icon {
+  width: 30px;
+  flex: 1;
+}
+
+.task__assign-container{
+ flex: 1;
+}
+
+.add-task-btns {
+  flex: 0;
+  justify-content: flex-end !important;
+  gap: 30px;
+}
+
+.btn--highlighted {
+  background-color: var(--bg-blue);
+  color: var(--bg-grey);
+}
+
+.btn--highlighted:hover {
+  background-color: #495cbe;
+}
+
+.btn--cancel {
+  background-color: var(--bg-grey);
+  color: var(--bg-blue);
+}
+
+.btn--cancel:hover {
+  background-color: #dbd9d9;
+}

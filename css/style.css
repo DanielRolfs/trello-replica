@@ -1,23 +1,91 @@
-body {
+/* ------------  GENERAL SETTINGS  ------------ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
     font-family: 'PT Sans', sans-serif;
-}
-
-.bodycontent {
+    --bg-grey: #f4f3fb;
+    --bg-blue: #1e3190;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 0.8rem;
+    color: var(--bg-blue);
+    /* font-weight: 400; */
+    /* margin-bottom: 30px; */
+    letter-spacing: 0.05rem;
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bg-blue);
+  }
+  
+  .d-none {
+    display: none !important;
+  }
+  
+  .flex-center {
     display: flex;
-}
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .col {
+    flex-direction: column;
+  }
+  
+  .bg-grey {
+    background-color: var(--bg-grey);
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
+  .h-100 {
+    height: 100%;
+  }
+  
+  button {
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .content {
+    padding: 0 20px;
+  }
 
-
-/* BOARD */
-
-.board_main {
-    margin-left: 20px;
-    margin-top: 36px;
-}
-
-.board_head {
+  .section-container{
+    height: 100vh;
+  }
+  
+  .section_head {
+    align-items: flex-start !important;
+    height: 18%;
+  }
+  
+  /* BOARD */
+  
+  .bodycontent {
+    display: flex;
+  }
+  
+  .board_head {
     margin-left: 8px;
-}
-
-.board_body {
+  }
+  
+  .board_body {
     display: flex;
-}
+  }
+  

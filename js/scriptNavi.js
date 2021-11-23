@@ -5,7 +5,7 @@ function showBoard() {
     document.getElementById('includeBacklog').classList.add('d-none');
     document.getElementById('backlog').classList.remove('aktivsidebarlink');
 
-    document.getElementById('includeAddtask').classList.add('d-none');
+    document.getElementById('include-addtask').classList.add('d-none');
     document.getElementById('addtask').classList.remove('aktivsidebarlink');
 
     document.getElementById('includeHelp').classList.add('d-none');
@@ -20,7 +20,7 @@ function showBacklog() {
     document.getElementById('includeBacklog').classList.remove('d-none');
     document.getElementById('backlog').classList.add('aktivsidebarlink');
 
-    document.getElementById('includeAddtask').classList.add('d-none');
+    document.getElementById('include-addtask').classList.add('d-none');
     document.getElementById('addtask').classList.remove('aktivsidebarlink');
 
     document.getElementById('includeHelp').classList.add('d-none');
@@ -35,7 +35,7 @@ function showAddTask() {
     document.getElementById('includeBacklog').classList.add('d-none');
     document.getElementById('backlog').classList.remove('aktivsidebarlink');
 
-    document.getElementById('includeAddtask').classList.remove('d-none');
+    document.getElementById('include-addtask').classList.remove('d-none');
     document.getElementById('addtask').classList.add('aktivsidebarlink');
 
     document.getElementById('includeHelp').classList.add('d-none');
@@ -50,7 +50,7 @@ function showHelp() {
     document.getElementById('includeBacklog').classList.add('d-none');
     document.getElementById('backlog').classList.remove('aktivsidebarlink');
 
-    document.getElementById('includeAddtask').classList.add('d-none');
+    document.getElementById('include-addtask').classList.add('d-none');
     document.getElementById('addtask').classList.remove('aktivsidebarlink');
 
     document.getElementById('includeHelp').classList.remove('d-none');
