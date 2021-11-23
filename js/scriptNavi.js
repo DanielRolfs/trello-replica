@@ -1,21 +1,14 @@
 function showBoard() {
     document.getElementById('includeBoard').classList.remove('d-none');
     document.getElementById('board').classList.add('aktivsidebarlink');
-
     document.getElementById('includeBacklog').classList.add('d-none');
     document.getElementById('backlog').classList.remove('aktivsidebarlink');
-
     document.getElementById('includeAddtask').classList.add('d-none');
     document.getElementById('addtask').classList.remove('aktivsidebarlink');
-
     document.getElementById('includeHelp').classList.add('d-none');
     document.getElementById('help').classList.remove('aktivsidebarlink');
-
     document.getElementById('includeAbout').classList.add('d-none');
-
     document.getElementById('includePrivacy').classList.add('d-none');
-
-
 }
 
 function showBacklog() {

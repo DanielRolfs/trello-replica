@@ -41,11 +41,15 @@ let tasks = [{
 
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done 
 
-async function init() {
-    await downloadFromServer();
-    users = JSON.parse(backend.getItem('EXAMPLE')) || [];
+async function smallestBackend() {
+
+    let url = 'https://gruppe-130.developerakademie.net/smallest_backend_ever';
+    let response = await fetch(url);
+    let responseAsjson = await response.json();
+
 };
 
 function init() {
     loadBacklogs();
+    // smallestBackend();
 }
