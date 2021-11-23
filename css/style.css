@@ -52,26 +52,6 @@ h3 {
     height: 100%;
 }
 
-
-/* BOARD */
-
-.board_main {
-    margin-left: 20px;
-    margin-top: 36px;
-}
-
-.board_head {
-    margin-left: 8px;
-}
-
-.board_body {
-    display: flex;
-}
-
-.width-100 {
-    width: 100% !important;
-}
-
 .d-none {
     display: none !important;
 }
@@ -80,7 +60,6 @@ h3 {
 /*Überschriften*/
 
 .section-header {
-    margin-top: 50px;
     margin-left: 20px;
     margin-bottom: 50px;
 }
