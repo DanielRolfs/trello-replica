@@ -66,7 +66,7 @@
     height: 100px;
 }
 
-#userpic {
+.userpic {
     width: 100px;
     height: 100px;
     object-fit: cover;
