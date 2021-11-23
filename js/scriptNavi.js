@@ -31,6 +31,10 @@ function showBacklog() {
     document.getElementById('includeHelp').classList.add('d-none');
     document.getElementById('help').classList.remove('aktivsidebarlink');
 
+    document.getElementById('includeAbout').classList.add('d-none');
+
+    document.getElementById('includePrivacy').classList.add('d-none');
+
 }
 
 function showAddTask() {
@@ -46,6 +50,10 @@ function showAddTask() {
     document.getElementById('includeHelp').classList.add('d-none');
     document.getElementById('help').classList.remove('aktivsidebarlink');
 
+    document.getElementById('includeAbout').classList.add('d-none');
+
+    document.getElementById('includePrivacy').classList.add('d-none');
+
 }
 
 function showHelp() {
@@ -60,6 +68,10 @@ function showHelp() {
 
     document.getElementById('includeHelp').classList.remove('d-none');
     document.getElementById('help').classList.add('aktivsidebarlink');
+
+    document.getElementById('includeAbout').classList.add('d-none');
+
+    document.getElementById('includePrivacy').classList.add('d-none');
 
 }
 
