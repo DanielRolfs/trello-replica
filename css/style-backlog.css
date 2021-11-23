@@ -31,18 +31,17 @@ table {
 
 .bl-row1 {
     width: 30%;
-}
-
-.bl-row1-1 {
-    width: 10%;
+    min-width: 300px;
 }
 
 .bl-row2 {
-    width: 10%;
+    width: 20%;
+    min-width: 200px;
 }
 
 .bl-row3 {
-    width: 60%;
+    width: 50%;
+    min-width: 500px;
 }
 
 .border-red {

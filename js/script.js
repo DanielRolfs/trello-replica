@@ -9,7 +9,8 @@ let tasks = [{
     'category': 'project',
     'urgency': 'high',
     'description': 'Logik hinter Add to Task ist implementiert und wird auf diesen JSON gespeichert',
-    'status': 'none'
+    'status': 'none',
+    'image': 'src',
 }, {
     'id': 1,
     'name': 'Marcus',
@@ -18,7 +19,8 @@ let tasks = [{
     'category': 'project',
     'urgency': 'high',
     'description': 'Logik hinter backlog ist implementiert und wird aus JSON gezogen/ von Add to Task übergeben',
-    'status': 'bl'
+    'status': 'bl',
+    'image': 'src',
 }, {
     'id': 2,
     'name': 'Daniel',
@@ -27,7 +29,8 @@ let tasks = [{
     'category': 'project',
     'urgency': 'high',
     'description': 'Logik hinter Board ist implementiert und wird aus JSON gezogen / von Backlog übergeben',
-    'status': 'b1'
+    'status': 'b1',
+    'image': 'src',
 }];
 
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done 
