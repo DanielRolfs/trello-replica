@@ -50,11 +50,11 @@
             <div class="bottomsidebar">
                 <div id="profile"> <img id="userpic" src="img/profil3.png" alt=""></div>
                 <div class="logout">
-                    <button onclick="logout()" class="logout_btn">Logout</button>
+                    <button onclick="logout()" class="logout_btn btn--highlighted">Logout</button>
                 </div>
                 <div>
-                    <a href="#">about</a>
-                    <a href="#">privacy</a>
+                    <a href="#" onclick="showAbout()">about</a>
+                    <a href="#" onclick="showPrivacy()">privacy</a>
                 </div>
             </div>
 
@@ -73,6 +73,12 @@
 
         <!-- help -->
         <div id="includeHelp" class=" includeHelp width-100 d-none" w3-include-html="templates/help.html"></div>
+
+        <!-- About -->
+        <div id="includeAbout" class=" includeAbout width-100 d-none" w3-include-html="templates/about.html"></div>
+
+        <!-- Privacy -->
+        <div id="includePrivacy" class=" includePrivacy width-100 d-none" w3-include-html="templates/privacy.html"></div>
     </div>
 
 

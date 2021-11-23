@@ -54,13 +54,11 @@
 }
 
 .logout_btn {
-    cursor: pointer;
     margin: 10px;
-    color: white;
     height: 30px;
-    background-color: rgb(118, 132, 235);
     cursor: pointer;
     margin-bottom: 30px;
+    padding: 5px !important;
 }
 
 #profile {
