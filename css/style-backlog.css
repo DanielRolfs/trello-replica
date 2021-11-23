@@ -1,0 +1,71 @@
+.backlog-overline {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    color: rgb(31, 50, 144);
+    font-weight: bolder;
+}
+
+table {
+    width: 100%;
+}
+
+.backlogs {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.log {
+    margin-bottom: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(244, 243, 251);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.bl-row1 {
+    width: 30%;
+}
+
+.bl-row1-1 {
+    width: 10%;
+}
+
+.bl-row2 {
+    width: 10%;
+}
+
+.bl-row3 {
+    width: 60%;
+}
+
+.border-red {
+    border-left: 7px solid red;
+}
+
+.border-blue {
+    border-left: 7px solid blue;
+}
+
+.border-green {
+    border-left: 7px solid green;
+}
+
+.bl-assigned {
+    display: flex;
+    align-items: center;
+}
+
+.bl-user {
+    margin-left: 15px;
+}
+
+#bl-mail {
+    color: cadetblue;
+}

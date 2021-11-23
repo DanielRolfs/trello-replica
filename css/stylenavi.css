@@ -42,7 +42,7 @@
 
 .bottomsidebar {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,6 +60,7 @@
     height: 30px;
     background-color: rgb(118, 132, 235);
     cursor: pointer;
+    margin-bottom: 30px;
 }
 
 #profile {
@@ -72,4 +73,16 @@
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.bottomsidebar a {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bottomsidebar a:hover {
+    color: lightgray;
 }

@@ -51,4 +51,10 @@ function renderprofile() {
     if (currentUser == 'Marcus') {
         document.getElementById('userpic').src = "img/marcus.jpg";
     }
+    if (currentUser == 'Anna') {
+        document.getElementById('userpic').src = "img/profil1.png";
+    }
+    if (currentUser == 'Daniel') {
+        document.getElementById('userpic').src = "img/profil2.png";
+    }
 }

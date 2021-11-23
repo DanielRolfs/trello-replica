@@ -1,0 +1,25 @@
+.content {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: rgb(244, 243, 251);
+    border-radius: 10px;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+.help-btn {
+    font-size: 16px;
+    color: white;
+    background-color: rgb(31, 50, 144);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+.contact {
+    text-align: center;
+    margin-top: 24px;
+}
