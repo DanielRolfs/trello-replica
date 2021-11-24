@@ -3,7 +3,6 @@ function loadBacklogs() {
     document.getElementById('backlogs').innerHTML = '';
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
-        let responsable = log.responsable
         document.getElementById('backlogs').innerHTML += `
         <div class="log ${log.category}" id="log" onclick="pushToBoard(${log[i]})">
         <table>
