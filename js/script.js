@@ -10,9 +10,7 @@ let tasks = [{
     'urgency': 'high',
     'description': 'Logik hinter Add to Task ist implementiert und wird auf diesen JSON gespeichert',
     'status': 'bl',
-    'image': 'img/profil1.png',
-    'mail': 'anna@da.de',
-    'color': 'border-red'
+
 }, {
     'id': 1,
     'name': 'Marcus',
@@ -22,9 +20,7 @@ let tasks = [{
     'urgency': 'high',
     'description': 'Logik hinter backlog ist implementiert und wird aus JSON gezogen/ von Add to Task übergeben',
     'status': 'bl',
-    'image': 'img/marcus.jpg',
-    'mail': 'marcus@da.de',
-    'color': 'border-green'
+
 }, {
     'id': 2,
     'name': 'Daniel',
@@ -34,11 +30,26 @@ let tasks = [{
     'urgency': 'high',
     'description': 'Logik hinter Board ist implementiert und wird aus JSON gezogen / von Backlog übergeben',
     'status': 'bl',
-    'image': 'img/profil2.png',
-    'mail': 'daniel@da.de',
-    'color': 'border-blue'
 }];
 
+
+let users = [{
+    'anna': {
+        'image': 'img/profil1.png',
+        'mail': 'anna@da.de',
+        'color': 'border-red'
+    },
+    'Marcus': {
+        'image': 'img/marcus.jpg',
+        'mail': 'marcus@da.de',
+        'color': 'border-green'
+    },
+    'Daniel': {
+        'image': 'img/profil2.png',
+        'mail': 'daniel@da.de',
+        'color': 'border-blue'
+    },
+}];
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done 
 
 async function smallestBackend() {
