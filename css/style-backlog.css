@@ -44,15 +44,15 @@ table {
     min-width: 500px;
 }
 
-.Anna {
+.Product {
     border-left: 7px solid red;
 }
 
-.Marcus {
+.Marketing {
     border-left: 7px solid blue;
 }
 
-.Daniel {
+.Sales {
     border-left: 7px solid green;
 }
 
