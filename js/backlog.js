@@ -12,12 +12,9 @@ function loadBacklogs() {
                     <div class="bl-assigned">
                         <Div><img src="${log.image}" alt="BILD" class="userpic"></Div>
                         <div class="bl-user">
-                            <div>${log.name}</div>
-                            <div id="bl-mail${i}"></div>
                             <div>${log.responsable}</div>
-                            <div id="bl-mail">${log.responsable}</div>
+                            <div id="bl-mail">${log.responsable} Mail</div>
                         </div>
-
                     </div>
                 </td>
 
