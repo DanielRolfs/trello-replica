@@ -33,23 +33,25 @@ let tasks = [{
 }];
 
 
-let users = [{
-    'anna': {
+let responsibles = [{
+    'Anna': {
         'image': 'img/profil1.png',
         'mail': 'anna@da.de',
         'color': 'border-red'
-    },
+    }
+}, {
     'Marcus': {
         'image': 'img/marcus.jpg',
         'mail': 'marcus@da.de',
         'color': 'border-green'
-    },
+    }
+}, {
     'Daniel': {
         'image': 'img/profil2.png',
         'mail': 'daniel@da.de',
         'color': 'border-blue'
-    },
-}];
+    }
+}, ];
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done 
 
 async function smallestBackend() {
