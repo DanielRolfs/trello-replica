@@ -3,8 +3,9 @@ function loadBacklogs() {
     document.getElementById('backlogs').innerHTML = '';
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
+        let status = log.status
         document.getElementById('backlogs').innerHTML += `
-        <div class="log ${log.category}" id="log" onclick="pushToBoard(${log[i]})">
+        <div class="log ${log.category}" id="log" onclick="pushTaskBoard(${status})">
         <table>
             <tr>
                 <td class=" bl-row1 " id="bl-row1 ">
@@ -53,7 +54,7 @@ function setUserDetails(name, i) {
     }
 }
 
-function pushToBoard(log) {
-    log[i].status = 'b1';
-    loadBacklogs();
+function pushTaskBoard(status) {
+    tasks.status.push(status);
+    backend.setItem('tasks.status', JSON.stringify(status));
 }
