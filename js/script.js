@@ -36,21 +36,18 @@ let users = [{
         password: "anna12345",
         'image': 'img/profil1.png',
         'mail': 'anna@da.de',
-        'color': 'border-red'
     },
     {
         username: "Marcus",
         password: "marcus12345",
         'image': 'img/marcus.jpg',
         'mail': 'marcus@da.de',
-        'color': 'border-green'
     },
     {
         username: "Daniel",
         password: "daniel12345",
         'image': 'img/profil2.png',
         'mail': 'daniel@da.de',
-        'color': 'border-blue'
     },
     {
         username: "test",
