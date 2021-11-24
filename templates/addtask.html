@@ -18,6 +18,7 @@
         <div class="input-container flex-center col w-100">
           <label for="task__category">CATEGORY</label>
           <select name="task__category" id="task__category" class="form-field w-100">
+            <option value="Management">Management</option>
             <option value="Marketing">Marketing</option>
             <option value="Product">Product</option>
             <option value="Sale">Sale</option>
@@ -50,7 +51,7 @@
         <div class="input-container flex-center col w-100">
           <h3>ASSIGNED TO</h3>
           <div class="task__assign-container flex-center">
-            <img class="assign__icon" src="./img/icon plus.png" alt="Assign to person" />
+            <img class="assign__icon" src="./img/icon plus.png" alt="Assign to person" onclick="assignTask()" />
             <input type="hidden" id="task__responsable" />
           </div>
           <div class="add-task-btns flex-center w-100">
@@ -60,5 +61,17 @@
         </div>
       </div>
     </form>
+  </div>
+</div>
+
+<!-- --------------ASSIGN TASK MODAL -------------- -->
+<div id="assign-task-modal" class="flex-center w-100 d-none">
+  <div id="assign-task__content" class="flex-center col">
+    <h1>Assign task to...</h1>
+    <div id="show-users" class="w-100 flex-1"></div>
+    <div class="add-task-btns flex-center w-100">
+      <button class="btn--cancel" onclick="cancelAssignment()">Cancel</button>
+      <button class="btn--highlighted" onclick="saveAssignment()">Save</button>
+    </div>
   </div>
 </div>

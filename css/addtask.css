@@ -1,98 +1,161 @@
+#include-addtask {
+  position: relative;
+}
+
 .add-task {
-    max-width: 900px;
+  max-width: 900px;
 }
 
 .add-task__form-container {
-    height: 70%;
-    max-height: 500px;
-    padding: clamp(25px, 10%, 100px) 30px;
-    padding: 25px 30px;
-    border-radius: 10px;
+  height: 70%;
+  max-height: 500px;
+  padding: clamp(25px, 10%, 100px) 30px;
+  padding: 25px 30px;
+  border-radius: 10px;
 }
 
 .add-task__form {
-    gap: 40px;
+  gap: 40px;
 }
 
 .form__column {
-    justify-content: flex-start !important;
+  justify-content: flex-start !important;
 }
 
 .input-container {
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 17px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 17px;
 }
 
 .form__column div:last-child {
-    flex: 1;
-    margin-bottom: 0;
+  flex: 1;
+  margin-bottom: 0;
 }
 
 label {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--bg-blue);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--bg-blue);
 }
 
 .form-field {
-    padding: 0.9rem 0.5rem;
-    border: 1px solid #dedee2;
-    border-radius: 5px;
-    font-size: 0.9rem;
+  padding: 0.9rem 0.5rem;
+  border: 1px solid #dedee2;
+  border-radius: 5px;
+  font-size: 0.9rem;
 }
 
 .input-container h3 {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 select {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .assign__icon {
-    width: 30px;
-    flex: 1;
+  width: 30px;
+  flex: 1;
 }
 
 .task__assign-container {
-    flex: 1;
+  flex: 1;
 }
 
 .add-task-btns {
-    flex: 0;
-    justify-content: flex-end !important;
-    gap: 30px;
+  flex: 0;
+  justify-content: flex-end !important;
+  gap: 30px;
 }
 
 .btn--highlighted {
-    background-color: var(--bg-blue);
-    color: var(--bg-grey);
+  background-color: var(--bg-blue);
+  color: var(--bg-grey);
 }
 
 .btn--highlighted:hover {
-    background-color: #495cbe;
+  background-color: #495cbe;
 }
 
 .btn--cancel {
-    background-color: var(--bg-grey);
-    color: var(--bg-blue);
+  background-color: var(--bg-grey);
+  color: var(--bg-blue);
 }
 
 .btn--cancel:hover {
-    background-color: #dbd9d9;
+  background-color: #dbd9d9;
 }
 
 button {
-    padding: 15px;
-    border-radius: 10px;
-    display: inline-block;
-    border: none;
-    font-weight: 700;
-    cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .section-container {
-    margin-left: 20px;
+  margin-left: 20px;
+}
+
+/* --------------  ASSIGN TASK  ----------------- */
+
+#assign-task-modal {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#assign-task__content {
+  width: 60%;
+  height: 70%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+#show-users {
+  margin-top: 20px;
+  overflow-y: auto;
+}
+
+.show-user__container {
+  justify-content: flex-start;
+  width: 80%;
+  height: 55px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background-color: var(--bg-grey);
+}
+
+.show-user__container:hover{
+    /* background-color: #c4c1d8; */
+    background-color: rgba(206, 205, 214, 0.5);
+}
+
+.user--selected{
+    background-color: #d5d2e4;
+}
+.user--selected:hover{
+    background-color: #b2afc4;
+}
+
+.show-user__image {
+  height: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+#assign-task__content button{
+    width: 7rem;
+    margin-top: 20px;
 }
