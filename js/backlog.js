@@ -3,7 +3,7 @@ function loadBacklogs() {
     document.getElementById('backlogs').innerHTML = '';
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
-        let name = log.name
+        let responsable = log.responsable
         document.getElementById('backlogs').innerHTML += `
         <div class="log ${log.category}" id="log" onclick="setStatusToB1(${i})">
         <table>
@@ -12,8 +12,8 @@ function loadBacklogs() {
                     <div class="bl-assigned">
                         <Div><img src="${log.image}" alt="BILD" class="userpic"></Div>
                         <div class="bl-user">
-                            <div>${log.name}</div>
-                            <div id="bl-mail">${log.name}</div>
+                            <div>${log.responsable}</div>
+                            <div id="bl-mail">${log.responsable}</div>
                         </div>
 
                     </div>
