@@ -1,6 +1,6 @@
 <div class="section-header">
-  <h1 class="header--overline">Add Task</h1>
-  <p class="header--underline">Learning Management System Project</p>
+  <h1>Add Task</h1>
+  <p class="subheading">Learning Management System Project</p>
 </div>
 
 <!-- Add Task -->
@@ -49,8 +49,8 @@
           </select>
         </div>
         <div class="input-container flex-center col w-100">
-          <h3>ASSIGNED TO</h3>
-          <div class="task__assign-container flex-center">
+          <label for="task__assign-container">ASSIGNED TO</label>
+          <div name="task__assign-container" class="task__assign-container flex-center">
             <img class="assign__icon" src="./img/icon plus.png" alt="Assign to person" onclick="assignTask()" />
             <input type="hidden" id="task__responsable" />
           </div>

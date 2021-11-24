@@ -19,20 +19,8 @@ body {
 
 h1 {
     font-size: 1.8rem;
-}
-
-h2 {
-    font-size: 0.8rem;
-    color: var(--bg-blue);
-    /* font-weight: 400; */
-    /* margin-bottom: 30px; */
-    letter-spacing: 0.05rem;
-}
-
-h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--bg-blue);
+    font-weight: bold;
+    margin-bottom: 0 !important;
 }
 
 .flex-center {
@@ -66,22 +54,17 @@ h3 {
 }
 
 
-/*Überschriften*/
+/* ---------  HEADINGS  --------- */
 
 .section-header {
     margin-left: 20px;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-top: 40px;
 }
 
-.header--overline {
-    font-weight: bold;
-    font-size: 28px;
-    margin-bottom: 0 !important;
-}
-
-.header--underline {
+.subheading {
     font-size: 14px;
-    color: rgb(53, 70, 155);
+    letter-spacing: 0.05rem;
+    color: var(--bg-blue);
     margin-top: 0 !important;
 }
