@@ -3,32 +3,32 @@
 
 let tasks = [{
     'id': 0,
-    'name': 'Anna',
     'title': 'Add Task Ready machen',
     'dueDate': '26.11.2021',
     'category': 'Product',
     'urgency': 'high',
     'description': 'Logik hinter Add to Task ist implementiert und wird auf diesen JSON gespeichert',
+    'responsable': 'Anna',
     'status': 'bl',
 
 }, {
     'id': 1,
-    'name': 'Marcus',
     'title': 'Backlog Ready machen',
     'dueDate': '29.11.2021',
     'category': 'Marketing',
     'urgency': 'high',
     'description': 'Logik hinter backlog ist implementiert und wird aus JSON gezogen/ von Add to Task übergeben',
+    'responsable': 'Marcus',
     'status': 'bl',
 
 }, {
     'id': 2,
-    'name': 'Daniel',
     'title': 'Board Ready machen',
     'dueDate': '29.11.2021',
     'category': 'Sales',
     'urgency': 'high',
     'description': 'Logik hinter Board ist implementiert und wird aus JSON gezogen / von Backlog übergeben',
+    'responsable': 'Daniel',
     'status': 'bl',
 }];
 let users = [{
