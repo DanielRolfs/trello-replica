@@ -13,7 +13,7 @@ function loadBacklogs() {
                         <Div><img src="${log.image}" alt="BILD" class="userpic"></Div>
                         <div class="bl-user">
                             <div>${log.name}</div>
-                            <div id="bl-mail">${log.name}</div>
+                            <div id="bl-mail${i}"></div>
                         </div>
 
                     </div>
@@ -29,6 +29,27 @@ function loadBacklogs() {
             </tr>
         </table>
     </div>`;
+        // setUserDetails(name, i);
+    }
+}
+
+function setUserDetails(name, i) {
+    if (name == 'Anna') {
+        let userId = 0;
+        dokument.getElementById('bl-mail' + i).innerHTML = `${users.userId.mail}`;
+
+    }
+    if (name == 'Marcus') {
+        let userId = 1;
+        dokument.getElementById('bl-mail').innerHTML = `${users.userId.mail}`;
+
+
+    }
+    if (name == 'Daniel') {
+        let userId = 2;
+        dokument.getElementById('bl-mail').innerHTML = `${users.userId.mail}`;
+
+
     }
 }
 
