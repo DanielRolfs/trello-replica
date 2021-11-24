@@ -9,7 +9,7 @@ let tasks = [{
         urgency: 'high',
         description: 'Logik hinter Add to Task ist implementiert und wird auf diesen JSON gespeichert',
         responsable: 'Anna',
-        status: 'bl',
+        status: 'b1',
     },
     {
         id: 1,
@@ -29,7 +29,7 @@ let tasks = [{
         urgency: 'high',
         description: 'Logik hinter Board ist implementiert und wird aus JSON gezogen / von Backlog übergeben',
         responsable: 'Daniel',
-        status: 'bl',
+        status: 'b1',
     },
 ];
 
