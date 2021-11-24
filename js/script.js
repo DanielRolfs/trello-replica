@@ -1,37 +1,36 @@
 // Backend
 setURL('http://gruppe-130.developerakademie.net/smallest_backend_ever');
 
-let tasks = [
-  {
-    id: 0,
-    title: 'Add Task Ready machen',
-    dueDate: '26.11.2021',
-    category: 'Product',
-    urgency: 'high',
-    description: 'Logik hinter Add to Task ist implementiert und wird auf diesen JSON gespeichert',
-    responsable: 'Anna',
-    status: 'bl',
-  },
-  {
-    id: 1,
-    title: 'Backlog Ready machen',
-    dueDate: '29.11.2021',
-    category: 'Marketing',
-    urgency: 'high',
-    description: 'Logik hinter backlog ist implementiert und wird aus JSON gezogen/ von Add to Task übergeben',
-    responsable: 'Marcus',
-    status: 'bl',
-  },
-  {
-    id: 2,
-    title: 'Board Ready machen',
-    dueDate: '29.11.2021',
-    category: 'Sales',
-    urgency: 'high',
-    description: 'Logik hinter Board ist implementiert und wird aus JSON gezogen / von Backlog übergeben',
-    responsable: 'Daniel',
-    status: 'bl',
-  },
+let tasks = [{
+        id: 0,
+        title: 'Add Task Ready machen',
+        dueDate: '26.11.2021',
+        category: 'Product',
+        urgency: 'high',
+        description: 'Logik hinter Add to Task ist implementiert und wird auf diesen JSON gespeichert',
+        responsable: 'Anna',
+        status: 'bl',
+    },
+    {
+        id: 1,
+        title: 'Backlog Ready machen',
+        dueDate: '29.11.2021',
+        category: 'Marketing',
+        urgency: 'high',
+        description: 'Logik hinter backlog ist implementiert und wird aus JSON gezogen/ von Add to Task übergeben',
+        responsable: 'Marcus',
+        status: 'bl',
+    },
+    {
+        id: 2,
+        title: 'Board Ready machen',
+        dueDate: '29.11.2021',
+        category: 'Sales',
+        urgency: 'high',
+        description: 'Logik hinter Board ist implementiert und wird aus JSON gezogen / von Backlog übergeben',
+        responsable: 'Daniel',
+        status: 'bl',
+    },
 ];
 
 let users = [
@@ -65,12 +64,12 @@ let users = [
 
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done
 
- async function init() {
+async function init() {
     await loadTasks();
     loadBacklogs();
 }
 
-async function loadTasks(){
+async function loadTasks() {
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem('tasks')) || [];
 }
