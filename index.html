@@ -1,118 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Join</title>
 
     <!-- including js -->
-    <script src="js/script.js"></script>
-    <script src="js/templates.js"></script>
-    <script src="js/scriptNavi.js"></script>
-    <script src="js/loginscript.js"></script>
-    <script src="js/mini_backend.js"></script>
-    <script src="js/addtask.js"></script>
-    <script src="js/backlog.js"></script>
-
+    <script src="./js/mini_backend.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/templates.js"></script>
+    <script src="./js/scriptNavi.js"></script>
+    <script src="./js/loginscript.js"></script>
+    <script src="./js/addtask.js"></script>
+    <script src="./js/backlog.js"></script>
 
     <!-- including css -->
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/stylenavi.css">
-    <link rel="stylesheet" href="css/loginstyle.css">
-    <link rel="stylesheet" href="css/style-backlog.css">
-    <link rel="stylesheet" href="css/style-help.css">
-    <link rel="stylesheet" href="css/addtask.css">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/stylenavi.css" />
+    <link rel="stylesheet" href="./css/loginstyle.css" />
+    <link rel="stylesheet" href="./css/style-backlog.css" />
+    <link rel="stylesheet" href="./css/style-help.css" />
+    <link rel="stylesheet" href="./css/addtask.css" />
 
     <!-- insert font family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-
-
-</head>
-
-<body onload="includeHTML()">
-
+  <body onload="includeHTML()">
     <div class="bodycontent" id="bodycontent">
+      <!-- sidebar -->
+      <div class="sidebar">
+        <div class="uppersidebar">
+          <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="" /></a>
+          </div>
 
-
-        <!-- sidebar -->
-        <div class="sidebar">
-            <div class="uppersidebar">
-                <div class="logo">
-                    <a href="index.html"><img src="img/logo.png" alt=""></a>
-                </div>
-
-                <div class="navlinks">
-                    <div class="links aktivsidebarlink" id="board" onclick="showBoard()">Board</div>
-                    <div class="links" id="backlog" onclick="showBacklog()">Backlog</div>
-                    <div class="links" id="addtask" onclick="showAddTask()">Add Task</div>
-                    <div class="links" id="help" onclick="showHelp()">Help</div>
-                </div>
-            </div>
-            <div class="bottomsidebar">
-                <div id="profile"> <img id="userpic" src="img/profil3.png" alt="" class="userpic"></div>
-                <div class="logout">
-                    <button onclick="logout()" class="logout_btn btn--highlighted">Logout</button>
-                </div>
-                <div>
-                    <a href="#" onclick="showAbout()">about</a>
-                    <a href="#" onclick="showPrivacy()">privacy</a>
-                </div>
-            </div>
-
+          <div class="navlinks">
+            <div class="links aktivsidebarlink" id="board" onclick="showBoard()">Board</div>
+            <div class="links" id="backlog" onclick="showBacklog()">Backlog</div>
+            <div class="links" id="addtask" onclick="showAddTask()">Add Task</div>
+            <div class="links" id="help" onclick="showHelp()">Help</div>
+          </div>
         </div>
+        <div class="bottomsidebar">
+          <div id="profile"><img id="userpic" src="img/profil3.png" alt="" class="userpic" /></div>
+          <div class="logout">
+            <button onclick="logout()" class="logout_btn btn--highlighted">Logout</button>
+          </div>
+          <div>
+            <a href="#" onclick="showAbout()">about</a>
+            <a href="#" onclick="showPrivacy()">privacy</a>
+          </div>
+        </div>
+      </div>
 
-        <!-- main -->
+      <!-- main -->
 
-        <!-- board -->
-        <div id="include-board" class="include-boardwidth-100 " w3-include-html="templates/board.html"></div>
+      <!-- board -->
+      <div id="include-board" class="include-boardwidth-100" w3-include-html="./templates/board.html"></div>
 
-        <!-- backlog -->
-        <div id="include-backlog" class="include-backlog d-none  width-100" w3-include-html="templates/backlog.html"></div>
+      <!-- backlog -->
+      <div
+        id="include-backlog"
+        class="include-backlog d-none width-100"
+        w3-include-html="./templates/backlog.html"
+      ></div>
 
-        <!-- add task -->
-        <div id="include-addtask" class="include-addtask d-none width-100" w3-include-html="templates/addtask.html"></div>
+      <!-- add task -->
+      <div
+        id="include-addtask"
+        class="include-addtask d-none width-100"
+        w3-include-html="./templates/addtask.html"
+      ></div>
 
-        <!-- help -->
-        <div id="include-help" class="include-help width-100 d-none" w3-include-html="templates/help.html"></div>
+      <!-- help -->
+      <div id="include-help" class="include-help width-100 d-none" w3-include-html="./templates/help.html"></div>
 
-        <!-- About -->
-        <div id="include-about" class="include-about width-100 d-none" w3-include-html="templates/about.html"></div>
+      <!-- About -->
+      <div id="include-about" class="include-about width-100 d-none" w3-include-html="./templates/about.html"></div>
 
-        <!-- Privacy -->
-        <div id="include-privacy" class="include-privacy width-100 d-none" w3-include-html="templates/privacy.html"></div>
+      <!-- Privacy -->
+      <div
+        id="include-privacy"
+        class="include-privacy width-100 d-none"
+        w3-include-html="./templates/privacy.html"
+      ></div>
     </div>
-
 
     <div class="login-site d-none" id="login-site">
-        <div class="login">
-            <div class="area">
-                <div class="head">
-                    <div class="logo"><img src="img/logo.png" alt=""></div>
-                    <div class="header">
-                        <h1>Login</h1>
-                    </div>
-                </div>
-                <div class="inputs">
-                    <form>
-                        <input type="text" id="username" placeholder="Username" class="input">
-                        <br>
-                        <input type="password" id="password" placeholder="Password" class="input">
-                        <br>
-                        <div id="incorrect"></div>
-                        <button type="button" onclick="getInfo()" class="btn">Login</button>
-                    </form>
-                </div>
+      <div class="login">
+        <div class="area">
+          <div class="head">
+            <div class="logo"><img src="img/logo.png" alt="" /></div>
+            <div class="header">
+              <h1>Login</h1>
             </div>
+          </div>
+          <div class="inputs">
+            <form>
+              <input type="text" id="username" placeholder="Username" class="input" />
+              <br />
+              <input type="password" id="password" placeholder="Password" class="input" />
+              <br />
+              <div id="incorrect"></div>
+              <button type="button" onclick="getInfo()" class="btn">Login</button>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-
-
-</body>
-
+  </body>
 </html>
