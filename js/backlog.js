@@ -5,7 +5,7 @@ function loadBacklogs() {
         const log = logs[i];
         let responsable = log.responsable
         document.getElementById('backlogs').innerHTML += `
-        <div class="log ${log.category}" id="log" onclick="setStatusToB1(${i})">
+        <div class="log ${log.category}" id="log" onclick="pushToBoard(${log[i]})">
         <table>
             <tr>
                 <td class=" bl-row1 " id="bl-row1 ">
@@ -17,12 +17,14 @@ function loadBacklogs() {
                         </div>
                     </div>
                 </td>
-
                 <td class="bl-row2 ">
+                    <div class="bl-category "> ${log.title}</div>
+                </td>
+                <td class="bl-row3 ">
                     <div class="bl-category "> ${log.category}</div>
                 </td>
 
-                <td class="bl-row3 ">
+                <td class="bl-row4 ">
                     <div class="bl-details ">${log.description}</div>
                 </td>
             </tr>
@@ -52,6 +54,7 @@ function setUserDetails(name, i) {
     }
 }
 
-function setStatusToB1(i) {
-
+function pushToBoard(log) {
+    log[i].status = 'b1';
+    loadBacklogs();
 }

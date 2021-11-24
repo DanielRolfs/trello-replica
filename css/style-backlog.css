@@ -31,7 +31,7 @@ table {
 
 .bl-row1 {
     width: 30%;
-    min-width: 300px;
+    min-width: 200px;
 }
 
 .bl-row2 {
@@ -40,6 +40,11 @@ table {
 }
 
 .bl-row3 {
+    width: 15%;
+    min-width: 150px;
+}
+
+.bl-row4 {
     width: 50%;
     min-width: 500px;
 }
