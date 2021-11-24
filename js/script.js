@@ -33,6 +33,7 @@ let tasks = [
     status: 'bl',
   },
 ];
+
 let users = [
   {
     username: 'Anna',
@@ -60,19 +61,12 @@ let users = [
 
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done
 
-async function init() {
-  await downloadFromServer();
-  tasks = JSON.parse(backend.getItem('tasks')) || [];
-  /* users = JSON.parse(backend.getItem('users')) || []; */
+ async function init() {
+    await loadTasks();
+    loadBacklogs();
 }
-/* 
-async function smallestBackend() {
-  let url = 'https://gruppe-130.developerakademie.net/smallest_backend_ever';
-  let response = await fetch(url);
-  let responseAsjson = await response.json();
-} */
 
-function init() {
-  loadBacklogs();
-  // smallestBackend();
+async function loadTasks(){
+    await downloadFromServer();
+    tasks = JSON.parse(backend.getItem('tasks')) || [];
 }
