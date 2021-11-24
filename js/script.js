@@ -31,27 +31,33 @@ let tasks = [{
     'description': 'Logik hinter Board ist implementiert und wird aus JSON gezogen / von Backlog übergeben',
     'status': 'bl',
 }];
-
-
-let responsibles = [{
-    'Anna': {
+let users = [{
+        username: "Anna",
+        password: "anna12345",
         'image': 'img/profil1.png',
         'mail': 'anna@da.de',
         'color': 'border-red'
-    }
-}, {
-    'Marcus': {
+    },
+    {
+        username: "Marcus",
+        password: "marcus12345",
         'image': 'img/marcus.jpg',
         'mail': 'marcus@da.de',
         'color': 'border-green'
-    }
-}, {
-    'Daniel': {
+    },
+    {
+        username: "Daniel",
+        password: "daniel12345",
         'image': 'img/profil2.png',
         'mail': 'daniel@da.de',
         'color': 'border-blue'
+    },
+    {
+        username: "test",
+        password: "test"
     }
-}, ];
+
+];
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done 
 
 async function smallestBackend() {

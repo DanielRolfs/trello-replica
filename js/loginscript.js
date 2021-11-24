@@ -1,22 +1,3 @@
-let users = [{
-        username: "Anna",
-        password: "anna12345"
-    },
-    {
-        username: "Marcus",
-        password: "marcus12345"
-    },
-    {
-        username: "Daniel",
-        password: "daniel12345"
-    },
-    {
-        username: "test",
-        password: "test"
-    }
-
-]
-
 let currentUser;
 
 function getInfo() {
