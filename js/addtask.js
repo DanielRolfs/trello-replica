@@ -1,5 +1,5 @@
 let selectedUser = [];
-let responsable = [];
+let responsible = [];
 
 function addTask() {
   addNewTask();
@@ -15,15 +15,20 @@ function addNewTask() {
   let description = document.getElementById('task__description');
   let date = document.getElementById('task__date');
   let urgency = document.getElementById('task__urgency');
-  /* let responsable = document.getElementById('task__responsable'); */
+  /* let responsible = document.getElementById('task__responsible'); */
 
   let newTask = createTask(title, category, description, date, urgency);
   saveTask(newTask);
-  resetForm(title, category, description, date, urgency, responsable);
+  resetForm(title, category, description, date, urgency, responsible);
 }
 
 function createTask(title, category, description, date, urgency) {
-  let id = tasks[tasks.length - 1].id + 1;
+  let id;
+  if (tasks.length > 0) {
+    id = tasks[tasks.length - 1].id + 1;
+  } else {
+    id = 0;
+  }
   let task = {
     id: id,
     title: title.value,
@@ -31,7 +36,7 @@ function createTask(title, category, description, date, urgency) {
     category: category.value,
     urgency: urgency.value,
     description: description.value,
-    responsable: responsable,
+    responsible: responsible,
     status: 'bl',
   };
   return task;
@@ -42,18 +47,18 @@ function saveTask(newTask) {
   backend.setItem('tasks', JSON.stringify(tasks));
 }
 
-function resetForm(title, category, description, date, urgency, responsable) {
+function resetForm(title, category, description, date, urgency, responsible) {
   title.value = '';
   category.value = '';
   description.value = '';
   date.value = '';
   urgency.value = '';
-  responsable.value = '';
+  responsible.value = '';
 }
 
-function resetVariables(){
- selectedUser = [];
- responsable = [];
+function resetVariables() {
+  selectedUser = [];
+  responsible = [];
 }
 
 /* function showTaskAddedModal() {
@@ -91,24 +96,27 @@ function createUserOverview() {
 }
 
 function assignToUser(id) {
-
-  if (!selectedUser.find(selected => selected == id)) {
-   selectedUser.push(id);
-   } else {
+  if (!selectedUser.find((selected) => selected == id)) {
+    selectedUser.push(id);
+  } else {
     selectedUser.splice(selectedUser.indexOf(id), 1);
-   }
-   highlightUser(id);
+  }
+  highlightUser(id);
 }
 
 function highlightUser(id) {
   document.getElementById('user' + id).classList.toggle('user--selected');
 }
 
-function saveAssignment(){
- responsable = selectedUser;
- document.getElementById('assign-task-modal').classList.add('d-none');
+function saveAssignment() {
+  responsible = selectedUser;
+  document.getElementById('assign-task-modal').classList.add('d-none');
 }
-function cancelAssignment(){
- selectedUser = responsable;
- document.getElementById('assign-task-modal').classList.add('d-none');
+function cancelAssignment() {
+  selectedUser = responsible;
+  document.getElementById('assign-task-modal').classList.add('d-none');
+}
+
+function showResponsibles() {
+  responsible;
 }
