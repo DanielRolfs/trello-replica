@@ -23,13 +23,16 @@ function loadBacklogs() {
                 </td>
 
                 <td class="bl-row4 ">
-                    <div class="bl-details ">${log.description}</div>
+                        <div class="bl-details ">${log.description}</div>                
                 </td>
+                <td class="bl-row5 ">
+                        <div class="del"><img src="img/del.png" alt=""></div>
+                   </td>
             </tr>
         </table>
     </div>`;
-        setUsersDetails(logs, i);
-    }
+        // setUsersDetails(logs, i);
+    };
 }
 
 async function pushTaskToBoard(logID) {
@@ -40,18 +43,18 @@ async function pushTaskToBoard(logID) {
 }
 
 
-function setUsersDetails(logs, logI) {
-    document.getElementById('bl-user-list' + i).innerHTML = '';
-    for (let i = 0; i < logs[logI].responsible.length; i++)
-        let responsible = logs[logI].responsible[i];
-    let user = users.find(u => u.username === responsible);
-    document.getElementById('bl-user-list' + i).innerHTML = `
-        <div class="user">
-            <div class="userpic">${user.image}</div>
-            <div>
-                ${user.username};
-                ${user.mail}
-            </name>
-        </div>
-    `
-};
+// function setUsersDetails(logs, logI) {
+//     document.getElementById('bl-user-list' + i).innerHTML = '';
+//     for (let i = 0; i < logs[logI].responsible.length; i++)
+//         let resp = logs[logI].responsible[i];
+//     let user = users.find(u => u.username === resp);
+//     document.getElementById('bl-user-list' + i).innerHTML = `
+//         <div class="user">
+//             <div class="userpic">${user.image}</div>
+//             <div>
+//                 ${user.username};
+//                 ${user.mail}
+//             </name>
+//         </div>
+//     `
+// };

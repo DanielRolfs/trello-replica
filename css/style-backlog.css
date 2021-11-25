@@ -1,4 +1,4 @@
-.backlog-overline {
+.backlog__table-headline {
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 15px;
@@ -47,6 +47,11 @@ table {
 .bl-row4 {
     width: 50%;
     min-width: 500px;
+}
+
+.bl-row5 {
+    width: 5%;
+    min-width: 25px;
 }
 
 .Product {
