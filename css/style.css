@@ -17,10 +17,10 @@ body {
     display: flex;
 }
 
-h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 0 !important;
+.section{
+    height: 100vh;
+    padding: 0 20px;
+    overflow-y: auto;
 }
 
 .flex-center {
@@ -57,9 +57,14 @@ h1 {
 /* ---------  HEADINGS  --------- */
 
 .section-header {
-    margin-left: 20px;
     margin-bottom: 30px;
     margin-top: 40px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0 !important;
 }
 
 .subheading {

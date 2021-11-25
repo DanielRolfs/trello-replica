@@ -1,6 +1,4 @@
-.backlog-overline {
-    margin-left: 20px;
-    margin-right: 20px;
+.backlog__table-headline {
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
@@ -13,10 +11,10 @@ table {
     width: 100%;
 }
 
-.backlogs {
+/* .backlogs {
     margin-left: 20px;
     margin-right: 20px;
-}
+} */
 
 .log {
     margin-bottom: 5px;
