@@ -57,8 +57,12 @@ table {
     border-left: 7px solid blue;
 }
 
-.Sales {
+.Sale {
     border-left: 7px solid green;
+}
+
+.Management {
+    border-left: 7px solid violet;
 }
 
 .bl-assigned {

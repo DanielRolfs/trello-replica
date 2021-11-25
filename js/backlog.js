@@ -3,17 +3,15 @@ function loadBacklogs() {
     document.getElementById('backlogs').innerHTML = '';
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
-        let responsible = log.responsible
+
         document.getElementById('backlogs').innerHTML += `
-        <div class="log ${log.category}" id="log" onclick="pushTaskToBoard(${log})">
+        <div class="log ${log.category}" id="log" onclick="pushTaskToBoard(${log.id})">
         <table>
             <tr>
                 <td class=" bl-row1 " id="bl-row1 ">
                     <div class="bl-assigned">
-                        <Div><img src="${log.image}" alt="BILD" class="userpic"></Div>
-                        <div class="bl-user">
-                            <div>${log.responsible}</div>
-                            <div id="bl-mail">${log.responsible} Mail</div>
+                        <div class="bl-user-list${i}">
+
                         </div>
                     </div>
                 </td>
@@ -30,31 +28,30 @@ function loadBacklogs() {
             </tr>
         </table>
     </div>`;
-        // setUserDetails(name, i);
+        setUsersDetails(logs, i);
     }
 }
 
-function pushTaskToBoard(log) {
+async function pushTaskToBoard(logID) {
+    let log = tasks.find(t => t.id === logID);
     log.status = 'b1';
+    await backend.setItem('tasks', JSON.stringify(tasks));
+    loadBacklogs();
 }
 
 
-function setUserDetails(name, i) {
-    if (name == 'Anna') {
-        let userId = 0;
-        dokument.getElementById('bl-mail' + i).innerHTML = `${users.userId.mail}`;
-
-    }
-    if (name == 'Marcus') {
-        let userId = 1;
-        dokument.getElementById('bl-mail').innerHTML = `${users.userId.mail}`;
-
-
-    }
-    if (name == 'Daniel') {
-        let userId = 2;
-        dokument.getElementById('bl-mail').innerHTML = `${users.userId.mail}`;
-
-
-    }
-}
+function setUsersDetails(logs, logI) {
+    document.getElementById('bl-user-list' + i).innerHTML = '';
+    for (let i = 0; i < logs[logI].responsible.length; i++)
+        let responsible = logs[logI].responsible[i];
+    let user = users.find(u => u.username === responsible);
+    document.getElementById('bl-user-list' + i).innerHTML = `
+        <div class="user">
+            <div class="userpic">${user.image}</div>
+            <div>
+                ${user.username};
+                ${user.mail}
+            </name>
+        </div>
+    `
+};
