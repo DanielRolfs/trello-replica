@@ -1,11 +1,16 @@
 .sidebar {
     background-color: rgb(32, 44, 139);
-    min-width: 150px;
+    width: 20vw;
+    max-width: 200px;
     height: 100vh;
     color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.navlinks {
+.nav__links {
     margin-top: 80px;
 }
 
@@ -14,14 +19,21 @@
     margin-top: 20px;
 }
 
-.links {
+.link {
     cursor: pointer;
     margin-top: 10px;
-    padding-left: 60px;
     border-left: 4px transparent solid;
 }
 
-.includeBoard {
+.nav__links div:first-child{
+    margin-top: 0;
+}
+
+.link-positioner{
+    width: 65px;
+}
+
+.include-board {
     display: flex;
 }
 
@@ -29,18 +41,11 @@
     margin: 8px;
 }
 
-.aktivsidebarlink {
+.sidebarlink--active {
     border-left: 4px white solid;
 }
 
-.sidebar {
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.bottomsidebar {
+.sidebar__bottom {
     width: 100%;
     margin-bottom: 20px;
     display: flex;
@@ -61,19 +66,14 @@
     padding: 5px !important;
 }
 
-#profile {
-    width: 100px;
-    height: 100px;
-}
-
 .userpic {
-    width: 100px;
-    height: 100px;
+    width: clamp(70px, 60%, 100px);
+    height: auto;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.bottomsidebar a {
+.sidebar__bottom a {
     margin-left: 10px;
     margin-right: 10px;
     color: white;
@@ -81,6 +81,6 @@
     cursor: pointer;
 }
 
-.bottomsidebar a:hover {
+.sidebar__bottom a:hover {
     color: lightgray;
 }
