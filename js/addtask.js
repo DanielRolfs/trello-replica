@@ -74,34 +74,31 @@ function assignTask() {
 }
 
 function showUsers() {
-  let userOverview = createUserOverview();
-  userOverview.forEach((user) => {
-    document.getElementById('show-users').insertAdjacentHTML('beforeend', user);
+  users.forEach((user) => {
+    document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
   });
 }
 
-function createUserOverview() {
-  let userOverview = [];
-
-  users.forEach((user) => {
-    let curentUser = `
+function createUserHTML(user) {
+  let userHTML = `
   <div id="user${user.id}" class="show-user__container flex-center" onclick="assignToUser(${user.id})">
     <img src="${user.image}" class="show-user__image">
     <span class="show-user__username">${user.username}</span>
   </div>`;
-    userOverview.push(curentUser);
-  });
-
-  return userOverview;
+  return userHTML;
 }
 
 function assignToUser(id) {
-  if (!selectedUser.find((selected) => selected == id)) {
+  if (!isSelected(id)) {
     selectedUser.push(id);
   } else {
     selectedUser.splice(selectedUser.indexOf(id), 1);
   }
   highlightUser(id);
+}
+
+function isSelected(id){
+ selectedUser.find((selected) => selected == id)
 }
 
 function highlightUser(id) {
@@ -111,6 +108,7 @@ function highlightUser(id) {
 function saveAssignment() {
   responsible = selectedUser;
   document.getElementById('assign-task-modal').classList.add('d-none');
+  showResponsibles();
 }
 function cancelAssignment() {
   selectedUser = responsible;
@@ -118,5 +116,18 @@ function cancelAssignment() {
 }
 
 function showResponsibles() {
-  responsible;
+ document.getElementById('responsibles').innerHTML = '';
+  responsible.forEach((id) => {
+    document.getElementById('responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(id));
+  });
+}
+
+function createResponsibleHTML(id) {
+  let currentUser = users.find((user) => user.id === id);
+  let responsibleHTML = `
+     <div id="responsible${currentUser.id}" class="show-user__container responsibles flex-center">
+       <img src="${currentUser.image}" class="show-user__image">
+       <span class="show-user__username">${currentUser.username}</span>
+     </div>`;
+  return responsibleHTML;
 }

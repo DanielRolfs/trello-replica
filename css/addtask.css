@@ -28,7 +28,7 @@
   margin-bottom: 17px;
 }
 
-.form__column div:last-child {
+.form__column > div:last-child {
   flex-grow: 1;
   margin-bottom: 0;
 }
@@ -51,22 +51,21 @@ select {
   background-color: #fff;
 }
 
-#task__description{
-    resize: none;
+#task__description {
+  resize: none;
 }
 
 .assign__icon {
   width: 30px;
-  flex-grow: 1;
   cursor: pointer;
 }
 
-.assign__icon:hover{
-    filter: brightness(90%);
+.assign__icon:hover {
+  filter: brightness(90%);
 }
 
 .task__assign-container {
-  flex: 1;
+  flex-grow: 1;
 }
 
 .add-task-btns {
@@ -128,6 +127,7 @@ button {
 .show-user__container {
   justify-content: flex-start;
   width: 80%;
+  max-width: 250px;
   height: 55px;
   cursor: pointer;
   padding: 5px 10px;
@@ -136,16 +136,16 @@ button {
   background-color: var(--bg-grey);
 }
 
-.show-user__container:hover{
-    /* background-color: #c4c1d8; */
-    background-color: rgba(206, 205, 214, 0.5);
+.show-user__container:hover {
+  /* background-color: #c4c1d8; */
+  background-color: rgba(206, 205, 214, 0.5);
 }
 
-.user--selected{
-    background-color: #d5d2e4;
+.user--selected {
+  background-color: #d5d2e4;
 }
-.user--selected:hover{
-    background-color: #b2afc4;
+.user--selected:hover {
+  background-color: #b2afc4;
 }
 
 .show-user__image {
@@ -156,7 +156,16 @@ button {
   margin-right: 20px;
 }
 
-#assign-task__content button{
-    width: 7rem;
-    margin-top: 20px;
+#assign-task__content button {
+  width: 7rem;
+  margin-top: 20px;
+}
+
+#responsibles {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.responsibles{
+    width: 150px;
 }
