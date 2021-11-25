@@ -3,9 +3,8 @@ function loadBacklogs() {
     document.getElementById('backlogs').innerHTML = '';
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
-        let status = log.status
         document.getElementById('backlogs').innerHTML += `
-        <div class="log ${log.category}" id="log" onclick="pushTaskBoard(${status})">
+        <div class="log ${log.category}" id="log" onclick="pushTaskToBoard(${log})">
         <table>
             <tr>
                 <td class=" bl-row1 " id="bl-row1 ">
@@ -13,7 +12,7 @@ function loadBacklogs() {
                         <Div><img src="${log.image}" alt="BILD" class="userpic"></Div>
                         <div class="bl-user">
                             <div>${log.responsable}</div>
-                            <div id="bl-mail">${log.responsable} Mail</div>
+                            <div id="bl-mail">Mail</div>
                         </div>
                     </div>
                 </td>
@@ -34,6 +33,11 @@ function loadBacklogs() {
     }
 }
 
+function pushTaskToBoard(log) {
+    log.status = 'b1';
+}
+
+
 function setUserDetails(name, i) {
     if (name == 'Anna') {
         let userId = 0;
@@ -52,9 +56,4 @@ function setUserDetails(name, i) {
 
 
     }
-}
-
-function pushTaskBoard(status) {
-    tasks.status.push(status);
-    backend.setItem('tasks.status', JSON.stringify(status));
 }
