@@ -2,13 +2,10 @@
   position: relative;
 }
 
-.add-task {
-  max-width: 900px;
-}
-
 .add-task__form-container {
   height: 70%;
   max-height: 500px;
+  max-width: 1100px;
   padding: clamp(25px, 10%, 100px) 30px;
   padding: 25px 30px;
   border-radius: 10px;
@@ -69,7 +66,6 @@ select {
 }
 
 .add-task-btns {
-  flex-grow: 0 !important;
   justify-content: flex-end !important;
   gap: 30px;
 }
@@ -103,7 +99,7 @@ button {
 
 /* --------------  ASSIGN TASK  ----------------- */
 
-#assign-task-modal {
+#add-task-modal {
   height: 100vh;
   position: absolute;
   top: 0;
@@ -112,32 +108,38 @@ button {
 }
 
 #assign-task__content {
-  width: 60%;
-  height: 70%;
+  width: 400px;
+  height: 450px;
   background-color: #fff;
   padding: 30px;
+  padding-bottom: 20px;
   border-radius: 10px;
 }
 
 #show-users {
+  justify-content: flex-start;
+  flex-grow: 1;
   margin-top: 20px;
   overflow-y: auto;
 }
 
-.show-user__container {
+.user__container {
   justify-content: flex-start;
-  width: 80%;
-  max-width: 250px;
-  height: 55px;
+  width: 230px;
+  height: 45px;
+  flex-shrink: 0;
   cursor: pointer;
   padding: 5px 10px;
   border-radius: 10px;
   margin-bottom: 5px;
   background-color: var(--bg-grey);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
 }
 
-.show-user__container:hover {
-  /* background-color: #c4c1d8; */
+.user__container:hover {
   background-color: rgba(206, 205, 214, 0.5);
 }
 
@@ -148,7 +150,7 @@ button {
   background-color: #b2afc4;
 }
 
-.show-user__image {
+.user__image {
   height: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
@@ -158,14 +160,43 @@ button {
 
 #assign-task__content button {
   width: 7rem;
+}
+#assign-task__content .add-task-btns {
   margin-top: 20px;
 }
 
 #responsibles {
-  align-items: flex-start;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  margin-right: 10px;
 }
 
 .responsibles{
     width: 150px;
+    flex-grow: 1;
+}
+
+.responsibles img{
+  margin-right: 15px;
+}
+
+.responsibles .user__username{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* --------------  TASK ADDED MODAL  ---------------- */
+
+.task-added__confirmation{
+  background-color: #fff;
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  text-align: center;
 }
