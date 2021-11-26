@@ -10,7 +10,7 @@ function loadBacklogs() {
             <tr>
                 <td class=" bl-row1 " id="bl-row1 ">
                 <div class="bl-assigned">
-                        <div class="bl-users${i}">
+                        <div class="bl-users" id="bl-users${log.id}">
 
                         </div>
                     </div>
@@ -31,7 +31,7 @@ function loadBacklogs() {
             </tr>
         </table>
     </div>`;
-        // setUsersDetails(log, i);
+        setUsersDetails(log, i);
     };
 }
 
@@ -49,18 +49,19 @@ async function deleteTask(logID) {
 }
 
 
-function setUsersDetails(logs, logI) {
-    // document.getElementById('bl-users' + logI).innerHTML = '';
+function setUsersDetails(log) {
+    document.getElementById('bl-users' + log.id).innerHTML = '';
 
-    for (let i = 0; i < logs[logI].responsible.length; i++) {
-        let resp = logs[logI].responsible[i];
-        let user = users.find(u => u.username === resp);
-        document.getElementById('bl-user-list' + logI).innerHTML = `
+    for (let i = 0; i < log.responsible.length; i++) {
+        let resp = log.responsible[i];
+        let user = users.find(u => u.id === resp);
+        document.getElementById('bl-users' + log.id).innerHTML = `
         <div class="user">
-            <div class="userpic">${user.image}</div>
-            <div>
-                ${user.username};
-                ${user.mail}
+            <img src="${user.image}" alt="" class="userpic">
+                  <div>
+                ${user.username}
+                <br>
+                <a href="mailto:${user.mail}">${user.mail}</a>
             </name>
         </div>
     `

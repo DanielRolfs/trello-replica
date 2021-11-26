@@ -28,13 +28,14 @@
     width: 173px;
 }
 
-.btn {
+.login-btn {
     margin: 10px;
     color: white;
     height: 40px;
     width: 150px;
     background-color: rgb(32, 44, 139);
     cursor: pointer;
+    padding-bottom: 30px;
 }
 
 .head {

@@ -64,6 +64,13 @@ let users = [{
         mail: 'daniel@da.de',
         id: 3,
     },
+    {
+        username: 'Gast',
+        password: '',
+        image: './img/profil3.png',
+        mail: '',
+        id: 4,
+    },
 
 ];
 
