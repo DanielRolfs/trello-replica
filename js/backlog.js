@@ -49,13 +49,13 @@ async function deleteTask(logID) {
 }
 
 
-function setUsersDetails(logs, i) {
-    document.getElementById('bl-users' + i).innerHTML = '';
+function setUsersDetails(logs, logI) {
+    // document.getElementById('bl-users' + logI).innerHTML = '';
 
     for (let i = 0; i < logs[logI].responsible.length; i++) {
         let resp = logs[logI].responsible[i];
         let user = users.find(u => u.username === resp);
-        document.getElementById('bl-user-list' + i).innerHTML = `
+        document.getElementById('bl-user-list' + logI).innerHTML = `
         <div class="user">
             <div class="userpic">${user.image}</div>
             <div>

@@ -25,11 +25,11 @@
     border-left: 4px transparent solid;
 }
 
-.nav__links div:first-child{
+.nav__links div:first-child {
     margin-top: 0;
 }
 
-.link-positioner{
+.link-positioner {
     width: 65px;
 }
 
