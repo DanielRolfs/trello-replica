@@ -5,12 +5,12 @@ function loadBacklogs() {
         const log = logs[i];
 
         document.getElementById('backlogs').innerHTML += `
-        <div class="log ${log.category}" id="log" onclick="pushTaskToBoard(${log.id})">
+        <div class="log ${log.category} ${log.urgency}" id="log" onclick="pushTaskToBoard(${log.id})">
         <table>
             <tr>
                 <td class=" bl-row1 " id="bl-row1 ">
-                    <div class="bl-assigned">
-                        <div class="bl-user-list${i}">
+                <div class="bl-assigned">
+                        <div class="bl-users${i}">
 
                         </div>
                     </div>
@@ -26,12 +26,12 @@ function loadBacklogs() {
                         <div class="bl-details ">${log.description}</div>                
                 </td>
                 <td class="bl-row5 ">
-                        <div class="del"><img src="img/del.png" alt=""></div>
+                        <div class="del"><img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn"></div>
                    </td>
             </tr>
         </table>
     </div>`;
-        // setUsersDetails(logs, i);
+        // setUsersDetails(log, i);
     };
 }
 
@@ -42,19 +42,27 @@ async function pushTaskToBoard(logID) {
     loadBacklogs();
 }
 
+async function deleteTask(logID) {
+    tasks.splice(logID, 1);
+    await backend.setItem('tasks', JSON.stringify(tasks));
+    loadBacklogs();
+}
 
-// function setUsersDetails(logs, logI) {
-//     document.getElementById('bl-user-list' + i).innerHTML = '';
-//     for (let i = 0; i < logs[logI].responsible.length; i++)
-//         let resp = logs[logI].responsible[i];
-//     let user = users.find(u => u.username === resp);
-//     document.getElementById('bl-user-list' + i).innerHTML = `
-//         <div class="user">
-//             <div class="userpic">${user.image}</div>
-//             <div>
-//                 ${user.username};
-//                 ${user.mail}
-//             </name>
-//         </div>
-//     `
-// };
+
+function setUsersDetails(logs, i) {
+    document.getElementById('bl-users' + i).innerHTML = '';
+
+    for (let i = 0; i < logs[logI].responsible.length; i++) {
+        let resp = logs[logI].responsible[i];
+        let user = users.find(u => u.username === resp);
+        document.getElementById('bl-user-list' + i).innerHTML = `
+        <div class="user">
+            <div class="userpic">${user.image}</div>
+            <div>
+                ${user.username};
+                ${user.mail}
+            </name>
+        </div>
+    `
+    }
+};

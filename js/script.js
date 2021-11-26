@@ -64,11 +64,7 @@ let users = [{
         mail: 'daniel@da.de',
         id: 3,
     },
-    {
-        username: 'test',
-        password: 'test',
-        id: 4,
-    },
+
 ];
 
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done

@@ -26,7 +26,18 @@ table {
     align-items: center;
     background-color: rgb(244, 243, 251);
     border-radius: 10px;
-    cursor: pointer;
+}
+
+.high {
+    background-color: rgb(250, 175, 175) !important;
+}
+
+.middle {
+    background-color: rgb(250, 249, 178) !important;
+}
+
+.low {
+    background-color: rgb(175, 248, 153) !important
 }
 
 .bl-row1 {
@@ -81,4 +92,14 @@ table {
 
 #bl-mail {
     color: cadetblue;
+}
+
+.del {
+    cursor: crosshair;
+}
+
+#del-btn {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
