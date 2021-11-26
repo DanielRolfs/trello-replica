@@ -55,8 +55,8 @@
             <img class="assign__icon" src="./img/icon plus.png" alt="Assign to person" onclick="assignTask()" />
           </div>
           <div class="add-task-btns flex-center w-100">
-            <button class="btn--cancel">CANCEL</button>
-            <button class="btn--highlighted">CREATE TASK</button>
+            <button type="button" class="btn--cancel" onclick="cancelAddTask()">CANCEL</button>
+            <button type="submit" class="btn--highlighted">CREATE TASK</button>
           </div>
         </div>
       </div>
@@ -65,13 +65,16 @@
 </div>
 
 <!-- --------------ASSIGN TASK MODAL -------------- -->
-<div id="assign-task-modal" class="flex-center w-100 d-none">
-  <div id="assign-task__content" class="flex-center col">
+<div id="add-task-modal" class="flex-center w-100 d-none">
+  <div id="assign-task__content" class="flex-center col d-none">
     <h1>Assign task to...</h1>
-    <div id="show-users" class="w-100 flex-1"></div>
+    <div id="show-users" class="w-100 flex-center col flex-1"></div>
     <div class="add-task-btns flex-center w-100">
       <button class="btn--cancel" onclick="cancelAssignment()">Cancel</button>
       <button class="btn--highlighted" onclick="saveAssignment()">Save</button>
     </div>
+  </div>
+  <div id="task-added__confirmation" class="task-added__confirmation flex-center d-none">
+    New task added
   </div>
 </div>

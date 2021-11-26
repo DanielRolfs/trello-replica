@@ -65,9 +65,23 @@ let users = [{
         id: 3,
     },
     {
+        username: 'Sebastian',
+        password: 'marcus12345',
+        image: './img/marcus.jpg',
+        mail: 'marcus@da.de',
+        id: 4,
+    },
+    {
+        username: 'Yvonne Müller-Müller',
+        password: 'daniel12345',
+        image: './img/profil2.png',
+        mail: 'daniel@da.de',
+        id: 5,
+    },
+    {
         username: 'test',
         password: 'test',
-        id: 4,
+        id: 6,
     },
 ];
 
