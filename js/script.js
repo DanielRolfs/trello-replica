@@ -79,8 +79,10 @@ let users = [{
         id: 5,
     },
     {
-        username: 'test',
-        password: 'test',
+        username: 'Gast',
+        password: '',
+        image: './img/profil3.png',
+        mail: '',
         id: 6,
     },
 
