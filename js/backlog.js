@@ -6,8 +6,9 @@ function loadBacklogs() {
         var table = document.getElementById('logs-table');
         var row = table.insertRow(0);
         row.className = `log ${log.category} ${log.urgency}`;
+        row.setAttribute("onclick", `pushTaskToBoard(${log.id})`);
         var cell1 = row.insertCell(0);
-        cell1.className = 'mr-15 ';
+        cell1.className = 'mr-15';
         var cell2 = row.insertCell(1);
         cell2.className = 'mr-15';
         var cell3 = row.insertCell(2);
