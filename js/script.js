@@ -93,6 +93,7 @@ let users = [{
 async function init() {
     await loadTasks();
     loadBacklogs();
+    loadTaskstoTODO();
 }
 
 async function loadTasks() {

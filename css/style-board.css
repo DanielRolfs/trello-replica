@@ -1,0 +1,37 @@
+.progress-section{
+    width: 180px;
+    margin-right: 25px;
+}
+
+.task-list-area{
+    width: 100%;
+    height: fit-content;
+    min-height: 600px;
+    background-color: rgb(244, 243, 251);
+    display: flex;
+    justify-content: center;
+}
+
+.section-main{
+    display: flex;
+    justify-content:flex-start;
+}
+
+.progress-headline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task{
+    margin-top: 10px;
+    border: solid black 2px;
+    width: 80%;
+    background-color: white;
+    height:fit-content;
+    padding: 5px;
+}
+
+.drag-area-highlight {
+    background-color: goldenrod;
+}

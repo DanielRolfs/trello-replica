@@ -3,24 +3,36 @@ function loadBacklogs() {
     document.getElementById('logs-table').innerHTML = '';
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
-        var table = document.getElementById('logs-table');
-        var row = table.insertRow(0);
-        row.className = `log ${log.category} ${log.urgency}`;
-        row.setAttribute("onclick", `pushTaskToBoard(${log.id})`);
-        var cell1 = row.insertCell(0);
-        cell1.className = 'mr-15';
-        var cell2 = row.insertCell(1);
-        cell2.className = 'mr-15';
-        var cell3 = row.insertCell(2);
-        cell3.className = 'mr-15';
-        var cell4 = row.insertCell(3);
-        cell4.className = 'mr-15';
-        var cell5 = row.insertCell(4);
-        cell1.innerHTML = `<div class="bl-users" id="bl-users${log.id}"></div>`;
-        cell2.innerHTML = `${log.title}`;
-        cell3.innerHTML = `${log.category}`;
-        cell4.innerHTML = `${log.description}`;
-        cell5.innerHTML = `<img src="img/del.png" onclick="deleteTask(${log.id})" id="del-btn">`;
+
+        document.getElementById('backlogs').innerHTML += `
+        <div class="log ${log.category} ${log.urgency}" id="log" onclick="loadTaskstoTODO(); pushTaskToBoard(${log.id});">
+        <table>
+            <tr>
+                <td class=" bl-row1 " id="bl-row1 ">
+                <div class="bl-assigned">
+                        <div class="bl-users" id="bl-users${log.id}">
+
+                        </div>
+                    </div>
+                </td>
+                <td class="bl-row2 ">
+                    <div class="bl-category "> ${log.title}</div>
+                </td>
+                <td class="bl-row3 ">
+                    <div class="bl-category "> ${log.category}</div>
+                </td>
+
+                <td class="bl-row4 ">
+                        <div class="bl-details ">${log.description}</div>                
+                </td>
+                <td class="bl-row5 ">
+                        <div class="del">
+                        <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+                        </div>
+                   </td>
+            </tr>
+        </table>
+    </div>`;
         setUsersDetails(log, i);
     };
 }
@@ -30,12 +42,14 @@ async function pushTaskToBoard(logID) {
     log.status = 'b1';
     await backend.setItem('tasks', JSON.stringify(tasks));
     loadBacklogs();
+    loadTaskstoTODO();
 }
 
 async function deleteTask(logID) {
     tasks.splice(logID, 1);
     await backend.setItem('tasks', JSON.stringify(tasks));
     loadBacklogs();
+    loadTaskstoTODO();
 }
 
 
