@@ -1,0 +1,11 @@
+.boardsection{
+    width: 100px;
+    height: 500px;
+    background-color: rgb(244, 243, 251);
+}
+
+.section-main{
+    display: flex;
+    justify-content: space-between;
+    width: 100vh;
+}
