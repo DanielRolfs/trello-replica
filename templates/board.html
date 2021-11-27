@@ -12,12 +12,37 @@
                 <h2>TO DO</h2>  
             </div>            
             <div class="task-list-area" >
-                <div id="task" class="task">
-                    <div>Title</div>
-                    <div>Category</div>
-                    <div>Due Date</div>
-                    <div>Urgency</div>
+                <div id="taskTodo" class="tasks" ondrop="drop('b1')" ondragover="allowDrop(event)">
+                </div>
+            </div>
+        </div>
 
+        <div class="progress-section">
+            <div class="progress-headline">
+                <h2>IN PROGRESS</h2>  
+            </div>            
+            <div class="task-list-area" ondrop="drop('b2')" ondragover="allowDrop(event)">
+                <div id="taskInprogress" class="tasks" >
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-headline">
+                <h2>TESTING</h2>  
+            </div>            
+            <div class="task-list-area" >
+                <div id="taskTesting" class="tasks" ondrop="drop('b3')" ondragover="allowDrop(event)">
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-headline">
+                <h2>DONE</h2>  
+            </div>            
+            <div class="task-list-area" >
+                <div id="taskdone" class="tasks" ondrop="drop('b4')" ondragover="allowDrop(event)">
                 </div>
             </div>
         </div>

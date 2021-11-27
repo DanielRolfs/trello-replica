@@ -39,15 +39,17 @@ function loadBacklogs() {
 
 async function pushTaskToBoard(logID) {
     let log = tasks.find(t => t.id === logID);
-    log.status = 'b1';
+    log.status = 'b2';
     await backend.setItem('tasks', JSON.stringify(tasks));
     loadBacklogs();
+    loadTaskstoTODO();
 }
 
 async function deleteTask(logID) {
     tasks.splice(logID, 1);
     await backend.setItem('tasks', JSON.stringify(tasks));
     loadBacklogs();
+    loadTaskstoTODO();
 }
 
 
