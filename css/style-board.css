@@ -31,3 +31,7 @@
     height:fit-content;
     padding: 5px;
 }
+
+.drag-area-highlight {
+    background-color: goldenrod;
+}

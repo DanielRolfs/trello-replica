@@ -11,7 +11,7 @@
             <div class="progress-headline">
                 <h2>TO DO</h2>  
             </div>            
-            <div class="task-list-area" ondrop="drop('b1')" ondragover="allowDrop(event)">
+            <div  id="b1" class="task-list-area" ondrop="drop('b1')" ondragleave="removeHighlight('b1')" ondragover="allowDrop(event); highlight('b1');">
                 <div id="taskTodo" class="tasks" >
                 </div>
             </div>
@@ -21,7 +21,7 @@
             <div class="progress-headline">
                 <h2>IN PROGRESS</h2>  
             </div>            
-            <div class="task-list-area" ondrop="drop('b2')" ondragover="allowDrop(event)">
+            <div  id="b2" class="task-list-area" ondrop="drop('b2')" ondragleave="removeHighlight('b2')" ondragover="allowDrop(event); highlight('b2');">
                 <div id="taskInprogress" class="tasks" >
                 </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="progress-headline">
                 <h2>TESTING</h2>  
             </div>            
-            <div class="task-list-area" ondrop="drop('b3')" ondragover="allowDrop(event)">
+            <div  id="b3" class="task-list-area" ondrop="drop('b3')" ondragleave="removeHighlight('b3')" ondragover="allowDrop(event); highlight('b3');">
                 <div id="taskTesting" class="tasks">
                 </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="progress-headline">
                 <h2>DONE</h2>  
             </div>            
-            <div class="task-list-area" ondrop="drop('b4')" ondragover="allowDrop(event)">
+            <div id="b4" class="task-list-area" ondrop="drop('b4')" ondragleave="removeHighlight('b4')" ondragover="allowDrop(event); highlight('b4');">
                 <div id="taskdone" class="tasks">
                 </div>
             </div>
