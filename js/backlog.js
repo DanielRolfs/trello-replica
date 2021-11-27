@@ -1,38 +1,24 @@
 function loadBacklogs() {
     let logs = tasks.filter(t => t['status'] == 'bl');
-    document.getElementById('logs-table').innerHTML = '';
+    document.getElementById('logs-table').innerHTML = `
+    <div class="log-headline">
+        <div class="bl-users mr-50 pd-10">ASSIGNED TO</div>
+        <div class="bl-title mr-50 pd-10">TITLE</div>
+        <div class="bl-category mr-50 pd-10">CATEGORY</div>
+        <div class="bl-details pd-10">DETAILS</div>                
+        <div class="del pd-10"></div>
+    </div>`;
+
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
-
-        document.getElementById('backlogs').innerHTML += `
-        <div class="log ${log.category} ${log.urgency}" id="log" onclick="loadTaskstoTODO(); pushTaskToBoard(${log.id});">
-        <table>
-            <tr>
-                <td class=" bl-row1 " id="bl-row1 ">
-                <div class="bl-assigned">
-                        <div class="bl-users" id="bl-users${log.id}">
-
-                        </div>
-                    </div>
-                </td>
-                <td class="bl-row2 ">
-                    <div class="bl-category "> ${log.title}</div>
-                </td>
-                <td class="bl-row3 ">
-                    <div class="bl-category "> ${log.category}</div>
-                </td>
-
-                <td class="bl-row4 ">
-                        <div class="bl-details ">${log.description}</div>                
-                </td>
-                <td class="bl-row5 ">
-                        <div class="del">
-                        <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
-                        </div>
-                   </td>
-            </tr>
-        </table>
-    </div>`;
+        document.getElementById('logs-table').innerHTML += `
+        <div class="log ${log.category} ${log.urgency}" id="log" onclick="pushTaskToBoard(${log.id});">
+            <div class="bl-users mr-50 pd-10" id="bl-users${log.id}"></div>
+            <div class="bl-title mr-50 pd-10"> ${log.title}</div>
+            <div class="bl-category mr-50 pd-10"> ${log.category}</div>
+            <div class="bl-details pd-10">${log.description}</div>                
+            <div class="del pd-10"><img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn"></div>
+         </div>`;
         setUsersDetails(log, i);
     };
 }

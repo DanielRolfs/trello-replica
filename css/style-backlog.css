@@ -17,6 +17,7 @@ table {
 }
 
 .log {
+    width: 100%;
     margin-bottom: 5px;
     padding: 10px;
     display: flex;
@@ -32,35 +33,6 @@ table {
 
 .middle {
     background-color: rgb(250, 249, 178) !important;
-}
-
-.low {
-    background-color: rgb(175, 248, 153) !important
-}
-
-.bl-row1 {
-    width: 30%;
-    min-width: 200px;
-}
-
-.bl-row2 {
-    width: 20%;
-    min-width: 200px;
-}
-
-.bl-row3 {
-    width: 15%;
-    min-width: 150px;
-}
-
-.bl-row4 {
-    width: 50%;
-    min-width: 500px;
-}
-
-.bl-row5 {
-    width: 5%;
-    min-width: 25px;
 }
 
 .Product {
@@ -82,10 +54,6 @@ table {
 .bl-assigned {
     display: flex;
     align-items: center;
-}
-
-.bl-users {
-    margin-left: 15px;
 }
 
 #bl-mail {
@@ -111,6 +79,15 @@ table {
     margin-right: 15px;
 }
 
-.mr-15 {
-    margin-right: 55px;
+.mr-50 {
+    margin-right: 16px;
+}
+
+.pd-10 {
+    padding: 12px
+}
+
+.log-headline {
+    display: flex;
+    justify-content: space-between;
 }

@@ -2,46 +2,8 @@
 setURL('http://gruppe-130.developerakademie.net/smallest_backend_ever');
 
 let tasks = [{
-        id: 0,
-        title: 'Add Task Ready machen',
-        dueDate: '26.11.2021',
-        category: 'Product',
-        urgency: 'high',
-        description: 'Logik hinter Add to Task ist implementiert und wird auf diesen JSON gespeichert',
-        responsible: 'Anna',
-        status: 'bl',
-    },
-    {
-        id: 1,
-        title: 'Backlog Ready machen',
-        dueDate: '29.11.2021',
-        category: 'Marketing',
-        urgency: 'high',
-        description: 'Logik hinter backlog ist implementiert und wird aus JSON gezogen/ von Add to Task übergeben',
-        responsible: 'Marcus',
-        status: 'b1',
-    },
-    {
-        id: 2,
-        title: 'Board Ready machen',
-        dueDate: '29.11.2021',
-        category: 'Sales',
-        urgency: 'high',
-        description: 'Logik hinter Board ist implementiert und wird aus JSON gezogen / von Backlog übergeben',
-        responsible: 'Daniel',
-        status: 'b2',
-    },
-    {
-        id: 3,
-        title: 'Responsive machen',
-        dueDate: '29.11.2021',
-        category: 'Management',
-        urgency: 'high',
-        description: 'Responsiveness implementieren',
-        responsible: 'Daniel',
-        status: 'b3',
-    },
-];
+
+}, ];
 
 let users = [{
         username: 'Anna',
