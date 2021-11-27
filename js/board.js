@@ -8,7 +8,7 @@ function loadTaskstoTODO() {
         const log = logs[i];
 
         document.getElementById('taskTodo').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task">
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.urgency}">
             <div>${log.title}</div>
             <div>${log.category}</div>
             <div>Due Date</div>
@@ -25,7 +25,7 @@ function loadTaskstoTODO() {
         const log = logs2[i];
 
         document.getElementById('taskInprogress').innerHTML += `
-        <div draggable="true" class="task">
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.urgency}">
             <div>${log.title}</div>
             <div>${log.category}</div>
             <div>Due Date</div>
@@ -43,7 +43,7 @@ function loadTaskstoTODO() {
         const log = logs3[i];
 
         document.getElementById('taskTesting').innerHTML += `
-        <div draggable="true" class="task">
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.urgency}">
             <div>${log.title}</div>
             <div>${log.category}</div>
             <div>Due Date</div>
@@ -61,7 +61,7 @@ function loadTaskstoTODO() {
         const log = logs4[i];
 
         document.getElementById('taskdone').innerHTML += `
-        <div draggable="true" class="task">
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.urgency}">
             <div>${log.title}</div>
             <div>${log.category}</div>
             <div>Due Date</div>
@@ -86,7 +86,7 @@ function startDragging(id) {
 
 
 function drop(status) {
-    //changed by Marcus (has to be tested)----> tested by Marcus 28.11. 01:13
+    //changed by Marcus (has to be tested)----> getested by Marcus 28.11. 01:20
     currentDraggedElement.status = status;
     // tasks[currentDraggedElement]["status"] = status;
     saveBoardStatus()

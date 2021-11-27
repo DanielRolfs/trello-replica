@@ -1,9 +1,9 @@
-.progress-section{
+.progress-section {
     width: 180px;
     margin-right: 25px;
 }
 
-.task-list-area{
+.task-list-area {
     width: 100%;
     height: fit-content;
     min-height: 600px;
@@ -12,26 +12,26 @@
     justify-content: center;
 }
 
-.section-main{
+.section-main {
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
 }
 
-.progress-headline{
+.progress-headline {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.task{
+.task {
     margin-top: 10px;
     border: solid black 2px;
     width: 80%;
     background-color: white;
-    height:fit-content;
+    height: fit-content;
     padding: 5px;
 }
 
 .drag-area-highlight {
-    background-color: goldenrod;
+    background-color: rgb(191, 205, 252);
 }
