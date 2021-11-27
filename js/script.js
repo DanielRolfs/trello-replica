@@ -1,9 +1,7 @@
 // Backend
 setURL('http://gruppe-130.developerakademie.net/smallest_backend_ever');
 
-let tasks = [{
-
-}, ];
+let tasks = [];
 
 let users = [{
         username: 'Anna',

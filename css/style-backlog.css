@@ -25,6 +25,7 @@ table {
     align-items: center;
     background-color: rgb(244, 243, 251);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .high {
@@ -61,13 +62,13 @@ table {
 }
 
 .del {
-    cursor: crosshair;
+    width: 54px;
 }
 
 #del-btn {
     width: 30px;
     height: 30px;
-    cursor: pointer;
+    cursor: url('/img/delete1.png'), auto;
 }
 
 .user {
@@ -89,5 +90,12 @@ table {
 
 .log-headline {
     display: flex;
+    justify-content: space-between;
+}
+
+.log-body {
+    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
