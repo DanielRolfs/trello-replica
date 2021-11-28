@@ -16,6 +16,7 @@
     <script src="./js/addtask.js"></script>
     <script src="./js/backlog.js"></script>
     <script src="./js/board.js"></script>
+    <script src="./js/addUser.js"></script>
 
     <!-- including css -->
 
@@ -34,7 +35,7 @@
 </head>
 
 <body onload="includeHTML()">
-    <div class="bodycontent w-100  " id="bodycontent">
+    <div class="bodycontent w-100  d-none" id="bodycontent">
         <!-- sidebar -->
         <div class="sidebar">
             <div class="sidebar__top w-100">
@@ -89,10 +90,10 @@
         <div id="include-about" class="section w-100 d-none" w3-include-html="./templates/about.html"></div>
 
         <!-- Privacy -->
-        <div id="include-privacy" class="w-100 d-none" w3-include-html="./templates/privacy.html"></div>
+        <div id="include-privacy" class="section w-100 d-none" w3-include-html="./templates/privacy.html"></div>
     </div>
 
-    <div class="login-site d-none" id="login-site">
+    <div class="login-site " id="login-site">
         <div class="login">
             <div class="area">
                 <div class="head">
@@ -108,10 +109,7 @@
                             <label for="Users">Choose User:</label>
 
                             <select name="users" id="username">
-                        <option value="Gast">Gast</option>
-                        <option value="Anna">Anna</option>
-                        <option value="Daniel">Daniel</option>
-                        <option value="Marcus">Marcus</option>
+                    
                       </select>
 
                             <br />

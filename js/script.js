@@ -24,27 +24,7 @@ let users = [{
         mail: 'daniel@da.de',
         id: 3,
     },
-    {
-        username: 'Sebastian',
-        password: 'marcus12345',
-        image: './img/marcus.jpg',
-        mail: 'marcus@da.de',
-        id: 4,
-    },
-    {
-        username: 'Yvonne Müller-Müller',
-        password: 'daniel12345',
-        image: './img/profil2.png',
-        mail: 'Vonny-müller-müller@ddsadsada.de',
-        id: 5,
-    },
-    {
-        username: 'Gast',
-        password: '',
-        image: './img/profil3.png',
-        mail: '',
-        id: 6,
-    },
+
 
 ];
 
@@ -52,6 +32,8 @@ let users = [{
 
 async function init() {
     await loadTasks();
+    // await loadUsers();
+    loadLogin();
     loadBacklogs();
     loadTaskstoTODO();
 }

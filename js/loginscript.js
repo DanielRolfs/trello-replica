@@ -1,11 +1,10 @@
 let currentUser;
 
 function getInfo() {
-    let username = document.getElementById('username').value
-    let password = document.getElementById('password').value
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
     for (let i = 0; i < users.length; i++) {
         if (username == users[i].username) {
-            console.log(username + " is logged in!!!")
             currentUser = username;
 
             for (let i = 0; i < users.length; i++) {
@@ -43,5 +42,14 @@ function renderprofile() {
     }
     if (currentUser == 'Daniel') {
         document.getElementById('userpic').src = "img/profil2.png";
+    }
+}
+
+function loadLogin() {
+    document.getElementById('username').innerHTML = `<option value="Gast">Gast</option>`;
+    for (let i = 0; i < users.length; i++) {
+        const user = users[i];
+        document.getElementById('username').innerHTML += `
+        <option value="${user.username}">${user.username}</option>`;
     }
 }
