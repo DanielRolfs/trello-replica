@@ -13,8 +13,6 @@ function loadTaskstoTODO() {
             <div>${log.category}</div>
             <div>Due Date</div>
            <div>${log.urgency}</div>
-           <div class="del">
-                <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
         `;
     };
@@ -31,9 +29,6 @@ function loadTaskstoTODO() {
             <div>Due Date</div>
            <div>${log.urgency}</div>
         </div>
-        <div class="del">
-                <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
-            </div>
         `;
     };
 
@@ -49,9 +44,6 @@ function loadTaskstoTODO() {
             <div>Due Date</div>
            <div>${log.urgency}</div>
         </div>
-        <div class="del">
-                <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
-            </div>
         `;
     };
 

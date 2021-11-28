@@ -19,7 +19,6 @@ table {
 .log {
     width: 100%;
     margin-bottom: 5px;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +61,7 @@ table {
 }
 
 .del {
-    width: 54px;
+    width: 50px;
 }
 
 #del-btn {
@@ -73,6 +72,8 @@ table {
 
 .user {
     display: flex;
+    justify-content: start;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -80,7 +81,7 @@ table {
     margin-right: 15px;
 }
 
-.mr-50 {
+.mr-16 {
     margin-right: 16px;
 }
 
@@ -97,5 +98,29 @@ table {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+
+.bl-users {
+    width: 190px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bl-title {
+    min-width: 180px !important;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.bl-category {
+    width: 130px !important;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.bl-details {
+    min-width: 215px !important;
+    display: flex;
+    justify-content: flex-start;
 }
