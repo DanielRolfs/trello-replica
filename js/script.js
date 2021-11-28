@@ -24,8 +24,6 @@ let users = [{
         mail: 'daniel@da.de',
         id: 3,
     },
-
-
 ];
 
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done
@@ -33,9 +31,10 @@ let users = [{
 async function init() {
     await loadTasks();
     // await loadUsers();
-    loadLogin();
+
     loadBacklogs();
     loadTaskstoTODO();
+    loadLoginUsers();
 }
 
 async function loadTasks() {

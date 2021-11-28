@@ -68,7 +68,7 @@ function setUsersDetails(logID) {
     for (let i = 0; i < currentLog.responsible.length; i++) {
         let resp = currentLog.responsible[i];
         let user = users.find(u => u.id === resp);
-        document.getElementById('bl-users' + currentLog.id).innerHTML = generateUserDetails(user)
+        document.getElementById('bl-users' + currentLog.id).innerHTML = generateUserDetails(user);
     }
 };
 

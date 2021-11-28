@@ -14,7 +14,7 @@ function getInfo() {
                     document.getElementById('bodycontent').classList.remove('d-none');
                     document.getElementById('login-site').classList.add('d-none');
                     renderprofile();
-                    return
+                    return false;
                 } else {
                     document.getElementById('incorrect').innerHTML = 'Fehler beim Login';
                 }
@@ -23,6 +23,7 @@ function getInfo() {
 
         }
     }
+
 }
 
 function logout() {
@@ -45,7 +46,7 @@ function renderprofile() {
     }
 }
 
-function loadLogin() {
+function loadLoginUsers() {
     document.getElementById('username').innerHTML = `<option value="Gast">Gast</option>`;
     for (let i = 0; i < users.length; i++) {
         const user = users[i];

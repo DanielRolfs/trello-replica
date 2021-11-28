@@ -16,7 +16,7 @@
     <script src="./js/addtask.js"></script>
     <script src="./js/backlog.js"></script>
     <script src="./js/board.js"></script>
-    <script src="./js/addUser.js"></script>
+    <!-- <script src="./js/addUser.js"></script> -->
 
     <!-- including css -->
 
@@ -35,7 +35,41 @@
 </head>
 
 <body onload="includeHTML()">
-    <div class="bodycontent w-100  d-none" id="bodycontent">
+
+    <!--    Login   -->
+    <div class="login-site  " id="login-site">
+        <div class="login">
+            <div class="area">
+                <div class="head">
+                    <div class="logo"><img src="img/logo.png" alt="" /></div>
+                    <div class="header">
+                        <h1>Login</h1>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <div>
+                        <form>
+
+                            <label for="Users">Choose User:</label>
+
+                            <select name="users" id="username">
+                    
+                      </select>
+
+                            <br />
+                            <input type="password" id="password" placeholder="Password" class="input" />
+                            <br />
+                            <div id="incorrect"></div>
+                            <button type="button" onclick="getInfo()" class="login-btn">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--    Main Content   -->
+    <div class="bodycontent w-100 d-none" id="bodycontent">
         <!-- sidebar -->
         <div class="sidebar">
             <div class="sidebar__top w-100">
@@ -70,7 +104,7 @@
             </div>
         </div>
 
-        <!-- main -->
+        <!-- content -->
 
         <!-- board -->
         <div id="include-board" class="section w-100" w3-include-html="./templates/board.html"></div>
@@ -93,36 +127,6 @@
         <div id="include-privacy" class="section w-100 d-none" w3-include-html="./templates/privacy.html"></div>
     </div>
 
-    <div class="login-site " id="login-site">
-        <div class="login">
-            <div class="area">
-                <div class="head">
-                    <div class="logo"><img src="img/logo.png" alt="" /></div>
-                    <div class="header">
-                        <h1>Login</h1>
-                    </div>
-                </div>
-                <div class="inputs">
-                    <div>
-                        <form>
-
-                            <label for="Users">Choose User:</label>
-
-                            <select name="users" id="username">
-                    
-                      </select>
-
-                            <br />
-                            <input type="password" id="password" placeholder="Password" class="input" />
-                            <br />
-                            <div id="incorrect"></div>
-                            <button type="button" onclick="getInfo()" class="login-btn">Login</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
