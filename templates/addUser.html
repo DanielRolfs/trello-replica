@@ -1,0 +1,44 @@
+<div class="section-header">
+    <h1>Add User</h1>
+    <p class="subheading">Learning Management System Project</p>
+</div>
+
+<!-- Add Task -->
+<!-- <div class="section-container add-task w-100"> -->
+<!-- new task -->
+<div class="add-task__form-container bg-grey w-100 h-100 pd-2">
+    <!-- form start -->
+    <form onsubmit="addUser(); return false" class="add-task__form flex-center h-100">
+        <!-- left side -->
+        <div class="form__column flex-center col w-100 h-100">
+            <div class="input-container flex-center col w-100">
+                <label for="user__name">Name</label>
+                <input required type="text" name="user__name" id="user__name" class="form-field w-100" />
+            </div>
+            <div class="input-container flex-center col w-100">
+                <label for="user__password">Passwort</label>
+                <input required type="password" name="user__password" id="user__password1" class="form-field w-100" />
+            </div>
+            <div class="input-container flex-center col w-100">
+                <label for="user__password">Passwort bestätigen</label>
+                <input required type="password" name="user__password" id="user__password2" class="form-field w-100" />
+            </div>
+            <div class="input-container flex-center col w-100">
+                <label for="user__mail">E-Mail</label>
+                <input required type="text" name="user__mail" id="user__mail" class="form-field w-100" />
+            </div>
+            <div class="input-container flex-center col w-100">
+                <label for="user__mail">Bild</label>
+                <form action="/action_page.php">
+                    <input type="file" id="myFile" name="filename">
+                </form>
+            </div>
+        </div>
+
+        <div class="add-task-btns flex-center w-100">
+            <button type="button" class="btn--cancel" onclick="cancelAddTask()">CANCEL</button>
+            <button type="submit" class="btn--highlighted">Add User</button>
+        </div>
+
+    </form>
+</div>

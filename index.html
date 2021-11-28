@@ -16,7 +16,7 @@
     <script src="./js/addtask.js"></script>
     <script src="./js/backlog.js"></script>
     <script src="./js/board.js"></script>
-    <!-- <script src="./js/addUser.js"></script> -->
+    <script src="./js/addUser.js"></script>
 
     <!-- including css -->
 
@@ -37,7 +37,7 @@
 <body onload="includeHTML()">
 
     <!--    Login   -->
-    <div class="login-site  " id="login-site">
+    <div class="login-site d-none " id="login-site">
         <div class="login">
             <div class="area">
                 <div class="head">
@@ -69,7 +69,7 @@
     </div>
 
     <!--    Main Content   -->
-    <div class="bodycontent w-100 d-none" id="bodycontent">
+    <div class="bodycontent w-100 " id="bodycontent">
         <!-- sidebar -->
         <div class="sidebar">
             <div class="sidebar__top w-100">
@@ -97,6 +97,7 @@
                 <div class="logout">
                     <button onclick="logout()" class="logout_btn btn--highlighted">Logout</button>
                 </div>
+                <img src="img/adduser.png" alt="" onclick="showadduser()" id="add-user-img">
                 <div>
                     <a href="#" onclick="showAbout()">about</a>
                     <a href="#" onclick="showPrivacy()">privacy</a>
@@ -119,6 +120,9 @@
 
         <!-- help -->
         <div id="include-help" class="section w-100 d-none" w3-include-html="./templates/help.html"></div>
+
+        <!-- Add User -->
+        <div id="include-adduser" class="section w-100 d-none" w3-include-html="./templates/addUser.html"></div>
 
         <!-- About -->
         <div id="include-about" class="section w-100 d-none" w3-include-html="./templates/about.html"></div>

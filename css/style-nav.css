@@ -50,16 +50,16 @@
     flex-direction: column;
 }
 
-.logout {
-    margin-top: 50px;
-}
-
 .logout_btn {
     margin: 10px;
     height: 30px;
     cursor: pointer;
-    margin-bottom: 30px;
     padding: 5px !important;
+    background-color: rgb(74, 81, 138) !important;
+}
+
+.logout_btn:hover {
+    background-color: rgb(99, 102, 128) !important;
 }
 
 .userpic {
@@ -79,4 +79,9 @@
 
 .sidebar__bottom a:hover {
     color: lightgray;
+}
+
+#add-user-img {
+    margin-bottom: 15px;
+    cursor: copy;
 }
