@@ -174,9 +174,10 @@ button {
 .responsibles{
     width: 150px;
     flex-grow: 1;
+    position: relative;
 }
 
-.responsibles img{
+.responsibles .user__img{
   margin-right: 15px;
 }
 
@@ -187,6 +188,24 @@ button {
   display: -webkit-box !important;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.responsibles:hover > div{
+  display: unset !important;
+}
+
+.delete-assignment-btn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 14px 5%;
+}
+
+.delete-assignment-btn__icon{
+  height: 100%;
+  object-fit: contain;
+  filter: invert(50%);
 }
 
 /* --------------  TASK ADDED MODAL  ---------------- */

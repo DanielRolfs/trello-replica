@@ -143,6 +143,14 @@ function createResponsibleHTML(id, index) {
      <div id="responsible${index}" class="user__container responsibles flex-center">
        <img src="${currentUser.image}" class="user__image">
        <span class="user__username">${currentUser.username}</span>
+       <div class="delete-assignment-btn d-none" onclick="deleteAssignment(${index})">
+         <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon">
+       </div>
      </div>`;
   return responsibleHTML;
+}
+
+function deleteAssignment(index) {
+  responsible.splice(index, 1);
+  document.getElementById('responsible' + index).remove();
 }
