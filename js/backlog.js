@@ -14,10 +14,11 @@ function generateLogHeadline() {
     return `
 <div class="log-headline">
 <div class="log-body">
-    <div class="bl-users mr-16 pd-10">ASSIGNED TO</div>
-    <div class="bl-title mr-16 ">TITLE</div>
+    <div class="bl-board pd-10 center">TO BOARD</div>
+    <div class="bl-users mr-16 pd-10 center">ASSIGNED TO</div>
+    <div class="bl-title">TITLE</div>
     <div class="bl-category ">CATEGORY</div>
-    <div class="bl-details ">DETAILS</div>      
+    <div class="bl-details ml-20">DETAILS</div>      
 </div>          
     <div class="del pd-10"></div>
 </div>`
@@ -26,11 +27,12 @@ function generateLogHeadline() {
 function generateLogs(log) {
     return `
     <div class="log ${log.category} ${log.urgency}" id="log" );>
-        <div onclick="pushTaskToBoard(${log.id})" class="log-body">
+        <div onclick="editTask(${log.id})" class="log-body">
+            <div class="bl-board mr-16 pd-10 center bounce next"><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id})"></div>
             <div class="bl-users mr-16 pd-10" id="bl-users${log.id}" ></div>
-            <div class="bl-title"> ${log.title}</div>
+            <div class="bl-title">${log.title}</div>
             <div class="bl-category"  > ${log.category}</div>
-            <div class="bl-details">${log.description}</div>                
+            <div class="bl-details pd-15">${log.description}</div>                
         </div>
         <div class="del pd-10"><img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn"></div>
     </div> `

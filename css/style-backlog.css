@@ -77,9 +77,7 @@ table {
     align-items: center;
 }
 
-.user img {
-    
-}
+.user img {}
 
 .mr-16 {
     margin-right: 16px;
@@ -101,14 +99,15 @@ table {
 }
 
 .bl-users {
-    width: 190px !important;
+    width: 150px !important;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .bl-title {
-    min-width: 180px !important;
+    width: 180px !important;
     display: flex;
     justify-content: flex-start;
 }
@@ -120,7 +119,41 @@ table {
 }
 
 .bl-details {
-    min-width: 215px !important;
+    width: 450px !important;
     display: flex;
     justify-content: flex-start;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next {
+    position: relative;
+    left: 10px;
+}
+
+.next img {
+    width: 35px;
+    margin-left: 24px;
+}
+
+.bounce:hover {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.ml-20 {
+    margin-left: 20px;
 }

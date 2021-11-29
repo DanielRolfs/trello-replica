@@ -11,6 +11,7 @@ function showBacklog() {
 function showAddTask() {
     document.getElementById('include-addtask').classList.remove('d-none');
     document.getElementById('addtask').classList.add('sidebarlink--active');
+<<<<<<< HEAD
 
     document.getElementById('include-help').classList.add('d-none');
     document.getElementById('help').classList.remove('sidebarlink--active');
@@ -20,6 +21,8 @@ function showAddTask() {
     document.getElementById('include-privacy').classList.add('d-none');
     document.getElementById('include-adduser').classList.add('d-none');
 
+=======
+>>>>>>> c952f074c86fb5fd251d71443f826108b90b1da8
 }
 
 function showHelp() {
