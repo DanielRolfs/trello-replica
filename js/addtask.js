@@ -57,6 +57,7 @@ function showTaskAddedModal() {
   setTimeout(() => {
     document.getElementById('add-task-modal').classList.add('d-none');
     document.getElementById('task-added__confirmation').classList.add('d-none');
+    hideboard();
     showBacklog();
     loadBacklogs();
     resetVariables();
