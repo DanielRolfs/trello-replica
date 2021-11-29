@@ -44,16 +44,16 @@
                 </div>
 
                 <div class="nav__links flex-center col">
-                    <div class="link flex-center w-100 sidebarlink--active" id="board" onclick="showBoard()">
+                    <div class="link flex-center w-100 sidebarlink--active" id="board" onclick="hideboard(); showBoard();">
                         <span class="link-positioner">Board</span>
                     </div>
-                    <div class="link flex-center w-100" id="backlog" onclick="showBacklog()">
+                    <div class="link flex-center w-100" id="backlog" onclick="hideboard(); showBacklog();">
                         <span class="link-positioner">Backlog</span>
                     </div>
-                    <div class="link flex-center w-100" id="addtask" onclick="showAddTask()">
+                    <div class="link flex-center w-100" id="addtask" onclick="hideboard(); showAddTask();">
                         <span class="link-positioner">Add Task</span>
                     </div>
-                    <div class="link flex-center w-100" id="help" onclick="showHelp()">
+                    <div class="link flex-center w-100" id="help" onclick="hideboard(); showHelp();">
                         <span class="link-positioner">Help</span>
                     </div>
                 </div>
@@ -64,8 +64,8 @@
                     <button onclick="logout()" class="logout_btn btn--highlighted">Logout</button>
                 </div>
                 <div>
-                    <a href="#" onclick="showAbout()">about</a>
-                    <a href="#" onclick="showPrivacy()">privacy</a>
+                    <a href="#" onclick="hideboard(); showAbout();">about</a>
+                    <a href="#" onclick="hideboard(); showPrivacy();">privacy</a>
                 </div>
             </div>
         </div>
