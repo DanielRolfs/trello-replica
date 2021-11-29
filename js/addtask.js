@@ -65,8 +65,8 @@ function showTaskAddedModal() {
 }
 
 function cancelAddTask() {
-  showBacklog();
-  loadBacklogs();
+  hideboard();
+  showBoard();
   resetVariables();
 }
 
@@ -79,10 +79,10 @@ function assignTask() {
 }
 
 function showUsers() {
-    users.forEach((user) => {
-        document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
-        /* checkIfSelected(user); */
-    });
+  users.forEach((user) => {
+    document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
+    /* checkIfSelected(user); */
+  });
 }
 
 function createUserHTML(user) {
