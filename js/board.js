@@ -8,13 +8,19 @@ function loadTaskstoTODO() {
         const log = logs[i];
 
         document.getElementById('taskTodo').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.urgency}">
-            <div>${log.title}</div>
-            <div>${log.category}</div>
-            <div>Due Date</div>
-           <div>${log.urgency}</div>
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
+            <div class="flex between">
+            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
+            <div class="task-description">${log.description}</div>
+            <div class="responsible-user" id="bl-users${log.id}" ></div>
+            <div class="flex between margin-top">
+            <div>${log.category}</div>
+            <div>${log.dueDate}</div>
+            </div>
+        </div>
         `;
+        setUsersDetails(log.id);
     };
 
     let logs2 = tasks.filter(t => t['status'] == 'b2');
@@ -23,13 +29,19 @@ function loadTaskstoTODO() {
         const log = logs2[i];
 
         document.getElementById('taskInprogress').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.urgency}">
-            <div>${log.title}</div>
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
+            <div class="flex between">
+            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            </div>
+            <div class="task-description">${log.description}</div>
+            <div class="responsible-user" id="bl-users${log.id}" ></div>
+            <div class="flex between margin-top">
             <div>${log.category}</div>
-            <div>Due Date</div>
-           <div>${log.urgency}</div>
+            <div>${log.dueDate}</div>
+            </div>
         </div>
         `;
+        setUsersDetails(log.id);
     };
 
     let logs3 = tasks.filter(t => t['status'] == 'b3');
@@ -38,13 +50,19 @@ function loadTaskstoTODO() {
         const log = logs3[i];
 
         document.getElementById('taskTesting').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.urgency}">
-            <div>${log.title}</div>
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
+            <div class="flex between">
+            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            </div>
+            <div class="task-description">${log.description}</div>
+            <div class="responsible-user" id="bl-users${log.id}" ></div>
+            <div class="flex between margin-top">
             <div>${log.category}</div>
-            <div>Due Date</div>
-           <div>${log.urgency}</div>
+            <div>${log.dueDate}</div>
+            </div>
         </div>
         `;
+        setUsersDetails(log.id);
     };
 
     let logs4 = tasks.filter(t => t['status'] == 'b4');
@@ -53,16 +71,19 @@ function loadTaskstoTODO() {
         const log = logs4[i];
 
         document.getElementById('taskdone').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.urgency}">
-            <div>${log.title}</div>
-            <div>${log.category}</div>
-            <div>Due Date</div>
-           <div>${log.urgency}</div>
-        </div>
-        <div class="del">
-                <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
+            <div class="flex between">
+            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
+            <div class="task-description">${log.description}</div>
+            <div class="responsible-user" id="bl-users${log.id}" ></div>
+            <div class="flex between margin-top">
+            <div>${log.category}</div>
+            <div>${log.dueDate}</div>
+            </div>
+        </div>
         `;
+        setUsersDetails(log.id);
     };
 }
 

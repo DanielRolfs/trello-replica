@@ -9,6 +9,7 @@
 
     <!-- including js -->
     <script src="./js/mini_backend.js"></script>
+    <script src="./models/task.class.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/templates.js"></script>
     <script src="./js/script-nav.js"></script>
@@ -16,6 +17,7 @@
     <script src="./js/addtask.js"></script>
     <script src="./js/backlog.js"></script>
     <script src="./js/board.js"></script>
+    <script src="./js/addUser.js"></script>
     <script src="./js/addUser.js"></script>
 
     <!-- including css -->
@@ -35,41 +37,7 @@
 </head>
 
 <body onload="includeHTML()">
-
-    <!--    Login   -->
-    <div class="login-site  d-none" id="login-site">
-        <div class="login">
-            <div class="area">
-                <div class="head">
-                    <div class="logo"><img src="img/logo.png" alt="" /></div>
-                    <div class="header">
-                        <h1>Login</h1>
-                    </div>
-                </div>
-                <div class="inputs">
-                    <div>
-                        <form>
-
-                            <label for="Users">Choose User:</label>
-
-                            <select name="users" id="username">
-                    
-                      </select>
-
-                            <br />
-                            <input type="password" id="password" placeholder="Password" class="input" />
-                            <br />
-                            <div id="incorrect"></div>
-                            <button type="button" onclick="getInfo()" class="login-btn">Login</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--    Main Content   -->
-    <div class="bodycontent w-100 " id="bodycontent">
+    <div class="bodycontent w-100  " id="bodycontent">
         <!-- sidebar -->
         <div class="sidebar">
             <div class="sidebar__top w-100">
@@ -78,16 +46,16 @@
                 </div>
 
                 <div class="nav__links flex-center col">
-                    <div class="link flex-center w-100 sidebarlink--active" id="board" onclick="showBoard()">
+                    <div class="link flex-center w-100 sidebarlink--active" id="board" onclick="hideboard(); showBoard();">
                         <span class="link-positioner">Board</span>
                     </div>
-                    <div class="link flex-center w-100" id="backlog" onclick="showBacklog()">
+                    <div class="link flex-center w-100" id="backlog" onclick="hideboard(); showBacklog();">
                         <span class="link-positioner">Backlog</span>
                     </div>
-                    <div class="link flex-center w-100" id="addtask" onclick="showAddTask()">
+                    <div class="link flex-center w-100" id="addtask" onclick="hideboard(); showAddTask();">
                         <span class="link-positioner">Add Task</span>
                     </div>
-                    <div class="link flex-center w-100" id="help" onclick="showHelp()">
+                    <div class="link flex-center w-100" id="help" onclick="hideboard(); showHelp();">
                         <span class="link-positioner">Help</span>
                     </div>
                 </div>
@@ -99,8 +67,8 @@
                 </div>
                 <img src="img/adduser.png" alt="" onclick="showadduser()" id="add-user-img">
                 <div>
-                    <a href="#" onclick="showAbout()">about</a>
-                    <a href="#" onclick="showPrivacy()">privacy</a>
+                    <a href="#" onclick="hideboard(); showAbout();">about</a>
+                    <a href="#" onclick="hideboard(); showPrivacy();">privacy</a>
                 </div>
             </div>
         </div>
@@ -131,6 +99,36 @@
         <div id="include-privacy" class="section w-100 d-none" w3-include-html="./templates/privacy.html"></div>
     </div>
 
+    <div class="login-site d-none" id="login-site">
+        <div class="login">
+            <div class="area">
+                <div class="head">
+                    <div class="logo"><img src="img/logo.png" alt="" /></div>
+                    <div class="header">
+                        <h1>Login</h1>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <div>
+                        <form>
+
+                            <label for="Users">Choose User:</label>
+
+                            <select name="users" id="username">
+                    
+                      </select>
+
+                            <br />
+                            <input type="password" id="password" placeholder="Password" class="input" />
+                            <br />
+                            <div id="incorrect"></div>
+                            <button type="button" onclick="getInfo()" class="login-btn">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
