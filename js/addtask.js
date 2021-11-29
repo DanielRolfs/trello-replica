@@ -18,7 +18,7 @@ function addTask() {
     responsible
   );
   saveTask(newTask);
-  resetForm(title, category, description, dueDate, urgency, responsible);
+  resetForm(title, category, description, dueDate, urgency);
 }
 
 function getId() {
@@ -37,13 +37,13 @@ function saveTask(newTask) {
   showTaskAddedModal();
 }
 
-function resetForm(title, category, description, date, urgency, responsible) {
+function resetForm(title, category, description, date, urgency) {
   title.value = '';
   category.value = '';
   description.value = '';
   date.value = '';
   urgency.value = '';
-  responsible.value = '';
+  document.getElementById('responsible').innerHTML = '';
 }
 
 function resetVariables() {
@@ -78,21 +78,26 @@ function assignTask() {
 }
 
 function showUsers() {
-  users.forEach((user) => {
-    document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
-  });
+    users.forEach((user) => {
+        document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
+        /* checkIfSelected(user); */
+    });
 }
 
 function createUserHTML(user) {
   let userHTML = `
-  <div id="user${user.id}" class="user__container flex-center" onclick="assignToUser(${user.id})">
+  <div id="user${user.id}" class="user__container flex-center" onclick="selectUser(${user.id})">
     <img src="${user.image}" class="user__image">
     <span class="user__username">${user.username}</span>
   </div>`;
   return userHTML;
 }
 
-function assignToUser(id) {
+/* function checkIfSelected(){
+
+} */
+
+function selectUser(id) {
   if (!isSelected(id)) {
     selectedUser.push(id);
   } else {
@@ -102,7 +107,7 @@ function assignToUser(id) {
 }
 
 function isSelected(id) {
-  selectedUser.find((selected) => selected == id);
+  return selectedUser.find((selected) => selected == id);
 }
 
 function highlightUser(id) {
@@ -113,6 +118,7 @@ function saveAssignment() {
   responsible = selectedUser;
   document.getElementById('add-task-modal').classList.add('d-none');
   document.getElementById('assign-task__content').classList.add('d-none');
+  document.getElementById('show-users').innerHTML = '';
   showResponsibles();
 }
 
