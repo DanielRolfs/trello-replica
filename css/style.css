@@ -17,7 +17,7 @@ body {
     display: flex;
 }
 
-.section{
+.section {
     height: 100vh;
     padding: 0 20px;
     overflow-y: auto;
@@ -72,4 +72,8 @@ h1 {
     letter-spacing: 0.05rem;
     color: var(--bg-blue);
     margin-top: 0 !important;
+}
+
+.pd-bt {
+    padding-bottom: 60px !important;
 }
