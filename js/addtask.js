@@ -81,7 +81,9 @@ function assignTask() {
 function showUsers() {
   users.forEach((user) => {
     document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
-    /* checkIfSelected(user); */
+    if (isSelected(user.id)) {
+      highlightUser(user.id);
+    }
   });
 }
 
@@ -93,10 +95,6 @@ function createUserHTML(user) {
   </div>`;
   return userHTML;
 }
-
-/* function checkIfSelected(){
-
-} */
 
 function selectUser(id) {
   if (!isSelected(id)) {
@@ -117,16 +115,19 @@ function highlightUser(id) {
 
 function saveAssignment() {
   responsible = selectedUser;
-  document.getElementById('add-task-modal').classList.add('d-none');
-  document.getElementById('assign-task__content').classList.add('d-none');
-  document.getElementById('show-users').innerHTML = '';
+  hideAddTaskModal();
   showResponsibles();
 }
 
 function cancelAssignment() {
   selectedUser = responsible;
+  hideAddTaskModal();
+}
+
+function hideAddTaskModal() {
   document.getElementById('add-task-modal').classList.add('d-none');
   document.getElementById('assign-task__content').classList.add('d-none');
+  document.getElementById('show-users').innerHTML = '';
 }
 
 function showResponsibles() {
