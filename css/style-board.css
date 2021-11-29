@@ -51,10 +51,23 @@
 }
 
 .padding{
-    padding: 5px;
+    padding: 7px;
 }
 
-.task-tile{
+.task-title{
     font-weight: bold;
     font-size: large;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.task-description{
+    margin-left: 5px;
+    margin-top: 10px;
+
+}
+
+.responsible-user{
+    margin-top: 12px;
 }

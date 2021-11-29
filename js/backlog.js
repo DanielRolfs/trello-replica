@@ -78,11 +78,13 @@ function generateUserDetails(user) {
         <div>    
          <img src="${user.image}" alt="" class="userpic">
         </div>
-        <div> 
+  
+`
+};
+
+     /*  <div> 
             ${user.username}
             <br>
             <a href="mailto:${user.mail}">${user.mail}</a>
             </div>
-    </div>
-`
-};
+    </div> */

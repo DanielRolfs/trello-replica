@@ -10,14 +10,17 @@ function loadTaskstoTODO() {
         document.getElementById('taskTodo').innerHTML += `
         <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
             <div class="flex between">
-            <div class="task-tile">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
+            <div class="task-description">${log.description}</div>
+            <div class="responsible-user" id="bl-users${log.id}" ></div>
             <div class="flex between margin-top">
             <div>${log.category}</div>
             <div>${log.dueDate}</div>
             </div>
         </div>
         `;
+        setUsersDetails(log.id);
     };
 
     let logs2 = tasks.filter(t => t['status'] == 'b2');
@@ -28,14 +31,17 @@ function loadTaskstoTODO() {
         document.getElementById('taskInprogress').innerHTML += `
         <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
             <div class="flex between">
-            <div class="task-tile">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
+            <div class="task-description">${log.description}</div>
+            <div class="responsible-user" id="bl-users${log.id}" ></div>
             <div class="flex between margin-top">
             <div>${log.category}</div>
             <div>${log.dueDate}</div>
             </div>
         </div>
         `;
+        setUsersDetails(log.id);
     };
 
     let logs3 = tasks.filter(t => t['status'] == 'b3');
@@ -46,14 +52,17 @@ function loadTaskstoTODO() {
         document.getElementById('taskTesting').innerHTML += `
         <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
             <div class="flex between">
-            <div class="task-tile">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
+            <div class="task-description">${log.description}</div>
+            <div class="responsible-user" id="bl-users${log.id}" ></div>
             <div class="flex between margin-top">
             <div>${log.category}</div>
             <div>${log.dueDate}</div>
             </div>
         </div>
         `;
+        setUsersDetails(log.id);
     };
 
     let logs4 = tasks.filter(t => t['status'] == 'b4');
@@ -64,15 +73,17 @@ function loadTaskstoTODO() {
         document.getElementById('taskdone').innerHTML += `
         <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
             <div class="flex between">
-            <div class="task-tile">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
+            <div class="task-description">${log.description}</div>
+            <div class="responsible-user" id="bl-users${log.id}" ></div>
             <div class="flex between margin-top">
             <div>${log.category}</div>
             <div>${log.dueDate}</div>
             </div>
         </div>
-       
         `;
+        setUsersDetails(log.id);
     };
 }
 
