@@ -10,7 +10,7 @@ function loadTaskstoTODO() {
         document.getElementById('taskTodo').innerHTML += `
         <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
             <div class="flex between">
-            <div>${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="task-tile">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
             <div class="flex between margin-top">
             <div>${log.category}</div>
@@ -28,7 +28,7 @@ function loadTaskstoTODO() {
         document.getElementById('taskInprogress').innerHTML += `
         <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
             <div class="flex between">
-            <div>${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="task-tile">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
             <div class="flex between margin-top">
             <div>${log.category}</div>
@@ -46,7 +46,7 @@ function loadTaskstoTODO() {
         document.getElementById('taskTesting').innerHTML += `
         <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
             <div class="flex between">
-            <div>${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="task-tile">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
             <div class="flex between margin-top">
             <div>${log.category}</div>
@@ -64,7 +64,7 @@ function loadTaskstoTODO() {
         document.getElementById('taskdone').innerHTML += `
         <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
             <div class="flex between">
-            <div>${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="task-tile">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
             <div class="flex between margin-top">
             <div>${log.category}</div>

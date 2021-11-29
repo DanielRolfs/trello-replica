@@ -53,3 +53,8 @@
 .padding{
     padding: 5px;
 }
+
+.task-tile{
+    font-weight: bold;
+    font-size: large;
+}
