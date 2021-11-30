@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +13,7 @@
     <script src="./js/templates.js"></script>
     <script src="./js/script-nav.js"></script>
     <script src="./js/board.js"></script>
+    <script src="./js/backlog.js"></script>
 
     <!-- including css -->
 
@@ -22,87 +24,61 @@
     <!-- insert font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+</head>
 
-  <body onload="includeHTML(); loadTaskstoTODO()">
+<body onload="includeHTML(); loadTaskstoTODO()">
     <div class="bodycontent w-100" id="bodycontent">
-      <!-- sidebar -->
-      <div class="sidebar" w3-include-html="./templates/sidebar.html"></div>
+        <!-- sidebar -->
+        <div class="sidebar" w3-include-html="./templates/sidebar.html"></div>
 
-      <!-- content -->
+        <!-- content -->
 
-      <div id="include-board" class="section w-100">
-        <div class="section-header">
-          <h1>Board</h1>
-          <p class="subheading">Learning Management System Project</p>
+        <div id="include-board" class="section w-100">
+            <div class="section-header">
+                <h1>Board</h1>
+                <p class="subheading">Learning Management System Project</p>
+            </div>
+
+            <div class="section w-100 section-main">
+                <div class="progress-section">
+                    <div class="progress-headline">
+                        <h2>TO DO</h2>
+                    </div>
+                    <div id="b1" class="task-list-area" ondrop="drop('b1')" ondragleave="removeHighlight('b1')" ondragover="allowDrop(event); highlight('b1');">
+                        <div id="taskTodo" class="tasks"></div>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-headline">
+                        <h2>IN PROGRESS</h2>
+                    </div>
+                    <div id="b2" class="task-list-area" ondrop="drop('b2')" ondragleave="removeHighlight('b2')" ondragover="allowDrop(event); highlight('b2');">
+                        <div id="taskInprogress" class="tasks"></div>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-headline">
+                        <h2>TESTING</h2>
+                    </div>
+                    <div id="b3" class="task-list-area" ondrop="drop('b3')" ondragleave="removeHighlight('b3')" ondragover="allowDrop(event); highlight('b3');">
+                        <div id="taskTesting" class="tasks"></div>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-headline">
+                        <h2>DONE</h2>
+                    </div>
+                    <div id="b4" class="task-list-area" ondrop="drop('b4')" ondragleave="removeHighlight('b4')" ondragover="allowDrop(event); highlight('b4');">
+                        <div id="taskdone" class="tasks"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="section w-100 section-main">
-          <div class="progress-section">
-            <div class="progress-headline">
-              <h2>TO DO</h2>
-            </div>
-            <div
-              id="b1"
-              class="task-list-area"
-              ondrop="drop('b1')"
-              ondragleave="removeHighlight('b1')"
-              ondragover="allowDrop(event); highlight('b1');"
-            >
-              <div id="taskTodo" class="tasks"></div>
-            </div>
-          </div>
-
-          <div class="progress-section">
-            <div class="progress-headline">
-              <h2>IN PROGRESS</h2>
-            </div>
-            <div
-              id="b2"
-              class="task-list-area"
-              ondrop="drop('b2')"
-              ondragleave="removeHighlight('b2')"
-              ondragover="allowDrop(event); highlight('b2');"
-            >
-              <div id="taskInprogress" class="tasks"></div>
-            </div>
-          </div>
-
-          <div class="progress-section">
-            <div class="progress-headline">
-              <h2>TESTING</h2>
-            </div>
-            <div
-              id="b3"
-              class="task-list-area"
-              ondrop="drop('b3')"
-              ondragleave="removeHighlight('b3')"
-              ondragover="allowDrop(event); highlight('b3');"
-            >
-              <div id="taskTesting" class="tasks"></div>
-            </div>
-          </div>
-
-          <div class="progress-section">
-            <div class="progress-headline">
-              <h2>DONE</h2>
-            </div>
-            <div
-              id="b4"
-              class="task-list-area"
-              ondrop="drop('b4')"
-              ondragleave="removeHighlight('b4')"
-              ondragover="allowDrop(event); highlight('b4');"
-            >
-              <div id="taskdone" class="tasks"></div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </body>
+</body>
+
 </html>
