@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,45 +20,43 @@
     <!-- insert font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+</head>
 
-  <body onload="init()">
+<body onload="includeHTML()">
     <div class="bodycontent w-100" id="bodycontent">
-      <!-- sidebar -->
-      <div class="sidebar" w3-include-html="./templates/sidebar.html"></div>
+        <!-- sidebar -->
+        <div class="sidebar" w3-include-html="./templates/sidebar.html"></div>
 
-      <!-- Help -->
-      <div id="include-help" class="section w-100">
-        <div class="section-header">
-          <h1>Help</h1>
-          <p class="subheading">Learning Management System Project</p>
+        <!-- Help -->
+        <div id="include-help" class="section w-100">
+            <div class="section-header">
+                <h1>Help</h1>
+                <p class="subheading">Learning Management System Project</p>
+            </div>
+
+            <div class="content">
+                <h3>How to use</h3>
+
+                <ol>
+                    <li>To create a new Task under go to "Add Task"</li>
+                    <li>After pressing the "CREATE TASK" button the Task will appear in the "Backlog" section.</li>
+                    <li>The assigned User can now take the task, by clicking on the Task in the "Backlog".</li>
+                    <li>The task is now moved from the "Backlog" section into the "Board" section.</li>
+                    <li>In the "Board" section, you can see the Progress of every Task.</li>
+                    <li>
+                        To bring the Task to the next level click and hold it and move it per Drag & Drop in the next level.
+                    </li>
+                    <li>In every section you can open the task by clicking on it.</li>
+                </ol>
+                <div class="contact">
+                    If you need help or there are any problems contact us.
+                    <br />
+                    <a href="mailto:"></a><button class="help-btn btn--highlighted">Send Mail</button>
+                </div>
+            </div>
         </div>
-
-        <div class="content">
-          <h3>How to use</h3>
-
-          <ol>
-            <li>To create a new Task under go to "Add Task"</li>
-            <li>After pressing the "CREATE TASK" button the Task will appear in the "Backlog" section.</li>
-            <li>The assigned User can now take the task, by clicking on the Task in the "Backlog".</li>
-            <li>The task is now moved from the "Backlog" section into the "Board" section.</li>
-            <li>In the "Board" section, you can see the Progress of every Task.</li>
-            <li>
-              To bring the Task to the next level click and hold it and move it per Drag & Drop in the next level.
-            </li>
-            <li>In every section you can open the task by clicking on it.</li>
-          </ol>
-          <div class="contact">
-            If you need help or there are any problems contact us.
-            <br />
-            <a href="mailto:"></a><button class="help-btn btn--highlighted">Send Mail</button>
-          </div>
-        </div>
-      </div>
     </div>
-  </body>
+</body>
+
 </html>
