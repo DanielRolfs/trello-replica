@@ -1,8 +1,6 @@
 function showActiveLink() {
-    console.log('show active link')
     let links = Array.from(document.links);
     let activeLink = links.find((link) => document.URL.includes(link.href));
-    console.log(activeLink)
     removeLinkMarker(links);
     activeLink.parentElement.classList.add('sidebarlink--active');
 }
