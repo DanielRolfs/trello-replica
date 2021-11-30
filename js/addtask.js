@@ -50,7 +50,7 @@ function resetForm(title, category, description, date, urgency) {
   description.value = '';
   date.value = '';
   urgency.value = '';
-  document.getElementById('responsible').innerHTML = '';
+  document.getElementById('responsibles').innerHTML = '';
 }
 
 function showTaskSavedModal() {
@@ -62,7 +62,7 @@ function redirectToBacklog() {
   setTimeout(() => {
     document.getElementById('add-task-modal').classList.add('d-none');
     document.getElementById('task-saved__confirmation').classList.add('d-none');
-    resetVariables();
+    resetVariables();   //hier gibts ein Problem
     window.location.href = './backlog.html';
   }, 1000);
 }
