@@ -81,7 +81,8 @@ function assignTask() {
 function showUsers() {
   users.forEach((user) => {
     document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
-    if (isSelected(user.id)) {
+    addSelectFunction(user);
+    if (isSelected(user)) {
       highlightUser(user.id);
     }
   });
@@ -89,24 +90,28 @@ function showUsers() {
 
 function createUserHTML(user) {
   let userHTML = `
-  <div id="user${user.id}" class="user__container flex-center" onclick="selectUser(${user.id})">
+  <div id="user${user.id}" class="user__container flex-center">
     <img src="${user.image}" class="user__image">
     <span class="user__username">${user.username}</span>
   </div>`;
   return userHTML;
 }
 
-function selectUser(id) {
-  if (!isSelected(id)) {
-    selectedUser.push(id);
-  } else {
-    selectedUser.splice(selectedUser.indexOf(id), 1);
-  }
-  highlightUser(id);
+function addSelectFunction(user) {
+  document.getElementById('user' + user.id).addEventListener('click', () => selectUser(user));
 }
 
-function isSelected(id) {
-  return selectedUser.find((selected) => selected == id);
+function selectUser(user) {
+  if (!isSelected(user)) {
+    selectedUser.push(user);
+  } else {
+    selectedUser.splice(selectedUser.indexOf(user), 1);
+  }
+  highlightUser(user.id);
+}
+
+function isSelected(user) {
+  return selectedUser.find((selection) => selection == user);
 }
 
 function highlightUser(id) {
@@ -132,17 +137,17 @@ function hideAddTaskModal() {
 
 function showResponsibles() {
   document.getElementById('responsibles').innerHTML = '';
-  responsible.forEach((id, index) => {
-    document.getElementById('responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(id, index));
+  responsible.forEach((user, index) => {
+    document.getElementById('responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(user, index));
   });
 }
 
-function createResponsibleHTML(id, index) {
-  let currentUser = users.find((user) => user.id === id);
+function createResponsibleHTML(user, index) {
+  /* let currentUser = users.find((user) => user.id === id); */
   let responsibleHTML = `
      <div id="responsible${index}" class="user__container responsibles flex-center">
-       <img src="${currentUser.image}" class="user__image">
-       <span class="user__username">${currentUser.username}</span>
+       <img src="${user.image}" class="user__image">
+       <span class="user__username">${user.username}</span>
        <div class="delete-assignment-btn d-none" onclick="deleteAssignment(${index})">
          <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon">
        </div>
