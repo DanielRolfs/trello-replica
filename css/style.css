@@ -13,6 +13,10 @@ body {
     background-color: var(--bg-grey) !important;
 }
 
+a{
+    color: #fff;
+}
+
 .bodycontent {
     display: flex;
 }
@@ -52,6 +56,24 @@ body {
 .pd-15 {
     padding: 15px;
 }
+
+button {
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .btn--highlighted {
+    background-color: var(--bg-blue);
+    color: var(--bg-grey);
+  }
+
+  .btn--highlighted:hover {
+    background-color: #495cbe;
+  }
 
 
 /* ---------  HEADINGS  --------- */

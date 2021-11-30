@@ -1,7 +1,7 @@
 let currentDraggedElement;
 
-
-function loadTaskstoTODO() {
+async function loadTaskstoTODO() {
+    await loadTasks();
     let logs = tasks.filter(t => t['status'] == 'b1');
     document.getElementById('taskTodo').innerHTML = '';
     for (let i = 0; i < logs.length; i++) {
