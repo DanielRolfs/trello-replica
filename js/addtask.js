@@ -1,5 +1,5 @@
 let selectedUser = [];
-let responsible = [];
+let responsibles = [];
 
 function addTask() {
   let title = document.getElementById('task__title');
@@ -15,7 +15,7 @@ function addTask() {
     category.value,
     dueDate.value,
     urgency.value,
-    responsible
+    getResponsibleId()
   );
   saveTask(newTask);
   resetForm(title, category, description, dueDate, urgency);
@@ -31,10 +31,17 @@ function getId() {
   return id;
 }
 
+function getResponsibleId() {
+  return responsibles.map((r) => r.id);
+}
+
 function saveTask(newTask) {
-  tasks.push(newTask);
+  if (newTask) {
+    tasks.push(newTask);
+  }
   backend.setItem('tasks', JSON.stringify(tasks));
-  showTaskAddedModal();
+  showTaskSavedModal();
+  redirectToBacklog();
 }
 
 function resetForm(title, category, description, date, urgency) {
@@ -48,25 +55,27 @@ function resetForm(title, category, description, date, urgency) {
 
 function resetVariables() {
   selectedUser = [];
-  responsible = [];
+  responsibles = [];
 }
 
-function showTaskAddedModal() {
+function showTaskSavedModal() {
   document.getElementById('add-task-modal').classList.remove('d-none');
-  document.getElementById('task-added__confirmation').classList.remove('d-none');
+  document.getElementById('task-saved__confirmation').classList.remove('d-none');
+}
+
+function redirectToBacklog() {
   setTimeout(() => {
     document.getElementById('add-task-modal').classList.add('d-none');
-    document.getElementById('task-added__confirmation').classList.add('d-none');
+    document.getElementById('task-saved__confirmation').classList.add('d-none');
     hideboard();
     showBacklog();
-    loadBacklogs();
     resetVariables();
   }, 1000);
 }
 
 function cancelAddTask() {
-  showBacklog();
-  loadBacklogs();
+  hideboard();
+  showBoard();
   resetVariables();
 }
 
@@ -79,36 +88,39 @@ function assignTask() {
 }
 
 function showUsers() {
-    users.forEach((user) => {
-        document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
-        /* checkIfSelected(user); */
-    });
+  users.forEach((user) => {
+    document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
+    addSelectFunction(user);
+    if (isSelected(user)) {
+      highlightUser(user.id);
+    }
+  });
 }
 
 function createUserHTML(user) {
   let userHTML = `
-  <div id="user${user.id}" class="user__container flex-center" onclick="selectUser(${user.id})">
+  <div id="user${user.id}" class="user__container flex-center">
     <img src="${user.image}" class="user__image">
     <span class="user__username">${user.username}</span>
   </div>`;
   return userHTML;
 }
 
-/* function checkIfSelected(){
-
-} */
-
-function selectUser(id) {
-  if (!isSelected(id)) {
-    selectedUser.push(id);
-  } else {
-    selectedUser.splice(selectedUser.indexOf(id), 1);
-  }
-  highlightUser(id);
+function addSelectFunction(user) {
+  document.getElementById('user' + user.id).addEventListener('click', () => selectUser(user));
 }
 
-function isSelected(id) {
-  return selectedUser.find((selected) => selected == id);
+function selectUser(user) {
+  if (!isSelected(user)) {
+    selectedUser.push(user);
+  } else {
+    selectedUser.splice(selectedUser.indexOf(user), 1);
+  }
+  highlightUser(user.id);
+}
+
+function isSelected(user) {
+  return selectedUser.find((selection) => selection == user);
 }
 
 function highlightUser(id) {
@@ -116,32 +128,43 @@ function highlightUser(id) {
 }
 
 function saveAssignment() {
-  responsible = selectedUser;
-  document.getElementById('add-task-modal').classList.add('d-none');
-  document.getElementById('assign-task__content').classList.add('d-none');
-  document.getElementById('show-users').innerHTML = '';
+  responsibles = selectedUser;
+  hideAddTaskModal();
   showResponsibles();
 }
 
 function cancelAssignment() {
-  selectedUser = responsible;
+  selectedUser = responsibles;
+  hideAddTaskModal();
+}
+
+function hideAddTaskModal() {
   document.getElementById('add-task-modal').classList.add('d-none');
   document.getElementById('assign-task__content').classList.add('d-none');
+  document.getElementById('show-users').innerHTML = '';
 }
 
 function showResponsibles() {
   document.getElementById('responsibles').innerHTML = '';
-  responsible.forEach((id, index) => {
-    document.getElementById('responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(id, index));
+  responsibles.forEach((user, index) => {
+    document.getElementById('responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(user, index));
   });
 }
 
-function createResponsibleHTML(id, index) {
-  let currentUser = users.find((user) => user.id === id);
+function createResponsibleHTML(user, index) {
+  /* let currentUser = users.find((user) => user.id === id); */
   let responsibleHTML = `
      <div id="responsible${index}" class="user__container responsibles flex-center">
-       <img src="${currentUser.image}" class="user__image">
-       <span class="user__username">${currentUser.username}</span>
+       <img src="${user.image}" class="user__image">
+       <span class="user__username">${user.username}</span>
+       <div class="delete-assignment-btn d-none" onclick="deleteAssignment(${index})">
+         <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon">
+       </div>
      </div>`;
   return responsibleHTML;
+}
+
+function deleteAssignment(index) {
+  responsibles.splice(index, 1);
+  document.getElementById('responsible' + index).remove();
 }
