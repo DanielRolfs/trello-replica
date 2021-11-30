@@ -32,8 +32,6 @@ async function init() {
     await loadTasks();
     // await loadUsers();
 
-    loadBacklogs();
-    loadTaskstoTODO();
     loadLoginUsers();
 }
 

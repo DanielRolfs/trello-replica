@@ -1,18 +1,18 @@
 let currentUser;
 
-function getInfo() {
+function validateLoginData() {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     for (let i = 0; i < users.length; i++) {
-        if (username == users[i].username) {
+        if (username == users[i].username || username == 'Gast') {
             currentUser = username;
 
             for (let i = 0; i < users.length; i++) {
-                if (username == users[i].username && password == users[i].password) {
+                if (username == users[i].username && password == users[i].password || username == 'Gast') {
                     console.log(username + " is logged in!!!")
                     currentUser = username;
-                    document.getElementById('bodycontent').classList.remove('d-none');
-                    document.getElementById('login-site').classList.add('d-none');
+                    window.location.href = './board.html'
+
                     renderprofile();
                     return false;
                 } else {
@@ -29,7 +29,7 @@ function getInfo() {
 function logout() {
     var l = confirm("Wirklich ausloggen?");
     if (l == true) {
-        window.location.href = 'index.html'
+        window.location.href = './board.html'
     };
 
 }

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,127 +8,57 @@
 
     <!-- including js -->
     <script src="./js/mini_backend.js"></script>
-    <script src="./models/task.class.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="./js/templates.js"></script>
-    <script src="./js/script-nav.js"></script>
     <script src="./js/loginscript.js"></script>
-    <script src="./js/addtask.js"></script>
-    <script src="./js/edittask.js"></script>
-    <script src="./js/backlog.js"></script>
-    <script src="./js/board.js"></script>
-    <script src="./js/addUser.js"></script>
+    <script src="./js/templates.js"></script>
+    <script src="./js/script.js"></script>
     <script src="./js/addUser.js"></script>
 
     <!-- including css -->
 
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/style-nav.css" />
     <link rel="stylesheet" href="./css/loginstyle.css" />
-    <link rel="stylesheet" href="./css/style-backlog.css" />
-    <link rel="stylesheet" href="./css/style-help.css" />
-    <link rel="stylesheet" href="./css/addtask.css" />
-    <link rel="stylesheet" href="./css/style-board.css" />
 
     <!-- insert font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body onload="includeHTML()">
-    <div class="bodycontent w-100  " id="bodycontent">
-        <!-- sidebar -->
-        <div class="sidebar">
-            <div class="sidebar__top w-100">
-                <div class="logo">
-                    <a href="index.html"><img src="img/logo.png" alt="" /></a>
-                </div>
+  <body onload="includeHTML(); init()">
+    <div class="bodycontent w-100" id="bodycontent">
+      <!-- login -->
 
-                <div class="nav__links flex-center col">
-                    <div class="link flex-center w-100 sidebarlink--active" id="board" onclick="hideboard(); showBoard();">
-                        <span class="link-positioner">Board</span>
-                    </div>
-                    <div class="link flex-center w-100" id="backlog" onclick="hideboard(); showBacklog();">
-                        <span class="link-positioner">Backlog</span>
-                    </div>
-                    <div class="link flex-center w-100" id="addtask" onclick="hideboard(); showAddTask();">
-                        <span class="link-positioner">Add Task</span>
-                    </div>
-                    <div class="link flex-center w-100" id="help" onclick="hideboard(); showHelp();">
-                        <span class="link-positioner">Help</span>
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar__bottom">
-                <img id="userpic" src="img/profil3.png" alt="" class="userpic" />
-                <div class="logout">
-                    <button onclick="logout()" class="logout_btn btn--highlighted">Logout</button>
-                </div>
-                <img src="img/adduser.png" alt="" onclick="showadduser()" id="add-user-img">
-                <div>
-                    <a href="#" onclick="hideboard(); showAbout();">about</a>
-                    <a href="#" onclick="hideboard(); showPrivacy();">privacy</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- content -->
-
-        <!-- board -->
-        <div id="include-board" class="section w-100" w3-include-html="./templates/board.html"></div>
-
-        <!-- backlog -->
-        <!-- prettier-ignore -->
-        <div id="include-backlog" class="section w-100 d-none" w3-include-html="./templates/backlog.html"></div>
-
-        <!-- add task -->
-        <!-- prettier-ignore -->
-        <div id="include-addtask" class="section w-100 d-none" w3-include-html="./templates/addtask.html"></div>
-
-        <!-- help -->
-        <div id="include-help" class="section w-100 d-none" w3-include-html="./templates/help.html"></div>
-
-        <!-- Add User -->
-        <div id="include-adduser" class="section w-100 d-none" w3-include-html="./templates/addUser.html"></div>
-
-        <!-- About -->
-        <div id="include-about" class="section w-100 d-none" w3-include-html="./templates/about.html"></div>
-
-        <!-- Privacy -->
-        <div id="include-privacy" class="section w-100 d-none" w3-include-html="./templates/privacy.html"></div>
-    </div>
-
-    <div class="login-site d-none" id="login-site">
+      <div class="login-site" id="login-site">
         <div class="login">
-            <div class="area">
-                <div class="head">
-                    <div class="logo"><img src="img/logo.png" alt="" /></div>
-                    <div class="header">
-                        <h1>Login</h1>
-                    </div>
-                </div>
-                <div class="inputs">
-                    <div>
-                        <form>
-
-                            <label for="Users">Choose User:</label>
-
-                            <select name="users" id="username">
-                    
-                      </select>
-
-                            <br />
-                            <input type="password" id="password" placeholder="Password" class="input" />
-                            <br />
-                            <div id="incorrect"></div>
-                            <button type="button" onclick="getInfo()" class="login-btn">Login</button>
-                        </form>
-                    </div>
-                </div>
+          <div class="area">
+            <div class="head">
+              <div class="logo"><img src="img/logo.png" alt="" /></div>
+              <div class="header">
+                <h1>Login</h1>
+              </div>
             </div>
-        </div>
-    </div>
-</body>
+            <div class="inputs">
+              <div>
+                <form>
+                  <label for="Users">Choose User:</label>
 
+                  <select name="users" id="username">
+                  </select>
+
+                  <br />
+                  <input type="password" id="password" placeholder="Password" class="input" />
+                  <br />
+                  <div id="incorrect"></div>
+                  <button type="button" onclick="validateLoginData()" class="login-btn">Login</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

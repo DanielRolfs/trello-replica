@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join</title>
+
+    <!-- including js -->
+    <script src="./js/mini_backend.js"></script>
+    <script src="./models/task.class.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/templates.js"></script>
+    <script src="./js/script-nav.js"></script>
+    <script src="./js/addtask.js"></script>
+    <script src="./js/edittask.js"></script>
+
+
+    <!-- including css -->
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style-nav.css" />
+    <link rel="stylesheet" href="./css/addtask.css" />
+
+    <!-- insert font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body onload="includeHTML()">
+    <div class="bodycontent w-100" id="bodycontent">
+      <!-- sidebar -->
+      <div class="sidebar" w3-include-html="./templates/sidebar.html"></div>
+
+      <!-- content -->
+
+      <div id="include-addtask" class="section w-100">
+        <div class="section-header">
+          <h1 id="add-task__heading">Add Task</h1>
+          <p class="subheading">Learning Management System Project</p>
+        </div>
+
+        <div class="add-task__form-container bg-grey w-100 h-100 pd-2">
+          <!-- form start -->
+          <form id="add-task__form" onsubmit="addTask(); return false" class="add-task__form flex-center h-100">
+            <!-- left side -->
+            <div class="form__column flex-center col w-100 h-100">
+              <div class="input-container flex-center col w-100">
+                <label for="task__title">TITLE</label>
+                <input required type="text" name="task__title" id="task__title" class="form-field w-100" />
+              </div>
+              <div class="input-container flex-center col w-100">
+                <label for="task__category">CATEGORY</label>
+                <select required name="task__category" id="task__category" class="form-field w-100">
+                  <option value=""></option>
+                  <option value="Management">Management</option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="Product">Product</option>
+                  <option value="Sale">Sale</option>
+                </select>
+              </div>
+              <div class="input-container flex-center col w-100">
+                <label for="task__description">DESCRIPTION</label>
+                <textarea
+                  required
+                  type="text"
+                  name="task__description"
+                  id="task__description"
+                  class="form-field w-100 h-100"
+                ></textarea>
+              </div>
+            </div>
+            <!-- right side -->
+            <div class="form__column flex-center col w-100 h-100">
+              <div class="input-container flex-center col w-100">
+                <label for="task__date">DUE DATE</label>
+                <input required type="date" name="task__date" id="task__date" class="form-field w-100" />
+              </div>
+              <div class="input-container flex-center col w-100">
+                <label for="task__urgency">URGENCY</label>
+                <select required name="task__urgency" id="task__urgency" class="form-field w-100">
+                  <option value=""></option>
+                  <option value="high">High</option>
+                  <option value="middle">Middle</option>
+                  <option value="low">Low</option>
+                </select>
+              </div>
+              <div class="input-container flex-center col w-100">
+                <label for="task__assign-container">ASSIGNED TO</label>
+                <div
+                  id="task__assign-container"
+                  name="task__assign-container"
+                  class="task__assign-container flex-center"
+                >
+                  <div id="responsibles" class="task__assign-container flex-center"></div>
+                  <img class="assign__icon" src="./img/icon plus.png" alt="Assign to person" onclick="assignTask()" />
+                </div>
+                <div class="add-task-btns flex-center w-100">
+                  <button type="button" class="btn--cancel" onclick="cancelAddTask()">CANCEL</button>
+                  <button id="save-task-btn" type="submit" class="btn--highlighted">CREATE TASK</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- </div> -->
+        </div>
+
+        <!-- --------------ASSIGN TASK MODAL -------------- -->
+        <div id="add-task-modal" class="flex-center w-100 d-none">
+          <div id="assign-task__content" class="flex-center col d-none">
+            <h1>Assign task to...</h1>
+            <div id="show-users" class="w-100 flex-center col flex-1"></div>
+            <div class="add-task-btns flex-center w-100">
+              <button class="btn--cancel" onclick="cancelAssignment()">Cancel</button>
+              <button class="btn--highlighted" onclick="saveAssignment()">Save</button>
+            </div>
+          </div>
+          <div id="task-saved__confirmation" class="task-saved__confirmation flex-center d-none">New task added</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

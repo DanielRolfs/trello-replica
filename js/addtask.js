@@ -69,7 +69,6 @@ function redirectToBacklog() {
     document.getElementById('task-saved__confirmation').classList.add('d-none');
     hideboard();
     showBacklog();
-    loadBacklogs();
     resetVariables();
   }, 1000);
 }
