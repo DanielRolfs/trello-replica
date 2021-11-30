@@ -1,5 +1,5 @@
 let selectedUser = [];
-let responsible = [];
+let responsibles = [];
 
 function addTask() {
   let title = document.getElementById('task__title');
@@ -15,7 +15,7 @@ function addTask() {
     category.value,
     dueDate.value,
     urgency.value,
-    responsible
+    getResponsibleId()
   );
   saveTask(newTask);
   resetForm(title, category, description, dueDate, urgency);
@@ -31,10 +31,17 @@ function getId() {
   return id;
 }
 
+function getResponsibleId() {
+  return responsibles.map((r) => r.id);
+}
+
 function saveTask(newTask) {
-  tasks.push(newTask);
+  if (newTask) {
+    tasks.push(newTask);
+  }
   backend.setItem('tasks', JSON.stringify(tasks));
-  showTaskAddedModal();
+  showTaskSavedModal();
+  redirectToBacklog();
 }
 
 function resetForm(title, category, description, date, urgency) {
@@ -48,15 +55,18 @@ function resetForm(title, category, description, date, urgency) {
 
 function resetVariables() {
   selectedUser = [];
-  responsible = [];
+  responsibles = [];
 }
 
-function showTaskAddedModal() {
+function showTaskSavedModal() {
   document.getElementById('add-task-modal').classList.remove('d-none');
-  document.getElementById('task-added__confirmation').classList.remove('d-none');
+  document.getElementById('task-saved__confirmation').classList.remove('d-none');
+}
+
+function redirectToBacklog() {
   setTimeout(() => {
     document.getElementById('add-task-modal').classList.add('d-none');
-    document.getElementById('task-added__confirmation').classList.add('d-none');
+    document.getElementById('task-saved__confirmation').classList.add('d-none');
     hideboard();
     showBacklog();
     loadBacklogs();
@@ -119,13 +129,13 @@ function highlightUser(id) {
 }
 
 function saveAssignment() {
-  responsible = selectedUser;
+  responsibles = selectedUser;
   hideAddTaskModal();
   showResponsibles();
 }
 
 function cancelAssignment() {
-  selectedUser = responsible;
+  selectedUser = responsibles;
   hideAddTaskModal();
 }
 
@@ -137,7 +147,7 @@ function hideAddTaskModal() {
 
 function showResponsibles() {
   document.getElementById('responsibles').innerHTML = '';
-  responsible.forEach((user, index) => {
+  responsibles.forEach((user, index) => {
     document.getElementById('responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(user, index));
   });
 }
@@ -156,6 +166,6 @@ function createResponsibleHTML(user, index) {
 }
 
 function deleteAssignment(index) {
-  responsible.splice(index, 1);
+  responsibles.splice(index, 1);
   document.getElementById('responsible' + index).remove();
 }
