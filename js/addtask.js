@@ -53,11 +53,6 @@ function resetForm(title, category, description, date, urgency) {
   document.getElementById('responsible').innerHTML = '';
 }
 
-function resetVariables() {
-  selectedUser = [];
-  responsibles = [];
-}
-
 function showTaskSavedModal() {
   document.getElementById('add-task-modal').classList.remove('d-none');
   document.getElementById('task-saved__confirmation').classList.remove('d-none');
@@ -67,16 +62,19 @@ function redirectToBacklog() {
   setTimeout(() => {
     document.getElementById('add-task-modal').classList.add('d-none');
     document.getElementById('task-saved__confirmation').classList.add('d-none');
-    hideboard();
-    showBacklog();
+    window.location.href = './backlog.html';
     resetVariables();
   }, 1000);
 }
 
 function cancelAddTask() {
-  hideboard();
-  showBoard();
+  window.location.href = './board.html';
   resetVariables();
+}
+
+function resetVariables() {
+  selectedUser = [];
+  responsibles = [];
 }
 
 /* --------------- ASSIGN TASK TO USERS ---------------- */
