@@ -30,19 +30,11 @@ let users = [
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done
 
 async function init() {
-  await loadSidebar();
   // await loadUsers();
   setTimeout(() => {
       
       showActiveLink();
   }, 1000);
-}
-
-function loadSidebar() {
-  return new Promise((resolve, reject) => {
-    includeHTML();
-    resolve();
-  });
 }
 
 async function loadTasks() {

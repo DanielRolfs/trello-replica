@@ -11,7 +11,6 @@ async function validateLoginData() {
                 if (username == users[i].username && password == users[i].password || username == 'Gast') {
                     console.log(username + " is logged in!!!")
                     currentUser = username;
-                    await loadTasks();
                     window.location.href = './board.html';
 
                     renderprofile();

@@ -1,6 +1,7 @@
 let currentLog;
 
-function loadBacklogs() {
+async function loadBacklogs() {
+    await loadTasks();
     let logs = tasks.filter(t => t['status'] == 'bl');
     document.getElementById('logs-table').innerHTML = generateLogHeadline();
     for (let i = 0; i < logs.length; i++) {

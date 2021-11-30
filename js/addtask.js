@@ -62,8 +62,8 @@ function redirectToBacklog() {
   setTimeout(() => {
     document.getElementById('add-task-modal').classList.add('d-none');
     document.getElementById('task-saved__confirmation').classList.add('d-none');
-    window.location.href = './backlog.html';
     resetVariables();
+    window.location.href = './backlog.html';
   }, 1000);
 }
 
