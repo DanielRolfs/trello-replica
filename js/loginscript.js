@@ -1,6 +1,6 @@
 let currentUser;
 
-function validateLoginData() {
+async function validateLoginData() {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     for (let i = 0; i < users.length; i++) {
@@ -11,7 +11,8 @@ function validateLoginData() {
                 if (username == users[i].username && password == users[i].password || username == 'Gast') {
                     console.log(username + " is logged in!!!")
                     currentUser = username;
-                    window.location.href = './board.html'
+                    await loadTasks();
+                    window.location.href = './board.html';
 
                     renderprofile();
                     return false;
