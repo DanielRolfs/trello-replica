@@ -35,7 +35,6 @@ function generateLogs(log) {
             <div class="bl-category"  > ${log.category}</div>
             <div class="bl-details pd-15">${log.description}</div>                
         </div>
-        <div class="del pd-10"><img src="./img/edit_icon.svg" alt="edit task" onclick="editTask(${log.id})" id="del-btn"></div>
         <div class="del pd-10"><img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn"></div>
     </div> `
 }
