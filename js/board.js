@@ -8,7 +8,7 @@ async function loadTaskstoTODO() {
         const log = logs[i];
 
         document.getElementById('taskTodo').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency} ${log.category}">
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category}">
             <div class="flex between">
             <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
