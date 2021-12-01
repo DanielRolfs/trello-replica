@@ -42,13 +42,29 @@
             </div>
 
             <div class="backlog-content">
-                <div class="backlog__table-headline">
-                    <div id="logs-table" class="backlogs"></div>
+                <div class="backlog-content">
+                    <div class="backlogs">
+                        <table id="log_table" class="backlog__table-headline col w-100">
+                            <thead>
+                                <tr>
+                                    <th>TO BOARD</th>
+                                    <th>ASSIGNED TO</th>
+                                    <th>TITLE</th>
+                                    <th class="mrl-15">CATEGORY</th>
+                                    <th>DETAILS</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="logs-table">
+
+                            </tbody>
+
+                        </table>
+                    </div>
                 </div>
+                <div class="edit-task__container task-form-modal section flex-center w-100 d-none" w3-include-html="./templates/edittask.html"></div>
             </div>
-            <div class="edit-task__container task-form-modal section flex-center w-100 d-none" w3-include-html="./templates/edittask.html"></div>
         </div>
-    </div>
     </div>
 </body>
 

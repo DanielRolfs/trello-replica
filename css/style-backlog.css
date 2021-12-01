@@ -1,176 +1,198 @@
-.backlog__table-headline {
-    margin-right: 20px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-    color: rgb(31, 50, 144);
-    font-weight: bolder;
-}
-
-table {
-    width: 100%;
-}
-
-.backlogs {
-    margin-right: 20px;
-}
-
-.log {
-    width: 100%;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(244, 243, 251);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.high {
-    background-color: rgb(250, 175, 175) !important;
-}
-
-.middle {
-    background-color: rgb(250, 249, 178) !important;
-}
-
-.Product {
-    border-left: 7px solid red !important;
-}
-
-.Marketing {
-    border-left: 7px solid blue !important;
-}
-
-.Sale {
-    border-left: 7px solid green !important;
-}
-
-.Management {
-    border-left: 7px solid violet !important;
-}
-
-.bl-assigned {
-    display: flex;
-    align-items: center;
-}
-
-#bl-mail {
-    color: cadetblue;
-}
-
-.del {
-    width: 50px;
-}
-
-#del-btn {
-    width: 30px;
-    height: 30px;
-    cursor: url('/img/delete1.png'), auto;
-}
-
-.user {
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    align-items: center;
-}
-
-.mr-16 {
-    margin-right: 16px;
-}
-
-.pd-10 {
-    padding: 12px
-}
-
-.log-headline {
-    display: flex;
-    justify-content: space-between;
-}
-
-.log-body {
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.bl-board {
-    width: 50px !important;
-    display: flex;
-    justify-content: flex-start;
-    text-align: center;
-}
-
-.bl-users {
-    width: 100px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.bl-title {
-    width: 150px !important;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.bl-category {
-    width: 80px !important;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.bl-details {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.fw-normal {
-    font-weight: normal;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.next {
-    position: relative;
-    left: 10px;
-}
-
-.next img {
-    width: 30px;
-    margin-left: 0px;
-}
-
-.bounce:hover {
-    animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-    0%,
-    100% {
-        transform: translateY(0);
+    .backlog__table-headline {
+        margin-right: 20px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: rgb(31, 50, 144);
+        font-weight: bolder;
     }
-    60% {
-        transform: translateY(-10px);
+    
+    table {
+        width: 100%;
     }
-}
-
-.ml-20 {
-    margin-left: 20px;
-}
-
-.userpic {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-}
+    
+    .backlogs {
+        margin-right: 20px;
+    }
+    
+    .log {
+        width: 100%;
+        background-color: rgb(244, 243, 251);
+        font-size: 14px;
+    }
+    
+    .Product {
+        border-left: 7px solid red !important;
+    }
+    
+    .Marketing {
+        border-left: 7px solid blue !important;
+    }
+    
+    .Sale {
+        border-left: 7px solid green !important;
+    }
+    
+    .Management {
+        border-left: 7px solid violet !important;
+    }
+    
+    .bl-assigned {
+        display: flex;
+        align-items: center;
+    }
+    
+    #bl-mail {
+        color: cadetblue;
+    }
+    
+    .del {
+        width: 50px;
+        text-align: center;
+        padding: 5px;
+    }
+    
+    .user {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mr-16 {
+        margin-right: 16px;
+    }
+    
+    .pd-10 {
+        padding: 12px
+    }
+    
+    .log-headline {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .log-body {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .bl-board {
+        width: 50px !important;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .bl-users {
+        width: 100px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .bl-title {
+        width: 150px !important;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .bl-category {
+        width: 80px !important;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .bl-details {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .fw-normal {
+        font-weight: normal;
+    }
+    
+    .fw-italic {
+        font-style: italic;
+    }
+    
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .next {
+        position: relative;
+        left: 5px;
+    }
+    
+    .next img {
+        width: 20px;
+    }
+    
+    .bounce:hover {
+        animation: bounce 1s infinite;
+    }
+    
+    @keyframes bounce {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        60% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    .ml-20 {
+        margin-left: 20px;
+    }
+    
+    .userpic {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    
+    .mrl-15 {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    #logs-table td:first-child {
+        border-left: 1px solid rgb(31, 50, 144, 0.2);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    #logs-table td:last-child {
+        border-right: 1px solid rgb(31, 50, 144, 0.2);
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    #logs-table td {
+        border-top: 1px solid rgba(31, 50, 144, 0.2);
+        border-bottom: 1px solid rgb(31, 50, 144, 0.2);
+        padding-top: 5px;
+    }
+    
+    table {
+        border-spacing: 0 10px;
+    }
+    
+    .del img {
+        margin-bottom: 10px;
+    }
+    
+    .prio {
+        text-align: center;
+        width: 40px;
+        background-color: red;
+        border-radius: 5px;
+    }
