@@ -97,6 +97,21 @@ select {
     background-color: #495cbe;
   }*/
 
+/* -------------- PSEUDE SELECT  --------------- */
+
+.pseudo-select__option{
+background-color: #fff;
+}
+
+.pseudo-select__option:not(:first-child){
+  border-radius: 0;
+
+}
+
+.option1{
+  justify-content: flex-end;
+}
+
 /* --------------  ASSIGN TASK  ----------------- */
 
 .task-form-modal {
@@ -136,7 +151,6 @@ select {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
 }
 
 .user__container:hover {
@@ -171,17 +185,17 @@ select {
   margin-right: 10px;
 }
 
-.responsibles{
-    width: 150px;
-    flex-grow: 1;
-    position: relative;
+.responsibles {
+  width: 150px;
+  flex-grow: 1;
+  position: relative;
 }
 
-.responsibles .user__img{
+.responsibles .user__img {
   margin-right: 15px;
 }
 
-.responsibles .user__username{
+.responsibles .user__username {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
@@ -190,11 +204,11 @@ select {
   -webkit-box-orient: vertical;
 }
 
-.responsibles:hover > div{
+.responsibles:hover > div {
   display: unset !important;
 }
 
-.delete-assignment-btn{
+.delete-assignment-btn {
   position: absolute;
   right: 0;
   top: 0;
@@ -202,7 +216,7 @@ select {
   padding: 14px 5%;
 }
 
-.delete-assignment-btn__icon{
+.delete-assignment-btn__icon {
   height: 100%;
   object-fit: contain;
   filter: invert(50%);
@@ -210,7 +224,7 @@ select {
 
 /* --------------  TASK SAVED CONFIRMATION  ---------------- */
 
-.task-saved__confirmation{
+.task-saved__confirmation {
   background-color: #fff;
   width: 300px;
   height: 150px;
