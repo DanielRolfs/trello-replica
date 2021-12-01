@@ -23,6 +23,9 @@
     .nav__links {
         margin-top: 20px;
     }
+    .sidebar__bottom {
+        display: none;
+    }
     .logo img {
         width: 30px;
     }
