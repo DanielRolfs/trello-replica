@@ -15,11 +15,11 @@ function generateLogs(log) {
     return `
     <tr  class="log" id="log" onclick="editTask(${log.id})">
         <td ><div class=" bl-board center bounce next" ><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id}) " </div></td>
-        <td id="bl-users${log.id}"></td>
+        <td id="bl-users${log.id}" class="users"></td>
         <td ><div class="mrl-15">${log.title}</div></td>
         <td><div class="mrl-15 fw-italic">${log.category}</div></td>
         <td><div class="mrl-15 fw-normal">${log.description}</div></td>
-        <td><div class="del"><img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})"><div class="prio">Prio1</div> </div></td>
+        <td><div class="del"><img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})"><div class="prio ${log.urgency}">${log.urgency}</div> </div></td>
     </tr>
   `
 }

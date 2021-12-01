@@ -183,7 +183,7 @@
     }
     
     table {
-        border-spacing: 0 10px;
+        border-spacing: 0 15px;
     }
     
     .del img {
@@ -193,6 +193,21 @@
     .prio {
         text-align: center;
         width: 40px;
-        background-color: red;
         border-radius: 5px;
+        font-size: 10px;
+    }
+    
+    .high {
+        background-color: rgba(255, 0, 0, 0.5);
+        color: white;
+    }
+    
+    .middle {
+        background-color: rgba(255, 255, 0, 0.5);
+        color: black;
+    }
+    
+    .low {
+        background-color: rgba(0, 128, 0, 0.5);
+        color: white;
     }

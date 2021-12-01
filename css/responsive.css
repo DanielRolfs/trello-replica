@@ -1,51 +1,92 @@
-@media (max-width: 1000px) {
-  .sidebar {
-    position: absolute;
-    left: -80px;
-    z-index: 1;
-    width: 130px;
-    font-size: 12px;
-  }
-  .menu-logo {
-    display: initial;
-    cursor: pointer;
-  }
-  #navi-close {
-    cursor: pointer;
-  }
-  .section {
-    padding-left: 70px;
-  }
-  .dropout {
-    position: absolute;
-    left: 0 !important;
-  }
-  .nav__links {
-    margin-top: 20px;
-  }
-  .sidebar__bottom {
-    display: none;
-  }
-  .logo img {
-    width: 30px;
-  }
-}
-
-/* --------------  ADD TASK FORM  -------------- */
-
-@media (min-width: 700px) {
-  .task-form {
-    height: 100%;
-    flex-direction: row !important;
-  }
-
-  .task-form__container {
-    height: 70%;
-    max-height: 500px;
-    max-width: 1100px;
-    /* height: 100%; */
-  }
-  .form__column {
-    height: 100%;
-  }
-}
+    @media (max-width: 1000px) {
+        .sidebar {
+            position: absolute;
+            left: -80px;
+            z-index: 1;
+            width: 130px;
+            font-size: 12px;
+        }
+        .menu-logo {
+            display: initial;
+            cursor: pointer;
+        }
+        #navi-close {
+            cursor: pointer;
+        }
+        .section {
+            padding-left: 70px;
+        }
+        .dropout {
+            position: absolute;
+            left: 0 !important;
+        }
+        .nav__links {
+            margin-top: 20px;
+        }
+        .sidebar__bottom {
+            display: none;
+        }
+        .logo img {
+            width: 30px;
+        }
+    }
+    /* --------------  ADD TASK FORM  -------------- */
+    
+    @media (min-width: 700px) {
+        .task-form {
+            height: 100%;
+            flex-direction: row !important;
+        }
+        .task-form__container {
+            height: 70%;
+            max-height: 500px;
+            max-width: 1100px;
+            /* height: 100%; */
+        }
+        .form__column {
+            height: 100%;
+        }
+    }
+    /*---------Backlog-------------*/
+    
+    @media (max-width: 700px) {
+        table tr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #logs-table td {
+            border: 0;
+        }
+        #logs-table td:first-child {
+            border-left: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0px;
+        }
+        #logs-table td:last-child {
+            border-right: 0;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+        .prio {
+            margin-bottom: 15px;
+        }
+        .log_table__head {
+            display: none;
+        }
+        #logs-table td:first-child {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border-top: 2px rgb(31, 50, 144, 0.2) solid;
+        }
+        .next {
+            position: relative;
+            left: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .users {
+            display: flex;
+        }
+    }
