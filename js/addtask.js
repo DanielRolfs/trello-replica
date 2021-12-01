@@ -40,7 +40,7 @@ function saveTask(newTask) {
   }
   backend.setItem('tasks', JSON.stringify(tasks));
   showTaskSavedModal();
-  redirectToBacklog();
+  closeForm(newTask);
 }
 
 function showTaskSavedModal() {
@@ -48,13 +48,15 @@ function showTaskSavedModal() {
   document.querySelector('.task-saved__confirmation').classList.remove('d-none');
 }
 
-function redirectToBacklog() {
+function closeForm(newTask) {
   setTimeout(() => {
     resetForm();
     resetVariables();
     document.querySelector('.task-form-modal').classList.add('d-none');
     document.querySelector('.task-saved__confirmation').classList.add('d-none');
-    window.location.href = './backlog.html';
+    if(newTask){
+      window.location.href = './backlog.html';
+    }
   }, 1000);
 }
 
