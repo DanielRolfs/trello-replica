@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,31 +25,30 @@
     <!-- insert font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+</head>
 
-  <body onload="includeHTML(); loadBacklogs()">
+<body onload="includeHTML(); loadBacklogs()">
     <div class="bodycontent w-100" id="bodycontent">
-      <!-- sidebar -->
-      <div class="sidebar" w3-include-html="./templates/sidebar.html"></div>
+        <!-- sidebar -->
+        <div class="sidebar" w3-include-html="./templates/sidebar.html"></div>
 
-      <!-- content -->
-      <div id="include-backlog" class="section w-100">
-        <div class="section-header">
-          <h1>Backlog</h1>
-          <p class="subheading">Learning Management System Project</p>
-        </div>
+        <!-- content -->
+        <div id="include-backlog" class="section w-100">
+            <div class="section-header">
+                <h1>Backlog</h1>
+                <p class="subheading">Learning Management System Project</p>
+            </div>
 
-        <div class="backlog-content">
-          <div class="backlog__table-headline">
-            <div id="logs-table" class="backlogs"></div>
-          </div>
+            <div class="backlog-content">
+                <div class="backlog__table-headline">
+                    <div id="logs-table" class="backlogs"></div>
+                </div>
+            </div>
         </div>
       </div>
       <div class="edit-task-modal" w3-include-html="./templates/edittask.html"></div>
     </div>
-  </body>
+</body>
+
 </html>

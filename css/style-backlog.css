@@ -36,19 +36,19 @@ table {
 }
 
 .Product {
-    border-left: 7px solid red;
+    border-left: 7px solid red !important;
 }
 
 .Marketing {
-    border-left: 7px solid blue;
+    border-left: 7px solid blue !important;
 }
 
 .Sale {
-    border-left: 7px solid green;
+    border-left: 7px solid green !important;
 }
 
 .Management {
-    border-left: 7px solid violet;
+    border-left: 7px solid violet !important;
 }
 
 .bl-assigned {
