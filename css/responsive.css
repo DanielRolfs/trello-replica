@@ -49,3 +49,9 @@
     height: 100%;
   }
 }
+
+@media (max-width: 400px){
+    .task-form-btns{
+        gap: 10px;
+    }
+}
