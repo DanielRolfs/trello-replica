@@ -3,7 +3,7 @@ let currentLog;
 async function loadBacklogs() {
     await loadTasks();
     let logs = tasks.filter(t => t['status'] == 'bl');
-    document.getElementById('logs-table').innerHTML = generateLogHeadline();
+    document.getElementById('logs-table').innerHTML = '';
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
         document.getElementById('logs-table').innerHTML += generateLogs(log);
@@ -11,32 +11,17 @@ async function loadBacklogs() {
     };
 }
 
-function generateLogHeadline() {
-    return `
-<div class="log-headline">
-<div class="log-body">
-    <div class="bl-board pd-10 center">TO BOARD</div>
-    <div class="bl-users mr-16 pd-10 center">ASSIGNED TO</div>
-    <div class="bl-title">TITLE</div>
-    <div class="bl-category ">CATEGORY</div>
-    <div class="bl-details ml-20">DETAILS</div>      
-</div>          
-    <div class="del pd-10"></div>
-</div>`
-};
-
 function generateLogs(log) {
     return `
-    <div class="log ${log.category} ${log.urgency}" id="log" );>
-        <div onclick="editTask(${log.id})" class="log-body">
-            <div class="bl-board center bounce next"><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id})"></div>
-            <div class="bl-users mr-16 pd-10" id="bl-users${log.id}" ></div>
-            <div class="bl-title">${log.title}</div>
-            <div class="bl-category "  > ${log.category}</div>
-            <div class="bl-details pd-15 fw-normal">${log.description}</div>                
-        </div>
-        <div class="del pd-10"><img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn"></div>
-    </div> `
+    <tr  class="log" id="log" onclick="editTask(${log.id})">
+        <td ><div class=" bl-board center bounce next" ><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id}) " </div></td>
+        <td id="bl-users${log.id}"></td>
+        <td ><div class="mrl-15">${log.title}</div></td>
+        <td><div class="mrl-15 fw-italic">${log.category}</div></td>
+        <td><div class="mrl-15 fw-normal">${log.description}</div></td>
+        <td><div class="del"><img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})"><div class="prio">Prio1</div> </div></td>
+    </tr>
+  `
 }
 
 async function pushTaskToBoard(logID) {
