@@ -95,3 +95,7 @@ a {
 .navi-resp {
     width: 30px;
 }
+
+.menu-logo {
+    display: none;
+}
