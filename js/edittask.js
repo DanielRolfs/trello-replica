@@ -18,7 +18,7 @@ function addSaveOnSubmit(task) {
 }
 
 function openTaskEditor() {
-  document.querySelector('.edit-task-modal').classList.remove('d-none');
+  document.querySelector('.edit-task__container').classList.remove('d-none');
 }
 
 function loadTaskToForm(task) {
@@ -54,7 +54,7 @@ function saveChanges(task) {
 }
 
 function cancelEditTask() {
-  document.querySelector('.edit-task-modal').classList.add('d-none');
+  document.querySelector('.edit-task__container').classList.add('d-none');
   resetForm();
   resetVariables();
 }

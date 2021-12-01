@@ -44,7 +44,7 @@ function saveTask(newTask) {
 }
 
 function showTaskSavedModal() {
-  document.querySelector('.task-form-modal').classList.remove('d-none');
+  document.querySelector('.form__inner-modal').classList.remove('d-none');
   document.querySelector('.task-saved__confirmation').classList.remove('d-none');
 }
 
@@ -76,7 +76,7 @@ function resetVariables() {
 /* --------------- ASSIGN TASK TO USERS ---------------- */
 
 function assignTask() {
-  document.querySelector('.task-form-modal').classList.remove('d-none');
+  document.querySelector('.form__inner-modal').classList.remove('d-none');
   document.querySelector('.assign-task').classList.remove('d-none');
   showUsers();
 }
@@ -133,7 +133,7 @@ function cancelAssignment() {
 }
 
 function hideAddTaskModal() {
-  document.querySelector('.task-form-modal').classList.add('d-none');
+  document.querySelector('.form__inner-modal').classList.add('d-none');
   document.querySelector('.assign-task').classList.add('d-none');
   document.querySelector('.assign-task__user-list').innerHTML = '';
 }
