@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.add-task__form-container {
+.task-form__container {
   height: 70%;
   max-height: 500px;
   max-width: 1100px;
@@ -11,7 +11,7 @@
   border-radius: 10px;
 }
 
-.add-task__form {
+.task-form {
   gap: 40px;
 }
 

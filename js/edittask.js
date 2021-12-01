@@ -10,10 +10,7 @@ function getTask(taskId){
 }
 
 function openTaskEditor() {
-  hideboard();
-  document.getElementById('include-addtask').classList.remove('d-none');
-  document.getElementById('add-task__heading').innerHTML = 'Edit Task';
-  document.getElementById('task-saved__confirmation').innerHTML = 'Changes saved';
+  document.querySelector('.edit-task-modal').classList.remove('d-none');
 }
 
 /* function changeSubmitEvent(task){
@@ -26,11 +23,11 @@ function openTaskEditor() {
 } */
 
 function loadTaskToForm(task) {
- let title = document.getElementById('task__title');
- let category = document.getElementById('task__category');
- let description = document.getElementById('task__description');
- let dueDate = document.getElementById('task__date');
- let urgency = document.getElementById('task__urgency');
+ let title = document.getElementById('edit-task__title');
+ let category = document.getElementById('edit-task__category');
+ let description = document.getElementById('edit-task__description');
+ let dueDate = document.getElementById('edit-task__date');
+ let urgency = document.getElementById('edit-task__urgency');
 
  title.value = task.title;
  category.value = task.category;
@@ -49,11 +46,11 @@ function getResponsibles(task){
 }
 
 function saveChanges(task){
-  let title = document.getElementById('task__title');
-  let category = document.getElementById('task__category');
-  let description = document.getElementById('task__description');
-  let dueDate = document.getElementById('task__date');
-  let urgency = document.getElementById('task__urgency');
+  let title = document.getElementById('edit-task__title');
+  let category = document.getElementById('edit-task__category');
+  let description = document.getElementById('edit-task__description');
+  let dueDate = document.getElementById('edit-task__date');
+  let urgency = document.getElementById('edit-task__urgency');
 
   task.title = title.value;
   task.category = category.value;
@@ -63,17 +60,4 @@ function saveChanges(task){
   task.responsible = getResponsibleId();
 
   saveTask();
-  resetSubmitEvent();
 }
-
-function resetSubmitEvent(){
-    let form = document.getElementById('add-task__form')
-    form.removeEventListener('submit', () => {saveChanges(task)})
-    form.addEventListener('submit', addTaskEvent)
-  
-    document.getElementById('save-task-btn').innerHTML = 'Create Task';
-  }
-
-
-/* document.getElementById('add-task__heading').innerHTML = 'Add Task';
- */

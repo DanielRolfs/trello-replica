@@ -1,6 +1,6 @@
-<div class="add-task__form-container bg-grey w-100 h-100 pd-2">
+<div class="task-form__container bg-grey w-100 h-100 pd-2">
  <!-- form start -->
- <form id="edit-task__form" onsubmit="saveChanges(); return false" class="add-task__form flex-center h-100">
+ <form id="edit-task__form" onsubmit="saveChanges(); return false" class="task-form flex-center h-100">
    <!-- left side -->
    <div class="form__column flex-center col w-100 h-100">
      <div class="input-container flex-center col w-100">
@@ -50,12 +50,12 @@
          name="task__assign-container"
          class="task__assign-container flex-center"
        >
-         <div id="edit-task__responsibles" class="task__assign-container flex-center"></div>
+         <div id="edit-task__responsibles" class="task-responsibles task__assign-container flex-center"></div>
          <img class="assign__icon" src="./img/icon plus.png" alt="Assign to person" onclick="assignTask()" />
        </div>
-       <div class="add-task-btns flex-center w-100">
+       <div class="task-form-btns flex-center w-100">
          <button type="button" class="btn--cancel" onclick="cancelAddTask()">CANCEL</button>
-         <button id="save-changes-btn" type="submit" class="btn--highlighted">SAVE CHANGES</button>
+         <button type="submit" class="btn--highlighted">SAVE CHANGES</button>
        </div>
      </div>
    </div>
@@ -64,14 +64,14 @@
 </div>
 
 <!-- --------------ASSIGN TASK MODAL -------------- -->
-<div id="edit-task-modal" class="flex-center w-100 d-none">
- <div id="edit-task__assign" class="flex-center col d-none">
+<div id="edit-task-modal" class="task-form-modal flex-center w-100 d-none">
+ <div id="edit-task__assign" class="assign-task flex-center col d-none">
    <h1>Assign task to...</h1>
-   <div id="edit-task__assign__user-list" class="w-100 flex-center col flex-1"></div>
-   <div class="add-task-btns flex-center w-100">
+   <div id="edit-task__assign__user-list" class="assign-task__user-list w-100 flex-center col flex-1"></div>
+   <div class="assign-btns task-form-btns flex-center w-100">
      <button class="btn--cancel" onclick="cancelAssignment()">Cancel</button>
      <button class="btn--highlighted" onclick="saveAssignment()">Save</button>
    </div>
  </div>
- <div id="edit-task__saved-confirmation" class="task-saved__confirmation flex-center d-none">New task added</div>
+ <div id="edit-task__saved-confirmation" class="task-saved__confirmation flex-center d-none">Changes saved</div>
 </div>
