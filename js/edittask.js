@@ -1,11 +1,20 @@
 function editTask(taskId) {
   let task = getTask(taskId);
   openTaskEditor();
+  addSaveOnSubmit(task);
   loadTaskToForm(task);
 }
 
-function getTask(taskId){
- return tasks.find(task => task.id == taskId)
+function getTask(taskId) {
+  return tasks.find((task) => task.id == taskId);
+}
+
+function addSaveOnSubmit(task) {
+  let form = document.querySelector('.task-form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    saveChanges(task);
+  });
 }
 
 function openTaskEditor() {
@@ -13,42 +22,39 @@ function openTaskEditor() {
 }
 
 function loadTaskToForm(task) {
+  getInputField('title').value = task.title;
+  getInputField('category').value = task.category;
+  getInputField('description').value = task.description;
+  getInputField('date').value = task.dueDate;
+  getInputField('urgency').value = task.urgency;
 
- getFormField('title').value = task.title;
- getFormField('category').value = task.category;
- getFormField('description').value = task.description;
- getFormField('date').value = task.dueDate;
- getFormField('urgency').value = task.urgency;
-
- getResponsibles(task);
+  getResponsibles(task);
 }
 
-function getResponsibles(task){
- let responsibleIDs = task.responsible;
- responsibleIDs.forEach(id => {responsibles.push(users.find(u => u.id == id))});
- selectedUser = responsibles;
- showResponsibles();
+function getResponsibles(task) {
+  let responsibleIDs = task.responsible;
+  responsibleIDs.forEach((id) => {
+    responsibles.push(users.find((u) => u.id == id));
+  });
+  selectedUser = responsibles;
+  showResponsibles();
 }
 
-function saveChanges(task){
+function saveChanges(task) {
+  console.log(task);
 
-  task.title = getFormField('title').value;
-  task.category = getFormField('category').value;
-  task.description = getFormField('description').value;
-  task.dueDate = getFormField('date').value;
-  task.urgency = getFormField('urgency').value;
+  task.title = getInputField('title').value;
+  task.category = getInputField('category').value;
+  task.description = getInputField('description').value;
+  task.dueDate = getInputField('date').value;
+  task.urgency = getInputField('urgency').value;
   task.responsible = getResponsibleId();
 
   saveTask();
 }
 
-function cancelEditTask(){
+function cancelEditTask() {
   document.querySelector('.edit-task-modal').classList.add('d-none');
-  reset
+  resetForm();
   resetVariables();
-}
-
-function getFormField(field){
-  /* return document.getElementById(`[name="task__${field}]"`); */
-  return document.getElementById('edit-task__'+field);
 }
