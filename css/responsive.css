@@ -1,8 +1,13 @@
 @media (max-width: 1000px) {
     .sidebar {
         position: absolute;
-        left: -130px;
+        left: -80px;
         z-index: 1;
+        width: 130px;
+        font-size: 12px;
+    }
+    #sidebar__bottom {
+        display: none;
     }
     .menu-logo {
         display: initial;
@@ -19,9 +24,12 @@
         left: 0 !important;
     }
     .nav__links {
-        margin-top: 30px;
+        margin-top: 20px;
     }
     .logo img {
-        width: 40px;
+        width: 30px;
+    }
+    #userpic {
+        display: none;
     }
 }
