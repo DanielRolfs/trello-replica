@@ -8,14 +8,16 @@
     <title>Join</title>
 
     <!-- including js -->
-    <script src="./js/templates.js"></script>
+    <script src="./js/mini_backend.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/templates.js"></script>
 
     <!-- including css -->
 
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/style-nav.css" />
     <link rel="stylesheet" href="./css/style-help.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
 
     <!-- insert font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,7 +28,7 @@
 <body onload="includeHTML()">
     <div class="bodycontent w-100" id="bodycontent">
         <!-- sidebar -->
-        <div class="sidebar" w3-include-html="./templates/sidebar.html"></div>
+        <div id="sidebar" class="sidebar" w3-include-html="./templates/sidebar.html"></div>
 
         <!-- Privacy -->
         <div id="include-privacy" class="section w-100">

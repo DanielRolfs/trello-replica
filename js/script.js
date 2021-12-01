@@ -54,6 +54,7 @@ function dropout() {
     document.getElementById('navi-menu').classList.add('d-none');
     document.getElementById('navi-close').classList.remove('d-none');
     document.getElementById('sidebar__bottom').classList.remove('d-none');
+
 }
 
 function dropin() {
