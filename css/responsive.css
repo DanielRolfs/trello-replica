@@ -6,9 +6,6 @@
         width: 130px;
         font-size: 12px;
     }
-    #sidebar__bottom {
-        display: none;
-    }
     .menu-logo {
         display: initial;
         cursor: pointer;
@@ -28,8 +25,5 @@
     }
     .logo img {
         width: 30px;
-    }
-    #userpic {
-        display: none;
     }
 }
