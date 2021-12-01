@@ -8,7 +8,7 @@ async function loadTaskstoTODO() {
         const log = logs[i];
 
         document.getElementById('taskTodo').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category}">
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category} ${log.category}" onclick="editTask(${log.id})>
             <div class="flex between">
             <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
@@ -29,7 +29,7 @@ async function loadTaskstoTODO() {
         const log = logs2[i];
 
         document.getElementById('taskInprogress').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category} ${log.urgency}">
             <div class="flex between">
             <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
@@ -50,7 +50,7 @@ async function loadTaskstoTODO() {
         const log = logs3[i];
 
         document.getElementById('taskTesting').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category} ${log.urgency}">
             <div class="flex between">
             <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
@@ -71,7 +71,7 @@ async function loadTaskstoTODO() {
         const log = logs4[i];
 
         document.getElementById('taskdone').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.urgency}">
+        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category} ${log.urgency}">
             <div class="flex between">
             <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
             </div>
