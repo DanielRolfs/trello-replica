@@ -44,9 +44,11 @@ function saveChanges(task){
 
 function cancelEditTask(){
   document.querySelector('.edit-task-modal').classList.add('d-none');
+  reset
   resetVariables();
 }
 
 function getFormField(field){
+  /* return document.getElementById(`[name="task__${field}]"`); */
   return document.getElementById('edit-task__'+field);
 }
