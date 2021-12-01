@@ -29,11 +29,11 @@ function generateLogs(log) {
     return `
     <div class="log ${log.category} ${log.urgency}" id="log" );>
         <div onclick="editTask(${log.id})" class="log-body">
-            <div class="bl-board mr-16 pd-10 center bounce next"><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id})"></div>
+            <div class="bl-board center bounce next"><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id})"></div>
             <div class="bl-users mr-16 pd-10" id="bl-users${log.id}" ></div>
             <div class="bl-title">${log.title}</div>
-            <div class="bl-category"  > ${log.category}</div>
-            <div class="bl-details pd-15">${log.description}</div>                
+            <div class="bl-category "  > ${log.category}</div>
+            <div class="bl-details pd-15 fw-normal">${log.description}</div>                
         </div>
         <div class="del pd-10"><img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn"></div>
     </div> `

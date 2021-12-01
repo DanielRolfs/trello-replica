@@ -1,1 +1,12 @@
-@media (max-width: 1300px) {}
+@media (max-width: 1000px) {
+    .sidebar {
+        position: absolute;
+        left: -150px;
+    }
+    .menu-logo {
+        display:
+    }
+    body {
+        margin-left: 20px;
+    }
+}

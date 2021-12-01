@@ -3,7 +3,7 @@
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(31, 50, 144);
     font-weight: bolder;
 }
@@ -25,6 +25,7 @@ table {
     background-color: rgb(244, 243, 251);
     border-radius: 10px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .high {
@@ -96,30 +97,41 @@ table {
     align-items: center;
 }
 
+.bl-board {
+    width: 50px !important;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+}
+
 .bl-users {
-    width: 150px !important;
+    width: 100px !important;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .bl-title {
-    width: 180px !important;
+    width: 150px !important;
     display: flex;
     justify-content: flex-start;
 }
 
 .bl-category {
-    width: 130px !important;
+    width: 80px !important;
     display: flex;
     justify-content: flex-start;
 }
 
 .bl-details {
-    width: 450px !important;
     display: flex;
     justify-content: flex-start;
+}
+
+.fw-normal {
+    font-weight: normal;
 }
 
 .center {
@@ -134,8 +146,8 @@ table {
 }
 
 .next img {
-    width: 35px;
-    margin-left: 24px;
+    width: 30px;
+    margin-left: 0px;
 }
 
 .bounce:hover {
@@ -154,4 +166,11 @@ table {
 
 .ml-20 {
     margin-left: 20px;
+}
+
+.userpic {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
 }
