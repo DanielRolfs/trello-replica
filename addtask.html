@@ -43,11 +43,11 @@
           <p class="subheading">Learning Management System Project</p>
         </div>
 
-        <div class="task-form__container bg-grey w-100 h-100 pd-2">
+        <div class="task-form__container bg-grey w-100 pd-2">
           <!-- form start -->
-          <form id="add-task__form" onsubmit="addTask(); return false" class="task-form flex-center h-100">
+          <form id="add-task__form" onsubmit="addTask(); return false" class="task-form flex-center col">
             <!-- left side -->
-            <div class="form__column flex-center col w-100 h-100">
+            <div class="form__column flex-center col w-100">
               <div class="input-container flex-center col w-100">
                 <label for="task__title">TITLE</label>
                 <input required type="text" name="task__title" id="add-task__title" class="form-field w-100" />
@@ -56,19 +56,12 @@
                 <label for="task__category">CATEGORY</label>
                 <select required name="task__category" id="add-task__category" class="select__category form-field w-100">
                   <option value=""></option>
-                  <option value="Management">Management</option>
+                  <option value="Management"><div>Management</div></option>
                   <option value="Marketing">Marketing</option>
                   <option value="Product">Product</option>
                   <option value="Sale">Sale</option>
                 </select>
               </div>
-              <!-- <div class="pseudo-select w-100">
-                <div class="option1 pseudo-select__option form-field flex-center"><img src="./img/chevron .png" alt="show options"></div>
-                <div class="pseudo-select__option form-field" onclick="select('Management')">Makagement</div>
-                <div class="pseudo-select__option form-field" onclick="select('Marketing')">Marketing</div>
-                <div class="pseudo-select__option form-field" onclick="select('Product')">Product</div>
-                <div class="pseudo-select__option form-field" onclick="select('Sale')">Sale</div>
-              </div> -->
               <div class="input-container flex-center col w-100">
                 <label for="task__description">DESCRIPTION</label>
                 <textarea
