@@ -1,8 +1,8 @@
-#include-addtask {
+#add-task-container {
   position: relative;
 }
 
-.add-task__form-container {
+.task-form__container {
   height: 70%;
   max-height: 500px;
   max-width: 1100px;
@@ -11,7 +11,7 @@
   border-radius: 10px;
 }
 
-.add-task__form {
+.task-form {
   gap: 40px;
 }
 
@@ -48,7 +48,7 @@ select {
   background-color: #fff;
 }
 
-#task__description {
+#add-task__description {
   resize: none;
 }
 
@@ -65,7 +65,7 @@ select {
   flex-grow: 1;
 }
 
-.add-task-btns {
+.task-form-btns {
   justify-content: flex-end !important;
   gap: 30px;
 }
@@ -99,7 +99,7 @@ select {
 
 /* --------------  ASSIGN TASK  ----------------- */
 
-#add-task-modal {
+.task-form-modal {
   height: 100vh;
   position: absolute;
   top: 0;
@@ -107,7 +107,7 @@ select {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-#assign-task__content {
+.assign-task {
   width: 400px;
   height: 450px;
   background-color: #fff;
@@ -116,7 +116,7 @@ select {
   border-radius: 10px;
 }
 
-#show-users {
+.assign-task__user-list {
   justify-content: flex-start;
   flex-grow: 1;
   margin-top: 20px;
@@ -158,14 +158,14 @@ select {
   margin-right: 20px;
 }
 
-#assign-task__content button {
+.assign-btns button {
   width: 7rem;
 }
-#assign-task__content .add-task-btns {
+.assign-btns {
   margin-top: 20px;
 }
 
-#responsibles {
+.task-responsibles {
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-right: 10px;
@@ -208,7 +208,7 @@ select {
   filter: invert(50%);
 }
 
-/* --------------  TASK ADDED MODAL  ---------------- */
+/* --------------  TASK SAVED CONFIRMATION  ---------------- */
 
 .task-saved__confirmation{
   background-color: #fff;
@@ -218,4 +218,10 @@ select {
   border-radius: 10px;
   font-size: 1.5rem;
   text-align: center;
+}
+
+/* ---------------  EDIT TASK  ------------------ */
+
+.edit-task-modal{
+
 }

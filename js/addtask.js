@@ -2,11 +2,11 @@ let selectedUser = [];
 let responsibles = [];
 
 function addTask() {
-  let title = document.getElementById('task__title');
-  let category = document.getElementById('task__category');
-  let description = document.getElementById('task__description');
-  let dueDate = document.getElementById('task__date');
-  let urgency = document.getElementById('task__urgency');
+  let title = document.getElementById('add-task__title');
+  let category = document.getElementById('add-task__category');
+  let description = document.getElementById('add-task__description');
+  let dueDate = document.getElementById('add-task__date');
+  let urgency = document.getElementById('add-task__urgency');
 
   let newTask = new Task(
     getId(),
@@ -50,19 +50,24 @@ function resetForm(title, category, description, date, urgency) {
   description.value = '';
   date.value = '';
   urgency.value = '';
-  document.getElementById('responsibles').innerHTML = '';
+  document.querySelector('.task-responsibles').innerHTML = '';
+  /* document.getElementById('task__responsibles').innerHTML = ''; */
 }
 
 function showTaskSavedModal() {
-  document.getElementById('add-task-modal').classList.remove('d-none');
-  document.getElementById('task-saved__confirmation').classList.remove('d-none');
+  document.querySelector('.task-form-modal').classList.remove('d-none');
+  document.querySelector('.task-saved__confirmation').classList.remove('d-none');
+  /* document.getElementById('add-task-modal').classList.remove('d-none'); */
+  /* document.getElementById('task-saved__confirmation').classList.remove('d-none'); */
 }
 
 function redirectToBacklog() {
   setTimeout(() => {
-    document.getElementById('add-task-modal').classList.add('d-none');
-    document.getElementById('task-saved__confirmation').classList.add('d-none');
-    resetVariables();   //hier gibts ein Problem
+    document.querySelector('.task-form-modal').classList.add('d-none');
+    document.querySelector('.task-saved__confirmation').classList.add('d-none');
+    /* document.getElementById('add-task-modal').classList.add('d-none'); */
+    /* document.getElementById('add-task__saved-confirmation').classList.add('d-none'); */
+    resetVariables();
     window.location.href = './backlog.html';
   }, 1000);
 }
@@ -80,14 +85,17 @@ function resetVariables() {
 /* --------------- ASSIGN TASK TO USERS ---------------- */
 
 function assignTask() {
-  document.getElementById('add-task-modal').classList.remove('d-none');
-  document.getElementById('assign-task__content').classList.remove('d-none');
+  document.querySelector('.task-form-modal').classList.remove('d-none');
+  document.querySelector('.assign-task').classList.remove('d-none');
+  /* document.getElementById('add-task-modal').classList.remove('d-none');
+  document.getElementById('add-task__assign').classList.remove('d-none'); */
   showUsers();
 }
 
 function showUsers() {
   users.forEach((user) => {
-    document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
+    document.querySelector('.assign-task__user-list').insertAdjacentHTML('beforeend', createUserHTML(user));
+    /* document.getElementById('add-task__assign__user-list').insertAdjacentHTML('beforeend', createUserHTML(user)); */
     addSelectFunction(user);
     if (isSelected(user)) {
       highlightUser(user.id);
@@ -137,15 +145,20 @@ function cancelAssignment() {
 }
 
 function hideAddTaskModal() {
-  document.getElementById('add-task-modal').classList.add('d-none');
-  document.getElementById('assign-task__content').classList.add('d-none');
-  document.getElementById('show-users').innerHTML = '';
+  document.querySelector('.task-form-modal').classList.add('d-none');
+  document.querySelector('.assign-task').classList.add('d-none');
+  document.querySelector('.assign-task__user-list').innerHTML = '';
+  /* document.getElementById('add-task-modal').classList.add('d-none');
+  document.getElementById('add-task__assign').classList.add('d-none');
+  document.getElementById('add-task__assign__user-list').innerHTML = ''; */
 }
 
 function showResponsibles() {
-  document.getElementById('responsibles').innerHTML = '';
+  document.querySelector('.task-responsibles').innerHTML = '';
+  /* document.getElementById('add-task__responsibles').innerHTML = ''; */
   responsibles.forEach((user, index) => {
-    document.getElementById('responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(user, index));
+    document.querySelector('.task-responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(user, index));
+    /* document.getElementById('add-task__responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(user, index)); */
   });
 }
 

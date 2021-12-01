@@ -1,7 +1,6 @@
 function editTask(taskId) {
   let task = getTask(taskId);
   openTaskEditor();
-  /* changeSubmitEvent(task) */
   loadTaskToForm(task);
 }
 
@@ -10,33 +9,16 @@ function getTask(taskId){
 }
 
 function openTaskEditor() {
-  hideboard();
-  document.getElementById('include-addtask').classList.remove('d-none');
-  document.getElementById('add-task__heading').innerHTML = 'Edit Task';
-  document.getElementById('task-saved__confirmation').innerHTML = 'Changes saved';
+  document.querySelector('.edit-task-modal').classList.remove('d-none');
 }
 
-/* function changeSubmitEvent(task){
-  let form = document.getElementById('add-task__form')
-  form.removeAttribute('onsubmit');
-  /* form.removeEventListener('submit', ()=> {addTask(); return false})
-  form.addEventListener('submit', () => {saveChanges(task); return false})
-
-  document.getElementById('save-task-btn').innerHTML = 'Save Changes';
-} */
-
 function loadTaskToForm(task) {
- let title = document.getElementById('task__title');
- let category = document.getElementById('task__category');
- let description = document.getElementById('task__description');
- let dueDate = document.getElementById('task__date');
- let urgency = document.getElementById('task__urgency');
 
- title.value = task.title;
- category.value = task.category;
- description.value = task.description;
- dueDate.value = task.dueDate;
- urgency.value = task.urgency;
+ getFormField('title').value = task.title;
+ getFormField('category').value = task.category;
+ getFormField('description').value = task.description;
+ getFormField('date').value = task.dueDate;
+ getFormField('urgency').value = task.urgency;
 
  getResponsibles(task);
 }
@@ -49,31 +31,22 @@ function getResponsibles(task){
 }
 
 function saveChanges(task){
-  let title = document.getElementById('task__title');
-  let category = document.getElementById('task__category');
-  let description = document.getElementById('task__description');
-  let dueDate = document.getElementById('task__date');
-  let urgency = document.getElementById('task__urgency');
 
-  task.title = title.value;
-  task.category = category.value;
-  task.description = description.value;
-  task.dueDate = dueDate.value;
-  task.urgency = urgency.value;
+  task.title = getFormField('title').value;
+  task.category = getFormField('category').value;
+  task.description = getFormField('description').value;
+  task.dueDate = getFormField('date').value;
+  task.urgency = getFormField('urgency').value;
   task.responsible = getResponsibleId();
 
   saveTask();
-  resetSubmitEvent();
 }
 
-function resetSubmitEvent(){
-    let form = document.getElementById('add-task__form')
-    form.removeEventListener('submit', () => {saveChanges(task)})
-    form.addEventListener('submit', addTaskEvent)
-  
-    document.getElementById('save-task-btn').innerHTML = 'Create Task';
-  }
+function cancelEditTask(){
+  document.querySelector('.edit-task-modal').classList.add('d-none');
+  resetVariables();
+}
 
-
-/* document.getElementById('add-task__heading').innerHTML = 'Add Task';
- */
+function getFormField(field){
+  return document.getElementById('edit-task__'+field);
+}
