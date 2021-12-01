@@ -1,50 +1,51 @@
 @media (max-width: 1000px) {
-    .sidebar {
-        position: absolute;
-        left: -80px;
-        z-index: 1;
-        width: 130px;
-        font-size: 12px;
-    }
-    .menu-logo {
-        display: initial;
-        cursor: pointer;
-    }
-    #navi-close {
-        cursor: pointer;
-    }
-    .section {
-        padding-left: 70px;
-      }
-    .dropout {
-        position: absolute;
-        left: 0 !important;
-    }
-    .nav__links {
-        margin-top: 20px;
-    }
-    .sidebar__bottom {
-        display: none;
-    }
-    .logo img {
-        width: 30px;
-    }
-    
-      /* --------------  ADD TASK FORM  -------------- */
-    
-      @media (min-width: 700px) {
-        .task-form {
-          flex-direction: row !important;
-          height: 70%;
-          max-height: 500px;
-          max-width: 1100px;
-        }
-    
-        .task-form__container{
-            height: 100%;
-        }
-        .form__column{
-            height: 100%;
-        }
-      }
+  .sidebar {
+    position: absolute;
+    left: -80px;
+    z-index: 1;
+    width: 130px;
+    font-size: 12px;
+  }
+  .menu-logo {
+    display: initial;
+    cursor: pointer;
+  }
+  #navi-close {
+    cursor: pointer;
+  }
+  .section {
+    padding-left: 70px;
+  }
+  .dropout {
+    position: absolute;
+    left: 0 !important;
+  }
+  .nav__links {
+    margin-top: 20px;
+  }
+  .sidebar__bottom {
+    display: none;
+  }
+  .logo img {
+    width: 30px;
+  }
+}
+
+/* --------------  ADD TASK FORM  -------------- */
+
+@media (min-width: 700px) {
+  .task-form {
+    height: 100%;
+    flex-direction: row !important;
+  }
+
+  .task-form__container {
+    height: 70%;
+    max-height: 500px;
+    max-width: 1100px;
+    /* height: 100%; */
+  }
+  .form__column {
+    height: 100%;
+  }
 }
