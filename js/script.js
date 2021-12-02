@@ -62,6 +62,8 @@ function dropout() {
     document.getElementById('sidebar').style.left = '0px';
     document.getElementById('navi-menu').classList.add('d-none');
     document.getElementById('navi-close').classList.remove('d-none');
+    document.getElementById('x700').style.visibility = 'hidden';
+    document.getElementById('menu700').style.visibility = 'hidden';
 
 }
 
@@ -71,6 +73,8 @@ function dropin() {
     document.getElementById('sidebar').style.left = '-100px';
     document.getElementById('navi-menu').classList.remove('d-none');
     document.getElementById('navi-close').classList.add('d-none');
+    document.getElementById('x700').style.visibility = 'hidden';
+    document.getElementById('menu700').style.visibility = 'hidden';
 }
 
 function dropout700() {

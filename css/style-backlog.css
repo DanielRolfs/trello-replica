@@ -168,6 +168,7 @@
         border-left: 1px solid rgb(31, 50, 144, 0.2);
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
+        width: 80px;
     }
     
     #logs-table td:last-child {
@@ -217,5 +218,10 @@
     }
     
     .bl-date {
+        text-align: center;
+    }
+    
+    .td-width {
+        width: 120px;
         text-align: center;
     }

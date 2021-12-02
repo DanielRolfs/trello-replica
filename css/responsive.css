@@ -106,6 +106,7 @@
             border-top-right-radius: 10px;
             border-bottom-left-radius: 0px;
             border-left: 2px rgb(31, 50, 144, 0.2) solid;
+            width: 100%;
         }
         #logs-table td:last-child {
             border-right: 0;
@@ -159,22 +160,6 @@
             border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
         }
         /*---------Backlog end-------------*/
-        .task-form {
-            height: 100%;
-            flex-direction: row !important;
-            align-items: flex-start;
-        }
-        .task-form__container {
-            height: 70%;
-            max-height: 600px;
-            max-width: 1100px;
-        }
-        .form__column {
-            height: 100%;
-        }
-        .task-responsibles {
-            overflow-y: auto;
-        }
     }
     
     @media (max-width: 400px) {
