@@ -10,19 +10,21 @@ async function loadTaskstoTODO() {
         document.getElementById('taskTodo').innerHTML += `
         <div onclick="editTask(${log.id})" draggable="true" ondragstart="startDragging(${log.id})" class="task padding">
             <div class="flex between">
-            <div class="task-title">${log.title}</div>     <div>X</div>
+            <div class="${log.category}">${log.category}</div> <div>X</div>
             </div>
+            <div class="task-title">${log.title}</div>
             <div class="task-description">${log.description}</div>
             <div class="responsible-user" id="bl-users${log.id}" ></div>
             <div class="flex between margin-top">
-            <div class="${log.category}">${log.category}</div>
-            <div class="${log.urgency}">${log.urgency}</div>
+            
+            <div class="prio ${log.urgency}">${log.urgency}</div>
             <div>${log.dueDate}</div>
             </div>
         </div>
         `;
         setUsersDetails(log.id);
     };
+
 
     let logs2 = tasks.filter(t => t['status'] == 'b2');
     document.getElementById('taskInprogress').innerHTML = '';

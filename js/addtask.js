@@ -1,18 +1,24 @@
 let selectedUser = [];
-let responsibles = [];
+let responsible = [];
 
 function addTask() {
+  let title = document.getElementById('task__title');
+  let category = document.getElementById('task__category');
+  let description = document.getElementById('task__description');
+  let dueDate = document.getElementById('task__date');
+  let urgency = document.getElementById('task__urgency');
+
   let newTask = new Task(
     getId(),
-    getInputField('title').value,
-    getInputField('description').value,
-    getInputField('category').value,
-    getInputField('date').value,
-    getInputField('urgency').value,
-    getResponsibleId()
+    title.value,
+    description.value,
+    category.value,
+    dueDate.value,
+    urgency.value,
+    responsible
   );
-
   saveTask(newTask);
+  resetForm(title, category, description, dueDate, urgency);
 }
 
 function getId() {
@@ -25,102 +31,84 @@ function getId() {
   return id;
 }
 
-function getInputField(field) {
-  let inputFields = document.querySelector('.task-form').elements;
-  return inputFields['task__' + field];
-}
-
-function getResponsibleId() {
-  return responsibles.map((r) => r.id);
-}
-
 function saveTask(newTask) {
-  if (newTask) {
-    tasks.push(newTask);
-  }
+  tasks.push(newTask);
   backend.setItem('tasks', JSON.stringify(tasks));
-  showTaskSavedModal();
-  closeForm(newTask);
+  showTaskAddedModal();
 }
 
-function showTaskSavedModal() {
-  document.querySelector('.form__inner-modal').classList.remove('d-none');
-  document.querySelector('.task-saved__confirmation').classList.remove('d-none');
-}
-
-function closeForm(newTask) {
-  setTimeout(() => {
-    resetForm();
-    resetVariables();
-    document.querySelector('.section').style.overflowY = 'auto';
-    document.querySelector('.task-form-modal').classList.add('d-none');
-    document.querySelector('.task-saved__confirmation').classList.add('d-none');
-    if (newTask) {
-      window.location.href = './backlog.html';
-    }
-  }, 1000);
-}
-
-function cancelAddTask() {
-  window.location.href = './board.html';
-  resetVariables();
-}
-
-function resetForm() {
-  ['title', 'category', 'description', 'date', 'urgency'].forEach((e) => (getInputField(e).value = ''));
-  document.querySelector('.task-responsibles').innerHTML = '';
+function resetForm(title, category, description, date, urgency) {
+  title.value = '';
+  category.value = '';
+  description.value = '';
+  date.value = '';
+  urgency.value = '';
+  document.getElementById('responsible').innerHTML = '';
 }
 
 function resetVariables() {
   selectedUser = [];
-  responsibles = [];
+  responsible = [];
+}
+
+function showTaskAddedModal() {
+  document.getElementById('add-task-modal').classList.remove('d-none');
+  document.getElementById('task-added__confirmation').classList.remove('d-none');
+  setTimeout(() => {
+    document.getElementById('add-task-modal').classList.add('d-none');
+    document.getElementById('task-added__confirmation').classList.add('d-none');
+    hideboard();
+    showBacklog();
+    loadBacklogs();
+    resetVariables();
+  }, 1000);
+}
+
+function cancelAddTask() {
+  showBacklog();
+  loadBacklogs();
+  resetVariables();
 }
 
 /* --------------- ASSIGN TASK TO USERS ---------------- */
 
 function assignTask() {
-  document.querySelector('.form__inner-modal').classList.remove('d-none');
-  document.querySelector('.assign-task').classList.remove('d-none');
+  document.getElementById('add-task-modal').classList.remove('d-none');
+  document.getElementById('assign-task__content').classList.remove('d-none');
   showUsers();
 }
 
 function showUsers() {
-  users.forEach((user) => {
-    document.querySelector('.assign-task__user-list').insertAdjacentHTML('beforeend', createUserHTML(user));
-    addSelectFunction(user);
-    if (isSelected(user)) {
-      highlightUser(user.id);
-    }
-  });
+    users.forEach((user) => {
+        document.getElementById('show-users').insertAdjacentHTML('beforeend', createUserHTML(user));
+        /* checkIfSelected(user); */
+    });
 }
 
 function createUserHTML(user) {
   let userHTML = `
-  <div id="user${user.id}" class="user__container flex-center">
+  <div id="user${user.id}" class="user__container flex-center" onclick="selectUser(${user.id})">
     <img src="${user.image}" class="user__image">
-    <div class="assign__user-details">
-      <div class="user__username">${user.username}</div>
-      <div class="user__mail">${user.mail}</div>
-    </div>
+    <span class="user__username">${user.username}</span>
   </div>`;
   return userHTML;
 }
 
-function addSelectFunction(user) {
-  document.getElementById('user' + user.id).addEventListener('click', () => selectUser(user));
-}
+/* function checkIfSelected(){
 
-function selectUser(user) {
-  if (!isSelected(user)) {
-    selectedUser.push(user);
+} */
+
+function selectUser(id) {
+  if (!isSelected(id)) {
+    selectedUser.push(id);
   } else {
-    selectedUser.splice(selectedUser.indexOf(user), 1);
+    selectedUser.splice(selectedUser.indexOf(id), 1);
   }
-  highlightUser(user.id);
+  highlightUser(id);
 }
 
-function isSelected(user) {
-  return selectedUser.find((selection) => selection == user);
+function isSelected(id) {
+  return selectedUser.find((selected) => selected == id);
 }
 
 function highlightUser(id) {
@@ -128,47 +116,32 @@ function highlightUser(id) {
 }
 
 function saveAssignment() {
-  responsibles = selectedUser;
-  hideAddTaskModal();
+  responsible = selectedUser;
+  document.getElementById('add-task-modal').classList.add('d-none');
+  document.getElementById('assign-task__content').classList.add('d-none');
+  document.getElementById('show-users').innerHTML = '';
   showResponsibles();
 }
 
 function cancelAssignment() {
-  selectedUser = responsibles;
-  hideAddTaskModal();
-}
-
-function hideAddTaskModal() {
-  document.querySelector('.form__inner-modal').classList.add('d-none');
-  document.querySelector('.assign-task').classList.add('d-none');
-  document.querySelector('.assign-task__user-list').innerHTML = '';
+  selectedUser = responsible;
+  document.getElementById('add-task-modal').classList.add('d-none');
+  document.getElementById('assign-task__content').classList.add('d-none');
 }
 
 function showResponsibles() {
-  setResponsiblesHeight();
-  document.querySelector('.task-responsibles').innerHTML = '';
-  responsibles.forEach((user, index) => {
-    document.querySelector('.task-responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(user, index));
+  document.getElementById('responsibles').innerHTML = '';
+  responsible.forEach((id, index) => {
+    document.getElementById('responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(id, index));
   });
 }
 
-function setResponsiblesHeight() {
-  document.querySelector('.task-responsibles').style.height = document.querySelector('.assign-to').clientHeight+'px';
-}
-
-function createResponsibleHTML(user, index) {
+function createResponsibleHTML(id, index) {
+  let currentUser = users.find((user) => user.id === id);
   let responsibleHTML = `
      <div id="responsible${index}" class="user__container responsibles flex-center">
-       <img src="${user.image}" class="user__image">
-       <span class="user__username">${user.username}</span>
-       <div class="delete-assignment-btn d-none" onclick="deleteAssignment(${index})">
-         <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon">
-       </div>
+       <img src="${currentUser.image}" class="user__image">
+       <span class="user__username">${currentUser.username}</span>
      </div>`;
   return responsibleHTML;
-}
-
-function deleteAssignment(index) {
-  responsibles.splice(index, 1);
-  document.getElementById('responsible' + index).remove();
 }
