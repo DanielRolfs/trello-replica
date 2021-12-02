@@ -36,15 +36,6 @@
         border-left: 7px solid violet !important;
     }
     
-    .bl-assigned {
-        display: flex;
-        align-items: center;
-    }
-    
-    #bl-mail {
-        color: cadetblue;
-    }
-    
     .del {
         width: 50px;
         text-align: center;
@@ -125,9 +116,13 @@
         align-items: center;
     }
     
+    .point {
+        cursor: pointer;
+    }
+    
     .next {
         position: relative;
-        left: 5px;
+        left: 15px;
     }
     
     .next img {

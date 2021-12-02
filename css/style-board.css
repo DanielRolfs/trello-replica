@@ -38,23 +38,27 @@
     background-color: rgb(191, 205, 252);
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
-.between{
+.between {
     justify-content: space-between;
 }
 
-.margin-top{
+.margin-top {
     margin-top: 20px;
 }
 
-.padding{
+.point {
+    cursor: pointer;
+}
+
+.padding {
     padding: 7px;
 }
 
-.task-title{
+.task-title {
     font-weight: bold;
     font-size: large;
     display: flex;
@@ -62,13 +66,12 @@
     margin-left: 5px;
 }
 
-.task-description{
+.task-description {
     margin-left: 5px;
     margin-top: 10px;
-
 }
 
-.responsible-user{
+.responsible-user {
     margin-top: 12px;
     display: flex;
     justify-content: center;
