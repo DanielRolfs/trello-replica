@@ -35,20 +35,33 @@ label {
 }
 
 .form-field {
+<<<<<<< HEAD
     padding: 0.9rem 0.5rem;
     border: 1px solid #dedee2;
     border-radius: 5px;
     font-size: 0.9rem;
+=======
+  padding: 0.9rem 0.5rem;
+  border: 1px solid #dedee2;
+  border-radius: 5px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 0.9rem;
+  resize: none;
+
+>>>>>>> cf17b9b254e269128957c2d4fb954a549d5bd669
 }
 
 select {
     background-color: #fff;
 }
 
+<<<<<<< HEAD
 #add-task__description {
     resize: none;
 }
 
+=======
+>>>>>>> cf17b9b254e269128957c2d4fb954a549d5bd669
 .assign__icon {
     width: 30px;
     cursor: pointer;
@@ -138,6 +151,7 @@ select {
 }
 
 .user__container {
+<<<<<<< HEAD
     justify-content: flex-start;
     width: 230px;
     height: 45px;
@@ -150,6 +164,20 @@ select {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+=======
+  justify-content: flex-start;
+  width: 270px;
+  height: 45px;
+  flex-shrink: 0;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background-color: var(--bg-grey);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+>>>>>>> cf17b9b254e269128957c2d4fb954a549d5bd669
 }
 
 .user__container:hover {
@@ -170,6 +198,18 @@ select {
     object-fit: cover;
     border-radius: 50%;
     margin-right: 20px;
+}
+
+.user__username, .user__mail{
+  width: 195px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.user__mail{
+  color: rgb(100, 100, 100);
+  font-size: 0.78rem;
 }
 
 .assign-btns button {

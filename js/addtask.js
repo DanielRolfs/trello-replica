@@ -52,9 +52,10 @@ function closeForm(newTask) {
   setTimeout(() => {
     resetForm();
     resetVariables();
+    document.querySelector('.section').style.overflowY = 'auto';
     document.querySelector('.task-form-modal').classList.add('d-none');
     document.querySelector('.task-saved__confirmation').classList.add('d-none');
-    if(newTask){
+    if (newTask) {
       window.location.href = './backlog.html';
     }
   }, 1000);
@@ -97,7 +98,10 @@ function createUserHTML(user) {
   let userHTML = `
   <div id="user${user.id}" class="user__container flex-center">
     <img src="${user.image}" class="user__image">
-    <span class="user__username">${user.username}</span>
+    <div class="assign__user-details">
+      <div class="user__username">${user.username}</div>
+      <div class="user__mail">${user.mail}</div>
+    </div>
   </div>`;
   return userHTML;
 }
@@ -141,10 +145,15 @@ function hideAddTaskModal() {
 }
 
 function showResponsibles() {
+  setResponsiblesHeight();
   document.querySelector('.task-responsibles').innerHTML = '';
   responsibles.forEach((user, index) => {
     document.querySelector('.task-responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(user, index));
   });
+}
+
+function setResponsiblesHeight() {
+  document.querySelector('.task-responsibles').style.height = document.querySelector('.assign-to').clientHeight+'px';
 }
 
 function createResponsibleHTML(user, index) {
