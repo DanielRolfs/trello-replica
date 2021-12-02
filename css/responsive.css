@@ -37,16 +37,20 @@
   .task-form {
     height: 100%;
     flex-direction: row !important;
+    align-items: flex-start;
   }
 
   .task-form__container {
     height: 70%;
-    max-height: 500px;
+    max-height: 600px;
     max-width: 1100px;
-    /* height: 100%; */
   }
   .form__column {
     height: 100%;
+  }
+
+  .task-responsibles{
+      overflow-y: auto;
   }
 }
 

@@ -1,6 +1,6 @@
 <div class="task-form__container bg-grey w-100 pd-2">
  <!-- form start -->
- <form id="edit-task__form" class="task-form flex-center">
+ <form id="edit-task__form" class="task-form flex-center col">
    <!-- left side -->
    <div class="form__column flex-center col w-100">
      <div class="input-container flex-center col w-100">
@@ -44,11 +44,10 @@
        </select>
      </div>
      <div class="input-container flex-center col w-100">
-       <label for="task__assign-container">ASSIGNED TO</label>
+       <label>ASSIGNED TO</label>
        <div
          id="edit-task__assign-container"
-         name="task__assign-container"
-         class="task__assign-container flex-center"
+         class="assign-to task__assign-container flex-center"
        >
          <div id="edit-task__responsibles" class="task-responsibles task__assign-container flex-center"></div>
          <img class="assign__icon" src="./img/icon plus.png" alt="Assign to person" onclick="assignTask()" />
@@ -69,8 +68,8 @@
    <h1>Assign task to...</h1>
    <div id="edit-task__assign__user-list" class="assign-task__user-list w-100 flex-center col flex-1"></div>
    <div class="assign-btns task-form-btns flex-center w-100">
-     <button class="btn--cancel" onclick="cancelAssignment()">Cancel</button>
-     <button class="btn--highlighted" onclick="saveAssignment()">Save</button>
+     <button class="btn--cancel" onclick="cancelAssignment()">CANCEL</button>
+     <button class="btn--highlighted" onclick="saveAssignment()">SAVE</button>
    </div>
  </div>
  <div id="edit-task__saved-confirmation" class="task-saved__confirmation flex-center d-none">Changes saved</div>
