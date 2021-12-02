@@ -2,84 +2,30 @@ let currentDraggedElement;
 
 async function loadTaskstoTODO() {
     await loadTasks();
-    let logs = tasks.filter(t => t['status'] == 'b1');
-    document.getElementById('taskTodo').innerHTML = '';
+    listTaskByStatus ( 'taskTodo', 'b1');
+    listTaskByStatus ( 'taskInprogress', 'b2');
+    listTaskByStatus ( 'taskTesting', 'b3');
+    listTaskByStatus ( 'taskdone', 'b4');
+}
+
+function listTaskByStatus( containerId, status) {
+    let logs = tasks.filter(t => t['status'] == status);
+    document.getElementById(containerId).innerHTML = '';
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
 
-        document.getElementById('taskTodo').innerHTML += `
-        <div onclick="editTask(${log.id})" draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category} ${log.urgency}">
+        document.getElementById(containerId).innerHTML += `
+        <div onclick="editTask(${log.id})" draggable="true" ondragstart="startDragging(${log.id})" class="task">
             <div class="flex between">
-            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="grey-text ${log.category}">${log.category}</div> <div onclick="deleteTask(${log.id})">X</div>
             </div>
-            <div class="task-description">${log.description}</div>
+            <div class="task-title">${log.title}</div>
+            <div class="grey-text task-description">${log.description}</div>
             <div class="responsible-user" id="bl-users${log.id}" ></div>
             <div class="flex between margin-top">
-            <div>${log.category}</div>
-            <div>${log.dueDate}</div>
-            </div>
-        </div>
-        `;
-        setUsersDetails(log.id);
-    };
-
-    let logs2 = tasks.filter(t => t['status'] == 'b2');
-    document.getElementById('taskInprogress').innerHTML = '';
-    for (let i = 0; i < logs2.length; i++) {
-        const log = logs2[i];
-
-        document.getElementById('taskInprogress').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category} ${log.urgency}">
-            <div class="flex between">
-            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
-            </div>
-            <div class="task-description">${log.description}</div>
-            <div class="responsible-user" id="bl-users${log.id}" ></div>
-            <div class="flex between margin-top">
-            <div>${log.category}</div>
-            <div>${log.dueDate}</div>
-            </div>
-        </div>
-        `;
-        setUsersDetails(log.id);
-    };
-
-    let logs3 = tasks.filter(t => t['status'] == 'b3');
-    document.getElementById('taskTesting').innerHTML = '';
-    for (let i = 0; i < logs3.length; i++) {
-        const log = logs3[i];
-
-        document.getElementById('taskTesting').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category} ${log.urgency}">
-            <div class="flex between">
-            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
-            </div>
-            <div class="task-description">${log.description}</div>
-            <div class="responsible-user" id="bl-users${log.id}" ></div>
-            <div class="flex between margin-top">
-            <div>${log.category}</div>
-            <div>${log.dueDate}</div>
-            </div>
-        </div>
-        `;
-        setUsersDetails(log.id);
-    };
-
-    let logs4 = tasks.filter(t => t['status'] == 'b4');
-    document.getElementById('taskdone').innerHTML = '';
-    for (let i = 0; i < logs4.length; i++) {
-        const log = logs4[i];
-
-        document.getElementById('taskdone').innerHTML += `
-        <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category} ${log.urgency}">
-            <div class="flex between">
-            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
-            </div>
-            <div class="task-description">${log.description}</div>
-            <div class="responsible-user" id="bl-users${log.id}" ></div>
-            <div class="flex between margin-top">
-            <div>${log.category}</div>
-            <div>${log.dueDate}</div>
+            
+            <div class="prio ${log.urgency}">${log.urgency}</div>
+            <div class="grey-text">${log.dueDate}</div>
             </div>
         </div>
         `;
@@ -102,7 +48,8 @@ function drop(status) {
     //changed by Marcus (has to be tested)----> getested by Marcus 28.11. 01:20
     currentDraggedElement.status = status;
     // tasks[currentDraggedElement]["status"] = status;
-    saveBoardStatus()
+    /* removeHighlight(id); */
+    saveBoardStatus();
 }
 
 function highlight(id) {
