@@ -13,7 +13,7 @@ body {
     background-color: var(--bg-grey) !important;
 }
 
-a{
+a {
     color: #fff;
 }
 
@@ -65,16 +65,16 @@ button {
     border: none;
     font-weight: 700;
     cursor: pointer;
-  }
+}
 
-  .btn--highlighted {
+.btn--highlighted {
     background-color: var(--bg-blue);
     color: var(--bg-grey);
-  }
+}
 
-  .btn--highlighted:hover {
+.btn--highlighted:hover {
     background-color: #495cbe;
-  }
+}
 
 
 /* ---------  HEADINGS  --------- */

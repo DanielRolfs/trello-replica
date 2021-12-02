@@ -81,6 +81,7 @@
         border-bottom-left-radius: 10px;
         border-right: 2px rgb(31, 50, 144, 0.2) solid;
         border-bottom: 2px rgba(141, 142, 150, 0.2) solid;
+        margin-bottom: 15px;
     }
     #logs-table td {
         width: 100%;
