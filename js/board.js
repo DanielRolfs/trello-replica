@@ -8,14 +8,15 @@ async function loadTaskstoTODO() {
         const log = logs[i];
 
         document.getElementById('taskTodo').innerHTML += `
-        <div onclick="editTask(${log.id})" draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category} ${log.urgency}">
+        <div onclick="editTask(${log.id})" draggable="true" ondragstart="startDragging(${log.id})" class="task padding">
             <div class="flex between">
-            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="task-title">${log.title}</div>     <div>X</div>
             </div>
             <div class="task-description">${log.description}</div>
             <div class="responsible-user" id="bl-users${log.id}" ></div>
             <div class="flex between margin-top">
-            <div>${log.category}</div>
+            <div class="${log.category}">${log.category}</div>
+            <div class="${log.urgency}">${log.urgency}</div>
             <div>${log.dueDate}</div>
             </div>
         </div>
@@ -31,7 +32,7 @@ async function loadTaskstoTODO() {
         document.getElementById('taskInprogress').innerHTML += `
         <div draggable="true" ondragstart="startDragging(${log.id})" class="task padding ${log.category} ${log.urgency}">
             <div class="flex between">
-            <div class="task-title">${log.title}</div>     <img src="img/del.png" alt="" onclick="deleteTask(${log.id})" id="del-btn">
+            <div class="task-title">${log.title}</div>     <div>X</div>
             </div>
             <div class="task-description">${log.description}</div>
             <div class="responsible-user" id="bl-users${log.id}" ></div>
