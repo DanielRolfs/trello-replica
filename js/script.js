@@ -72,3 +72,25 @@ function dropin() {
     document.getElementById('navi-menu').classList.remove('d-none');
     document.getElementById('navi-close').classList.add('d-none');
 }
+
+function dropout700() {
+    document.getElementById('sidebar__links').style.visibility = 'visible';
+    document.getElementById('sidebar__bottom').style.visibility = 'visible';
+    document.getElementById('sidebar').style.left = '0px';
+    document.getElementById('navi-menu').classList.add('d-none');
+    document.getElementById('navi-close').classList.add('d-none');
+    document.getElementById('x700').style.visibility = 'visible';
+    document.getElementById('menu700').style.visibility = 'hidden';
+
+}
+
+function dropin700() {
+    document.getElementById('sidebar__links').style.visibility = 'hidden';
+    document.getElementById('sidebar__bottom').style.visibility = 'hidden';
+    document.getElementById('sidebar').style.left = '-150px';
+    document.getElementById('navi-menu').classList.add('d-none');
+    document.getElementById('navi-close').classList.add('d-none');
+    document.getElementById('x700').style.visibility = 'hidden';
+    document.getElementById('menu700').style.visibility = 'visible';
+
+}

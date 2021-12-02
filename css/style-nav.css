@@ -98,3 +98,22 @@ a {
 .menu-logo {
     display: none;
 }
+
+#xmenu700 {
+    position: absolute;
+    top: 10px;
+    left: 160px;
+    visibility: hidden;
+}
+
+#x700 {
+    position: absolute;
+    left: 0px;
+    visibility: hidden;
+}
+
+#menu700 {
+    position: absolute;
+    left: 0px;
+    visibility: hidden;
+}

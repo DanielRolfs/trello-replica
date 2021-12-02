@@ -1,160 +1,184 @@
-@media (max-width: 1000px) {
-    /*---------navbar-------------*/
-    .sidebar {
-        position: absolute;
-        left: -100px;
-        z-index: 1;
-        width: 150px;
-        font-size: 16px;
+    @media (max-width: 1000px) {
+        /*---------navbar-------------*/
+        .sidebar {
+            position: absolute;
+            left: -100px;
+            z-index: 1;
+            width: 150px;
+            font-size: 16px;
+        }
+        .menu-logo {
+            display: initial;
+            cursor: pointer;
+        }
+        #navi-close {
+            cursor: pointer;
+        }
+        .section {
+            padding-left: 70px;
+        }
+        .dropout {
+            position: absolute;
+            left: 0 !important;
+        }
+        .nav__links {
+            margin-top: 20px;
+        }
+        .logo img {
+            width: 30px;
+        }
+        #sidebar__bottom {
+            visibility: hidden;
+        }
+        #sidebar__links {
+            visibility: hidden;
+        }
+        /*---------navbar end-------------*/
     }
-    .menu-logo {
-        display: initial;
-        cursor: pointer;
+    /* --------------  ADD TASK FORM  -------------- */
+    
+    @media (min-width: 700px) {
+        .task-form {
+            height: 100%;
+            flex-direction: row !important;
+            align-items: flex-start;
+        }
+        .task-form__container {
+            height: 70%;
+            max-height: 600px;
+            max-width: 1100px;
+        }
+        .form__column {
+            height: 100%;
+        }
+        .task-responsibles {
+            overflow-y: auto;
+        }
+        /*---------navbar end-------------*/
     }
-    #navi-close {
-        cursor: pointer;
+    
+    @media (max-width: 700px) {
+        /*---------navbar-------------*/
+        .sidebar {
+            position: absolute;
+            left: -150px;
+            z-index: 1;
+            width: 150px;
+            font-size: 16px;
+        }
+        .menu-logo {
+            display: initial;
+            cursor: pointer;
+        }
+        #navi-close {
+            cursor: pointer;
+        }
+        .section {
+            padding-left: 10px;
+        }
+        #xmenu700 {
+            visibility: visible;
+        }
+        #menu700 {
+            visibility: visible;
+        }
+        #x700 {
+            visibility: hidden;
+        }
+        /*---------navbar end-------------*/
+        /*---------Backlog-------------*/
+        table tr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .log {
+            background-color: white;
+        }
+        #logs-table td {
+            border: 0;
+            background-color: rgb(244, 243, 251);
+        }
+        #logs-table td:first-child {
+            border-top: 2px rgba(141, 142, 150, 0.2) solid;
+            border-left: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 0px;
+            border-left: 2px rgb(31, 50, 144, 0.2) solid;
+        }
+        #logs-table td:last-child {
+            border-right: 0;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 10px;
+            border-right: 2px rgb(31, 50, 144, 0.2) solid;
+            border-bottom: 2px rgba(141, 142, 150, 0.2) solid;
+            margin-bottom: 15px;
+        }
+        #logs-table td {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-left: 2px rgb(31, 50, 144, 0.2) solid;
+            border-right: 2px rgb(31, 50, 144, 0.2) solid;
+        }
+        .prio {
+            margin-bottom: 15px;
+        }
+        .log_table__head {
+            display: none;
+        }
+        .next {
+            position: relative;
+            left: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .users {
+            display: flex;
+        }
+        .center {
+            text-align: center;
+        }
+        .Product {
+            border-top: 7px solid rgba(0, 255, 255, 0.5) !important;
+            border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
+        }
+        .Marketing {
+            border-top: 7px solid rgba(0, 0, 255, 0.5) !important;
+            border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
+        }
+        .Sale {
+            border-top: 7px solid rgba(49, 0, 128, 0.5) !important;
+            border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
+        }
+        .Management {
+            border-left: 7px solid violet !important;
+            border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
+        }
+        /*---------Backlog end-------------*/
+        .task-form {
+            height: 100%;
+            flex-direction: row !important;
+            align-items: flex-start;
+        }
+        .task-form__container {
+            height: 70%;
+            max-height: 600px;
+            max-width: 1100px;
+        }
+        .form__column {
+            height: 100%;
+        }
+        .task-responsibles {
+            overflow-y: auto;
+        }
     }
-    .section {
-        padding-left: 70px;
+    
+    @media (max-width: 400px) {
+        .task-form-btns {
+            gap: 10px;
+        }
     }
-    .dropout {
-        position: absolute;
-        left: 0 !important;
-    }
-    .nav__links {
-        margin-top: 20px;
-    }
-    .logo img {
-        width: 30px;
-    }
-    #sidebar__bottom {
-        visibility: hidden;
-    }
-    #sidebar__links {
-        visibility: hidden;
-    }
-    /*---------navbar end-------------*/
-}
-
-
-/* --------------  ADD TASK FORM  -------------- */
-
-@media (min-width: 700px) {
-    .task-form {
-        height: 100%;
-        flex-direction: row !important;
-        align-items: flex-start;
-    }
-    .task-form__container {
-        height: 70%;
-        max-height: 600px;
-        max-width: 1100px;
-    }
-    .form__column {
-        height: 100%;
-    }
-    .task-responsibles {
-        overflow-y: auto;
-    }
-    /*---------navbar end-------------*/
-}
-
-@media (max-width: 700px) {
-    /*---------navbar-------------*/
-    /*---------navbar end-------------*/
-    /*---------Backlog-------------*/
-    table tr {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .log {
-        background-color: white;
-    }
-    #logs-table td {
-        border: 0;
-        background-color: rgb(244, 243, 251);
-    }
-    #logs-table td:first-child {
-        border-top: 2px rgba(141, 142, 150, 0.2) solid;
-        border-left: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-left-radius: 0px;
-        border-left: 2px rgb(31, 50, 144, 0.2) solid;
-    }
-    #logs-table td:last-child {
-        border-right: 0;
-        border-bottom-right-radius: 10px;
-        border-top-right-radius: 0px;
-        border-bottom-left-radius: 10px;
-        border-right: 2px rgb(31, 50, 144, 0.2) solid;
-        border-bottom: 2px rgba(141, 142, 150, 0.2) solid;
-        margin-bottom: 15px;
-    }
-    #logs-table td {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-left: 2px rgb(31, 50, 144, 0.2) solid;
-        border-right: 2px rgb(31, 50, 144, 0.2) solid;
-    }
-    .prio {
-        margin-bottom: 15px;
-    }
-    .log_table__head {
-        display: none;
-    }
-    .next {
-        position: relative;
-        left: 0px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .users {
-        display: flex;
-    }
-    .center {
-        text-align: center;
-    }
-    .Product {
-        border-top: 7px solid rgba(0, 255, 255, 0.5) !important;
-        border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
-    }
-    .Marketing {
-        border-top: 7px solid rgba(0, 0, 255, 0.5) !important;
-        border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
-    }
-    .Sale {
-        border-top: 7px solid rgba(49, 0, 128, 0.5) !important;
-        border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
-    }
-    .Management {
-        border-left: 7px solid violet !important;
-        border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
-    }
-    /*---------Backlog end-------------*/
-    .task-form {
-        height: 100%;
-        flex-direction: row !important;
-        align-items: flex-start;
-    }
-    .task-form__container {
-        height: 70%;
-        max-height: 600px;
-        max-width: 1100px;
-    }
-    .form__column {
-        height: 100%;
-    }
-    .task-responsibles {
-        overflow-y: auto;
-    }
-}
-
-@media (max-width: 400px) {
-    .task-form-btns {
-        gap: 10px;
-    }
-}
