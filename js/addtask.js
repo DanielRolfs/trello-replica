@@ -52,6 +52,7 @@ function closeForm(newTask) {
   setTimeout(() => {
     resetForm();
     resetVariables();
+    document.querySelector('.section').style.overflowY = 'auto';
     document.querySelector('.task-form-modal').classList.add('d-none');
     document.querySelector('.task-saved__confirmation').classList.add('d-none');
     if (newTask) {

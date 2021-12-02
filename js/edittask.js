@@ -19,6 +19,7 @@ function addSaveOnSubmit(task) {
 
 function openTaskEditor() {
   document.querySelector('.edit-task__container').classList.remove('d-none');
+  document.querySelector('.section').style.overflowY = 'hidden';
 }
 
 function loadTaskToForm(task) {
@@ -55,6 +56,7 @@ function saveChanges(task) {
 
 function cancelEditTask() {
   document.querySelector('.edit-task__container').classList.add('d-none');
+  document.querySelector('.section').style.overflowY = 'auto';
   resetForm();
   resetVariables();
 }
