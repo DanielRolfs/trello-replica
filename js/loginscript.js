@@ -14,7 +14,7 @@ async function validateLoginData() {
                     window.location.href = './board.html';
 
                     renderprofile();
-                    return false;
+                    return true;
                 } else {
                     document.getElementById('incorrect').innerHTML = 'Fehler beim Login';
                 }

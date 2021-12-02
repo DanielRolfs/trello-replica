@@ -18,13 +18,14 @@
 .area {
     padding: 20px;
     background-color: white;
-    width: 350px;
+    border-radius: 15px;
+    border: 4px #dedee2 solid;
 }
 
 .input {
     margin: 10px;
     height: 24px;
-    font-size: 16px;
+    font-size: 12px;
     width: 173px;
 }
 
@@ -41,18 +42,32 @@
 .head {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .inputs {
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .header {
-    margin-left: 50px;
+    margin-top: 30px;
 }
 
 #incorrect {
     text-align: center;
     color: brown;
     font-weight: bolder;
+}
+
+#username {
+    height: 25px;
+    width: 200px;
+}
+
+#password {
+    height: 25px;
+    width: 200px;
 }
