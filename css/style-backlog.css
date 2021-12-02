@@ -21,15 +21,15 @@
     }
     
     .Product {
-        border-left: 7px solid red !important;
+        border-left: 7px solid rgba(0, 255, 255, 0.5) !important;
     }
     
     .Marketing {
-        border-left: 7px solid blue !important;
+        border-left: 7px solid rgba(0, 0, 255, 0.5) !important;
     }
     
     .Sale {
-        border-left: 7px solid green !important;
+        border-left: 7px solid rgba(49, 0, 128, 0.5) !important;
     }
     
     .Management {
@@ -114,6 +114,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+    }
+    
+    .gap div {
+        padding: 5px;
     }
     
     .point {
