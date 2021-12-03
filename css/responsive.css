@@ -73,6 +73,16 @@
             justify-content: center;
             width: 100%;
         }
+        .backlogs {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        #log_table {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
         table tr {
             display: flex;
             flex-direction: column;
@@ -145,9 +155,21 @@
             border-top: 7px solid violet !important;
             border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
         }
-        #fourth-field {
+        .center {
             display: flex;
+            justify-content: center;
+            align-items: center;
             flex-direction: row;
+        }
+        #cat-date-urg {
+            width: 100%;
+        }
+        .row700 {
+            width: 100%;
+        }
+        .pd700 {
+            margin-left: 30px;
+            margin-right: 30px;
         }
     }
     /*---------Backlog end-------------*/

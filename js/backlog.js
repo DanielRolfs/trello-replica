@@ -14,10 +14,10 @@ async function loadBacklogs() {
 function generateLogs(log) {
     return `
     <tr  class="log" id="log" >
-        <td id="first-field" class="${log.category}" ><div class=" bl-board bounce next" ><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id}) " </div></td>
+        <td id="first-field" class="${log.category}" id="cat-date-urg"><div class=" bl-board bounce next" ><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id}) " </div></td>
         <td id="bl-users${log.id}" class="users td-width"></td>
-        <td id="third-field"><div class="mrl-15 point center" onclick="editTask(${log.id})">${log.title}</div></td>
-        <td id="fourth-field" class="td-width"><div class="mrl-15 fw-italic point gap  " onclick="editTask(${log.id})"><div class="center"><div>${log.category}</div><div class="fw-normal bl-date">${log.dueDate}</div><div class="prio ${log.urgency}">${log.urgency}</div></div></td>
+        <td id="third-field"><div class="mrl-15 point center row700" onclick="editTask(${log.id})">${log.title}</div></td>
+        <td id="fourth-field" class="td-width row700"><div class="mrl-15 fw-italic point gap row700" onclick="editTask(${log.id})"><div class="center" ><div>${log.category}</div><div class="fw-normal bl-date pd700">${log.dueDate}</div><div class="prio ${log.urgency}">${log.urgency}</div></div></td>
         <td><div class="mrl-15 fw-normal point center" onclick="editTask(${log.id})">${log.description}</div></td>
         <td id="last-field"><div class="del"><img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})"> </div></td>
     </tr>
