@@ -121,9 +121,6 @@
             border-left: 2px rgb(31, 50, 144, 0.2) solid;
             border-right: 2px rgb(31, 50, 144, 0.2) solid;
         }
-        .prio {
-            margin-bottom: 15px;
-        }
         .log_table__head {
             display: none;
         }
