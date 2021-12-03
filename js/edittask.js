@@ -42,21 +42,33 @@ function getResponsibles(task) {
 }
 
 function saveChanges(task) {
-  console.log(task);
-
   task.title = getInputField('title').value;
   task.category = getInputField('category').value;
   task.description = getInputField('description').value;
   task.dueDate = getInputField('date').value;
   task.urgency = getInputField('urgency').value;
   task.responsible = getResponsibleId();
-
+  
   saveTask();
+  closeEditTask();
 }
 
 function cancelEditTask() {
-  document.querySelector('.edit-task__container').classList.add('d-none');
-  document.querySelector('.section').style.overflowY = 'auto';
+  closeEditTask();
   resetForm();
   resetVariables();
+}
+
+function closeEditTask(){
+  document.querySelector('.edit-task__container').classList.add('d-none');
+  document.querySelector('.section').style.overflowY = 'auto';
+  removeSaveOnSubmit();
+}
+
+function removeSaveOnSubmit(){
+  let form = document.querySelector('.task-form');
+  form.removeEventListener('submit', (e) => {
+    e.preventDefault();
+    saveChanges(task);
+  });
 }
