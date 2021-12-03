@@ -162,7 +162,7 @@
         #add-task__heading {
             padding: 0 20px;
         }
-        .edit-task__form-container {
+        .edit-task__container {
             height: 100vh;
             overflow-y: auto;
         }
@@ -201,6 +201,7 @@
     
     @media (min-width: 1000px) {
         .edit-task__container {
+            width: calc(100% - 180px);
             padding-left: 20px;
         }
     }
