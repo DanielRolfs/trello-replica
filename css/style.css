@@ -56,6 +56,14 @@ a {
     display: none !important;
 }
 
+.v-hidden{
+    visibility: hidden;
+}
+
+.v-visible{
+    visibility: visible !important;
+}
+
 .pd-15 {
     padding: 15px;
 }

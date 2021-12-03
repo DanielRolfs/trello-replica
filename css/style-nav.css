@@ -7,6 +7,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 225ms ease-in-out;
 }
 
 a {
@@ -16,7 +17,7 @@ a {
     width: 65px;
 }
 
-.nav__links {
+#sidebar__top {
     margin-top: 80px;
 }
 
@@ -31,7 +32,7 @@ a {
     border-left: 4px transparent solid;
 }
 
-.nav__links div:first-child {
+#sidebar__top div:first-child {
     margin-top: 0;
 }
 
@@ -43,18 +44,13 @@ a {
     border-left: 4px white solid;
 }
 
-.sidebar__bottom {
+#sidebar__bottom {
     width: 100%;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    visibility: visible;
-}
-
-.sidebar__links {
-    visibility: visible;
 }
 
 .logout_btn {
@@ -69,19 +65,19 @@ a {
     background-color: rgb(99, 102, 128) !important;
 }
 
-.navipic {
+.nav__pic {
     width: 80px;
     height: 80px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.sidebar__bottom a {
+#sidebar__bottom a {
     margin-left: 10px;
     margin-right: 10px;
 }
 
-.sidebar__bottom a:hover {
+#sidebar__bottom a:hover {
     color: lightgray;
 }
 
@@ -90,52 +86,25 @@ a {
     cursor: copy;
 }
 
-.navi-resp {
-    width: 30px;
-}
+/* responsive navbar - elements */
 
-#xmenu700 {
-    position: absolute;
-    top: 10px;
-    left: 160px;
-    visibility: hidden;
-}
-
-#x700 {
-    position: absolute;
-    left: 0px;
-    visibility: hidden;
-}
-
-#menu700 {
-    position: absolute;
-    left: 0px;
-    visibility: hidden;
-}
-
-#resp-btn {
+#nav-btn__container {
     position: absolute;
     top: 10px;
     left: 110px;
-    visibility: hidden;
+    width: 30px;
+    height: 30px;
+    display: none;
 }
 
-#menu-logo {
+.nav-btn {
     position: absolute;
-    left: 0px;
-    visibility: hidden;
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
 }
 
-#navi-close {
-    position: absolute;
-    left: 0px;
-    visibility: hidden;
-}
-
-.sidebar-open {
-    position: absolute;
-    left: 0px !important;
-    z-index: 100;
-    width: 150px;
-    font-size: 16px;
+.nav-btn--blue{
+    left: 50px;
+    width: 1.5rem;
 }
