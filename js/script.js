@@ -8,6 +8,7 @@ let users = [{
         password: 'anna12345',
         image: './img/profil1.png',
         mail: 'anna@da.de',
+        tel: '001200321321',
         id: 1,
     },
     {
@@ -15,6 +16,7 @@ let users = [{
         password: 'marcus12345',
         image: './img/marcus.jpg',
         mail: 'marcus@da.de',
+        tel: '001200321321',
         id: 2,
     },
     {
@@ -22,6 +24,7 @@ let users = [{
         password: 'daniel12345',
         image: './img/profil2.png',
         mail: 'daniel@da.de',
+        tel: '001200321321',
         id: 3,
     },
     {
@@ -29,6 +32,7 @@ let users = [{
         password: 'daniel12345',
         image: './img/profil2.png',
         mail: 'thisisalongusermailaddress@da.de',
+        tel: '001200321321',
         id: 4,
     },
 ];

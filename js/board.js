@@ -2,30 +2,26 @@ let currentDraggedElement;
 
 async function loadTaskstoTODO() {
     await loadTasks();
-    listTaskByStatus ( 'taskTodo', 'b1');
-    listTaskByStatus ( 'taskInprogress', 'b2');
-    listTaskByStatus ( 'taskTesting', 'b3');
-    listTaskByStatus ( 'taskdone', 'b4');
+    listTaskByStatus('taskTodo', 'b1');
+    listTaskByStatus('taskInprogress', 'b2');
+    listTaskByStatus('taskTesting', 'b3');
+    listTaskByStatus('taskdone', 'b4');
 }
 
-function listTaskByStatus( containerId, status) {
+function listTaskByStatus(containerId, status) {
     let logs = tasks.filter(t => t['status'] == status);
     document.getElementById(containerId).innerHTML = '';
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
 
         document.getElementById(containerId).innerHTML += `
-        <div onclick="editTask(${log.id})" draggable="true" ondragstart="startDragging(${log.id})" class="task">
-            <div class="flex between">
-            <div class="grey-text ${log.category}">${log.category}</div> <div onclick="deleteTask(${log.id})">X</div>
-            </div>
-            <div class="task-title">${log.title}</div>
-            <div class="grey-text task-description">${log.description}</div>
+        <div onclick="editTask(${log.id})" draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.category}  ">
             <div class="responsible-user" id="bl-users${log.id}" ></div>
-            <div class="flex between margin-top">
-            
-            <div class="prio ${log.urgency}">${log.urgency}</div>
-            <div class="grey-text">${log.dueDate}</div>
+            <div class="task-title ">${log.title}</div>
+            <div class="flex between bottom">    
+                <div class="prio ${log.urgency}">${log.urgency}</div>
+                <div class="grey-text">${log.dueDate}</div>
+                <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})">
             </div>
         </div>
         `;
