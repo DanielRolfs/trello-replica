@@ -10,31 +10,24 @@
         .section {
             padding-left: 70px;
         }
-
         #nav-btn__container {
             display: unset;
         }
-
-        .sidebar__content{
+        .sidebar__content {
             visibility: hidden;
         }
-
         #sidebar__top {
             margin-top: 20px;
         }
-
         .logo img {
             width: 30px;
         }
-
-        .nav-btn--blue{
+        .nav-btn--blue {
             display: none;
         }
-
         .sidebar-open {
             left: 0 !important;
         }
-
         /*---------navbar end-------------*/
     }
     
@@ -50,14 +43,12 @@
         .section {
             padding-left: 20px;
         }
-
-        .nav-btn--blue{
+        .nav-btn--blue {
             display: unset;
         }
-        .nav-btn--white{
+        .nav-btn--white {
             display: none;
         }
-
         /*---------navbar end-------------*/
     }
     
@@ -66,17 +57,22 @@
             gap: 10px;
         }
     }
-
+    
     @media (min-width: 1025px) {
         /*---------Board-------------*/
         /* Size chosen becaus Ipad does not support drag and drop in browser */
-        .move-task{
+        .move-task {
             display: none;
         }
     }
     
     @media (max-width: 700px) {
         /*---------Backlog-------------*/
+        .backlog-content {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
         table tr {
             display: flex;
             flex-direction: column;
@@ -146,8 +142,12 @@
             border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
         }
         .Management {
-            border-left: 7px solid violet !important;
+            border-top: 7px solid violet !important;
             border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
+        }
+        #fourth-field {
+            display: flex;
+            flex-direction: row;
         }
     }
     /*---------Backlog end-------------*/
