@@ -36,6 +36,7 @@
 }
 
 .task {
+    cursor: pointer;
     margin-top: 10px;
     margin-right: 10px;
     margin-left: 10px;
@@ -140,6 +141,7 @@
 .task-title {
     width: 100%;
     margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
     font-size: 16px;
     font-weight: 700;
@@ -167,4 +169,13 @@
 
 .z-index-0{
     z-index: 0;
+}
+
+.move-task{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pointer{
+    cursor: pointer;
 }
