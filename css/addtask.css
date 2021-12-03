@@ -3,17 +3,11 @@
 }
 
 .task-form__container {
-    padding: clamp(25px, 10%, 100px) 30px;
     padding: 25px 30px;
-    border-radius: 10px;
 }
 
 .task-form {
     gap: 40px;
-}
-
-.form__column {
-    justify-content: flex-start !important;
 }
 
 .input-container {
@@ -22,19 +16,14 @@
     margin-bottom: 17px;
 }
 
-.form__column>div:last-child {
-    flex-grow: 1;
-    margin-bottom: 0;
-}
-
 label {
     font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
     color: var(--bg-blue);
 }
 
 .form-field {
+    margin-top: .5rem;
     padding: 0.9rem 0.5rem;
     border: 1px solid #dedee2;
     border-radius: 5px;
@@ -49,6 +38,14 @@ label {
 
 select {
     background-color: #fff;
+}
+
+.task-form textarea{
+    min-height: 8rem;
+}
+
+.assign-to{
+    margin: 30px 0;
 }
 
 .assign__icon {
@@ -77,25 +74,6 @@ select {
 .btn--cancel:hover {
     background-color: #dbd9d9;
 }
-
-
-/* button {
-  padding: 15px;
-  border-radius: 10px;
-  display: inline-block;
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
-} 
-
-  .btn--highlighted {
-    background-color: var(--bg-blue);
-    color: var(--bg-grey);
-  }
-
-  .btn--highlighted:hover {
-    background-color: #495cbe;
-  }*/
 
 
 /* -------------- PSEUDE SELECT  --------------- */
@@ -253,3 +231,8 @@ select {
 
 
 /* ---------------  EDIT TASK  ------------------ */
+
+.edit-task__container{
+    z-index: 2;
+    overflow-y: auto;
+}

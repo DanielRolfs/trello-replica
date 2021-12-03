@@ -1,13 +1,13 @@
-<div class="task-form__container bg-grey w-100 pd-2">
+<div id="edit-task__form-container" class="task-form__container bg-grey w-100">
  <!-- form start -->
- <form id="edit-task__form" class="task-form flex-center col">
+ <form id="edit-task__form" class="task-form">
    <!-- left side -->
-   <div class="form__column flex-center col w-100">
-     <div class="input-container flex-center col w-100">
+   <div class="form__column w-100">
+     <div class="input-container w-100">
        <label for="task__title">TITLE</label>
        <input required type="text" name="task__title" id="edit-task__title" class="form-field w-100" />
      </div>
-     <div class="input-container flex-center col w-100">
+     <div class="input-container w-100">
        <label for="task__category">CATEGORY</label>
        <select required name="task__category" id="edit-task__category" class="select__category form-field w-100">
          <option value=""></option>
@@ -17,7 +17,7 @@
          <option value="Sale">Sale</option>
        </select>
      </div>
-     <div class="input-container flex-center col w-100">
+     <div class="input-container w-100">
        <label for="task__description">DESCRIPTION</label>
        <textarea
          required
@@ -29,12 +29,12 @@
      </div>
    </div>
    <!-- right side -->
-   <div class="form__column flex-center col w-100">
-     <div class="input-container flex-center col w-100">
+   <div class="form__column w-100">
+     <div class="input-container w-100">
        <label for="task__date">DUE DATE</label>
        <input required type="date" name="task__date" id="edit-task__date" class="form-field w-100" />
      </div>
-     <div class="input-container flex-center col w-100">
+     <div class="input-container w-100">
        <label for="task__urgency">URGENCY</label>
        <select required name="task__urgency" id="edit-task__urgency" class="select__urgency form-field w-100">
          <option value=""></option>
@@ -43,7 +43,7 @@
          <option value="low">Low</option>
        </select>
      </div>
-     <div class="input-container flex-center col w-100">
+     <div class="input-container w-100">
        <label>ASSIGNED TO</label>
        <div
          id="edit-task__assign-container"
@@ -59,7 +59,6 @@
      </div>
    </div>
  </form>
- <!-- </div> -->
 </div>
 
 <!-- --------------ASSIGN TASK MODAL -------------- -->

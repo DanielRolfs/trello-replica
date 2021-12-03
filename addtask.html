@@ -38,21 +38,21 @@
       <!-- content -->
 
       <div id="add-task-container" class="section w-100">
-        <div class="section-header">
-          <h1 id="add-task__heading">Add Task</h1>
+        <div id="add-task__heading" class="section-header">
+          <h1 >Add Task</h1>
           <p class="subheading">Learning Management System Project</p>
         </div>
 
-        <div class="task-form__container bg-grey w-100 pd-2">
+        <div class="task-form__container bg-grey w-100">
           <!-- form start -->
-          <form id="add-task__form" onsubmit="addTask(); return false" class="task-form flex-center col">
+          <form id="add-task__form" onsubmit="addTask(); return false" class="task-form">
             <!-- left side -->
-            <div class="form__column flex-center col w-100">
-              <div class="input-container flex-center col w-100">
+            <div class="form__column w-100">
+              <div class="input-container w-100">
                 <label for="task__title">TITLE</label>
                 <input required type="text" name="task__title" id="add-task__title" class="form-field w-100" />
               </div>
-              <div class="input-container flex-center col w-100">
+              <div class="input-container w-100">
                 <label for="task__category">CATEGORY</label>
                 <select required name="task__category" id="add-task__category" class="select__category form-field w-100">
                   <option value=""></option>
@@ -69,7 +69,7 @@
                 <div class="pseudo-select__option form-field" onclick="select('Sale')">Sale</div>
               </div> -->
               </div>
-              <div class="input-container flex-center col w-100">
+              <div class="input-container w-100">
                 <label for="task__description">DESCRIPTION</label>
                 <textarea
                   required
@@ -81,12 +81,12 @@
               </div>
             </div>
             <!-- right side -->
-            <div class="form__column flex-center col w-100">
-              <div class="input-container flex-center col w-100">
+            <div class="form__column w-100">
+              <div class="input-container w-100">
                 <label for="task__date">DUE DATE</label>
                 <input required type="date" name="task__date" id="add-task__date" class="form-field w-100" />
               </div>
-              <div class="input-container flex-center col w-100">
+              <div class="input-container w-100">
                 <label for="task__urgency">URGENCY</label>
                 <select required name="task__urgency" id="add-task__urgency" class="select__urgency form-field w-100">
                   <option value=""></option>
@@ -95,7 +95,7 @@
                   <option value="low">Low</option>
                 </select>
               </div>
-              <div class="input-container flex-center col w-100">
+              <div class="input-container w-100">
                 <label>ASSIGNED TO</label>
                 <div
                   id="add-task__assign-container"
@@ -111,7 +111,6 @@
               </div>
             </div>
           </form>
-          <!-- </div> -->
         </div>
 
         <!-- --------------ASSIGN TASK MODAL -------------- -->
