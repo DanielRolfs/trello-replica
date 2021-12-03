@@ -58,9 +58,8 @@
         }
     }
     
-    @media (min-width: 1025px) {
+    @media (min-width: 1000px) {
         /*---------Board-------------*/
-        /* Size chosen becaus Ipad does not support drag and drop in browser */
         .move-task {
             display: none;
         }

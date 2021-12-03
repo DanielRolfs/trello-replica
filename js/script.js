@@ -72,7 +72,7 @@ function dropin() {
   toggleBtnVisibility();
   setTimeout(() => {
     toggleNavContentVisibility();
-  }, 220);
+  }, 150);
 }
 
 function toggleBtnVisibility() {

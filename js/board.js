@@ -11,7 +11,7 @@ async function loadTaskstoTODO() {
 
 function listTaskByStatus(containerId, status) {
     let logs = tasks.filter(t => t['status'] == status);
-    document.getElementById(containerId).innerHTML = '';
+    document.getElementById(containerId).innerHTML = ``;
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
 
@@ -29,6 +29,8 @@ function listTaskByStatus(containerId, status) {
         `;
         setUsersDetails(log.id);
     };
+
+    
 }
 
 function allowDrop(ev) {
