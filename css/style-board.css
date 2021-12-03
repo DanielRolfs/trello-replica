@@ -141,6 +141,7 @@
 .task-title {
     width: 100%;
     margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
     font-size: 16px;
     font-weight: 700;
@@ -173,4 +174,8 @@
 .move-task{
     display: flex;
     justify-content: space-between;
+}
+
+.pointer{
+    cursor: pointer;
 }

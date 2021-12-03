@@ -17,14 +17,14 @@ function listTaskByStatus(containerId, status) {
 
         document.getElementById(containerId).innerHTML += `
         <div  draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.category}  ">
-        <div class="move-task"><img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})"><img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" ></div>    
-        <div class="responsible-user" id="bl-users${log.id}" ></div>
-            <div onclick="editTask(${log.id})" class="task-title">${log.title}</div>
-            <div class="flex between bottom">    
-                <div class="prio ${log.urgency}">${log.urgency}</div>
-                <div class="grey-text">${log.dueDate}</div>
-                <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})">
-            </div>
+        <div class="move-task"><img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})" class="pointer"><img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" class="pointer"></div>    
+        <div onclick="editTask(${log.id})" class="responsible-user" id="bl-users${log.id}" ></div>
+        <div onclick="editTask(${log.id})" class="task-title pointer">${log.title}</div>
+        <div class="flex between bottom">    
+            <div onclick="editTask(${log.id})" class="pointer prio ${log.urgency}">${log.urgency}</div>
+            <div onclick="editTask(${log.id})" class="pointer grey-text">${log.dueDate}</div>
+            <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})">
+        </div>
         </div>
         `;
         setUsersDetails(log.id);
