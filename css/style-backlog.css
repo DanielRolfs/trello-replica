@@ -1,5 +1,5 @@
     .backlog__table-headline {
-        margin-right: 20px;
+        margin-right: 5px;
         margin-bottom: 15px;
         font-size: 16px;
         color: rgb(31, 50, 144);
@@ -7,7 +7,7 @@
     }
     
     .backlogs {
-        margin-right: 20px;
+        margin-right: 5px;
     }
     
     .log {
