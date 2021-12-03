@@ -1,4 +1,5 @@
 let currentDraggedElement;
+let currentBoard;
 
 async function loadTaskstoTODO() {
     await loadTasks();
@@ -15,9 +16,10 @@ function listTaskByStatus(containerId, status) {
         const log = logs[i];
 
         document.getElementById(containerId).innerHTML += `
-        <div onclick="editTask(${log.id})" draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.category}  ">
-            <div class="responsible-user" id="bl-users${log.id}" ></div>
-            <div class="task-title">${log.title}</div>
+        <div  draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.category}  ">
+        <div class="move-task"><img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})"><img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" ></div>    
+        <div class="responsible-user" id="bl-users${log.id}" ></div>
+            <div onclick="editTask(${log.id})" class="task-title">${log.title}</div>
             <div class="flex between bottom">    
                 <div class="prio ${log.urgency}">${log.urgency}</div>
                 <div class="grey-text">${log.dueDate}</div>
@@ -61,4 +63,30 @@ async function saveBoardStatus() {
     await backend.setItem('tasks', JSON.stringify(tasks));
     loadBacklogs();
     loadTaskstoTODO();
+}
+
+function moveToPreviousBoard(id, status){
+    currentDraggedElement = tasks.find(t => t.id === id);
+/*     console.log('currentDraggedElementii', currentDraggedElement);
+    console.log('currendboard', status == b1); */
+    if (status == b4) {
+        status = 'b3';
+    } else if (status == b3) {
+        status = 'b2';
+    } else if (status == b2) {
+        status = 'b1';
+    };
+    drop(status);
+}
+
+function moveToNextBoard(id, status){
+    currentDraggedElement = tasks.find(t => t.id === id);
+    if (status == b1) {
+        status = 'b2';
+    } else if (status == b2) {
+        status = 'b3';
+    } else if (status == b3) {
+        status = 'b4';
+    };
+    drop(status);
 }
