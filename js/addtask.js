@@ -145,7 +145,7 @@ function hideAddTaskModal() {
 }
 
 function showResponsibles() {
-  setResponsiblesHeight();
+  /* setResponsiblesHeight(); */
   document.querySelector('.task-responsibles').innerHTML = '';
   responsibles.forEach((user, index) => {
     document.querySelector('.task-responsibles').insertAdjacentHTML('beforeend', createResponsibleHTML(user, index));

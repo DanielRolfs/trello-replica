@@ -38,27 +38,6 @@
         }
         /*---------navbar end-------------*/
     }
-    /* --------------  ADD TASK FORM  -------------- */
-    
-    @media (min-width: 700px) {
-        .task-form {
-            height: 100%;
-            flex-direction: row !important;
-            align-items: flex-start;
-        }
-        .task-form__container {
-            height: 70%;
-            max-height: 600px;
-            max-width: 1100px;
-        }
-        .form__column {
-            height: 100%;
-        }
-        .task-responsibles {
-            overflow-y: auto;
-        }
-        /*---------navbar end-------------*/
-    }
     
     @media (max-width: 700px) {
         /*---------navbar-------------*/
@@ -77,7 +56,7 @@
             cursor: pointer;
         }
         .section {
-            padding-left: 10px;
+            padding-left: 20px;
         }
         #xmenu700 {
             visibility: visible;
@@ -171,5 +150,57 @@
             border-left: 7px solid violet !important;
             border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
         }
-        /*---------Backlog end-------------*/
+    }
+    /*---------Backlog end-------------*/
+    /* --------------  ADD / EDIT TASK FORM  -------------- */
+    
+    @media (max-width: 400px) {
+        #add-task-container {
+            padding: 0;
+            padding-top: 20px;
+        }
+        #add-task__heading {
+            padding: 0 20px;
+        }
+        .edit-task__form-container {
+            height: 100vh;
+            overflow-y: auto;
+        }
+    }
+    
+    @media (min-width: 400px) {
+        .edit-task__container {
+            padding: 30px;
+        }
+        .task-form__container {
+            border-radius: 10px;
+        }
+    }
+    
+    @media (min-width: 700px) {
+        .task-form__container {
+            max-width: 1100px;
+        }
+        .task-form {
+            height: 100%;
+            display: flex;
+        }
+        .form__column>div:last-child {
+            margin-bottom: 0;
+        }
+        .task-responsibles {
+            overflow-y: auto;
+        }
+        .edit-task__container {
+            padding-left: 70px;
+            display: flex;
+            align-items: center;
+            z-index: 0 !important;
+        }
+    }
+    
+    @media (min-width: 1000px) {
+        .edit-task__container {
+            padding-left: 20px;
+        }
     }
