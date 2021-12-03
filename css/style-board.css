@@ -163,3 +163,7 @@
 .grey-text {
     color: var(--bg-textgrey);
 }
+
+.z-index-0{
+    z-index: 0;
+}
