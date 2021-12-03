@@ -14,12 +14,12 @@ async function loadBacklogs() {
 function generateLogs(log) {
     return `
     <tr  class="log" id="log" >
-        <td  class="${log.category}" ><div class=" bl-board center bounce next" ><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id}) " </div></td>
-        <td id="bl-users${log.id}" class="users"></td>
-        <td><div class="mrl-15 point" onclick="editTask(${log.id})">${log.title}</div></td>
-        <td><div class="mrl-15 fw-italic point gap " onclick="editTask(${log.id})"><div class="center"><div>${log.category}</div><div class="fw-normal bl-date">${log.dueDate}</div><div class="prio ${log.urgency}">${log.urgency}</div></div></td>
+        <td id="first-field" class="${log.category}" ><div class=" bl-board bounce next" ><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id}) " </div></td>
+        <td id="bl-users${log.id}" class="users td-width"></td>
+        <td id="third-field"><div class="mrl-15 point center" onclick="editTask(${log.id})">${log.title}</div></td>
+        <td id="fourth-field" class="td-width"><div class="mrl-15 fw-italic point gap  " onclick="editTask(${log.id})"><div class="center"><div>${log.category}</div><div class="fw-normal bl-date">${log.dueDate}</div><div class="prio ${log.urgency}">${log.urgency}</div></div></td>
         <td><div class="mrl-15 fw-normal point center" onclick="editTask(${log.id})">${log.description}</div></td>
-        <td><div class="del"><img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})"> </div></td>
+        <td id="last-field"><div class="del"><img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})"> </div></td>
     </tr>
   `
 }
@@ -64,7 +64,21 @@ function generateUserDetails(user) {
     return `
     <div class="user">
         <div>    
+        <a class="hideDisplay">
          <img src="${user.image}" alt="" class="userpic">
+         <span class="showDisplayOnHover">
+            <h4>User Details</h4>
+            <span class="showBodyOfDisplayOnHover">
+                <img src="${user.image}" alt="" class="detail-pic">
+                <br>
+                <b>Name:</b>&nbsp<i>${user.username}</i>
+                <br>
+                <b>Mail:</b>&nbsp<i>${user.mail}</i>
+                <br>
+                <b>Tel:</b>&nbsp${user.tel}
+            </span>
+         </span>
+        </a>
         </div>
 `
 };

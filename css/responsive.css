@@ -7,12 +7,15 @@
             width: 150px;
             font-size: 16px;
         }
-        .menu-logo {
-            display: initial;
-            cursor: pointer;
+        #navi-menu {
+            position: absolute;
+            left: 0px;
+            visibility: visible;
         }
         #navi-close {
-            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            visibility: hidden;
         }
         .section {
             padding-left: 70px;
@@ -35,7 +38,6 @@
         }
         /*---------navbar end-------------*/
     }
-
     
     @media (max-width: 700px) {
         /*---------navbar-------------*/
@@ -66,6 +68,15 @@
             visibility: hidden;
         }
         /*---------navbar end-------------*/
+    }
+    
+    @media (max-width: 400px) {
+        .task-form-btns {
+            gap: 10px;
+        }
+    }
+    
+    @media (max-width: 500px) {
         /*---------Backlog-------------*/
         table tr {
             display: flex;
@@ -86,6 +97,7 @@
             border-top-right-radius: 10px;
             border-bottom-left-radius: 0px;
             border-left: 2px rgb(31, 50, 144, 0.2) solid;
+            width: 100%;
         }
         #logs-table td:last-child {
             border-right: 0;
@@ -139,34 +151,32 @@
             border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
         }
     }
-        /*---------Backlog end-------------*/
-    
+    /*---------Backlog end-------------*/
     /* --------------  ADD / EDIT TASK FORM  -------------- */
     
-    @media (max-width: 400px){
-        #add-task-container{
+    @media (max-width: 400px) {
+        #add-task-container {
             padding: 0;
             padding-top: 20px;
         }
-
-        #add-task__heading{
+        #add-task__heading {
             padding: 0 20px;
         }
         .edit-task__form-container {
             height: 100vh;
             overflow-y: auto;
         }
-
     }
-    @media (min-width: 400px){
-        .edit-task__container{
+    
+    @media (min-width: 400px) {
+        .edit-task__container {
             padding: 30px;
         }
         .task-form__container {
             border-radius: 10px;
         }
     }
-
+    
     @media (min-width: 700px) {
         .task-form__container {
             max-width: 1100px;
@@ -175,24 +185,22 @@
             height: 100%;
             display: flex;
         }
-
         .form__column>div:last-child {
             margin-bottom: 0;
         }
         .task-responsibles {
             overflow-y: auto;
         }
-
-        .edit-task__container{
+        .edit-task__container {
             padding-left: 70px;
             display: flex;
             align-items: center;
             z-index: 0 !important;
         }
     }
-
-    @media (min-width: 1000px){
-        .edit-task__container{
+    
+    @media (min-width: 1000px) {
+        .edit-task__container {
             padding-left: 20px;
         }
     }

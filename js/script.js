@@ -8,6 +8,7 @@ let users = [{
         password: 'anna12345',
         image: './img/profil1.png',
         mail: 'anna@da.de',
+        tel: '001200321321',
         id: 1,
     },
     {
@@ -15,6 +16,7 @@ let users = [{
         password: 'marcus12345',
         image: './img/marcus.jpg',
         mail: 'marcus@da.de',
+        tel: '001200321321',
         id: 2,
     },
     {
@@ -22,6 +24,7 @@ let users = [{
         password: 'daniel12345',
         image: './img/profil2.png',
         mail: 'daniel@da.de',
+        tel: '001200321321',
         id: 3,
     },
     {
@@ -29,6 +32,7 @@ let users = [{
         password: 'daniel12345',
         image: './img/profil2.png',
         mail: 'thisisalongusermailaddress@da.de',
+        tel: '001200321321',
         id: 4,
     },
 ];
@@ -56,41 +60,51 @@ function removeLinkMarker(links) {
     links.forEach((link) => link.parentElement.classList.remove('sidebarlink--active'));
 }
 
+
+
 function dropout() {
     document.getElementById('sidebar__links').style.visibility = 'visible';
     document.getElementById('sidebar__bottom').style.visibility = 'visible';
-    document.getElementById('sidebar').style.left = '0px';
-    document.getElementById('navi-menu').classList.add('d-none');
-    document.getElementById('navi-close').classList.remove('d-none');
+    document.getElementById('sidebar').classList.add('sidebar-open');
+    document.getElementById('navi-menu').style.visibility = 'hidden';
+    document.getElementById('navi-close').style.visibility = 'visible';
+    document.getElementById('x700').style.visibility = 'hidden';
+    document.getElementById('menu700').style.visibility = 'hidden';
 
 }
 
 function dropin() {
     document.getElementById('sidebar__links').style.visibility = 'hidden';
     document.getElementById('sidebar__bottom').style.visibility = 'hidden';
-    document.getElementById('sidebar').style.left = '-100px';
-    document.getElementById('navi-menu').classList.remove('d-none');
-    document.getElementById('navi-close').classList.add('d-none');
+    document.getElementById('sidebar').classList.remove('sidebar-open');
+
+    // document.getElementById('sidebar__links').style.visibility = 'hidden';
+    // document.getElementById('sidebar__bottom').style.visibility = 'hidden';
+    // document.getElementById('sidebar').style.left = '-100px';
+    document.getElementById('navi-menu').style.visibility = 'visible';
+    document.getElementById('navi-close').style.visibility = 'hidden';
+    // document.getElementById('x700').style.visibility = 'hidden';
+    // document.getElementById('menu700').style.visibility = 'hidden';
 }
 
-function dropout700() {
-    document.getElementById('sidebar__links').style.visibility = 'visible';
-    document.getElementById('sidebar__bottom').style.visibility = 'visible';
-    document.getElementById('sidebar').style.left = '0px';
-    document.getElementById('navi-menu').classList.add('d-none');
-    document.getElementById('navi-close').classList.add('d-none');
-    document.getElementById('x700').style.visibility = 'visible';
-    document.getElementById('menu700').style.visibility = 'hidden';
+// function dropout700() {
+//     document.getElementById('sidebar__links').style.visibility = 'visible';
+//     document.getElementById('sidebar__bottom').style.visibility = 'visible';
+//     document.getElementById('sidebar').style.left = '0px';
+//     document.getElementById('navi-menu').classList.add('d-none');
+//     document.getElementById('navi-close').classList.add('d-none');
+//     document.getElementById('x700').style.visibility = 'visible';
+//     document.getElementById('menu700').style.visibility = 'hidden';
 
-}
+// }
 
-function dropin700() {
-    document.getElementById('sidebar__links').style.visibility = 'hidden';
-    document.getElementById('sidebar__bottom').style.visibility = 'hidden';
-    document.getElementById('sidebar').style.left = '-150px';
-    document.getElementById('navi-menu').classList.add('d-none');
-    document.getElementById('navi-close').classList.add('d-none');
-    document.getElementById('x700').style.visibility = 'hidden';
-    document.getElementById('menu700').style.visibility = 'visible';
+// function dropin700() {
+//     document.getElementById('sidebar__links').style.visibility = 'hidden';
+//     document.getElementById('sidebar__bottom').style.visibility = 'hidden';
+//     document.getElementById('sidebar').style.left = '-150px';
+//     document.getElementById('navi-menu').classList.add('d-none');
+//     document.getElementById('navi-close').classList.add('d-none');
+//     document.getElementById('x700').style.visibility = 'hidden';
+//     document.getElementById('menu700').style.visibility = 'visible';
 
-}
+// }

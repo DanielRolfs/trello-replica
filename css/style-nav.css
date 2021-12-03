@@ -9,12 +9,6 @@
     justify-content: space-between;
 }
 
-#resp-btn {
-    display: flex;
-    justify-content: end;
-    padding: 10px;
-}
-
 a {
     color: white;
     text-decoration: none;
@@ -56,6 +50,11 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    visibility: visible;
+}
+
+.sidebar__links {
+    visibility: visible;
 }
 
 .logout_btn {
@@ -95,10 +94,6 @@ a {
     width: 30px;
 }
 
-.menu-logo {
-    display: none;
-}
-
 #xmenu700 {
     position: absolute;
     top: 10px;
@@ -116,4 +111,31 @@ a {
     position: absolute;
     left: 0px;
     visibility: hidden;
+}
+
+#resp-btn {
+    position: absolute;
+    top: 10px;
+    left: 110px;
+    visibility: hidden;
+}
+
+#menu-logo {
+    position: absolute;
+    left: 0px;
+    visibility: hidden;
+}
+
+#navi-close {
+    position: absolute;
+    left: 0px;
+    visibility: hidden;
+}
+
+.sidebar-open {
+    position: absolute;
+    left: 0px !important;
+    z-index: 100;
+    width: 150px;
+    font-size: 16px;
 }

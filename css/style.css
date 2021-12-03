@@ -102,3 +102,50 @@ h1 {
 .pd-bt {
     padding-bottom: 60px !important;
 }
+
+
+/* POPUP for Userdetails */
+
+a.hideDisplay {
+    position: relative;
+    z-index: 20;
+    color: #000;
+    text-decoration: none
+}
+
+a.hideDisplay:hover {
+    z-index: 30;
+}
+
+a.hideDisplay span.showDisplayOnHover {
+    display: none
+}
+
+a.hideDisplay:hover span.showDisplayOnHover {
+    display: block;
+    position: absolute;
+    font-size: 18px;
+    line-height: 25px;
+    top: 5px;
+    left: 35px;
+    padding: 10px;
+    border: 1px solid rgb(31, 50, 144, 0.2);
+    background-color: var(--bg-grey);
+    color: rgb(31, 50, 144);
+    text-align: left;
+    border-radius: 10px;
+}
+
+span.showBodyOfDisplayOnHover {
+    font-size: 16px;
+    font-weight: normal;
+    color: #444;
+    line-height: 18px;
+}
+
+.detail-pic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
