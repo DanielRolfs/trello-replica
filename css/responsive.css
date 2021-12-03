@@ -7,12 +7,15 @@
             width: 150px;
             font-size: 16px;
         }
-        .menu-logo {
-            display: initial;
-            cursor: pointer;
+        #navi-menu {
+            position: absolute;
+            left: 0px;
+            visibility: visible;
         }
         #navi-close {
-            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            visibility: hidden;
         }
         .section {
             padding-left: 70px;
@@ -86,6 +89,15 @@
             visibility: hidden;
         }
         /*---------navbar end-------------*/
+    }
+    
+    @media (max-width: 400px) {
+        .task-form-btns {
+            gap: 10px;
+        }
+    }
+    
+    @media (max-width: 500px) {
         /*---------Backlog-------------*/
         table tr {
             display: flex;
@@ -160,10 +172,4 @@
             border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
         }
         /*---------Backlog end-------------*/
-    }
-    
-    @media (max-width: 400px) {
-        .task-form-btns {
-            gap: 10px;
-        }
     }
