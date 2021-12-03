@@ -1,4 +1,11 @@
+.section-header-board{
+    margin-bottom: 30px;
+    margin-top: 20px;
+    position: fixed;
+}
+
 .progress-section {
+    margin-top: 100px;
     margin-right: 25px;
 }
 
