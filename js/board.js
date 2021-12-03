@@ -29,6 +29,8 @@ function listTaskByStatus(containerId, status) {
         `;
         setUsersDetails(log.id);
     };
+
+    
 }
 
 function allowDrop(ev) {

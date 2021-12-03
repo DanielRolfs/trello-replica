@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 </head>
 
-<body onload="includeHTML(); loadTaskstoTODO()">
+<body onload="includeHTML(); loadTaskstoTODO(); initBoard()">
     <div class="bodycontent flex-center w-100" id="bodycontent">
         <!-- sidebar -->
         <div id="sidebar" class="sidebar" w3-include-html="./templates/sidebar.html"></div>
@@ -41,9 +41,29 @@
 
         <div id="include-board" class="section w-100 z-index-0">
             <div class="section-header-board">
-                <h1>Board</h1>
-                <p class="subheading">Learning Management System Project</p>
+                <div>
+                    <h1>Board</h1>
+                    <p class="subheading">Learning Management System Project</p>
+                </div>
+                <div>
+                    <div class="category-descriptions Sale">
+                        <p>Sale</p>
+                    </div>
+                    <div class="category-descriptions Product">
+                        <p>Product</p>
+                    </div>
+                    <div class="category-descriptions Marketing">
+                        <p>Marketing</p>
+                    </div>
+                    <div class="category-descriptions Management">
+                        <p>Management</p>
+                    </div>
+                    
+                    
+                    
+                </div>
             </div>
+            
 
             <div class="w-100 section-main">
                 <div class="progress-section">
