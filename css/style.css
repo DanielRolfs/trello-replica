@@ -56,11 +56,11 @@ a {
     display: none !important;
 }
 
-.v-hidden{
+.v-hidden {
     visibility: hidden;
 }
 
-.v-visible{
+.v-visible {
     visibility: visible !important;
 }
 
@@ -159,3 +159,9 @@ span.showBodyOfDisplayOnHover {
 
 
 /* POPUP for Userdetails  End*/
+
+
+/* EXTRA BAR */
+
+
+/* EXTRA BAR END */
