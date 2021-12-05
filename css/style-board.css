@@ -21,7 +21,6 @@
     display: flex;
     justify-content: center;
     padding-bottom: 150px;
-    /* min-height: 100%; */
 }
 
 .section-main {
@@ -143,6 +142,11 @@
     justify-content: center;
     padding: 5px;
     border: 1px solid rgb(31, 50, 144, 0.2);
+    margin-top: 7px;
+}
+
+.del-btn-board {
+    padding-top: 5px;
 }
 
 .flex {
@@ -197,6 +201,7 @@
 .move-task {
     display: flex;
     justify-content: space-between;
+    padding-top: 10px;
 }
 
 .pointer {

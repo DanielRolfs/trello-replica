@@ -17,20 +17,20 @@ function listTaskByStatus(containerId, status) {
 
         document.getElementById(containerId).innerHTML += `
         <div  draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.category}  ">
-        <div class="move-task"><img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})" class="pointer"><img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" class="pointer"></div>    
         <div onclick="editTask(${log.id})" class="responsible-user" id="bl-users${log.id}" ></div>
         <div onclick="editTask(${log.id})" class="task-title pointer">${log.title}</div>
         <div class="flex between bottom">    
-            <div onclick="editTask(${log.id})" class="pointer prio ${log.urgency}">${log.urgency}</div>
-            <div onclick="editTask(${log.id})" class="pointer grey-text">${log.dueDate}</div>
-            <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})">
+            <div onclick="editTask(${log.id})" class="pointer prio ${log.urgency} center">${log.urgency}</div>
+            <div onclick="editTask(${log.id})" class="pointer grey-text center">${log.dueDate}</div>
+            <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon center del-btn-board" onclick="deleteTask(${log.id})">
         </div>
+        <div class="move-task"><img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})" class="pointer"><img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" class="pointer"></div>    
         </div>
         `;
         setUsersDetails(log.id);
     };
 
-    
+
 }
 
 function allowDrop(ev) {
@@ -67,10 +67,10 @@ async function saveBoardStatus() {
     loadTaskstoTODO();
 }
 
-function moveToPreviousBoard(id, status){
+function moveToPreviousBoard(id, status) {
     currentDraggedElement = tasks.find(t => t.id === id);
-/*     console.log('currentDraggedElementii', currentDraggedElement);
-    console.log('currendboard', status == b1); */
+    /*     console.log('currentDraggedElementii', currentDraggedElement);
+        console.log('currendboard', status == b1); */
     if (status == b4) {
         status = 'b3';
     } else if (status == b3) {
@@ -81,7 +81,7 @@ function moveToPreviousBoard(id, status){
     drop(status);
 }
 
-function moveToNextBoard(id, status){
+function moveToNextBoard(id, status) {
     currentDraggedElement = tasks.find(t => t.id === id);
     if (status == b1) {
         status = 'b2';
