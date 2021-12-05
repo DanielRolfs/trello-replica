@@ -1,4 +1,4 @@
-.section-header-board{
+.section-header-board {
     margin-bottom: 30px;
     margin-top: 20px;
     display: flex;
@@ -8,12 +8,9 @@
 
 .progress-section {
     margin-right: 15px;
-   
 }
 
-.all-boards{
-
-}
+.all-boards {}
 
 .task-list-area {
     min-width: 220px;
@@ -23,7 +20,7 @@
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 150px;
     /* min-height: 100%; */
 }
 
@@ -93,7 +90,8 @@
     border-radius: 50%;
 }
 
-.category-descriptions{
+
+/* .category-descriptions {
     border-radius: 10px;
     width: fit-content;
     margin-bottom: 5px;
@@ -102,7 +100,7 @@
 .category-descriptions p {
     margin-left: 10px;
     margin-right: 10px;
-}
+} */
 
 .Product {
     border-top: 4px solid rgba(0, 255, 255, 0.5) !important;
@@ -192,15 +190,15 @@
     color: var(--bg-textgrey);
 }
 
-.z-index-0{
+.z-index-0 {
     z-index: 0;
 }
 
-.move-task{
+.move-task {
     display: flex;
     justify-content: space-between;
 }
 
-.pointer{
+.pointer {
     cursor: pointer;
 }

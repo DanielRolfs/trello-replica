@@ -163,5 +163,145 @@ span.showBodyOfDisplayOnHover {
 
 /* EXTRA BAR */
 
+#extrabar {
+    position: absolute;
+    left: 200px;
+    bottom: 15px;
+    background-color: var(--bg-grey);
+    border-radius: 25px;
+    border: 1px solid rgb(31, 50, 144, 0.2);
+    z-index: 20;
+}
+
+.search-legend-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    /* padding-top: 10px; */
+    height: 100%;
+}
+
+.legend-pic {
+    width: 26px;
+}
+
+
+/* POPUP LEGEND */
+
+a.hideDisplayLegend {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.hideDisplayLegend:hover {
+    z-index: 30;
+}
+
+a.hideDisplayLegend span.showDisplayOnHoverLegend {
+    display: none
+}
+
+a.hideDisplayLegend:hover span.showDisplayOnHoverLegend {
+    display: block;
+    position: absolute;
+    font-size: 18px;
+    line-height: 25px;
+    top: -175px;
+    left: 0px;
+    padding: 10px;
+    border: 1px solid rgb(31, 50, 144, 0.2);
+    background-color: var(--bg-grey);
+    color: rgb(31, 50, 144);
+    text-align: left;
+    border-radius: 10px;
+}
+
+span.showBodyOfDisplayOnHoverLegend {
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--bg-blue);
+    line-height: 18px;
+}
+
+.Product-col {
+    background-color: rgba(0, 255, 255, 0.5) !important;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.Marketing-col {
+    background-color: rgba(0, 0, 255, 0.5) !important;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.Sale-col {
+    background-color: rgba(49, 0, 128, 0.5) !important;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.Management-col {
+    background-color: rgba(238, 130, 238, 0.5) !important;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.colors {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.legends {
+    display: flex;
+}
+
+.urgendy-legend {
+    margin-left: 16px;
+}
+
+
+/* pop legend end\ */
+
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+.legend {
+    border-right: 1px solid rgb(31, 50, 144, 0.2);
+}
+
+.search-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search img {
+    width: 23px;
+}
+
+.search-input {
+    border-radius: 15px;
+    width: 0px;
+    visibility: hidden;
+    height: 30px;
+}
+
 
 /* EXTRA BAR END */

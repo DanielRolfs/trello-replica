@@ -1,4 +1,55 @@
-<div class="extrabar">
-    <div class="legend"></div>
-    <div class="search"></div>
+<div class="search-legend-bar">
+
+
+    <!-- LEGEND -->
+    <div class="legend">
+        <a class="hideDisplayLegend">
+            <img src="./img/legend.png" class="legend-pic">
+            <span class="showDisplayOnHoverLegend">
+                   <span class="showBodyOfDisplayOnHoverLegend">
+                    <div class="legends">    
+                            <div>
+                                <h4>Category</h4>
+                                <div class="colors">
+                                <div class="Sale-col"></div>
+                                    <p>Sale</p>
+                                </div>
+                                <div  class="colors">
+                                <div class="Product-col"></div>
+                                    <p>Product</p>
+                                </div>
+                                <div  class="colors">
+                                <div class="Marketing-col"></div>
+                                    <p>Marketing</p>
+                                </div>
+                                <div  class="colors">
+                                <div class="Management-col"></div>
+                                    <p>Management</p>
+                                </div>
+                            </div>
+
+                                <div class="urgendy-legend">
+                                    <h4>Urgency</h4>
+                                    <div class="prio low">low</div>
+                                    <div class="prio middle">Middle</div>
+                                    <div class="prio high">High</div>
+
+                                </div>
+                    </div>
+                            
+               </span>
+            </span>
+        </a>
+    </div>
+
+    <!-- LEGEND END -->
+
+    <!-- SEARCH -->
+
+    <div class="search">
+        <a class="search-btn"><img src="./img/search.png" onclick="showSearch()" id="search-btn"></a>
+        <input type="text" name="" placeholder="search" id="search-input" class="search-input" onkeypress="filterTasks()">
+
+    </div>
+    <!-- SEARCH END -->
 </div>
