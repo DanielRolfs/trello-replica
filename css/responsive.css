@@ -83,6 +83,22 @@
 
 @media (max-width: 700px) {
     .task-list-area {
+        min-width: 220px;
+        max-width: 220px;
+        height: fit-content;
+        background-color: var(--bg-grey);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 200px;
+        overflow-x: auto;
+        height: 100vh;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .task-list-area {
         min-width: 90vw;
         max-width: 220px;
         height: fit-content;
