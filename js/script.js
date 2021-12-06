@@ -29,12 +29,20 @@ let users = [
     id: 3,
   },
   {
-    username: 'This is a long user name',
-    password: 'daniel12345',
+    username: 'John Doe',
+    password: '',
     image: './img/profil2.png',
-    mail: 'thisisalongusermailaddress@da.de',
+    mail: 'johndoe@da.de',
     tel: '001200321321',
     id: 4,
+  },
+  {
+    username: 'Jane Doe',
+    password: '',
+    image: './img/profil1.png',
+    mail: 'janedoe@da.de',
+    tel: '001200321321',
+    id: 5,
   },
 ];
 

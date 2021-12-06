@@ -47,6 +47,7 @@ function executeSaving(newTask){
   if (newTask) {
     tasks.push(newTask);
   }
+  console.log(tasks)
   backend.setItem('tasks', JSON.stringify(tasks));
   showTaskSavedModal();
   closeForm();
