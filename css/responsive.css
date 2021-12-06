@@ -95,6 +95,22 @@
         height: 100vh;
     }
 
+    .progress-headline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--bg-blue);
+        position: sticky;
+        top: 0px;
+        background-color: white;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        z-index: 1;
+    }
+
 }
 
 /* @media (max-width: 400px) {
