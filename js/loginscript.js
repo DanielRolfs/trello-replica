@@ -1,29 +1,22 @@
-let currentUser;
-
-async function validateLoginData() {
+function validateLoginData() {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
-    for (let i = 0; i < users.length; i++) {
-        if (username == users[i].username || username == 'Gast') {
-            currentUser = username;
-
-            for (let i = 0; i < users.length; i++) {
-                if (username == users[i].username && password == users[i].password || username == 'Gast') {
-                    console.log(username + " is logged in!!!")
-                    currentUser = username;
-                    window.location.href = './board.html';
-
-                    renderprofile();
-                    return true;
-                } else {
-                    document.getElementById('incorrect').innerHTML = 'Fehler beim Login';
-                }
-            }
-            console.log("incorrect username or password")
-
+    let matchingUser = getMatchingUser(username, password);
+        if ( matchingUser || username == 'Gast') {
+            console.log(username + " is logged in!!!")
+            window.location.href = './board.html'
+            /* renderprofile(matchingUser); */
+            return true;
+        } else {
+            document.getElementById('incorrect').innerHTML = 'Fehler beim Login';
         }
-    }
+    console.log("incorrect username or password")
 
+
+}
+
+function getMatchingUser(username, password){
+return users.find(u => username == u.username && password == u.password)
 }
 
 function logout() {
@@ -34,16 +27,8 @@ function logout() {
 
 }
 
-function renderprofile() {
-    if (currentUser == 'Marcus') {
-        document.getElementById('userpic').src = "img/marcus.jpg";
-    }
-    if (currentUser == 'Anna') {
-        document.getElementById('userpic').src = "img/profil1.png";
-    }
-    if (currentUser == 'Daniel') {
-        document.getElementById('userpic').src = "img/profil2.png";
-    }
+function renderprofile(matchingUser) {
+    document.getElementById('userpic').src = matchingUser.image;
 }
 
 function loadLoginUsers() {
