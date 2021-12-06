@@ -63,7 +63,6 @@ function removeHighlight(id) {
 //inserted by Marcus (has to be tested)----> getested by Marcus 28.11. 01:20
 async function saveBoardStatus() {
     await backend.setItem('tasks', JSON.stringify(tasks));
-    loadBacklogs();
     loadTaskstoTODO();
 }
 
