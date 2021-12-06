@@ -27,10 +27,6 @@ label {
     padding: 0.9rem 0.5rem;
     border: 1px solid #dedee2;
     border-radius: 5px;
-    font-size: 0.9rem;
-    padding: 0.9rem 0.5rem;
-    border: 1px solid #dedee2;
-    border-radius: 5px;
     font-family: 'PT Sans', sans-serif;
     font-size: 0.9rem;
     resize: none;
@@ -216,6 +212,18 @@ select {
     cursor: pointer;
 }
 
+/* -------------- NO ASSIGNMENT - WARNING  -------------- */
+
+.assign-warning::before{
+    content: "Please assign this task";
+    height: 50px;
+    width: 100%;
+    padding-left: 10px;
+    border: 2px solid #398ee7;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
 
 /* --------------  TASK SAVED CONFIRMATION  ---------------- */
 

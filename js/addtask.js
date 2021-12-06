@@ -35,6 +35,15 @@ function getResponsibleId() {
 }
 
 function saveTask(newTask) {
+  if (selectedUser.length > 0) {
+    executeSaving(newTask);
+  } else{
+    toggleAssignWarning();
+    addWarningRemove();
+  }
+}
+
+function executeSaving(newTask){
   if (newTask) {
     tasks.push(newTask);
   }
@@ -57,7 +66,7 @@ function closeForm() {
     document.querySelector('.task-saved__confirmation').classList.add('d-none');
     if (document.URL.includes('board.html')) {
       window.location.href = './board.html';
-    } else{
+    } else {
       window.location.href = './backlog.html';
     }
   }, 1000);
@@ -76,6 +85,16 @@ function resetForm() {
 function resetVariables() {
   selectedUser = [];
   responsibles = [];
+}
+
+function toggleAssignWarning(){
+document.querySelector('.assign-to').classList.toggle('assign-warning');
+}
+
+function addWarningRemove(){
+  document.body.addEventListener('click', function(){
+    toggleAssignWarning();
+  }, {once: true});
 }
 
 /* --------------- ASSIGN TASK TO USERS ---------------- */
@@ -155,7 +174,7 @@ function showResponsibles() {
 }
 
 function setResponsiblesHeight() {
-  document.querySelector('.task-responsibles').style.height = document.querySelector('.assign-to').clientHeight+'px';
+  document.querySelector('.task-responsibles').style.height = document.querySelector('.assign-to').clientHeight + 'px';
 }
 
 function createResponsibleHTML(user, index) {
