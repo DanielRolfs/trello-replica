@@ -7,7 +7,7 @@
 }
 
 .progress-section {
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 .all-boards {}
@@ -39,7 +39,7 @@
     margin-bottom: 0.5rem;
     color: var(--bg-blue);
     position: sticky;
-    top: -20px;
+    top: 0px;
     background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
