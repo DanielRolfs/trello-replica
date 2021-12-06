@@ -194,10 +194,6 @@
     color: var(--bg-textgrey);
 }
 
-.z-index-0 {
-    z-index: 0;
-}
-
 .move-task {
     display: flex;
     justify-content: space-between;
