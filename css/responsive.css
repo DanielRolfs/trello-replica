@@ -97,20 +97,35 @@
 
 }
 
-@media (max-width: 400px) {
-    .task-list-area {
-        min-width: 90vw;
-        max-width: 220px;
-        height: fit-content;
-        background-color: var(--bg-grey);
-        border-radius: 10px;
+/* @media (max-width: 400px) {
+    .progress-section {
+        min-width: 100vw;
         display: flex;
+        align-items: center;
         justify-content: center;
-        padding-bottom: 200px;
-        overflow-x: auto;
-        height: 100vh;
+        flex-direction: column;
     }
 
+    .task-list-area {
+        min-width: 80vw;
+    }
+
+    .section{
+        padding-left: 0px;
+    }
+
+    .section-header-board{
+        padding-left: 20px;
+    }
+
+    .section-header{
+        padding-left: 20px;
+    }
+
+    .backlog-content{
+        padding-left: 20px;
+    }
+ */
 }
 
 
