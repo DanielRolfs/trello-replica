@@ -63,12 +63,14 @@ function removeLinkMarker(links) {
 
 function dropout() {
     document.getElementById('sidebar').classList.add('sidebar-open');
+    document.getElementById('extrabar').classList.add('extrabar--sidebar-open');
     toggleBtnVisibility();
     toggleNavContentVisibility();
 }
 
 function dropin() {
     document.getElementById('sidebar').classList.remove('sidebar-open');
+    document.getElementById('extrabar').classList.remove('extrabar--sidebar-open');
     toggleBtnVisibility();
     setTimeout(() => {
         toggleNavContentVisibility();
