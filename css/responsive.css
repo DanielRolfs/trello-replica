@@ -260,3 +260,17 @@
         padding-left: 20px;
     }
 }
+
+/* ------------  COLOR LEGEND  -------------- */
+
+@media (min-width: 700px){
+    #extrabar{
+        left: 70px;
+    }
+}
+
+@media (min-width: 1000px){
+    #extrabar{
+        left: 200px;
+    }
+}
