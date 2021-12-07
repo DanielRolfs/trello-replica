@@ -11,22 +11,41 @@ async function loadTaskstoTODO() {
 
 function listTaskByStatus(containerId, status) {
     let logs = tasks.filter(t => t['status'] == status);
+    let nextbuttons = '';
+
+    /* Define mobile view specific arrows. Difficult to put in a seperate function, because falues are needet. */
+    if ('b4' == status) {
+        nextbuttons = '<img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})" class="pointer"></div></div>'
+    } 
+
+    if ('b1' == status) {
+        nextbuttons = '<div></div><img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" class="pointer"></div>'
+   } 
+
+   if (('b2' == status)||('b3' == status)) {
+    nextbuttons = '<img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})" class="pointer"> <img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" class="pointer"></div>'
+     }
+
+
     document.getElementById(containerId).innerHTML = ``;
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
 
         document.getElementById(containerId).innerHTML += `
         <div  draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.category}  ">
-        <div onclick="editTask(${log.id})" class="responsible-user" id="bl-users${log.id}" ></div>
-        <div onclick="editTask(${log.id})" class="task-title pointer">${log.title}</div>
-        <div class="flex between bottom">    
-            <div onclick="editTask(${log.id})" class="pointer prio ${log.urgency} center">${log.urgency}</div>
-            <div onclick="editTask(${log.id})" class="pointer grey-text center">${log.dueDate}</div>
-            <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon center del-btn-board" onclick="deleteTask(${log.id})">
-        </div>
-        <div class="move-task"><img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})" class="pointer"><img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" class="pointer"></div>    
-        </div>
+            <div onclick="editTask(${log.id})" class="responsible-user" id="bl-users${log.id}" ></div>
+            <div onclick="editTask(${log.id})" class="task-title pointer">${log.title}</div>
+            <div class="flex between bottom">    
+                <div onclick="editTask(${log.id})" class="pointer prio ${log.urgency} center">${log.urgency}</div>
+                <div onclick="editTask(${log.id})" class="pointer grey-text center">${log.dueDate}</div>
+                <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon center del-btn-board" onclick="deleteTask(${log.id})">
+            </div>
+            
+            <div class="move-task">
+            ${nextbuttons}
+            </div>
         `;
+        
         setUsersDetails(log.id);
     };
 
