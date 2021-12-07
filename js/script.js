@@ -44,6 +44,14 @@ let users = [
     tel: '001200321321',
     id: 5,
   },
+  {
+    username: 'This is a long user naaaaaaaaaaaame',
+    password: '',
+    image: './img/profil1.png',
+    mail: 'thisisalongusermaiaaaaaaaaaaaaaaddress@da.de',
+    tel: '001200321321',
+    id: 6,
+  },
 ];
 
 //status: bl= Backlog ; b1=board - todo ; b2=board - in Progress ; b3=board - testing; b4= board Done

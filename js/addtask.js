@@ -182,8 +182,11 @@ function createResponsibleHTML(user, index) {
   let responsibleHTML = `
      <div id="responsible${index}" class="user__container responsibles flex-center">
        <img src="${user.image}" class="user__image">
-       <span class="user__username">${user.username}</span>
-       <div class="delete-assignment-btn d-none" onclick="deleteAssignment(${index})">
+       <div class="assign__user-details">
+         <div class="user__username">${user.username}</div>
+         <div class="user__mail">${user.mail}</div>
+       </div>
+       <div class="delete-assignment-btn" onclick="deleteAssignment(${index})">
          <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon">
        </div>
      </div>`;
