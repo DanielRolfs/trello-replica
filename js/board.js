@@ -11,25 +11,28 @@ async function loadTaskstoTODO() {
 
 function listTaskByStatus(containerId, status) {
     let logs = tasks.filter(t => t['status'] == status);
+    
     let nextbuttons = '';
-
-    /* Define mobile view specific arrows. Difficult to put in a seperate function, because falues are needet. */
-    if ('b4' == status) {
-        nextbuttons = '<img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})" class="pointer"></div></div>'
-    } 
-
-    if ('b1' == status) {
-        nextbuttons = '<div></div><img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" class="pointer"></div>'
-   } 
-
-   if (('b2' == status)||('b3' == status)) {
-    nextbuttons = '<img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})" class="pointer"> <img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" class="pointer"></div>'
-     }
+   
 
 
     document.getElementById(containerId).innerHTML = ``;
     for (let i = 0; i < logs.length; i++) {
         const log = logs[i];
+
+         /* Define mobile view specific arrows. Difficult to put in a seperate function, because falues are needet. */
+
+         if ('b4' == status) {
+            nextbuttons = `<img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})" class="pointer"></div></div>`
+        } 
+    
+        if ('b1' == status) {
+            nextbuttons = `<div></div><img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" class="pointer"></div>`
+       } 
+    
+       if (('b2' == status)||('b3' == status)) {
+        nextbuttons = `<img src="img/next-left.png" onclick="moveToPreviousBoard(${log.id},${status})" class="pointer"> <img src="img/next-right.png" onclick="moveToNextBoard(${log.id},${status})" class="pointer"></div>`
+         }
 
         document.getElementById(containerId).innerHTML += `
         <div  draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.category}  ">
@@ -45,6 +48,8 @@ function listTaskByStatus(containerId, status) {
             ${nextbuttons}
             </div>
         `;
+
+
         
         setUsersDetails(log.id);
     };
