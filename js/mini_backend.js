@@ -37,9 +37,19 @@ function setURL(url) {
  */
 
 async function loadJSONFromServer() {
-    let response = await fetch(BASE_SERVER_URL + '/nocors.php?json=database&noache=' + (new Date().getTime()));
-    return await response.text();
-
+    try{
+        let response = await fetch(BASE_SERVER_URL + '/nocors.php?json=database&noache=' + (new Date().getTime()));
+        return await response.text();
+    }
+    catch{
+        try{
+            let response = await fetch(BASE_SERVER_URL + '/nocors.php?json=database&noache=' + (new Date().getTime()));
+            return await response.text();
+        }
+        catch{
+            alert('There seems to be a problem with the server-connection.')
+        }
+    }
 }
 
 function loadJSONFromServerOld() {

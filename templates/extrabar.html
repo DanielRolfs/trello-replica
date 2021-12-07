@@ -1,55 +1,44 @@
 <div class="search-legend-bar">
+  <!-- LEGEND -->
+  <div class="color-legend">
+    <img src="./img/legend.png" class="legend-pic" />
+    <div class="color-legend__popup">
+      <div>
+        <h4>Category</h4>
+        <div class="color-explanation">
+          <div id="color__management" class="legend__colors"></div>
+          <p>Management</p>
+        </div>
+        <div class="color-explanation">
+          <div id="color__marketing" class="legend__colors"></div>
+          <p>Marketing</p>
+        </div>
+        <div class="color-explanation">
+          <div id="color__product" class="legend__colors"></div>
+          <p>Product</p>
+        </div>
+        <div class="color-explanation">
+          <div id="color__sale" class="legend__colors"></div>
+          <p>Sale</p>
+        </div>
+      </div>
 
-
-    <!-- LEGEND -->
-    <div class="legend">
-        <a class="hideDisplayLegend">
-            <img src="./img/legend.png" class="legend-pic">
-            <span class="showDisplayOnHoverLegend">
-                   <span class="showBodyOfDisplayOnHoverLegend">
-                    <div class="legends">    
-                            <div>
-                                <h4>Category</h4>
-                                <div class="colors">
-                                <div class="Sale-col"></div>
-                                    <p>Sale</p>
-                                </div>
-                                <div  class="colors">
-                                <div class="Product-col"></div>
-                                    <p>Product</p>
-                                </div>
-                                <div  class="colors">
-                                <div class="Marketing-col"></div>
-                                    <p>Marketing</p>
-                                </div>
-                                <div  class="colors">
-                                <div class="Management-col"></div>
-                                    <p>Management</p>
-                                </div>
-                            </div>
-
-                                <div class="urgendy-legend">
-                                    <h4>Urgency</h4>
-                                    <div class="prio low">low</div>
-                                    <div class="prio middle">Middle</div>
-                                    <div class="prio high">High</div>
-
-                                </div>
-                    </div>
-                            
-               </span>
-            </span>
-        </a>
+      <div class="urgendy-legend">
+        <h4>Urgency</h4>
+        <div class="prio low">low</div>
+        <div class="prio middle">Middle</div>
+        <div class="prio high">High</div>
+      </div>
     </div>
+  </div>
 
-    <!-- LEGEND END -->
+  <!-- LEGEND END -->
 
-    <!-- SEARCH -->
+  <!-- SEARCH -->
 
-    <div class="search">
-        <a class="search-btn"><img src="./img/search.png" onclick="showSearch()" id="search-btn"></a>
-        <input type="text" name="" placeholder="search" id="search-input" class="search-input" onkeypress="filterTasks()">
-
-    </div>
-    <!-- SEARCH END -->
+  <div class="search">
+    <a class="search-btn"><img src="./img/search.png" onclick="showSearch()" id="search-btn" /></a>
+    <input type="text" name="" placeholder="search" id="search-input" class="search-input" onkeypress="filterTasks()" />
+  </div>
+  <!-- SEARCH END -->
 </div>
