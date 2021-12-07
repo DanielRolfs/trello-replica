@@ -8,13 +8,17 @@
 
 .progress-section {
     margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .all-boards {}
 
 .task-list-area {
     min-width: 220px;
-    /* max-width: 220px; */
+    max-width: 220px;
     height: fit-content;
     background-color: var(--bg-grey);
     border-radius: 10px;
@@ -46,6 +50,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
     z-index: 1;
+    width: 100%;
 }
 
 .task {
