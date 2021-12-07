@@ -127,9 +127,22 @@
 
    .progress-section {
        height: 100%;
-       flex: 0 0 100%;
+       /* flex: 0 0 100%; */
        scroll-snap-align: center;
      }
+
+    .white-side-bar-mobile {
+        width: 44px;
+        height: 44px;
+        background-color: white;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
 
     /*
     .progress-section {
