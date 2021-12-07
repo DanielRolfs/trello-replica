@@ -84,7 +84,7 @@
 @media (max-width: 700px) {
     .task-list-area {
         min-width: 220px;
-        max-width: 220px;
+        /* max-width: 220px; */
         height: fit-content;
         background-color: var(--bg-grey);
         border-radius: 10px;
@@ -111,22 +111,26 @@
         z-index: 1;
     }
 
-/*     .scroll-container {
-        // margin: 3rem auto;
-        display: flex;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-      }
 
-    .progress-section {
-        height: 100%;
-        flex: 0 0 100%;
-        scroll-snap-align: center;
-      }
- */
+
 }
 
-/* @media (max-width: 400px) {
+ @media (max-width: 400px) {
+
+    .scroll-container {
+        margin: 3rem auto;
+       display: flex;
+       overflow-x: scroll;
+       scroll-snap-type: x mandatory;
+     }
+
+   .progress-section {
+       height: 100%;
+       flex: 0 0 100%;
+       scroll-snap-align: center;
+     }
+
+    /*
     .progress-section {
         min-width: 100vw;
         display: flex;
@@ -154,8 +158,9 @@
     .backlog-content{
         padding-left: 20px;
     }
+    */
 
-} */
+} 
 
 
 /*---------Board end-------------*/
