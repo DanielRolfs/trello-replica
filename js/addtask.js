@@ -103,6 +103,7 @@ function addWarningRemove(){
 function assignTask() {
   document.querySelector('.form__inner-modal').classList.remove('d-none');
   document.querySelector('.assign-task').classList.remove('d-none');
+  document.querySelector('.form__inner-modal').parentElement.style.overflowY = 'hidden';
   showUsers();
 }
 
@@ -163,6 +164,7 @@ function cancelAssignment() {
 function hideAddTaskModal() {
   document.querySelector('.form__inner-modal').classList.add('d-none');
   document.querySelector('.assign-task').classList.add('d-none');
+  document.querySelector('.form__inner-modal').parentElement.style = '';
   document.querySelector('.assign-task__user-list').innerHTML = '';
 }
 
