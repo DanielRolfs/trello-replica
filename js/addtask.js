@@ -103,6 +103,7 @@ function addWarningRemove(){
 function assignTask() {
   document.querySelector('.form__inner-modal').classList.remove('d-none');
   document.querySelector('.assign-task').classList.remove('d-none');
+  document.querySelector('.form__inner-modal').parentElement.style.overflowY = 'hidden';
   showUsers();
 }
 
@@ -163,6 +164,7 @@ function cancelAssignment() {
 function hideAddTaskModal() {
   document.querySelector('.form__inner-modal').classList.add('d-none');
   document.querySelector('.assign-task').classList.add('d-none');
+  document.querySelector('.form__inner-modal').parentElement.style = '';
   document.querySelector('.assign-task__user-list').innerHTML = '';
 }
 
@@ -182,8 +184,11 @@ function createResponsibleHTML(user, index) {
   let responsibleHTML = `
      <div id="responsible${index}" class="user__container responsibles flex-center">
        <img src="${user.image}" class="user__image">
-       <span class="user__username">${user.username}</span>
-       <div class="delete-assignment-btn d-none" onclick="deleteAssignment(${index})">
+       <div class="assign__user-details">
+         <div class="user__username">${user.username}</div>
+         <div class="user__mail">${user.mail}</div>
+       </div>
+       <div class="delete-assignment-btn" onclick="deleteAssignment(${index})">
          <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon">
        </div>
      </div>`;

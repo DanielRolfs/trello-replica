@@ -311,6 +311,13 @@
         height: 100vh;
         overflow-y: auto;
     }
+
+    .assign-task{
+        width: 100% !important;
+        height: 100vh !important;
+        padding-top: 60px !important;
+        border-radius: 0 !important;
+    }
 }
 
 @media (min-width: 400px) {
