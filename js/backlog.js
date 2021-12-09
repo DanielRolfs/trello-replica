@@ -4,17 +4,21 @@ async function loadBacklogs() {
     await loadTasks();
     let logs = tasks.filter(t => t['status'] == 'bl');
     document.getElementById('logs-table').innerHTML = '';
-    for (let i = 0; i < logs.length; i++) {
-        const log = logs[i];
-        document.getElementById('logs-table').innerHTML += generateLogs(log);
-        setUsersDetails(log.id);
-    };
+    if (logs.length > 0) {
+        for (let i = 0; i < logs.length; i++) {
+            const log = logs[i];
+            document.getElementById('logs-table').innerHTML += generateLogs(log);
+            setUsersDetails(log.id);
+        };
+    } else {
+        document.getElementById('logs-table').innerHTML = 'No Tasks right now!';
+    }
 }
 
 function generateLogs(log) {
     return `
-    <tr  class="log rendered-task" id="log" >
-        <td id="first-field" class="${log.category}" id="cat-date-urg"><div class=" bl-board bounce next" ><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id}) " </div></td>
+    <tr  class="log rendered-task ${log.category}" id="log" >
+        <td id="first-field"  id="cat-date-urg" class="${log.category}"><div class=" bl-board bounce next" ><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id}) " </div></td>
         <td id="bl-users${log.id}" class="users td-width" onclick="editTask(${log.id})"></td>
         <td id="third-field" onclick="editTask(${log.id})"><div class="mrl-15 point center row700" >${log.title}</div></td>
         <td id="fourth-field" class="td-width row700" onclick="editTask(${log.id})"><div class="mrl-15 fw-italic point gap row700" ><div class="center" ><div>${log.category}</div><div class="fw-normal bl-date pd700">${log.dueDate}</div><div class="prio ${log.urgency}">${log.urgency}</div></div></td>
@@ -31,7 +35,6 @@ async function pushTaskToBoard(logID) {
     console.log('Task mit ID:' + logID + 'im Board')
     console.log(tasks);
     loadBacklogs();
-    loadTaskstoTODO();
 }
 
 async function deleteTask(logID) {
@@ -45,7 +48,6 @@ async function deleteTask(logID) {
     console.log(tasks.length);
     console.log(tasks);
     loadBacklogs();
-    loadTaskstoTODO();
 }
 
 
