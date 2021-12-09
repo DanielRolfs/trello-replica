@@ -74,20 +74,6 @@ select {
   background-color: #dbd9d9;
 }
 
-/* -------------- PSEUDE SELECT  --------------- */
-
-.pseudo-select__option {
-  background-color: #fff;
-}
-
-.pseudo-select__option:not(:first-child) {
-  border-radius: 0;
-}
-
-.option1 {
-  justify-content: flex-end;
-}
-
 /* --------------  ASSIGN TASK  ----------------- */
 
 .task-form-modal {

@@ -1,9 +1,50 @@
-<div class="search-legend-bar">
-  <!-- LEGEND -->
-  <div class="color-legend">
-    <img src="./img/legend.png" class="legend-pic" />
-    <div class="color-legend__popup">
-      <div>
+<!-- <div class="search-legend-bar"> -->
+<!-- LEGEND -->
+<div id="color-legend" class="flex-center">
+  <img src="./img/legend.png" class="legend-img" />
+
+  <div id="color-legend__popup">
+    <div id="color-legend__popup-content">
+      <table class="color-legend__table">
+        <thead>
+          <tr>
+            <th colspan="2">Category</th>
+            <th>Urgency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="legend__color-td">
+              <div id="color__management" class="legend__colors"></div>
+            </td>
+            <td id="td--marketing"  class="legend__category-td">Management</td>
+            <td rowspan="4">
+              <div class="prio low">low</div>
+              <div class="prio middle">Middle</div>
+              <div class="prio high">High</div>
+            </td>
+          </tr>
+          <tr>
+            <td  class="legend__color-td">
+              <div id="color__marketing" class="legend__colors"></div>
+            </td>
+            <td  class="legend__category-td">Marketing</td>
+          </tr>
+          <tr>
+            <td  class="legend__color-td">
+              <div id="color__product" class="legend__colors"></div>
+            </td>
+            <td  class="legend__category-td">Product</td>
+          </tr>
+          <tr>
+            <td  class="legend__color-td">
+              <div id="color__sale" class="legend__colors"></div>
+            </td>
+            <td  class="legend__category-td">Sale</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <div>
         <h4>Category</h4>
         <div class="color-explanation">
           <div id="color__management" class="legend__colors"></div>
@@ -28,17 +69,18 @@
         <div class="prio low">low</div>
         <div class="prio middle">Middle</div>
         <div class="prio high">High</div>
-      </div>
+      </div> -->
     </div>
   </div>
-
-  <!-- LEGEND END -->
-
-  <!-- SEARCH -->
-
-  <div class="search">
-    <a class="search-btn"><img src="./img/search.png" onclick="showSearch()" id="search-btn" /></a>
-    <input type="text" name="" placeholder="search" id="search-input" class="search-input" onkeypress="filterTasks()" />
-  </div>
-  <!-- SEARCH END -->
 </div>
+
+<!-- LEGEND END -->
+
+<!-- SEARCH -->
+
+<div class="search flex-center">
+  <img src="./img/search.png" onclick="showSearch()" id="search-btn" />
+  <input type="text" name="" placeholder="search" id="search-input" class="search-input" onkeypress="filterTasks()" />
+</div>
+<!-- SEARCH END -->
+<!-- </div> -->
