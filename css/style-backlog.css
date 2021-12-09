@@ -232,7 +232,7 @@
     }
     
     #first-field {
-        width: 20px;
+        min-width: 100px;
         text-align: center;
         flex-direction: column;
     }

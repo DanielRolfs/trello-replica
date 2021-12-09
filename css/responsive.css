@@ -185,7 +185,7 @@
 
 /*---------Board end-------------*/
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
     /*---------Backlog-------------*/
     .backlog-content {
         display: flex;
@@ -196,8 +196,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 300px;
-        min-width: 200px;
+        min-width: 250px
     }
     .log {
         background-color: white;
