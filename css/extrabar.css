@@ -114,3 +114,38 @@
  visibility: hidden;
  height: 30px;
 }
+
+#reset-filter-btn{
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  width: unset;
+  height: 38px;
+  padding: 0 1.5rem;
+}
+
+/* ----------  FILTER FUNCTION  ----------- */
+
+.rendered-task{
+  position: relative;
+}
+
+.task-overlay{
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.filter-animation--hide{
+  animation: filter-animation 225ms ease-in-out 50ms forwards;
+}
+
+.filter-animation--show{
+  animation: filter-animation 225ms ease-in-out 50ms reverse backwards;
+}
+
+@keyframes filter-animation{
+  to {
+    background-color: rgba(255, 255, 255, 1);
+  }
+}

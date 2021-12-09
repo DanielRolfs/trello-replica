@@ -142,3 +142,62 @@ function filterTasks() {
 }
 
 // Searchbar END
+
+// extrabar
+
+function filterTasks(category) {
+  if (filterIsActive()) {
+    resetFilter();
+  }
+  applyFilter(category);
+  toggleResetBtn();
+}
+
+function applyFilter(category){
+  let tasks = Array.from(document.getElementsByClassName('rendered-task'));
+  let tasksToHide = tasks.filter((t) => !t.classList.contains(category));
+  tasksToHide.forEach((t) => {
+    fadeTaskOut(t);
+    hideTask(t);
+  });
+}
+
+function fadeTaskOut(t) {
+  let overlay = document.createElement('DIV');
+  overlay.classList.add('task-overlay', 'filter-animation--hide');
+  t.appendChild(overlay);
+  setTimeout(() => {
+    overlay.classList.remove('filter-animation--hide');
+    overlay.classList.add('filter-animation--show');
+  }, 300);
+}
+
+function hideTask(t) {
+  setTimeout(() => {
+    t.classList.add('d-none');
+  }, 300);
+}
+
+function fadeTaskIn() {
+  let overlays = Array.from(document.getElementsByClassName('task-overlay'));
+  overlays.forEach((o) => {
+    setTimeout(() => {
+      o.remove();
+    }, 300);
+  });
+}
+
+function resetFilter() {
+  fadeTaskIn();
+  let tasks = Array.from(document.getElementsByClassName('rendered-task'));
+  tasks.forEach((t) => t.classList.remove('d-none'));
+  toggleResetBtn();
+}
+
+function filterIsActive() {
+  return !document.getElementById('reset-filter-btn').classList.contains('d-none');
+}
+
+function toggleResetBtn() {
+  document.getElementById('reset-filter-btn').classList.toggle('d-none');
+}
