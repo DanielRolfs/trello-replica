@@ -60,17 +60,25 @@ function setUsersDetails(logID) {
     if (currentLog.responsible.length == 1) {
         document.getElementById('bl-users' + logID).innerHTML = `
         <div class="usernew">
-        <img src="${user.image}" alt="" class="userpic" >
-         <div id="count-assignes" class="d-none">+${currentLog.responsible.length -1}</div>
-         </div>
+            <div>    
+            <img src="${user.image}" alt="" class="userpic">
+            <div id="count-assignes" class="d-none">+${currentLog.responsible.length -1}</div>
+            </div>
 `;
     } else {
         if (currentLog.responsible.length > 1) {
             document.getElementById('bl-users' + logID).innerHTML = `
-        <div class="usernew">
-        <img src="${user.image}" alt="" class="userpic">
-         <div id="count-assignes" class="">+${currentLog.responsible.length -1}</div>
-         </div>
+            <div class="usernew">
+            <div>    
+            <a class="hideDisplay">
+            <img src="${user.image}" alt="" class="userpic">
+            <div id="count-assignes" class="">+${currentLog.responsible.length -1}</div>
+            <span class="showDisplayOnHover">
+                <span class="showBodyOfDisplayOnHover">
+                <img src="${user.image}" alt="" class="userpic">
+                </span>
+            </span>
+            </a>
 `;
         }
 
@@ -82,6 +90,7 @@ function setUsersDetails(logID) {
 function generateUserDetails(user) {
     return `
     <div class="user">
+    +${currentLog.responsible.length -1}
         <div>    
         <a class="hideDisplay">
          <img src="${user.image}" alt="" class="userpic">

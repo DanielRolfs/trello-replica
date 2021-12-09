@@ -226,8 +226,8 @@
     
     #count-assignes {
         position: absolute;
-        right: 10px;
-        top: -10px;
+        right: -11px;
+        top: -41px;
         background-color: rgba(31, 50, 144, 0.7);
         color: white;
         height: 20px;
