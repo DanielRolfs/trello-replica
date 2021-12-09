@@ -115,10 +115,25 @@
  height: 30px;
 }
 
+.filter__warning::after{
+  content: "No matching tasks found";
+  position: absolute;
+  right: -200px;
+  color: var(--bg-blue);
+  font-weight: 700;
+  animation: hide-filter-warning 225s ease-in-out 2000s forwards;
+}
+
+@keyframes hide-filter-warning {
+  to{
+    opacity: 0;
+  }
+}
+
 #reset-filter-btn{
   position: fixed;
   right: 30px;
-  bottom: 20px;
+  bottom: 15px;
   width: unset;
   height: 38px;
   padding: 0 1.5rem;

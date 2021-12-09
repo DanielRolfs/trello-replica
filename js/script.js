@@ -155,11 +155,22 @@ function filterTasks(category) {
 
 function applyFilter(category){
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
+  checkIfMatchingTasks(tasks, category);
   let tasksToHide = tasks.filter((t) => !t.classList.contains(category));
   tasksToHide.forEach((t) => {
     fadeTaskOut(t);
     hideTask(t);
   });
+}
+
+function checkIfMatchingTasks(tasks, category){
+  if(!matchingTasks(tasks, category).length > 0){
+    showFilterWarning();
+  }
+}
+
+function matchingTasks(tasks, category){
+  return tasks.filter((t) => t.classList.contains(category))
 }
 
 function fadeTaskOut(t) {
@@ -206,4 +217,12 @@ function filterIsActive() {
 
 function toggleResetBtn() {
   document.getElementById('reset-filter-btn').classList.toggle('d-none');
+}
+
+function showFilterWarning(){
+  let extrabar = document.getElementById('extrabar');
+  extrabar.classList.add('filter__warning')
+  setTimeout(() => {
+    extrabar.classList.remove('filter__warning')
+  }, 2250);
 }
