@@ -117,7 +117,7 @@
     
     .next {
         position: relative;
-        left: 15px;
+        left: -5px;
     }
     
     .next img {
@@ -138,6 +138,12 @@
         }
     }
     
+    #sign-to-board {
+        font-size: 10px !important;
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
+    
     .ml-20 {
         margin-left: 20px;
     }
@@ -147,6 +153,8 @@
         height: 50px;
         object-fit: cover;
         border-radius: 50%;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     
     .mrl-15 {
@@ -165,6 +173,11 @@
         border-right: 1px solid rgb(31, 50, 144, 0.2);
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
+        display: flex;
+    }
+    
+    #del-btn-bl {
+        margin-top: 15px;
     }
     
     #logs-table td {
@@ -180,16 +193,19 @@
     }
     
     .prio {
-        text-align: center;
         width: 40px;
         border-radius: 5px;
         font-size: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 5px;
         margin-top: 7px;
         border: 1px solid rgb(31, 50, 144, 0.2);
+    }
+    
+    .urg-date {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     
     .high {
@@ -216,8 +232,23 @@
         text-align: center;
     }
     
+    #first-field {
+        width: 20px;
+        text-align: center;
+        flex-direction: column;
+    }
+    
     #last-field {
         width: 50px;
+    }
+    
+    #third-field {
+        width: 200px;
+        text-align: center;
+    }
+    
+    #fourth-field {
+        width: 200px;
     }
     
     #fifth-field {
@@ -227,7 +258,7 @@
     #count-assignes {
         position: absolute;
         right: -11px;
-        top: -41px;
+        top: -61px;
         background-color: rgba(31, 50, 144, 0.7);
         color: white;
         height: 20px;
@@ -249,8 +280,8 @@
         border: 1px solid rgb(31, 50, 144, 0.2);
         border-radius: 10px;
     }
-
-    .delete-task-btn__icon{
+    
+    .delete-task-btn__icon {
         width: 40%;
         height: 30px;
         object-fit: contain;
