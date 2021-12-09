@@ -155,6 +155,7 @@ function filterTasks(category) {
 
 function applyFilter(category){
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
+  /* let tasksToHide; */
   checkIfMatchingTasks(tasks, category);
   let tasksToHide = tasks.filter((t) => !t.classList.contains(category));
   tasksToHide.forEach((t) => {

@@ -17,7 +17,7 @@ async function loadBacklogs() {
 
 function generateLogs(log) {
     return `
-    <tr  class="log rendered-task ${log.category}" id="log" >
+    <tr  class="log rendered-task ${log.category} filter-prio--${log.urgency}" id="log" >
         <td id="first-field"  id="cat-date-urg" class="${log.category}"><div class=" bl-board bounce next" ><img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id}) " </div></td>
         <td id="bl-users${log.id}" class="users td-width" onclick="editTask(${log.id})"></td>
         <td id="third-field" onclick="editTask(${log.id})"><div class="mrl-15 point center row700" >${log.title}</div></td>
