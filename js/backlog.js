@@ -11,7 +11,7 @@ async function loadBacklogs() {
             setUsersDetails(log.id);
         };
     } else {
-        document.getElementById('logs-table').innerHTML = 'No Tasks right now!';
+        document.getElementById('logs-table').innerHTML = `<div class="no-tasks">No Tasks right now!</div>`;
     }
 }
 
