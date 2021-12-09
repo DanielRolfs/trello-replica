@@ -147,7 +147,7 @@ function filterTasks() {
 
 function filterTasks(category) {
   if (filterIsActive()) {
-    resetFilter();
+    resetFilter(category);
   }
   applyFilter(category);
   toggleResetBtn();
@@ -178,8 +178,11 @@ function hideTask(t) {
   }, 300);
 }
 
-function fadeTaskIn() {
+function fadeTaskIn(category) {
   let overlays = Array.from(document.getElementsByClassName('task-overlay'));
+  if(category){
+    overlays = overlays.filter(o => o.parentElement.classList.contains(category))
+  }
   overlays.forEach((o) => {
     setTimeout(() => {
       o.remove();
@@ -187,9 +190,12 @@ function fadeTaskIn() {
   });
 }
 
-function resetFilter() {
-  fadeTaskIn();
+function resetFilter(category) {
+  fadeTaskIn(category);
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
+  if(category){
+    tasks = tasks.filter(t => t.classList.contains(category))
+  }
   tasks.forEach((t) => t.classList.remove('d-none'));
   toggleResetBtn();
 }
