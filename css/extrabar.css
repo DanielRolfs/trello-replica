@@ -54,7 +54,7 @@
  display: flex;
 }
 
-.legend__color-td, .legend__category-td{
+.legend__color-td, .legend__category-td, .legend__urgency{
  cursor: pointer;
 }
 
@@ -64,6 +64,11 @@
 
 .legend__color-td:hover ~ .legend__category-td{
  font-weight: bold;
+}
+
+.legend__urgency:hover{
+  font-weight: 700;
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 .color-legend__table th{
