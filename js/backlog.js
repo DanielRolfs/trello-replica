@@ -11,6 +11,7 @@ async function loadBacklogs() {
             setUsersDetails(log.id);
         };
     } else {
+        document.getElementById('log_table__head').style.visibility = 'hidden';
         document.getElementById('logs-table').innerHTML = `<div class="no-tasks">No Tasks right now!</div>`;
     }
 }
@@ -21,7 +22,7 @@ function generateLogs(log) {
     <td id="bl-users${log.id}" class="users td-width ${log.category}" onclick="editTask(${log.id})"></td>
 
     <td id="third-field" onclick="editTask(${log.id})">
-        <div class="ml-20 point center row700" >${log.title}</div>
+        <div class="point center row700" >${log.title}</div>
     </td>
     
     <td id="fourth-field" class="td-width row700" onclick="editTask(${log.id})">
@@ -43,8 +44,8 @@ function generateLogs(log) {
     <td id="last-field" >
         <div class="del">
         <span id="sign-to-board">
-        <div class=" bl-board bounce next" > <img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id})  id="to-board"></div>
-            <p>to <br> Board</p>
+        <div class=" bl-board bounce next" > <img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id})"  id="to-board"></div>
+            <p class="p-to-board">to <br> Board</p>
             </span>
             <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})" id="del-btn-bl">
         </div>

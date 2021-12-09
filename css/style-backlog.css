@@ -173,7 +173,6 @@
         border-right: 1px solid rgb(31, 50, 144, 0.2);
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
-        display: flex;
     }
     
     #del-btn-bl {

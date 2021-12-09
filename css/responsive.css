@@ -192,20 +192,12 @@
         justify-content: center;
         width: 100%;
     }
-    .backlogs {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    #log_table {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
     table tr {
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 300px;
+        min-width: 200px;
     }
     .log {
         background-color: white;
@@ -232,6 +224,24 @@
         border-bottom: 2px rgba(141, 142, 150, 0.2) solid;
         margin-bottom: 15px;
         padding-top: 30px;
+    }
+    #sign-to-board {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .del {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .p-to-board {
+        display: none;
+    }
+    #del-btn-bl {
+        width: 20px;
+        margin-top: 0;
     }
     #logs-table td {
         width: 100%;
@@ -278,6 +288,18 @@
         align-items: center;
         flex-direction: row;
     }
+    .urg-date {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .bl-date {
+        margin-left: 0 !important;
+        margin-right: 20px !important;
+    }
+    .prio {
+        margin-top: 0;
+    }
     #cat-date-urg {
         width: 100%;
     }
@@ -295,7 +317,7 @@
         visibility: hidden;
     }
     .resp-desc {
-        padding-top: 50px;
+        padding-top: 20px;
     }
 }
 
