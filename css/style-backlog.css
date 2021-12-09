@@ -249,3 +249,11 @@
         border: 1px solid rgb(31, 50, 144, 0.2);
         border-radius: 10px;
     }
+
+    .delete-task-btn__icon{
+        width: 40%;
+        height: 30px;
+        object-fit: contain;
+        filter: invert(50%);
+        cursor: pointer;
+    }

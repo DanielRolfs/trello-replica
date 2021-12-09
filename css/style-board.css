@@ -154,6 +154,10 @@
 
 .del-btn-board {
     padding-top: 5px;
+    height: 30px;
+    object-fit: contain;
+    filter: invert(50%);
+    cursor: pointer;
 }
 
 .flex {
