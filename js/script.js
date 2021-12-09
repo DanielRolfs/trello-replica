@@ -146,9 +146,11 @@ function filterTasks() {
 // extrabar
 
 function filterTasks(category, target) {
-  if (filterIsActive()) {
-    resetFilter(category);
-  }
+  setTimeout(() => {
+    if (filterIsActive()) {
+      resetFilter(category);
+    }
+  }, 225);
   applyFilter(category);
   highlightActiveCategory(category, target);
   toggleResetBtn();
@@ -156,11 +158,9 @@ function filterTasks(category, target) {
 
 function applyFilter(category) {
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
-  /* let tasksToHide; */
   checkIfMatchingTasks(tasks, category);
   let tasksToHide = tasks.filter((t) => !t.classList.contains(category));
   tasksToHide.forEach((t) => {
-    fadeTaskOut(t);
     hideTask(t);
   });
 }
@@ -175,41 +175,26 @@ function matchingTasks(tasks, category) {
   return tasks.filter((t) => t.classList.contains(category));
 }
 
-function fadeTaskOut(t) {
-  let overlay = document.createElement('DIV');
-  overlay.classList.add('task-overlay', 'filter-animation--hide');
-  t.appendChild(overlay);
-  setTimeout(() => {
-    overlay.classList.remove('filter-animation--hide');
-    overlay.classList.add('filter-animation--show');
-  }, 300);
-}
-
 function hideTask(t) {
+  t.classList.add('filter-animation--hide');
   setTimeout(() => {
+    t.classList.remove('filter-animation--hide');
     t.classList.add('d-none');
-  }, 300);
-}
-
-function fadeTaskIn(category) {
-  let overlays = Array.from(document.getElementsByClassName('task-overlay'));
-  if (category) {
-    overlays = overlays.filter((o) => o.parentElement.classList.contains(category));
-  }
-  overlays.forEach((o) => {
-    setTimeout(() => {
-      o.remove();
-    }, 300);
-  });
+  }, 225);
 }
 
 function resetFilter(category) {
-  fadeTaskIn(category);
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
   if (category) {
     tasks = tasks.filter((t) => t.classList.contains(category));
   }
-  tasks.forEach((t) => t.classList.remove('d-none'));
+  tasks.forEach((t) => {
+    t.classList.add('filter-animation--show');
+    t.classList.remove('d-none');
+    setTimeout(() => {
+      t.classList.remove('filter-animation--show');
+    }, 225);
+  });
   unhighlightCategory();
   toggleResetBtn();
 }
@@ -228,7 +213,7 @@ function highlightActiveCategory(category, target) {
 
 function unhighlightCategory() {
   let highlighted = Array.from(document.querySelectorAll('.legend__category-td--active, .legend__urgency--active'));
-  console.log(highlighted)
+  console.log(highlighted);
   highlighted[0].classList.remove('legend__category-td--active', 'legend__urgency--active');
 }
 
