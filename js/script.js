@@ -145,15 +145,16 @@ function filterTasks() {
 
 // extrabar
 
-function filterTasks(category) {
+function filterTasks(category, target) {
   if (filterIsActive()) {
     resetFilter(category);
   }
   applyFilter(category);
+  highlightActiveCategory(category, target);
   toggleResetBtn();
 }
 
-function applyFilter(category){
+function applyFilter(category) {
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
   /* let tasksToHide; */
   checkIfMatchingTasks(tasks, category);
@@ -164,14 +165,14 @@ function applyFilter(category){
   });
 }
 
-function checkIfMatchingTasks(tasks, category){
-  if(!matchingTasks(tasks, category).length > 0){
+function checkIfMatchingTasks(tasks, category) {
+  if (!matchingTasks(tasks, category).length > 0) {
     showFilterWarning();
   }
 }
 
-function matchingTasks(tasks, category){
-  return tasks.filter((t) => t.classList.contains(category))
+function matchingTasks(tasks, category) {
+  return tasks.filter((t) => t.classList.contains(category));
 }
 
 function fadeTaskOut(t) {
@@ -192,8 +193,8 @@ function hideTask(t) {
 
 function fadeTaskIn(category) {
   let overlays = Array.from(document.getElementsByClassName('task-overlay'));
-  if(category){
-    overlays = overlays.filter(o => o.parentElement.classList.contains(category))
+  if (category) {
+    overlays = overlays.filter((o) => o.parentElement.classList.contains(category));
   }
   overlays.forEach((o) => {
     setTimeout(() => {
@@ -205,10 +206,11 @@ function fadeTaskIn(category) {
 function resetFilter(category) {
   fadeTaskIn(category);
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
-  if(category){
-    tasks = tasks.filter(t => t.classList.contains(category))
+  if (category) {
+    tasks = tasks.filter((t) => t.classList.contains(category));
   }
   tasks.forEach((t) => t.classList.remove('d-none'));
+  unhighlightCategory();
   toggleResetBtn();
 }
 
@@ -216,14 +218,28 @@ function filterIsActive() {
   return !document.getElementById('reset-filter-btn').classList.contains('d-none');
 }
 
+function highlightActiveCategory(category, target) {
+  if (/high|middle|low/.test(category)) {
+    target.classList.add('legend__urgency--active');
+  } else {
+    target.classList.add('legend__category-td--active');
+  }
+}
+
+function unhighlightCategory() {
+  let highlighted = Array.from(document.querySelectorAll('.legend__category-td--active, .legend__urgency--active'));
+  console.log(highlighted)
+  highlighted[0].classList.remove('legend__category-td--active', 'legend__urgency--active');
+}
+
 function toggleResetBtn() {
   document.getElementById('reset-filter-btn').classList.toggle('d-none');
 }
 
-function showFilterWarning(){
+function showFilterWarning() {
   let extrabar = document.getElementById('extrabar');
-  extrabar.classList.add('filter__warning')
+  extrabar.classList.add('filter__warning');
   setTimeout(() => {
-    extrabar.classList.remove('filter__warning')
+    extrabar.classList.remove('filter__warning');
   }, 2250);
 }

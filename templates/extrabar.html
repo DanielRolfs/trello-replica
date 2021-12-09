@@ -14,33 +14,33 @@
         </thead>
         <tbody>
           <tr>
-            <td class="legend__color-td" onclick="filterTasks('Management')">
+            <td class="legend__color-td" onclick="filterTasks('Management', this)">
               <div id="color__management" class="legend__colors"></div>
             </td>
-            <td id="td--marketing" class="legend__category-td" onclick="filterTasks('Management')">Management</td>
+            <td id="td--marketing" class="legend__category-td" onclick="filterTasks('Management', this)">Management</td>
             <td rowspan="4">
-              <div class="prio low legend__urgency" onclick="filterTasks('filter-prio--low')">low</div>
-              <div class="prio middle legend__urgency" onclick="filterTasks('filter-prio--middle')">Middle</div>
-              <div class="prio high legend__urgency" onclick="filterTasks('filter-prio--high')">High</div>
+              <div class="prio low legend__urgency" onclick="filterTasks('filter-prio--low', this)">low</div>
+              <div class="prio middle legend__urgency" onclick="filterTasks('filter-prio--middle', this)">Middle</div>
+              <div class="prio high legend__urgency" onclick="filterTasks('filter-prio--high', this)">High</div>
             </td>
           </tr>
           <tr>
-            <td class="legend__color-td" onclick="filterTasks('Marketing')">
+            <td class="legend__color-td" onclick="filterTasks('Marketing', this)">
               <div id="color__marketing" class="legend__colors"></div>
             </td>
-            <td class="legend__category-td" onclick="filterTasks('Marketing')">Marketing</td>
+            <td class="legend__category-td" onclick="filterTasks('Marketing', this)">Marketing</td>
           </tr>
           <tr>
-            <td class="legend__color-td" onclick="filterTasks('Product')">
+            <td class="legend__color-td" onclick="filterTasks('Product', this)">
               <div id="color__product" class="legend__colors"></div>
             </td>
-            <td class="legend__category-td" onclick="filterTasks('Product')">Product</td>
+            <td class="legend__category-td" onclick="filterTasks('Product', this)">Product</td>
           </tr>
           <tr>
-            <td class="legend__color-td" onclick="filterTasks('Sale')">
+            <td class="legend__color-td" onclick="filterTasks('Sale', this)">
               <div id="color__sale" class="legend__colors"></div>
             </td>
-            <td class="legend__category-td" onclick="filterTasks('Sale')">Sale</td>
+            <td class="legend__category-td" onclick="filterTasks('Sale', this)">Sale</td>
           </tr>
         </tbody>
       </table>
