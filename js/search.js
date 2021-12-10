@@ -26,9 +26,7 @@ function matchingTasks(tasks, category) {
 }
 
 function hideDifferingTasks(criterion) {
-  /*  let tasks = Array.from(document.getElementsByClassName('rendered-task')); */
   let tasksToHide = getTasksToHide(criterion);
-  console.log(tasksToHide)
   tasksToHide.forEach((t) => {
     t.classList.add('filter-animation--hide');
     setTimeout(() => {
@@ -41,8 +39,8 @@ function hideDifferingTasks(criterion) {
 function getTasksToHide(criterion) {
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
   let tasksToHide = [];
-  if (typeof criterion == 'object') {
-   let regEx = new RegExp(criterion.toString().replace(/,/g, '|'));
+  if (typeof criterion == 'object' && criterion.length > 0) {
+    let regEx = new RegExp(criterion.toString().replace(/,/g, '|'));
     tasksToHide = tasks.filter((t) => !regEx.test(t.id));
   } else {
     tasksToHide = tasks.filter((t) => !t.classList.contains(criterion));
@@ -50,15 +48,27 @@ function getTasksToHide(criterion) {
   return tasksToHide;
 }
 
-function resetFilter(category) {
+function resetFilter(criterion) {
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
-  if (category) {
-    tasks = tasks.filter((t) => t.classList.contains(category));
+  if (criterion) {
+   tasks = getTasksToShow(criterion);
   } else {
     unhighlightCategory();
     toggleResetBtn();
   }
   tasks.forEach((t) => showHiddenTask(t));
+}
+
+function getTasksToShow(criterion){
+ let tasks = Array.from(document.getElementsByClassName('rendered-task'));
+ let tasksToShow = [];
+ if (typeof criterion == 'object' && criterion.length > 0) {
+   let regEx = new RegExp(criterion.toString().replace(/,/g, '|'));
+   tasksToShow = tasks.filter((t) => regEx.test(t.id));
+ } else {
+   tasksToShow = tasks.filter((t) => t.classList.contains(criterion));
+ }
+ return tasksToShow;
 }
 
 function showHiddenTask(t) {
@@ -83,7 +93,9 @@ function highlightActiveCategory(category, target) {
 
 function unhighlightCategory() {
   let highlighted = document.querySelector('.legend__category-td--active, .legend__urgency--active');
-  highlighted.classList.remove('legend__category-td--active', 'legend__urgency--active');
+  if (highlighted) {
+    highlighted.classList.remove('legend__category-td--active', 'legend__urgency--active');
+  }
 }
 
 function toggleResetBtn() {
@@ -114,8 +126,9 @@ function hideSearchInput() {
 
 function startSearch() {
   let search = document.getElementById('search-input').value;
-  if(!search){
-   resetFilter();
+  console.log(search)
+  if (!search) {
+    resetFilter();
   }
   search = search.toLowerCase();
   searchTasks(search);
@@ -126,7 +139,11 @@ function searchTasks(search) {
   let matchingTasksIds = matchingTasks.map((m) => {
     return m.id;
   });
+  console.log(matchingTasksIds)
   hideDifferingTasks(matchingTasksIds);
+  setTimeout(() => {
+   resetFilter(matchingTasksIds);
+  }, 250);
 }
 
 function getMatchingTasks(search) {
