@@ -124,15 +124,17 @@ function showFilterWarning() {
 /* --------------  INPUT SEARCH  --------------- */
 
 function showSearchInput() {
-  document.getElementById('search-input').style.visibility = 'visible';
-  document.getElementById('search-input').style.width = '200px';
-  document.getElementById('search-btn').setAttribute('onclick', 'hideSearchInput();');
+  document.getElementById('search-input').classList.add('search-input--open');
+  document.getElementById('search').classList.add('search--open');
+  document.getElementById('search').setAttribute('onclick', 'hideSearchInput(event);');
 }
 
-function hideSearchInput() {
-  document.getElementById('search-input').style.visibility = 'hidden';
-  document.getElementById('search-input').style.width = '0px';
-  document.getElementById('search-btn').setAttribute('onclick', 'showSearchInput();');
+function hideSearchInput(event) {
+  if (event.target.id != 'search-input') {
+    document.getElementById('search-input').classList.remove('search-input--open');
+    document.getElementById('search').classList.remove('search--open');
+    document.getElementById('search').setAttribute('onclick', 'showSearchInput();');
+  }
 }
 
 function startSearch() {
@@ -163,7 +165,7 @@ function getMatchingTasks(search) {
   return tasks.filter((t) => t.title.toLowerCase().includes(search) || t.description.toLowerCase().includes(search));
 }
 
-function resetSearchInput(){
- document.getElementById('search-input').value = '';
- hideSearchInput();
+function resetSearchInput() {
+  document.getElementById('search-input').value = '';
+  hideSearchInput();
 }
