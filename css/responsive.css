@@ -90,7 +90,6 @@
             display: flex;
             justify-content: center;
             padding-bottom: 200px;
-            overflow-x: auto;
             height: 100vh;
         }
         .progress-headline {
@@ -147,35 +146,6 @@
             writing-mode: vertical-rl;
             text-orientation: upright;
         }
-        /*
-    .progress-section {
-        min-width: 100vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .task-list-area {
-        min-width: 80vw;
-    }
-
-    .section{
-        padding-left: 0px;
-    }
-
-    .section-header-board{
-        padding-left: 20px;
-    }
-
-    .section-header{
-        padding-left: 20px;
-    }
-
-    .backlog-content{
-        padding-left: 20px;
-    }
-    */
     }
     /*---------Board end-------------*/
     
