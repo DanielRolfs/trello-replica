@@ -122,23 +122,3 @@ function navBarIsOpen() {
 }
 // responsive nav-bar end
 
-// Searchbar
-
-function showSearch() {
-  document.getElementById('search-input').style.visibility = 'visible';
-  document.getElementById('search-input').style.width = '200px';
-  document.getElementById('search-btn').setAttribute('onClick', 'hideSearch();');
-}
-
-function hideSearch() {
-  document.getElementById('search-input').style.visibility = 'hidden';
-  document.getElementById('search-input').style.width = '0px';
-  document.getElementById('search-btn').setAttribute('onClick', 'showSearch();');
-}
-
-function filterTasks() {
-  let search = document.getElementById('search-input').value;
-  search = search.toLowerCase();
-}
-
-// Searchbar END

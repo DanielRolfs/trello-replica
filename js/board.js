@@ -35,7 +35,7 @@ function listTaskByStatus(containerId, status) {
          }
 
         document.getElementById(containerId).innerHTML += `
-        <div  draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.category} rendered-task filter-prio--${log.urgency}">
+        <div id="task-${log.id}" draggable="true" ondragstart="startDragging(${log.id})" class="task ${log.category} rendered-task filter-prio--${log.urgency}">
             <div onclick="editTask(${log.id})" class="responsible-user" id="bl-users${log.id}" ></div>
             <div onclick="editTask(${log.id})" class="task-title pointer">${log.title}</div>
             <div class="flex between bottom">    

@@ -44,32 +44,6 @@
           </tr>
         </tbody>
       </table>
-      <!-- <div>
-        <h4>Category</h4>
-        <div class="color-explanation">
-          <div id="color__management" class="legend__colors"></div>
-          <p>Management</p>
-        </div>
-        <div class="color-explanation">
-          <div id="color__marketing" class="legend__colors"></div>
-          <p>Marketing</p>
-        </div>
-        <div class="color-explanation">
-          <div id="color__product" class="legend__colors"></div>
-          <p>Product</p>
-        </div>
-        <div class="color-explanation">
-          <div id="color__sale" class="legend__colors"></div>
-          <p>Sale</p>
-        </div>
-      </div>
-
-      <div class="urgendy-legend">
-        <h4>Urgency</h4>
-        <div class="prio low">low</div>
-        <div class="prio middle">Middle</div>
-        <div class="prio high">High</div>
-      </div> -->
     </div>
   </div>
 </div>
@@ -79,8 +53,8 @@
 <!-- SEARCH -->
 
 <div class="search flex-center">
-  <img src="./img/search.png" onclick="showSearch()" id="search-btn" />
-  <input type="text" name="" placeholder="search" id="search-input" class="search-input" onkeypress="filterTasks()" />
+  <img src="./img/search.png" onclick="showSearchInput()" id="search-btn" />
+  <input type="text" name="" placeholder="search" id="search-input" class="search-input" oninput="startSearch()" />
 </div>
 <!-- SEARCH END -->
 <!-- </div> -->
