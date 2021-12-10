@@ -274,10 +274,11 @@
         position: absolute;
         left: 40%;
         top: 40%;
-        font-size: 16px;
+        font-size: 20px;
         padding: 5px;
         border: 1px solid rgb(31, 50, 144, 0.2);
         border-radius: 10px;
+        background-color: rgb(244, 243, 251);
     }
     
     .delete-task-btn__icon {
