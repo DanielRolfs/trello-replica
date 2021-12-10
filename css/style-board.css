@@ -29,6 +29,7 @@
     /* overflow-y: auto;  We cannot use this because otherwise the hoverbox is also partially hidden*/
 }
 
+
 .section-main {
     display: flex;
     justify-content: flex-start;
