@@ -9,6 +9,7 @@ async function loadBacklogs() {
             const log = logs[i];
             document.getElementById('logs-table').innerHTML += generateLogs(log);
             setUsersDetails(log.id);
+            setHoverUsersDetails(log.id);
         };
     } else {
         document.getElementById('log_table__head').style.visibility = 'hidden';
@@ -101,7 +102,7 @@ function setUsersDetails(logID) {
             <div id="count-assignes" class="">+${currentLog.responsible.length -1}</div>
             <span class="showDisplayOnHover">
                 <span class="showBodyOfDisplayOnHover">
-                <img src="${user.image}" alt="" class="userpic">
+                    <div id="hover-users${logID}" style="display: flex;">test</div>
                 </span>
             </span>
             </a>
@@ -111,28 +112,25 @@ function setUsersDetails(logID) {
     }
 };
 // +${currentLog.responsible.length -1}
+// <img src="${user.image}" alt="" class="userpic">
 
+function setHoverUsersDetails(logID) {
+    let currentLog;
+    currentLog = tasks.find(t => t.id === logID);
+    document.getElementById('hover-users' + logID).innerHTML = '';
+    for (let i = 0; i < currentLog.responsible.length; i++) {
+        let resp = currentLog.responsible[i];
+        let user = users.find(u => u.id === resp);
+        document.getElementById('hover-users' + currentLog.id).innerHTML += generateUserDetails(user);
+    }
+}
 
 function generateUserDetails(user) {
     return `
     <div class="user">
-    +${currentLog.responsible.length -1}
-        <div>    
-        <a class="hideDisplay">
-         <img src="${user.image}" alt="" class="userpic">
-         <span class="showDisplayOnHover">
-            <h4>User Details</h4>
-            <span class="showBodyOfDisplayOnHover">
-                <img src="${user.image}" alt="" class="detail-pic">
-                <br>
-                <b>Name:</b>&nbsp<i>${user.username}</i>
-                <br>
-                <b>Mail:</b>&nbsp<i>${user.mail}</i>
-                <br>
-                <b>Tel:</b>&nbsp${user.tel}
-            </span>
-         </span>
-        </a>
-        </div>
+    <div>    
+    <img src="${user.image}" alt="" class="userpic">
+    </div>
+    
 `
 };

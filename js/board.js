@@ -49,6 +49,7 @@ function listTaskByStatus(containerId, status) {
             </div>
         `;
         setUsersDetails(log.id);
+        setHoverUsersDetails(log.id);
     };
 
 
