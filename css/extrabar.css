@@ -87,7 +87,15 @@
 }
 
 .color-legend__table th {
+  padding-bottom: 10px;
+}
+
+.color-legend__table td {
   padding-bottom: 5px;
+}
+
+.color-legend__table .prio{
+  margin-bottom: 5px;
 }
 
 #td--marketing {
