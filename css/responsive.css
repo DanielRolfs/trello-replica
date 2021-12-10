@@ -188,11 +188,11 @@
             justify-content: center;
             width: 100%;
         }
-        table tr {
+        #log_table tr {
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 250px
+            min-width: 250px;
         }
         .log {
             background-color: white;
@@ -202,7 +202,6 @@
             background-color: rgb(244, 243, 251);
         }
         #logs-table td:first-child {
-            border-top: 2px rgba(141, 142, 150, 0.2) solid;
             border-left: 0;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;

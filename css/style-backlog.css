@@ -187,7 +187,7 @@
         cursor: pointer;
     }
     
-    table {
+    #log_table {
         border-spacing: 0 15px;
     }
     
