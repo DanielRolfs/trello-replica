@@ -6,9 +6,10 @@ function filterTasks(category, target) {
     setTimeout(() => {
       resetFilter(category);
     }, 225);
-  } else {
+  } /* else {
     toggleResetBtn();
-  }
+  } */
+  showResetBtn();
   applyFilter(category);
   highlightActiveCategory(category, target);
 }
@@ -51,24 +52,26 @@ function getTasksToHide(criterion) {
 function resetFilter(criterion) {
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
   if (criterion) {
-   tasks = getTasksToShow(criterion);
+    tasks = getTasksToShow(criterion);
   } else {
     unhighlightCategory();
-    toggleResetBtn();
+    /* toggleResetBtn(); */
+    hideResetBtn();
+    resetSearchInput();
   }
   tasks.forEach((t) => showHiddenTask(t));
 }
 
-function getTasksToShow(criterion){
- let tasks = Array.from(document.getElementsByClassName('rendered-task'));
- let tasksToShow = [];
- if (typeof criterion == 'object' && criterion.length > 0) {
-   let regEx = new RegExp(criterion.toString().replace(/,/g, '|'));
-   tasksToShow = tasks.filter((t) => regEx.test(t.id));
- } else {
-   tasksToShow = tasks.filter((t) => t.classList.contains(criterion));
- }
- return tasksToShow;
+function getTasksToShow(criterion) {
+  let tasks = Array.from(document.getElementsByClassName('rendered-task'));
+  let tasksToShow = [];
+  if (typeof criterion == 'object' && criterion.length > 0) {
+    let regEx = new RegExp(criterion.toString().replace(/,/g, '|'));
+    tasksToShow = tasks.filter((t) => regEx.test(t.id));
+  } else {
+    tasksToShow = tasks.filter((t) => t.classList.contains(criterion));
+  }
+  return tasksToShow;
 }
 
 function showHiddenTask(t) {
@@ -98,9 +101,17 @@ function unhighlightCategory() {
   }
 }
 
-function toggleResetBtn() {
-  document.getElementById('reset-filter-btn').classList.toggle('d-none');
+function showResetBtn() {
+  document.getElementById('reset-filter-btn').classList.remove('d-none');
 }
+
+function hideResetBtn() {
+  document.getElementById('reset-filter-btn').classList.add('d-none');
+}
+
+/* function toggleResetBtn() {
+  document.getElementById('reset-filter-btn').classList.toggle('d-none');
+} */
 
 function showFilterWarning() {
   let extrabar = document.getElementById('extrabar');
@@ -126,12 +137,14 @@ function hideSearchInput() {
 
 function startSearch() {
   let search = document.getElementById('search-input').value;
-  console.log(search)
+  console.log(search);
   if (!search) {
     resetFilter();
+  } else {
+    search = search.toLowerCase();
+    searchTasks(search);
+    showResetBtn();
   }
-  search = search.toLowerCase();
-  searchTasks(search);
 }
 
 function searchTasks(search) {
@@ -139,13 +152,18 @@ function searchTasks(search) {
   let matchingTasksIds = matchingTasks.map((m) => {
     return m.id;
   });
-  console.log(matchingTasksIds)
+  console.log(matchingTasksIds);
   hideDifferingTasks(matchingTasksIds);
   setTimeout(() => {
-   resetFilter(matchingTasksIds);
+    resetFilter(matchingTasksIds);
   }, 250);
 }
 
 function getMatchingTasks(search) {
   return tasks.filter((t) => t.title.toLowerCase().includes(search) || t.description.toLowerCase().includes(search));
+}
+
+function resetSearchInput(){
+ document.getElementById('search-input').value = '';
+ hideSearchInput();
 }
