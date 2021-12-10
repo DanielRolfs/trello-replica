@@ -90,6 +90,7 @@
             display: flex;
             justify-content: center;
             padding-bottom: 200px;
+            overflow-x: auto;
             height: 100vh;
         }
         .progress-headline {
