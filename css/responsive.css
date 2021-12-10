@@ -192,7 +192,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 250px;
             border-top: none !important;
             border-left: none !important;
         }
@@ -316,7 +315,15 @@
             padding-top: 20px;
         }
         #third-field {
-            max-width: 100% !important;
+            padding-left: auto !important;
+            padding-right: auto !important;
+            font-size: 18px !important;
+            padding: 5px;
+            border-top: 1px solid rgba(141, 142, 150, 0.2) !important;
+            border-bottom: 1px solid rgba(141, 142, 150, 0.2) !important;
+        }
+        .short-title {
+            margin-left: 0;
         }
     }
     /*---------Backlog end-------------*/
