@@ -6,12 +6,14 @@ function filterTasks(category, target) {
     setTimeout(() => {
       resetFilter(category);
     }, 225);
-  } /* else {
-    toggleResetBtn();
-  } */
+  }
   showResetBtn();
   applyFilter(category);
   highlightActiveCategory(category, target);
+}
+
+function filterIsActive() {
+  return !document.getElementById('reset-filter-btn').classList.contains('d-none');
 }
 
 function applyFilter(category) {
@@ -39,39 +41,48 @@ function hideDifferingTasks(criterion) {
 
 function getTasksToHide(criterion) {
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
-  let tasksToHide = [];
-  if (typeof criterion == 'object' && criterion.length > 0) {
-    let regEx = new RegExp(criterion.toString().replace(/,/g, '|'));
-    tasksToHide = tasks.filter((t) => !regEx.test(t.id));
-  } else {
-    tasksToHide = tasks.filter((t) => !t.classList.contains(criterion));
+  let tasksToHide = tasks.filter((t) => !t.classList.contains(criterion));
+  if (criterionHasTaskIds(criterion)) {
+    tasksToHide = getTasksWithoutMatchingId(tasks, criterion);
   }
   return tasksToHide;
 }
 
-function resetFilter(criterion) {
+function resetFilter(criterion, event) {
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
   if (criterion) {
     tasks = getTasksToShow(criterion);
-  } else {
-    unhighlightCategory();
-    /* toggleResetBtn(); */
-    hideResetBtn();
+  } else if (event) {
     resetSearchInput();
+    hideResetBtn();
   }
+  unhighlightCategory();
   tasks.forEach((t) => showHiddenTask(t));
 }
 
 function getTasksToShow(criterion) {
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
-  let tasksToShow = [];
-  if (typeof criterion == 'object' && criterion.length > 0) {
-    let regEx = new RegExp(criterion.toString().replace(/,/g, '|'));
-    tasksToShow = tasks.filter((t) => regEx.test(t.id));
-  } else {
-    tasksToShow = tasks.filter((t) => t.classList.contains(criterion));
+  let tasksToShow = tasks.filter((t) => t.classList.contains(criterion));
+  if (criterionHasTaskIds(criterion)) {
+    tasksToShow = getTasksWithMatchingId(tasks, criterion);
   }
   return tasksToShow;
+}
+
+function criterionHasTaskIds(criterion) {
+  return typeof criterion == 'object' && criterion.length > 0;
+}
+
+function getTasksWithMatchingId(tasks, criterion) {
+  let regEx = new RegExp(criterion.toString().replace(/,/g, '|'));
+  let tasksToShow = tasks.filter((t) => regEx.test(t.id));
+  return tasksToShow;
+}
+
+function getTasksWithoutMatchingId(tasks, criterion) {
+  let regEx = new RegExp(criterion.toString().replace(/,/g, '|'));
+  let tasksToHide = tasks.filter((t) => !regEx.test(t.id));
+  return tasksToHide;
 }
 
 function showHiddenTask(t) {
@@ -80,10 +91,6 @@ function showHiddenTask(t) {
   setTimeout(() => {
     t.classList.remove('filter-animation--show');
   }, 225);
-}
-
-function filterIsActive() {
-  return !document.getElementById('reset-filter-btn').classList.contains('d-none');
 }
 
 function highlightActiveCategory(category, target) {
@@ -109,10 +116,6 @@ function hideResetBtn() {
   document.getElementById('reset-filter-btn').classList.add('d-none');
 }
 
-/* function toggleResetBtn() {
-  document.getElementById('reset-filter-btn').classList.toggle('d-none');
-} */
-
 function showFilterWarning() {
   let extrabar = document.getElementById('extrabar');
   extrabar.classList.add('filter__warning');
@@ -130,7 +133,7 @@ function showSearchInput() {
 }
 
 function hideSearchInput(event) {
-  if (event.target.id != 'search-input') {
+  if (!event || event.target.id != 'search-input') {
     document.getElementById('search-input').classList.remove('search-input--open');
     document.getElementById('search').classList.remove('search--open');
     document.getElementById('search').setAttribute('onclick', 'showSearchInput();');
@@ -139,7 +142,6 @@ function hideSearchInput(event) {
 
 function startSearch() {
   let search = document.getElementById('search-input').value;
-  console.log(search);
   if (!search) {
     resetFilter();
   } else {
@@ -154,7 +156,6 @@ function searchTasks(search) {
   let matchingTasksIds = matchingTasks.map((m) => {
     return m.id;
   });
-  console.log(matchingTasksIds);
   hideDifferingTasks(matchingTasksIds);
   setTimeout(() => {
     resetFilter(matchingTasksIds);
