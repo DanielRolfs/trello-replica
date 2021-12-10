@@ -53,11 +53,19 @@ function resetFilter(criterion, event) {
   if (criterion) {
     tasks = getTasksToShow(criterion);
   } else if (event) {
-    resetSearchInput();
+    hideSearchInput();
     hideResetBtn();
   }
   unhighlightCategory();
   tasks.forEach((t) => showHiddenTask(t));
+}
+
+function showHiddenTask(t) {
+  t.classList.add('filter-animation--show');
+  t.classList.remove('d-none');
+  setTimeout(() => {
+    t.classList.remove('filter-animation--show');
+  }, 225);
 }
 
 function getTasksToShow(criterion) {
@@ -83,14 +91,6 @@ function getTasksWithoutMatchingId(tasks, criterion) {
   let regEx = new RegExp(criterion.toString().replace(/,/g, '|'));
   let tasksToHide = tasks.filter((t) => !regEx.test(t.id));
   return tasksToHide;
-}
-
-function showHiddenTask(t) {
-  t.classList.add('filter-animation--show');
-  t.classList.remove('d-none');
-  setTimeout(() => {
-    t.classList.remove('filter-animation--show');
-  }, 225);
 }
 
 function highlightActiveCategory(category, target) {
@@ -136,7 +136,12 @@ function hideSearchInput(event) {
   if (!event || event.target.id != 'search-input') {
     document.getElementById('search-input').classList.remove('search-input--open');
     document.getElementById('search').classList.remove('search--open');
+    document.getElementById('search-input').value = '';
     document.getElementById('search').setAttribute('onclick', 'showSearchInput();');
+    hideResetBtn();
+  }
+  if (event && event.target.id == 'search-icon') {
+    resetFilter();
   }
 }
 
@@ -164,9 +169,4 @@ function searchTasks(search) {
 
 function getMatchingTasks(search) {
   return tasks.filter((t) => t.title.toLowerCase().includes(search) || t.description.toLowerCase().includes(search));
-}
-
-function resetSearchInput() {
-  document.getElementById('search-input').value = '';
-  hideSearchInput();
 }

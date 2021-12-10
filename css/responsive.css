@@ -315,6 +315,9 @@
         .resp-desc {
             padding-top: 20px;
         }
+        #third-field {
+            max-width: 100% !important;
+        }
     }
     /*---------Backlog end-------------*/
     /* --------------  ADD / EDIT TASK FORM  -------------- */

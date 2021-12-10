@@ -23,7 +23,7 @@ function generateLogs(log) {
     <td id="bl-users${log.id}" class="users td-width ${log.category}" onclick="editTask(${log.id})"></td>
 
     <td id="third-field" onclick="editTask(${log.id})">
-        <div class="point center row700" >${log.title}</div>
+        <div class="point row700 short-title" >${log.title}</div>
     </td>
     
     <td id="fourth-field" class="td-width row700" onclick="editTask(${log.id})">
@@ -39,7 +39,7 @@ function generateLogs(log) {
         </td>
 
     <td id ="fifth-field" onclick="editTask(${log.id})">
-        <div class="mrl-15 fw-normal point center resp-desc" >${log.description}</div>
+        <div class="mrl-15 fw-normal point  resp-desc short-desc" >${log.description}</div>
     </td>
 
     <td id="last-field" >

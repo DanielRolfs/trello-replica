@@ -39,6 +39,22 @@
         align-items: center;
     }
     
+    .short-desc {
+        max-height: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+    
+    .short-title {
+        margin-left: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
     .mr-16 {
         margin-right: 16px;
     }
@@ -242,7 +258,7 @@
     }
     
     #third-field {
-        width: 200px;
+        max-width: 150px;
         text-align: center;
     }
     
