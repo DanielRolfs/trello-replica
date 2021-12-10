@@ -102,7 +102,7 @@ function setUsersDetails(logID) {
             <div id="count-assignes" class="">+${currentLog.responsible.length -1}</div>
             <span class="showDisplayOnHover">
                 <span class="showBodyOfDisplayOnHover">
-                    <div id="hover-users${logID}" style="display: flex;">test</div>
+                    <div id="hover-users${logID}" class="userHoverBox" style="display: flex;">test</div>
                 </span>
             </span>
             </a>

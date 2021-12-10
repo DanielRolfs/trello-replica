@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+html {
+ 
+ }
+
 body {
     font-family: 'PT Sans', sans-serif;
     --bg-grey: #f4f3fb;
@@ -129,7 +133,7 @@ a.hideDisplay span.showDisplayOnHover {
 }
 
 a.hideDisplay:hover span.showDisplayOnHover {
-    display: block;
+    display: flex;
     position: absolute;
     font-size: 18px;
     line-height: 25px;

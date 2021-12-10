@@ -304,3 +304,7 @@
         filter: invert(50%);
         cursor: pointer;
     }
+
+    .userHoverBox {
+        margin-right: 5px;
+    }

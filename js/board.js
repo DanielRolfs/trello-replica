@@ -113,14 +113,3 @@ function moveToNextBoard(id, status) {
     };
     drop(status);
 }
-
-/* function setUsersDetails(logID) {
-    let currentLog;
-    currentLog = tasks.find(t => t.id === logID);
-    document.getElementById('bl-users' + logID).innerHTML = '';
-    for (let i = 0; i < currentLog.responsible.length; i++) {
-        let resp = currentLog.responsible[i];
-        let user = users.find(u => u.id === resp);
-        document.getElementById('bl-users' + currentLog.id).innerHTML += generateUserDetails(user);
-    }
-}; */
