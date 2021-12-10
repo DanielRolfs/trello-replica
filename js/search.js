@@ -147,26 +147,63 @@ function hideSearchInput(event) {
 
 function startSearch() {
   let search = document.getElementById('search-input').value;
+  search = search.toLowerCase();
   if (!search) {
     resetFilter();
   } else {
-    search = search.toLowerCase();
-    searchTasks(search);
+    let matches = getMatches(search);
+    showSearchResult(matches);
     showResetBtn();
   }
 }
 
-function searchTasks(search) {
-  let matchingTasks = getMatchingTasks(search);
-  let matchingTasksIds = matchingTasks.map((m) => {
-    return m.id;
+function getMatches(search){
+  let matches = searchUsers(search);
+  let matches_2 = searchTasks(search);
+  matches_2.forEach((m) => {
+    if (!matches.includes(m)) {
+      matches.push(m);
+    }
   });
+  return matches;
+}
+
+function searchUsers(search) {
+  let matchingUsersIds = getMatchingUsers(search);
+  if(matchingUsersIds.length > 0){
+  let matchingTasksIds = getTasksWithUsers(matchingUsersIds);
+  return matchingTasksIds;
+  } else{
+    return [];
+  }
+}
+
+function getMatchingUsers(search) {
+  let matchingUsers = users.filter(
+    (u) => u.username.toLowerCase().includes(search) || u.mail.toLowerCase().includes(search)
+  );
+  let matchingUsersIds = matchingUsers.map((m) => m.id);
+  return matchingUsersIds;
+}
+
+function getTasksWithUsers(matchingUsersIds) {
+  let regEx = new RegExp(matchingUsersIds.toString().replace(/,/g, '|'));
+  let matchingTasks = tasks.filter((t) => regEx.test(t.responsible.toString()));
+  let matchingTasksIds = matchingTasks.map((m) => m.id);
+  return matchingTasksIds;
+}
+
+function searchTasks(search) {
+  let matchingTasks = tasks.filter(
+    (t) => t.title.toLowerCase().includes(search) || t.description.toLowerCase().includes(search)
+  );
+  let matchingTasksIds = matchingTasks.map((m) => m.id);
+  return matchingTasksIds;
+}
+
+function showSearchResult(matchingTasksIds) {
   hideDifferingTasks(matchingTasksIds);
   setTimeout(() => {
     resetFilter(matchingTasksIds);
   }, 250);
-}
-
-function getMatchingTasks(search) {
-  return tasks.filter((t) => t.title.toLowerCase().includes(search) || t.description.toLowerCase().includes(search));
 }
