@@ -129,8 +129,10 @@ function setHoverUsersDetails(logID) {
 function generateUserDetails(user) {
     return `
     <div class="user">
-    <div>    
-    <img src="${user.image}" alt="" class="userpic">
+    <div class="hover-all-user">    
+    <img src="${user.image}" alt="" class="hover-userpic">
+    ${user.username}
+    </div>
     </div>
     
 `

@@ -304,7 +304,24 @@
         filter: invert(50%);
         cursor: pointer;
     }
-
+    
     .userHoverBox {
         margin-right: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .hover-all-user {
+        display: flex;
+        align-items: center;
+    }
+    
+    .hover-userpic {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
     }
