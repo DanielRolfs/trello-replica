@@ -9,7 +9,7 @@ async function loadBacklogs() {
             const log = logs[i];
             document.getElementById('logs-table').innerHTML += generateLogs(log);
             setUsersDetails(log.id);
-            setHoverUsersDetails(log.id);
+            // setHoverUsersDetails(log.id);
         };
     } else {
         document.getElementById('log_table__head').style.visibility = 'hidden';
@@ -108,6 +108,7 @@ function setUsersDetails(logID) {
             </a>
 `;
         }
+        setHoverUsersDetails(logID);
 
     }
 };
