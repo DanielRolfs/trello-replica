@@ -150,7 +150,7 @@
             transform: translateY(0);
         }
         60% {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
     }
     

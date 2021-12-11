@@ -44,10 +44,10 @@ function generateLogs(log) {
 
     <td id="last-field" >
         <div class="del">
-        <span id="sign-to-board">
-        <div class=" bl-board bounce next" > <img src="img/next.png" alt="" onclick="pushTaskToBoard(${log.id})"  id="to-board"></div>
+        <div id="sign-to-board" onclick="pushTaskToBoard(${log.id})">
+        <div class=" bl-board bounce next" > <img src="img/next.png" id="to-board"></div>
             <p class="p-to-board">to <br> Board</p>
-            </span>
+            </div>
             <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})" id="del-btn-bl">
         </div>
     </td>
