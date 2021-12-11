@@ -88,13 +88,22 @@
     }
 }
 
-@media (max-width: 400px) {
-    .scroll-container {
-        display: flex;
+@media (max-width: 500px) {
+    #include-board {
         scroll-snap-type: x mandatory;
     }
+
+    .section-main{
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+
     .progress-section {
         scroll-snap-align: center;
+    }
+
+    .task-list-area{
+      width: 70vw;
     }
     .white-side-bar-mobile {
         width: 44px;
