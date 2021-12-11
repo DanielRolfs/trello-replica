@@ -135,6 +135,7 @@ a.hideDisplay span.showDisplayOnHover {
     color: rgb(31, 50, 144);
     text-align: left;
     border-radius: 10px;
+    z-index: 1;
 }
 
 a.hideDisplay:hover span.showDisplayOnHover {
