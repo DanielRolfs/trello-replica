@@ -3,9 +3,7 @@
     box-sizing: border-box;
 }
 
-html {
- 
- }
+html {}
 
 body {
     font-family: 'PT Sans', sans-serif;
@@ -142,14 +140,14 @@ a.hideDisplay:hover span.showDisplayOnHover {
     display: flex;
 }
 
-.user-hover__backlog{
+.user-hover__backlog {
     top: -50px;
     left: 50px;
 }
 
-.user-hover__board{
+.user-hover__board {
     top: 0px;
-   left: -73px; 
+    left: -73px;
 }
 
 span.showBodyOfDisplayOnHover {
@@ -166,10 +164,26 @@ span.showBodyOfDisplayOnHover {
     border-radius: 50%;
 }
 
-.link{
+.link {
     word-wrap: break-word;
     color: var(--bg-blue);
 }
 
 
 /* POPUP for Userdetails  End*/
+
+.opt-1300 {
+    max-width: 1100px;
+}
+
+.col-txt-blue {
+    color: rgb(31, 50, 144);
+}
+
+.radius {
+    border-radius: 10px;
+}
+
+.light-border {
+    border: 1px solid rgb(31, 50, 144, 0.2);
+}
