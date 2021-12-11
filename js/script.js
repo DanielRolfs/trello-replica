@@ -134,7 +134,7 @@ function addCloseToBody() {
 
 function targetIsSidebar(target) {
   let sidebarParent = document.getElementById('sidebar');
-  let sidebar = Array.from(sidebarParent.childNodes);
+  let sidebar = Array.from(sidebarParent.querySelectorAll('*'));
   sidebar.push(sidebarParent);
   return sidebar.some((e) => e == target);
 }
