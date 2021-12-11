@@ -177,7 +177,8 @@
 .filter__warning::after {
   content: 'No matching tasks found';
   position: absolute;
-  right: -200px;
+  top: -35px;
+  right: 25px;
   color: var(--bg-blue);
   font-weight: 700;
   animation: hide-filter-warning 225s ease-in-out 2000s forwards;
