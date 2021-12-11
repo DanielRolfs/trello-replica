@@ -166,5 +166,10 @@ span.showBodyOfDisplayOnHover {
     border-radius: 50%;
 }
 
+.link{
+    word-wrap: break-word;
+    color: var(--bg-blue);
+}
+
 
 /* POPUP for Userdetails  End*/
