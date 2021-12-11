@@ -18,7 +18,9 @@
 }
 
 .task-list-area {
-    width: 220px;
+    width: calc((100vw - 170px - 120px) / 4);
+    min-width: 220px;
+    max-width: 377px;
     flex: 1;
     background-color: var(--bg-grey);
     border-radius: 10px;
