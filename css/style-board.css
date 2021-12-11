@@ -1,5 +1,7 @@
 #include-board{
     padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-header-board {
@@ -11,7 +13,6 @@
 }
 
 .progress-section {
-    margin-right: 20px;
     height: 100vh;
 }
 
@@ -26,8 +27,11 @@
 }
 
 .section-main {
+    width: fit-content;
     display: flex;
     justify-content: flex-start;
+    gap: 20px;
+    overflow-x: visible;
 }
 
 .progress-headline {
