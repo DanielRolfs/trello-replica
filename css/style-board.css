@@ -1,4 +1,4 @@
-#include-board{
+#include-board {
     padding-bottom: 0;
     display: flex;
     flex-direction: column;
@@ -75,19 +75,19 @@
 }
 
 .Product {
-    border-top: 4px solid rgba(0, 255, 255, 0.5) !important;
+    border-top: 7px solid rgba(0, 255, 255, 0.5) !important;
 }
 
 .Marketing {
-    border-top: 4px solid rgba(0, 0, 255, 0.5) !important;
+    border-top: 7px solid rgba(0, 0, 255, 0.5) !important;
 }
 
 .Sale {
-    border-top: 4px solid rgba(49, 0, 128, 0.5) !important;
+    border-top: 7px solid rgba(49, 0, 128, 0.5) !important;
 }
 
 .Management {
-    border-top: 4px solid rgba(238, 130, 238, 0.5) !important;
+    border-top: 7px solid rgba(238, 130, 238, 0.5) !important;
 }
 
 .high {
@@ -115,7 +115,6 @@
     justify-content: center;
     padding: 5px;
     border: 1px solid rgb(31, 50, 144, 0.2);
-    margin-top: 7px;
 }
 
 .del-btn-board {
