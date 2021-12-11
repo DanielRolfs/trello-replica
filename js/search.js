@@ -7,6 +7,7 @@ function filterTasks(category, target) {
       resetFilter(category);
     }, 225);
   }
+  hideSearchInput();
   showResetBtn();
   applyFilter(category);
   highlightActiveCategory(category, target);
@@ -121,7 +122,7 @@ function showFilterWarning() {
   extrabar.classList.add('filter__warning');
   setTimeout(() => {
     extrabar.classList.remove('filter__warning');
-  }, 2250);
+  }, 2000);
 }
 
 /* --------------  INPUT SEARCH  --------------- */
@@ -138,7 +139,6 @@ function hideSearchInput(event) {
     document.getElementById('search-input').classList.remove('search-input--open');
     document.getElementById('search-input').value = '';
     document.getElementById('search').setAttribute('onclick', 'showSearchInput();');
-    hideResetBtn();
   }
   if (event && event.target.id == 'search-icon') {
     resetFilter();
@@ -153,6 +153,7 @@ function startSearch() {
   } else {
     executeSearch(search);
   }
+  hideResetBtn();
 }
 
 function executeSearch(search) {
@@ -161,9 +162,9 @@ function executeSearch(search) {
     showFilterWarning();
   }
   showSearchResult(matches);
-  if (window.innerWidth > 600) {
+/*   if (window.innerWidth > 600) {
     showResetBtn();
-  }
+  } */
 }
 
 function getMatches(search) {

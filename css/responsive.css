@@ -373,6 +373,22 @@
   }
 }
 
+@media (max-width: 600px){
+    #reset-filter-btn{
+        top: 20px;
+        right: 20px;
+        padding: 0 1rem;
+        z-index: 2;
+    }
+
+    .filter__warning::after {
+        top: -35vh;
+        left: 50vw;
+        right: unset;
+        transform: translateX(-50%);
+    }
+}
+
 /* -------------  SEARCH INPUT  ------------- */
 
 @media (max-width: 400px) {

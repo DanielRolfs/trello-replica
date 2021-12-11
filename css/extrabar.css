@@ -176,18 +176,20 @@
 
 .filter__warning::after {
   content: 'No matching tasks found';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 4rem;
   position: absolute;
-  top: -35px;
-  right: 25px;
+  background-color: white;
+  border-radius: 10px;
+  top: -40vh;
+  left: 20vw;
   color: var(--bg-blue);
   font-weight: 700;
-  animation: hide-filter-warning 225s ease-in-out 2000s forwards;
-}
-
-@keyframes hide-filter-warning {
-  to {
-    opacity: 0;
-  }
+  font-size: 1.25rem;
+  opacity: 1;
 }
 
 #reset-filter-btn {
