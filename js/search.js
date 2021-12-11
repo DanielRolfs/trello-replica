@@ -130,6 +130,7 @@ function showFilterWarning() {
 function showSearchInput() {
   document.getElementById('extrabar').classList.add('extrabar--open');
   document.getElementById('search-input').classList.add('search-input--open');
+  document.getElementById('search-icon').src = './img/close_blue.png';
   document.getElementById('search').setAttribute('onclick', 'hideSearchInput(event);');
 }
 
@@ -138,6 +139,7 @@ function hideSearchInput(event) {
     document.getElementById('extrabar').classList.remove('extrabar--open');
     document.getElementById('search-input').classList.remove('search-input--open');
     document.getElementById('search-input').value = '';
+    document.getElementById('search-icon').src = './img/search.png';
     document.getElementById('search').setAttribute('onclick', 'showSearchInput();');
   }
   if (event && event.target.id == 'search-icon') {
