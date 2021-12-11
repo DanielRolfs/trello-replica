@@ -137,9 +137,9 @@ a.hideDisplay:hover span.showDisplayOnHover {
     position: absolute;
     font-size: 18px;
     line-height: 25px;
-    top: 5px;
-    left: 35px;
-    padding: 10px;
+    top: -50px;
+    left: 50px;
+    padding: 10px 20px;
     border: 1px solid rgb(31, 50, 144, 0.2);
     background-color: var(--bg-grey);
     color: rgb(31, 50, 144);
