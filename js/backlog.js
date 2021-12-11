@@ -80,6 +80,10 @@ async function deleteTask(logID) {
 
 function setUsersDetails(logID) {
     let currentLog;
+    let currentPage = 'backlog';
+    if(document.URL.includes("board")){
+        currentPage = 'board';
+    }
     currentLog = tasks.find(t => t.id === logID);
     document.getElementById('bl-users' + logID).innerHTML = '';
     let resp = currentLog.responsible[0];
@@ -100,7 +104,7 @@ function setUsersDetails(logID) {
             <a class="hideDisplay">
             <img src="${user.image}" alt="" class="userpic">
             <div id="count-assignes" class="">+${currentLog.responsible.length -1}</div>
-            <span class="showDisplayOnHover">
+            <span class="showDisplayOnHover user-hover__${currentPage}">
                 <span class="showBodyOfDisplayOnHover">
                     <div id="hover-users${logID}" class="userHoverBox" style="display: flex;">test</div>
                 </span>

@@ -1,3 +1,7 @@
+#include-board{
+    padding-bottom: 0;
+}
+
 .section-header-board {
     margin-bottom: 30px;
     margin-top: 20px;
@@ -12,9 +16,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
-
-.all-boards {}
 
 .task-list-area {
     min-width: 220px;
@@ -26,38 +29,27 @@
     justify-content: center;
     padding-bottom: 150px;
     height: 100vh;
-    /* overflow-y: auto;  We cannot use this because otherwise the hoverbox is also partially hidden*/
+    overflow-y: auto;
 }
 
 .section-main {
     display: flex;
     justify-content: flex-start;
-    position: sticky;
-    top: -20px;
 }
 
 .progress-headline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 16px;
     font-weight: 700;
-    margin-bottom: 0.5rem;
     color: var(--bg-blue);
-    position: sticky;
-    top: -20px;
     background-color: white;
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 20px;
-    z-index: 1;
     width: 100%;
 }
 
 .task {
     cursor: pointer;
     margin-top: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
     border-radius: 10px;
     width: 200px;
     background-color: white;
@@ -80,13 +72,6 @@
     margin-top: auto;
     padding-top: 5px;
     border-top: 1px solid rgb(31, 50, 144, 0.2);
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .userpic {

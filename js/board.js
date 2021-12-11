@@ -39,9 +39,9 @@ function listTaskByStatus(containerId, status) {
             <div onclick="editTask(${log.id})" class="responsible-user" id="bl-users${log.id}" ></div>
             <div onclick="editTask(${log.id})" class="task-title pointer">${log.title}</div>
             <div class="flex between bottom">    
-                <div onclick="editTask(${log.id})" class="pointer prio ${log.urgency} center">${log.urgency}</div>
-                <div onclick="editTask(${log.id})" class="pointer grey-text center">${log.dueDate}</div>
-                <img src="./img/delete1.png" alt="delete assginment" class="center del-btn-board" onclick="deleteTask(${log.id})">
+                <div onclick="editTask(${log.id})" class="pointer prio ${log.urgency} flex-center col">${log.urgency}</div>
+                <div onclick="editTask(${log.id})" class="pointer grey-text flex-center col">${log.dueDate}</div>
+                <img src="./img/delete1.png" alt="delete assginment" class="flex-center col del-btn-board" onclick="deleteTask(${log.id})">
             </div>
             <div onclick="editTask(${log.id})" class="task-description pointer">${log.description}</div>
             <div class="move-task">

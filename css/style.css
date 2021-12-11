@@ -124,27 +124,31 @@ a.hideDisplay {
     text-decoration: none
 }
 
-a.hideDisplay:hover {
-    z-index: 30;
-}
-
 a.hideDisplay span.showDisplayOnHover {
-    display: none
-}
-
-a.hideDisplay:hover span.showDisplayOnHover {
-    display: flex;
+    display: none;
     position: absolute;
     font-size: 18px;
     line-height: 25px;
-    top: -50px;
-    left: 50px;
     padding: 10px 20px;
     border: 1px solid rgb(31, 50, 144, 0.2);
     background-color: var(--bg-grey);
     color: rgb(31, 50, 144);
     text-align: left;
     border-radius: 10px;
+}
+
+a.hideDisplay:hover span.showDisplayOnHover {
+    display: flex;
+}
+
+.user-hover__backlog{
+    top: -50px;
+    left: 50px;
+}
+
+.user-hover__board{
+    top: 0px;
+   left: -73px; 
 }
 
 span.showBodyOfDisplayOnHover {

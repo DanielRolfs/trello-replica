@@ -84,8 +84,6 @@
     display: flex;
     justify-content: center;
     padding-bottom: 200px;
-
-    height: 100vh;
   }
   .progress-headline {
     display: flex;
@@ -100,7 +98,6 @@
     background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
-    z-index: 1;
     width: 100%;
   }
 }
@@ -111,28 +108,13 @@
   }
 }
 
-@media (min-width: 400px) {
-  .scroll-container {
-    margin: 3rem auto;
-    display: flex;
-
-    scroll-snap-type: x mandatory;
-  }
-  .progress-section {
-    height: 100%;
-    /* flex: 0 0 100%; */
-    scroll-snap-align: center;
-  }
-}
-
 @media (max-width: 400px) {
   .scroll-container {
-    margin: 3rem auto;
+    /* margin: 3rem auto; */
     display: flex;
     scroll-snap-type: x mandatory;
   }
   .progress-section {
-    height: 100%;
     scroll-snap-align: center;
   }
   .white-side-bar-mobile {
