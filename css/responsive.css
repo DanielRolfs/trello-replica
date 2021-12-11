@@ -206,7 +206,7 @@
         border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
     }
     .Management {
-        border-top: 7px solid violet !important;
+        border-top: 7px solid rgba(238, 130, 238, 0.5) !important;
         border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
     }
     .center {
