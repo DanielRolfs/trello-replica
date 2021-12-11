@@ -12,23 +12,16 @@
 
 .progress-section {
     margin-right: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 
 .task-list-area {
-    min-width: 220px;
-    max-width: 220px;
-    height: fit-content;
+    width: 220px;
+    flex: 1;
     background-color: var(--bg-grey);
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    padding-bottom: 150px;
-    height: 100vh;
     overflow-y: auto;
 }
 
@@ -48,20 +41,15 @@
 }
 
 .task {
-    cursor: pointer;
     margin-top: 10px;
     border-radius: 10px;
     width: 200px;
     background-color: white;
     min-height: 180px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding: 10px;
     border: 1px solid rgb(31, 50, 144, 0.2);
     display: flex;
     flex-direction: column;
-    cursor: text;
 }
 
 .drag-area-highlight {
@@ -80,18 +68,6 @@
     object-fit: cover;
     border-radius: 50%;
 }
-
-
-/* .category-descriptions {
-    border-radius: 10px;
-    width: fit-content;
-    margin-bottom: 5px;
-}
-
-.category-descriptions p {
-    margin-left: 10px;
-    margin-right: 10px;
-} */
 
 .Product {
     border-top: 4px solid rgba(0, 255, 255, 0.5) !important;

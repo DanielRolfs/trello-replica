@@ -75,30 +75,9 @@
 /*---------Board-------------*/
 
 @media (max-width: 700px) {
-  .task-list-area {
-    min-width: 220px;
-    /* max-width: 220px; */
-    height: fit-content;
-    background-color: var(--bg-grey);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 200px;
-  }
+
   .progress-headline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--bg-blue);
-    position: sticky;
-    top: 0px;
-    background-color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
+    z-index: 2;
   }
 }
 
@@ -110,13 +89,14 @@
 
 @media (max-width: 400px) {
   .scroll-container {
-    /* margin: 3rem auto; */
     display: flex;
     scroll-snap-type: x mandatory;
   }
+
   .progress-section {
     scroll-snap-align: center;
   }
+  
   .white-side-bar-mobile {
     width: 44px;
     height: 44px;
