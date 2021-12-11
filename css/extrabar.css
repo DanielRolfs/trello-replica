@@ -1,5 +1,5 @@
 #extrabar {
-  /* width: 150px; */
+  width: 150px;
   height: 40px;
   position: fixed;
   left: 20px;
@@ -7,7 +7,7 @@
   background-color: var(--bg-grey);
   border-radius: 25px;
   border: 1px solid rgb(31, 50, 144, 0.2);
-  transition: left 225ms ease-in-out;
+  transition: all 225ms ease-in-out;
 }
 
 .extrabar--sidebar-open {
@@ -24,7 +24,6 @@
   position: relative;
   height: 100%;
   width: 75px;
-  flex: 1;
   border-right: 1px solid rgb(31, 50, 144, 0.2);
 }
 
@@ -128,38 +127,51 @@
 /* pop legend end\ */
 
 #search {
-  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
   height: 100%;
+  padding: 3px;
   transition: all 225ms ease-in-out;
   position: relative;
 }
 
 #search img {
   width: 23px;
-  position: absolute;
-  left: 23px;
+  margin-left: 20px;
+  margin-right: 10px;
+  /* position: absolute;
+  left: 23px; */
 }
 
 #search-input {
-  position: absolute;
-  left: 50px;
+  /* position: absolute;
+  left: 55px; */
+  flex: 0;
   width: 0px;
-  height: 30px;
-  padding: 5px 10px;
+  height: 32px;
+  padding: 2.5% 5%;
+  /* padding: 5px 10px; */
   border: 1px solid rgb(200, 200, 200);
   border-radius: 15px;
   visibility: hidden;
   transition: all 225ms ease-in-out;
 }
 
+.extrabar--open{
+  width: 350px !important;
+}
+
 .search-input--open {
-  width: 200px !important;
+  flex: 1 !important;
+  /* width: 100% !important; */
   visibility: visible !important;
 }
 
 .search--open {
   justify-content: flex-end !important;
-  width: 255px !important;
+  width: 285px !important;
 }
 
 .filter__warning::after {

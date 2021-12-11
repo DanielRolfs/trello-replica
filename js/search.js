@@ -127,15 +127,17 @@ function showFilterWarning() {
 /* --------------  INPUT SEARCH  --------------- */
 
 function showSearchInput() {
+  document.getElementById('extrabar').classList.add('extrabar--open');
   document.getElementById('search-input').classList.add('search-input--open');
-  document.getElementById('search').classList.add('search--open');
+  /* document.getElementById('search').classList.add('search--open'); */
   document.getElementById('search').setAttribute('onclick', 'hideSearchInput(event);');
 }
 
 function hideSearchInput(event) {
   if (!event || event.target.id != 'search-input') {
+    document.getElementById('extrabar').classList.remove('extrabar--open');
     document.getElementById('search-input').classList.remove('search-input--open');
-    document.getElementById('search').classList.remove('search--open');
+    /* document.getElementById('search').classList.remove('search--open'); */
     document.getElementById('search-input').value = '';
     document.getElementById('search').setAttribute('onclick', 'showSearchInput();');
     hideResetBtn();
@@ -153,7 +155,9 @@ function startSearch() {
   } else {
     let matches = getMatches(search);
     showSearchResult(matches);
+    if(window.innerWidth > 600){
     showResetBtn();
+    }
   }
 }
 
@@ -206,4 +210,11 @@ function showSearchResult(matchingTasksIds) {
   setTimeout(() => {
     resetFilter(matchingTasksIds);
   }, 250);
+}
+
+
+window.onresize = () => {
+  if(window.innerWidth < 600 && document.getElementById('search-input').classList.contains('search-input--open')){
+    hideResetBtn();
+  }
 }
