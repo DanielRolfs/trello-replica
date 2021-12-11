@@ -129,7 +129,6 @@ function showFilterWarning() {
 function showSearchInput() {
   document.getElementById('extrabar').classList.add('extrabar--open');
   document.getElementById('search-input').classList.add('search-input--open');
-  /* document.getElementById('search').classList.add('search--open'); */
   document.getElementById('search').setAttribute('onclick', 'hideSearchInput(event);');
 }
 
@@ -137,7 +136,6 @@ function hideSearchInput(event) {
   if (!event || event.target.id != 'search-input') {
     document.getElementById('extrabar').classList.remove('extrabar--open');
     document.getElementById('search-input').classList.remove('search-input--open');
-    /* document.getElementById('search').classList.remove('search--open'); */
     document.getElementById('search-input').value = '';
     document.getElementById('search').setAttribute('onclick', 'showSearchInput();');
     hideResetBtn();
@@ -153,15 +151,22 @@ function startSearch() {
   if (!search) {
     resetFilter();
   } else {
-    let matches = getMatches(search);
-    showSearchResult(matches);
-    if(window.innerWidth > 600){
-    showResetBtn();
-    }
+    executeSearch(search);
   }
 }
 
-function getMatches(search){
+function executeSearch(search) {
+  let matches = getMatches(search);
+  if (!matches.length > 0) {
+    showFilterWarning();
+  }
+  showSearchResult(matches);
+  if (window.innerWidth > 600) {
+    showResetBtn();
+  }
+}
+
+function getMatches(search) {
   let matches = searchUsers(search);
   let matches_2 = searchTasks(search);
   matches_2.forEach((m) => {
@@ -174,10 +179,10 @@ function getMatches(search){
 
 function searchUsers(search) {
   let matchingUsersIds = getMatchingUsers(search);
-  if(matchingUsersIds.length > 0){
-  let matchingTasksIds = getTasksWithUsers(matchingUsersIds);
-  return matchingTasksIds;
-  } else{
+  if (matchingUsersIds.length > 0) {
+    let matchingTasksIds = getTasksWithUsers(matchingUsersIds);
+    return matchingTasksIds;
+  } else {
     return [];
   }
 }
@@ -212,9 +217,8 @@ function showSearchResult(matchingTasksIds) {
   }, 250);
 }
 
-
 window.onresize = () => {
-  if(window.innerWidth < 600 && document.getElementById('search-input').classList.contains('search-input--open')){
+  if (window.innerWidth < 600 && document.getElementById('search-input').classList.contains('search-input--open')) {
     hideResetBtn();
   }
-}
+};
