@@ -1,369 +1,378 @@
 /*---------All pages-------------*/
 
 @media (max-width: 700px) {
-  .white-top-bar-mobile {
-    width: 100vw;
-    height: 44px;
-    background-color: white;
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
+    .white-top-bar-mobile {
+        width: 100vw;
+        height: 44px;
+        background-color: white;
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
 }
 
 @media (max-width: 1000px) {
-  /*---------navbar-------------*/
-  .sidebar {
-    position: absolute;
-    left: -100px;
-    z-index: 3;
-    width: 150px;
-    font-size: 16px;
-  }
-  .section {
-    padding-left: 70px;
-  }
-  #nav-btn__container {
-    display: unset;
-  }
-  .sidebar__content {
-    visibility: hidden;
-  }
-  #sidebar__top {
-    margin-top: 20px;
-  }
-  .logo img {
-    width: 30px;
-  }
-  .nav-btn--blue {
-    display: none;
-  }
-  .sidebar-open {
-    left: 0 !important;
-  }
-  /*---------navbar end-------------*/
+    /*---------navbar-------------*/
+    .sidebar {
+        position: absolute;
+        left: -100px;
+        z-index: 3;
+        width: 150px;
+        font-size: 16px;
+    }
+    .section {
+        padding-left: 70px;
+    }
+    #nav-btn__container {
+        display: unset;
+    }
+    .sidebar__content {
+        visibility: hidden;
+    }
+    #sidebar__top {
+        margin-top: 20px;
+    }
+    .logo img {
+        width: 30px;
+    }
+    .nav-btn--blue {
+        display: none;
+    }
+    .sidebar-open {
+        left: 0 !important;
+    }
+    /*---------navbar end-------------*/
 }
 
 @media (max-width: 700px) {
-  /*---------navbar-------------*/
-  .sidebar {
-    position: absolute;
-    left: -150px;
-    z-index: 2;
-    width: 150px;
-    font-size: 16px;
-  }
-  .section {
-    padding-left: 20px;
-  }
-  .nav-btn--blue {
-    display: unset;
-  }
-  .nav-btn--white {
-    display: none;
-  }
-  /*---------navbar end-------------*/
+    /*---------navbar-------------*/
+    .sidebar {
+        position: absolute;
+        left: -150px;
+        /* z-index: 2; */
+        width: 150px;
+        font-size: 16px;
+    }
+    .section {
+        padding-left: 20px;
+    }
+    .nav-btn--blue {
+        display: unset;
+    }
+    .nav-btn--white {
+        display: none;
+    }
+    /*---------navbar end-------------*/
 }
 
 @media (max-width: 400px) {
-  .task-form-btns {
-    gap: 10px;
-  }
+    .task-form-btns {
+        gap: 10px;
+    }
 }
+
+
 /*---------Board-------------*/
 
 @media (max-width: 700px) {
-
-  .progress-headline {
-    z-index: 2;
-  }
+    .progress-headline {
+        z-index: 2;
+    }
 }
 
 @media (min-width: 700px) {
-  .move-task {
-    display: none;
-  }
+    .move-task {
+        display: none;
+    }
 }
 
 @media (max-width: 400px) {
-  .scroll-container {
-    display: flex;
-    scroll-snap-type: x mandatory;
-  }
-
-  .progress-section {
-    scroll-snap-align: center;
-  }
-  
-  .white-side-bar-mobile {
-    width: 44px;
-    height: 44px;
-    background-color: white;
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-  }
+    .scroll-container {
+        display: flex;
+        scroll-snap-type: x mandatory;
+    }
+    .progress-section {
+        scroll-snap-align: center;
+    }
+    .white-side-bar-mobile {
+        width: 44px;
+        height: 44px;
+        background-color: white;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
 }
+
+
 /*---------Board end-------------*/
 
 @media (max-width: 500px) {
-  /*---------Backlog-------------*/
-  .backlog-content {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  #log_table tr {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: none !important;
-    border-left: none !important;
-  }
-  .log {
-    background-color: white;
-  }
-  #logs-table td {
-    border: 0;
-    background-color: rgb(244, 243, 251);
-  }
-  #logs-table td:first-child {
-    border-left: 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 0px;
-    border-left: 2px rgb(31, 50, 144, 0.2) solid;
-    width: 100%;
-  }
-  #logs-table td:last-child {
-    border-right: 0;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 10px;
-    border-right: 2px rgb(31, 50, 144, 0.2) solid;
-    border-bottom: 2px rgba(141, 142, 150, 0.2) solid;
-    margin-bottom: 15px;
-    padding-top: 30px;
-  }
-  #sign-to-board {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 0;
-  }
-  .del {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-  }
-  .p-to-board {
-    display: none;
-  }
-  #del-btn-bl {
-    width: 20px;
-    margin-top: 0;
-  }
-  #logs-table td {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-left: 2px rgb(31, 50, 144, 0.2) solid;
-    border-right: 2px rgb(31, 50, 144, 0.2) solid;
-  }
-  .log_table__head {
-    display: none;
-  }
-  .next {
-    position: relative;
-    left: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .users {
-    display: flex;
-  }
-  .center {
-    text-align: center;
-  }
-  .Product {
-    border-top: 7px solid rgba(0, 255, 255, 0.5) !important;
-    border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
-  }
-  .Marketing {
-    border-top: 7px solid rgba(0, 0, 255, 0.5) !important;
-    border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
-  }
-  .Sale {
-    border-top: 7px solid rgba(49, 0, 128, 0.5) !important;
-    border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
-  }
-  .Management {
-    border-top: 7px solid violet !important;
-    border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
-  }
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-  .urg-date {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .bl-date {
-    margin-left: 0 !important;
-    margin-right: 20px !important;
-  }
-  .prio {
-    margin-top: 0;
-  }
-  #cat-date-urg {
-    width: 100%;
-  }
-  .row700 {
-    width: 100%;
-  }
-  .pd700 {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-  #log {
-    border: none !important;
-  }
-  .resp-cat {
-    visibility: hidden;
-  }
-  .resp-desc {
-    padding-top: 20px;
-  }
-  #third-field {
-    max-width: 100%;
-    font-size: 18px !important;
-    border-top: 1px solid rgba(141, 142, 150, 0.2) !important;
-  }
-  .short-title {
-    margin-left: 0;
-    white-space: inherit;
-  }
-  #fourth-field {
-    height: 0;
-  }
-  #first-field {
-    border-top: 1px solid rgba(141, 142, 150, 0.2) !important;
-  }
+    /*---------Backlog-------------*/
+    .backlog-content {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    #log_table tr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: none !important;
+        border-left: none !important;
+    }
+    .log {
+        background-color: white;
+    }
+    #logs-table td {
+        border: 0;
+        background-color: rgb(244, 243, 251);
+    }
+    #logs-table td:first-child {
+        border-left: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-left: 2px rgb(31, 50, 144, 0.2) solid;
+        width: 100%;
+    }
+    #logs-table td:last-child {
+        border-right: 0;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-right: 2px rgb(31, 50, 144, 0.2) solid;
+        border-bottom: 2px rgba(141, 142, 150, 0.2) solid;
+        margin-bottom: 15px;
+        padding-top: 30px;
+    }
+    #sign-to-board {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .del {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .p-to-board {
+        display: none;
+    }
+    #del-btn-bl {
+        width: 20px;
+        margin-top: 0;
+    }
+    #logs-table td {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 2px rgb(31, 50, 144, 0.2) solid;
+        border-right: 2px rgb(31, 50, 144, 0.2) solid;
+    }
+    .log_table__head {
+        display: none;
+    }
+    .next {
+        position: relative;
+        left: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .users {
+        display: flex;
+    }
+    .center {
+        text-align: center;
+    }
+    .Product {
+        border-top: 7px solid rgba(0, 255, 255, 0.5) !important;
+        border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
+    }
+    .Marketing {
+        border-top: 7px solid rgba(0, 0, 255, 0.5) !important;
+        border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
+    }
+    .Sale {
+        border-top: 7px solid rgba(49, 0, 128, 0.5) !important;
+        border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
+    }
+    .Management {
+        border-top: 7px solid violet !important;
+        border-left: 2px rgb(31, 50, 144, 0.2) solid !important;
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    .urg-date {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .bl-date {
+        margin-left: 0 !important;
+        margin-right: 20px !important;
+    }
+    .prio {
+        margin-top: 0;
+    }
+    #cat-date-urg {
+        width: 100%;
+    }
+    .row700 {
+        width: 100%;
+    }
+    .pd700 {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    #log {
+        border: none !important;
+    }
+    .resp-cat {
+        visibility: hidden;
+    }
+    .resp-desc {
+        padding-top: 20px;
+    }
+    #third-field {
+        max-width: 100%;
+        font-size: 18px !important;
+        border-top: 1px solid rgba(141, 142, 150, 0.2) !important;
+    }
+    .short-title {
+        margin-left: 0;
+        white-space: inherit;
+    }
+    #fourth-field {
+        height: 0;
+    }
+    #first-field {
+        border-top: 1px solid rgba(141, 142, 150, 0.2) !important;
+    }
 }
+
+
 /*---------Backlog end-------------*/
+
+
 /* --------------  ADD / EDIT TASK FORM  -------------- */
 
 @media (max-width: 400px) {
-  #add-task-container {
-    padding: 0;
-    padding-top: 20px;
-  }
-  #add-task__heading {
-    padding: 0 20px;
-  }
-  .edit-task__container {
-    height: 100vh;
-    overflow-y: auto;
-  }
-  .assign-task {
-    width: 100% !important;
-    height: 100vh !important;
-    padding-top: 60px !important;
-    border-radius: 0 !important;
-  }
+    #add-task-container {
+        padding: 0;
+        padding-top: 20px;
+    }
+    #add-task__heading {
+        padding: 0 20px;
+    }
+    .edit-task__container {
+        height: 100vh;
+        overflow-y: auto;
+    }
+    .assign-task {
+        width: 100% !important;
+        height: 100vh !important;
+        padding-top: 60px !important;
+        border-radius: 0 !important;
+    }
 }
 
 @media (min-width: 400px) {
-  .edit-task__container {
-    padding: 30px;
-  }
-  .task-form__container {
-    border-radius: 10px;
-  }
+    .edit-task__container {
+        padding: 30px;
+    }
+    .task-form__container {
+        border-radius: 10px;
+    }
 }
 
 @media (min-width: 700px) {
-  .task-form__container {
-    max-width: 1100px;
-  }
-  .task-form {
-    height: 100%;
-    display: flex;
-  }
-  .form__column > div:last-child {
-    margin-bottom: 0;
-  }
-  .task-responsibles {
-    overflow-y: auto;
-  }
-  .edit-task__container {
-    padding-left: 70px;
-    display: flex;
-    align-items: center;
-  }
+    .task-form__container {
+        max-width: 1100px;
+    }
+    .task-form {
+        height: 100%;
+        display: flex;
+    }
+    .form__column>div:last-child {
+        margin-bottom: 0;
+    }
+    .task-responsibles {
+        overflow-y: auto;
+    }
+    .edit-task__container {
+        padding-left: 70px;
+        display: flex;
+        align-items: center;
+    }
 }
 
 @media (min-width: 1000px) {
-  .edit-task__container {
-    width: calc(100% - 180px);
-    padding-left: 20px;
-  }
+    .edit-task__container {
+        width: calc(100% - 180px);
+        padding-left: 20px;
+    }
 }
+
+
 /* ------------  COLOR LEGEND  -------------- */
 
 @media (max-width: 700px) {
-  #extrabar {
-    left: 20px;
-  }
-  #color-legend:focus #color-legend__popup {
-    display: flex;
-  }
+    #extrabar {
+        left: 20px;
+    }
+    #color-legend:focus #color-legend__popup {
+        display: flex;
+    }
 }
 
 @media (min-width: 1000px) {
-  #extrabar {
-    left: 200px;
-  }
+    #extrabar {
+        left: 200px;
+    }
 }
 
 @media (max-width: 600px) {
-  #reset-filter-btn {
-    top: 20px;
-    right: 20px;
-    padding: 0 1rem;
-    z-index: 2;
-  }
-
-  .filter__warning::after {
-    top: -35vh;
-    left: 50vw;
-    right: unset;
-    transform: translateX(-50%);
-  }
+    #reset-filter-btn {
+        top: 20px;
+        right: 20px;
+        padding: 0 1rem;
+        z-index: 2;
+    }
+    .filter__warning::after {
+        top: -35vh;
+        left: 50vw;
+        right: unset;
+        transform: translateX(-50%);
+    }
 }
+
 
 /* -------------  SEARCH INPUT  ------------- */
 
 @media (max-width: 400px) {
-  .extrabar--open {
-    width: 88% !important;
-  }
+    .extrabar--open {
+        width: 88% !important;
+    }
 }
 
+
 /*---------Backlog-------------*/
+
 @media (max-width: 700px) {
-  #fourth-field {
-    display: none;
-  }
+    #fourth-field {
+        display: none;
+    }
 }
