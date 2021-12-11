@@ -67,12 +67,19 @@ async function loadTasks() {
 function showActiveLink() {
   let links = Array.from(document.links);
   let activeLink = links.find((link) => document.URL.includes(link.href));
+  console.log(activeLink);
   removeLinkMarker(links);
-  activeLink.parentElement.classList.add('sidebarlink--active');
+  let regEx = /about|privacy/;
+  if (regEx.test(activeLink.href)) {
+    activeLink.classList.add('sidebarlink--active__bottom');
+  } else {
+    activeLink.parentElement.classList.add('sidebarlink--active');
+  }
 }
 
 function removeLinkMarker(links) {
   links.forEach((link) => link.parentElement.classList.remove('sidebarlink--active'));
+  links.forEach((link) => link.classList.remove('sidebarlink--active__bottom'));
 }
 //sidebarend
 

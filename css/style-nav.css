@@ -43,6 +43,9 @@ a {
 .sidebarlink--active {
     border-left: 4px white solid;
 }
+.sidebarlink--active__bottom {
+    border-bottom: 4px white solid;
+}
 
 #sidebar__bottom {
     width: 100%;
@@ -73,8 +76,7 @@ a {
 }
 
 #sidebar__bottom a {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
 #sidebar__bottom a:hover {
