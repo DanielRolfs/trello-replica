@@ -83,6 +83,9 @@ function dropout() {
   moveColorLegend();
   toggleBtnVisibility();
   toggleNavContentVisibility();
+  setTimeout(() => {
+    addCloseToBody();
+  }, 20);
 }
 
 function dropin() {
@@ -120,5 +123,19 @@ window.onresize = function () {
 function navBarIsOpen() {
   return document.getElementById('sidebar').classList.contains('sidebar-open');
 }
-// responsive nav-bar end
 
+function addCloseToBody() {
+  document.body.addEventListener('click', (event) => {
+    if (!targetIsSidebar(event.target) && navBarIsOpen()) {
+      dropin();
+    }
+  });
+}
+
+function targetIsSidebar(target) {
+  let sidebarParent = document.getElementById('sidebar');
+  let sidebar = Array.from(sidebarParent.childNodes);
+  sidebar.push(sidebarParent);
+  return sidebar.some((e) => e == target);
+}
+// responsive nav-bar end
