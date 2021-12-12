@@ -14,7 +14,8 @@ function filterTasks(category, target) {
 }
 
 function filterIsActive() {
-  return !document.getElementById('reset-filter-btn').classList.contains('d-none');
+  let tasks = Array.from(document.getElementsByClassName('rendered-task'));
+  return tasks.some((t) => t.classList.contains('d-none'));
 }
 
 function applyFilter(category) {
@@ -54,10 +55,8 @@ function resetFilter(criterion, event) {
   if (criterion) {
     tasks = getTasksToShow(criterion);
   } else if (event) {
-    hideSearchInput();
     hideResetBtn();
   }
-  unhighlightCategory();
   tasks.forEach((t) => showHiddenTask(t));
 }
 
@@ -136,15 +135,19 @@ function showSearchInput() {
 
 function hideSearchInput(event) {
   if (!event || event.target.id != 'search-input') {
+    if (event && event.target.id == 'search-icon' && hasInput()) {
+      resetFilter();
+    }
     document.getElementById('extrabar').classList.remove('extrabar--open');
     document.getElementById('search-input').classList.remove('search-input--open');
     document.getElementById('search-input').value = '';
     document.getElementById('search-icon').src = './img/search.png';
     document.getElementById('search').setAttribute('onclick', 'showSearchInput();');
   }
-  if (event && event.target.id == 'search-icon') {
-    resetFilter();
-  }
+}
+
+function hasInput() {
+  return document.getElementById('search-input').value != '';
 }
 
 function startSearch() {
@@ -155,6 +158,7 @@ function startSearch() {
   } else {
     executeSearch(search);
   }
+  unhighlightCategory();
   hideResetBtn();
 }
 
@@ -164,9 +168,6 @@ function executeSearch(search) {
     showFilterWarning();
   }
   showSearchResult(matches);
-/*   if (window.innerWidth > 600) {
-    showResetBtn();
-  } */
 }
 
 function getMatches(search) {
