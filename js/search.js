@@ -51,10 +51,12 @@ function getTasksToHide(criterion) {
 }
 
 function resetFilter(criterion, event) {
+  console.log(event)
   let tasks = Array.from(document.getElementsByClassName('rendered-task'));
   if (criterion) {
     tasks = getTasksToShow(criterion);
   } else if (event) {
+    unhighlightCategory();
     hideResetBtn();
   }
   tasks.forEach((t) => showHiddenTask(t));
