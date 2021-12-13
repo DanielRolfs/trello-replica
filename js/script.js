@@ -67,7 +67,6 @@ async function loadTasks() {
 function showActiveLink() {
   let links = Array.from(document.links);
   let activeLink = links.find((link) => document.URL.includes(link.href));
-  console.log(activeLink);
   removeLinkMarker(links);
   let regEx = /about|privacy/;
   if (regEx.test(activeLink.href)) {

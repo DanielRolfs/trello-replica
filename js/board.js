@@ -68,8 +68,6 @@ async function deleteTask(logID) {
     });
     await backend.setItem('tasks', JSON.stringify(tasks));
     console.log('gelöscht Task mit ID:' + logID);
-    console.log(tasks.length);
-    console.log(tasks);
     loadTaskstoTODO()
 }
 
@@ -108,8 +106,6 @@ async function saveBoardStatus() {
 
 function moveToPreviousBoard(id, status) {
     currentDraggedElement = tasks.find(t => t.id === id);
-    /*     console.log('currentDraggedElementii', currentDraggedElement);
-        console.log('currendboard', status == b1); */
     if (status == b4) {
         status = 'b3';
     } else if (status == b3) {
