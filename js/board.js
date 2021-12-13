@@ -4,6 +4,10 @@ let currentBoard;
 
 async function loadTaskstoTODO() {
     await loadTasks();
+    renderTasksInBoard();
+}
+
+function renderTasksInBoard(){
     listTaskByStatus('taskTodo', 'b1');
     listTaskByStatus('taskInprogress', 'b2');
     listTaskByStatus('taskTesting', 'b3');
