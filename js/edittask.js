@@ -9,6 +9,10 @@ function getTask(taskId) {
   return tasks.find((task) => task.id == taskId);
 }
 
+/**
+ * Adds the onsubmit-event to the form and passes the needed Task-instance that shall be edited
+ * @param {Task} task - The task that shall be edited
+ */
 function addSaveOnSubmit(task) {
   let form = document.querySelector('.task-form');
   form.addEventListener('submit', (e) => {
