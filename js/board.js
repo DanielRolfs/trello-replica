@@ -102,8 +102,8 @@ function removeHighlight(id) {
 
 //inserted by Marcus (has to be tested)----> getested by Marcus 28.11. 01:20
 async function saveBoardStatus() {
+    renderTasksInBoard();
     await backend.setItem('tasks', JSON.stringify(tasks));
-    loadTaskstoTODO();
 }
 
 function moveToPreviousBoard(id, status) {
