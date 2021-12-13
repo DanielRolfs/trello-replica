@@ -1,6 +1,10 @@
 let currentLog;
-
 async function loadBacklogs() {
+    await loadTasks();
+    renderTasksInBacklog();
+}
+
+async function renderTasksInBacklog() {
     await loadTasks();
     let logs = tasks.filter(t => t['status'] == 'bl');
     document.getElementById('logs-table').innerHTML = '';
@@ -61,7 +65,7 @@ async function pushTaskToBoard(logID) {
     await backend.setItem('tasks', JSON.stringify(tasks));
     console.log('Task mit ID:' + logID + 'im Board')
     console.log(tasks);
-    loadBacklogs();
+    renderTasksInBacklog();
 }
 
 async function deleteTask(logID) {
@@ -74,7 +78,7 @@ async function deleteTask(logID) {
     console.log('gelöscht Task mit ID:' + logID);
     console.log(tasks.length);
     console.log(tasks);
-    loadBacklogs();
+    renderTasksInBacklog();
 }
 
 
