@@ -64,10 +64,12 @@ function closeForm() {
     document.querySelector('.section').style.overflowY = 'auto';
     document.querySelector('.form__inner-modal').classList.add('d-none');
     document.querySelector('.task-saved__confirmation').classList.add('d-none');
-    if (document.URL.includes('board.html')) {
-      window.location.href = './board.html';
-    } else {
+    if (document.URL.includes('addtask.html')) {
       window.location.href = './backlog.html';
+    } else if(document.URL.includes('backlog.html')){
+      renderTasksInBacklog()
+    } else if(document.URL.includes('board.html')){
+      renderTasksInBoard();
     }
   }, 1000);
 }

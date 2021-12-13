@@ -4,6 +4,10 @@ let currentBoard;
 
 async function loadTaskstoTODO() {
     await loadTasks();
+    renderTasksInBoard();
+}
+
+function renderTasksInBoard(){
     listTaskByStatus('taskTodo', 'b1');
     listTaskByStatus('taskInprogress', 'b2');
     listTaskByStatus('taskTesting', 'b3');
@@ -64,8 +68,6 @@ async function deleteTask(logID) {
     });
     await backend.setItem('tasks', JSON.stringify(tasks));
     console.log('gelöscht Task mit ID:' + logID);
-    console.log(tasks.length);
-    console.log(tasks);
     loadTaskstoTODO()
 }
 
@@ -98,14 +100,12 @@ function removeHighlight(id) {
 
 //inserted by Marcus (has to be tested)----> getested by Marcus 28.11. 01:20
 async function saveBoardStatus() {
+    renderTasksInBoard();
     await backend.setItem('tasks', JSON.stringify(tasks));
-    loadTaskstoTODO();
 }
 
 function moveToPreviousBoard(id, status) {
     currentDraggedElement = tasks.find(t => t.id === id);
-    /*     console.log('currentDraggedElementii', currentDraggedElement);
-        console.log('currendboard', status == b1); */
     if (status == b4) {
         status = 'b3';
     } else if (status == b3) {

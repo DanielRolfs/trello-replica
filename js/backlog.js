@@ -64,7 +64,6 @@ async function pushTaskToBoard(logID) {
     log.status = 'b1';
     await backend.setItem('tasks', JSON.stringify(tasks));
     console.log('Task mit ID:' + logID + 'im Board')
-    console.log(tasks);
     renderTasksInBacklog();
 }
 
@@ -76,8 +75,6 @@ async function deleteTask(logID) {
     });
     await backend.setItem('tasks', JSON.stringify(tasks));
     console.log('gelöscht Task mit ID:' + logID);
-    console.log(tasks.length);
-    console.log(tasks);
     renderTasksInBacklog();
 }
 
