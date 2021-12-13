@@ -90,7 +90,8 @@ function setUsersDetails(logID) {
     let user = users.find(u => u.id === resp);
     if (currentLog.responsible.length == 1) {
         document.getElementById('bl-users' + logID).innerHTML = `
-        
+        <div class="usernew">
+            <div>   
             <a class="hideDisplay"> 
             <img src="${user.image}" alt="" class="userpic">
             <div id="count-assignes" class="d-none">+${currentLog.responsible.length -1}</div>
@@ -100,13 +101,16 @@ function setUsersDetails(logID) {
                 </span>
             </span>
             </a>
+            </div>
+            </div>
 `;
         setHoverUsersDetails(logID);
 
     } else {
         if (currentLog.responsible.length > 1) {
             document.getElementById('bl-users' + logID).innerHTML = `
-           
+            <div class="usernew">
+            <div>   
             <a class="hideDisplay">
             <img src="${user.image}" alt="" class="userpic">
             <div id="count-assignes" class="">+${currentLog.responsible.length -1}</div>
@@ -116,6 +120,8 @@ function setUsersDetails(logID) {
                 </span>
             </span>
             </a>
+            </div>
+            </div>
 `;
         }
         setHoverUsersDetails(logID);
