@@ -10,21 +10,6 @@
         font-size: 14px;
     }
     
-    .Product {
-        border-left: 7px solid rgba(0, 255, 255, 0.5) !important;
-    }
-    
-    .Marketing {
-        border-left: 7px solid rgba(0, 0, 255, 0.5) !important;
-    }
-    
-    .Sale {
-        border-left: 7px solid rgba(49, 0, 128, 0.5) !important;
-    }
-    
-    .Management {
-        border-left: 7px solid rgba(238, 130, 238, 0.5) !important;
-    }
     
     .del {
         width: 50px;
@@ -199,7 +184,7 @@
         border-top: 1px solid rgba(31, 50, 144, 0.2);
         border-bottom: 1px solid rgb(31, 50, 144, 0.2);
         padding-top: 5px;
-        background-color: rgb(244, 243, 251);
+        background-color: var(--bg-grey);
         cursor: pointer;
     }
     
@@ -213,7 +198,7 @@
         font-size: 10px;
         padding: 5px;
         margin-top: 7px;
-        border: 1px solid rgb(31, 50, 144, 0.2);
+        /* border: 1px solid rgb(31, 50, 144, 0.2); */
     }
     
     .urg-date {
@@ -224,21 +209,18 @@
     }
     
     .high {
-        background-color: rgba(255, 0, 0, 0.5);
+        background-color: #F44336;
         color: white;
-        font-weight: lighter;
     }
     
     .middle {
-        background-color: rgba(255, 255, 0, 0.5);
+        background-color: #FFEB3B;
         color: black;
-        font-weight: lighter;
     }
     
     .low {
-        background-color: rgba(0, 128, 0, 0.5);
+        background-color: #8BC34A;
         color: white;
-        font-weight: lighter;
     }
     
     .bl-date {

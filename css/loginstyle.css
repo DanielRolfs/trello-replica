@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     height: 100vh;
-    background-color: var(--secondary);
+    background-color: var(--bg-grey);
 }
 
 .login {
@@ -19,7 +19,7 @@
     padding: 20px;
     background-color: white;
     border-radius: 15px;
-    border: 4px #dedee2 solid;
+    border: 2px var(--primary) solid;
 }
 
 .input {
