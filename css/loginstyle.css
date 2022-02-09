@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     height: 100vh;
-    background-color: rgb(32, 44, 139);
+    background-color: var(--secondary);
 }
 
 .login {
@@ -34,7 +34,7 @@
     color: white;
     height: 40px;
     width: 150px;
-    background-color: rgb(32, 44, 139);
+    background-color: var(--primary);
     cursor: pointer;
     padding-bottom: 30px;
 }

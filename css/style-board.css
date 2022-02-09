@@ -40,7 +40,7 @@
 .progress-headline {
     font-size: 16px;
     font-weight: 700;
-    color: var(--bg-blue);
+    color: var(--primary);
     background-color: white;
     padding-top: 30px;
     padding-bottom: 20px;
@@ -76,34 +76,20 @@
     border-radius: 50%;
 }
 
-.Product {
-    border-top: 7px solid rgba(0, 255, 255, 0.5) !important;
-}
 
-.Marketing {
-    border-top: 7px solid rgba(0, 0, 255, 0.5) !important;
-}
-
-.Sale {
-    border-top: 7px solid rgba(49, 0, 128, 0.5) !important;
-}
-
-.Management {
-    border-top: 7px solid rgba(238, 130, 238, 0.5) !important;
-}
 
 .high {
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: #F44336;
     color: white;
 }
 
 .middle {
-    background-color: rgba(255, 255, 0, 0.5);
+    background-color: #FFEB3B;
     color: black;
 }
 
 .low {
-    background-color: rgba(0, 128, 0, 0.5);
+    background-color: #8BC34A;
     color: white;
 }
 
@@ -150,7 +136,7 @@
     text-align: center;
     font-size: 16px;
     font-weight: 700;
-    color: var(--bg-blue);
+    color: var(--primary);
 }
 
 .task-description {

@@ -61,8 +61,8 @@ select {
   gap: 30px;
 }
 
-.btns-right{
-    justify-content: flex-end;
+.btns-right {
+  justify-content: flex-end;
 }
 
 .btn--cancel {
@@ -174,7 +174,7 @@ select {
   margin-right: 15px;
 }
 
-.responsibles:hover > .delete-assignment-btn {
+.responsibles:hover>.delete-assignment-btn {
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -226,4 +226,10 @@ select {
 .edit-task__container {
   z-index: 2;
   overflow-y: auto;
+}
+
+.place {
+  height: 158px;
+  display: flex;
+  align-items: end;
 }

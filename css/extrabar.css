@@ -109,19 +109,19 @@
 }
 
 #color__management {
-  background-color: rgba(238, 130, 238, 0.5);
+  background-color: #3F51B5;
 }
 
 #color__marketing {
-  background-color: rgba(0, 0, 255, 0.5);
+  background-color: #2196F3;
 }
 
 #color__product {
-  background-color: rgba(0, 255, 255, 0.5);
+  background-color: #00BCD4;
 }
 
 #color__sale {
-  background-color: rgba(49, 0, 128, 0.5);
+  background-color: #009688;
 }
 
 /* pop legend end\ */
