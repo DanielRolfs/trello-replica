@@ -2,7 +2,7 @@ function validateLoginData() {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     let matchingUser = getMatchingUser(username, password);
-        if ( matchingUser || username == 'Gast') {
+        if ( matchingUser || username == 'Guest') {
             console.log(username + " is logged in!!!")
             window.location.href = './board.html'
             /* renderprofile(matchingUser); */
@@ -32,7 +32,7 @@ function renderprofile(matchingUser) {
 }
 
 function loadLoginUsers() {
-    document.getElementById('username').innerHTML = `<option value="Gast">Gast</option>`;
+    document.getElementById('username').innerHTML = `<option value="Guest">Guest</option>`;
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
         document.getElementById('username').innerHTML += `

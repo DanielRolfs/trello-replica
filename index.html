@@ -34,7 +34,7 @@
             <div class="login">
                 <div class="area">
                     <div class="head">
-                        <div class="logo"><img src="img/logo.png" alt="" /></div>
+                        <!-- <div class="logo"><img src="img/logo.png" alt="" /></div> -->
                         <div class="header">
                             <h1>Login</h1>
                         </div>
@@ -42,15 +42,14 @@
                     <div class="inputs">
                         <div>
                             <form>
-                                <label for="Users"><h3>Choose User:</h3></label>
-                                <br>
-
                                 <select name="users" id="username">
                                 </select>
                                 <br />
                                 <input type="password" id="password" placeholder="Password" class="input" />
                                 <br />
                                 <div id="incorrect"></div>
+                            
+                                <p>Use the guest account <br> without a password</p>
                                 <button type="button" onclick="validateLoginData()" class="login-btn">Login</button>
                             </form>
                         </div>
