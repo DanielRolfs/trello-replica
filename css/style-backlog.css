@@ -31,10 +31,12 @@
         display: -webkit-box;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
+        text-align: center;
     }
     
     .short-title {
         margin-left: 16px;
+        margin-right: 16px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
