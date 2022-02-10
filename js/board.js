@@ -7,12 +7,24 @@ async function loadTaskstoTODO() {
     renderTasksInBoard();
 }
 
-function renderTasksInBoard() {
+async function deleteTaskBoard(logID) {
+    tasks.forEach(function(log, ID) {
+        if (logID == log.id) {
+            tasks.splice(ID, 1)
+        }
+    });
+    await backend.setItem('tasks', JSON.stringify(tasks));
+    console.log('gelöscht Task mit ID:' + logID);
+    renderTasksInBoard();
+    loadTaskstoTODO();
+  }
+  
+  function renderTasksInBoard() {
     listTaskByStatus('taskTodo', 'b1');
     listTaskByStatus('taskInprogress', 'b2');
     listTaskByStatus('taskTesting', 'b3');
     listTaskByStatus('taskdone', 'b4');
-}
+  }
 
 function listTaskByStatus(containerId, status) {
     let logs = tasks.filter(t => t['status'] == status);
@@ -47,7 +59,7 @@ function listTaskByStatus(containerId, status) {
             <div class="flex between bottom">    
                 <div onclick="editTask(${log.id})" class="pointer prio ${log.urgency} flex-center col">${log.urgency}</div>
                 <div onclick="editTask(${log.id})" class="pointer grey-text flex-center col">${log.dueDate}</div>
-                <img src="./img/delete1.png" alt="delete assginment" class="flex-center col del-btn-board" onclick="deleteTask(${log.id})">
+                <img src="./img/delete1.png" alt="delete assginment" class="flex-center col del-btn-board" onclick="deleteTaskBoard(${log.id})">
             </div>
             
             <div class="move-task">

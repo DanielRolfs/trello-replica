@@ -4,6 +4,18 @@ async function loadBacklogs() {
     renderTasksInBacklog();
 }
 
+async function deleteTaskBacklog(logID) {
+    tasks.forEach(function(log, ID) {
+        if (logID == log.id) {
+            tasks.splice(ID, 1)
+        }
+    });
+    await backend.setItem('tasks', JSON.stringify(tasks));
+    console.log('gelöscht Task mit ID:' + logID);
+    renderTasksInBacklog();
+    loadBacklogs();
+  }
+
 async function renderTasksInBacklog() {
     await loadTasks();
     let logs = tasks.filter(t => t['status'] == 'bl');
@@ -52,7 +64,7 @@ function generateLogs(log) {
         <div class=" bl-board bounce next" > <img src="img/next.png" id="to-board"></div>
             <p class="p-to-board">to <br> Board</p>
             </div>
-            <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTask(${log.id})" id="del-btn-bl">
+            <img src="./img/delete1.png" alt="delete assginment" class="delete-assignment-btn__icon" onclick="deleteTaskBacklog(${log.id})" id="del-btn-bl">
         </div>
     </td>
      </tr>

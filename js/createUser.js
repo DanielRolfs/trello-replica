@@ -1,14 +1,4 @@
-async function deleteTask(logID) {
-    tasks.forEach(function(log, ID) {
-        if (logID == log.id) {
-            tasks.splice(ID, 1)
-        }
-    });
-    await backend.setItem('tasks', JSON.stringify(tasks));
-    console.log('gelöscht Task mit ID:' + logID);
-    renderTasksInBacklog();
-    loadTaskstoTODO()
-}
+
 
 
 function setUsersDetails(logID) {
