@@ -3,7 +3,7 @@
 
 
 // Backend
-setURL('http://gruppe-130.developerakademie.net/smallest_backend_ever');
+setURL('https://github.com/DanielRolfs/media/tree/main/trello-replica/smallest_backend_ever');
 
 let tasks = [];
 
