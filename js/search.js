@@ -130,7 +130,7 @@ function showFilterWarning() {
 function showSearchInput() {
   document.getElementById('extrabar').classList.add('extrabar--open');
   document.getElementById('search-input').classList.add('search-input--open');
-  document.getElementById('search-icon').src = './img/close_blue.png';
+  document.getElementById('search-icon').src = './img/cancel.png';
   document.getElementById('search').setAttribute('onclick', 'hideSearchInput(event);');
 }
 
