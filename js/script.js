@@ -3,7 +3,7 @@
 
 
 // Backend
-setURL('./smallest_backend_ever');
+setURL('https://danielrolfs.com/projects/smallest_backend_ever');
 
 let tasks = [];
 
